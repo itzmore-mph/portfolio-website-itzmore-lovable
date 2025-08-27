@@ -24,13 +24,41 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// Football Analytics Color Palette
+				'pitch-green': {
+					DEFAULT: 'hsl(var(--pitch-green))',
+					light: 'hsl(var(--pitch-green-light))',
+					dark: 'hsl(var(--pitch-green-dark))'
+				},
+				'data-blue': 'hsl(var(--data-blue))',
+				'data-orange': 'hsl(var(--data-orange))',
+				'analytics-purple': 'hsl(var(--analytics-purple))',
+				
+				// Professional Slate Palette
+				slate: {
+					50: 'hsl(var(--slate-50))',
+					100: 'hsl(var(--slate-100))',
+					200: 'hsl(var(--slate-200))',
+					300: 'hsl(var(--slate-300))',
+					400: 'hsl(var(--slate-400))',
+					500: 'hsl(var(--slate-500))',
+					600: 'hsl(var(--slate-600))',
+					700: 'hsl(var(--slate-700))',
+					800: 'hsl(var(--slate-800))',
+					900: 'hsl(var(--slate-900))'
+				},
+				
+				// Semantic Design Tokens
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					hover: 'hsl(var(--secondary-hover))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -42,7 +70,8 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					hover: 'hsl(var(--accent-hover))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -50,7 +79,8 @@ export default {
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					foreground: 'hsl(var(--card-foreground))',
+					hover: 'hsl(var(--card-hover))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

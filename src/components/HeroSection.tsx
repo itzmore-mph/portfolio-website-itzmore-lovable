@@ -22,17 +22,15 @@ const HeroSection = () => {
           <div className="text-left animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
               <BarChart3 className="w-4 h-4 text-white" />
-              <span className="text-white text-sm font-medium">Football Analytics Specialist</span>
+              <span className="text-white text-sm font-medium">Data Analyst • Football Analytics</span>
             </div>
             
             <h1 className="text-hero text-white mb-6 leading-tight">
-              Transforming Football Data Into 
-              <span className="block text-data-blue">Winning Insights</span>
+              Hello, I'm <span className="block text-data-blue">Moritz Philipp Haaf</span>
             </h1>
             
             <p className="text-body text-white/90 mb-8 max-w-lg">
-              Sports Data Enthusiast specializing in Football Analytics. I help teams and organizations 
-              make data-driven decisions through advanced statistical analysis and performance metrics.
+              Certified Data Analyst & Data Scientist with 5+ years experience transforming complex datasets into actionable insights for football analytics, business intelligence, and digital media.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -58,8 +56,8 @@ const HeroSection = () => {
           {/* Stats Cards */}
           <div className="grid grid-cols-2 gap-6 animate-slide-up">
             <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="text-3xl font-bold text-white mb-2">150+</div>
-              <div className="text-white/80 text-sm">Matches Analyzed</div>
+              <div className="text-3xl font-bold text-white mb-2">5+</div>
+              <div className="text-white/80 text-sm">Years Experience</div>
             </div>
             
             <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
@@ -68,8 +66,8 @@ const HeroSection = () => {
             </div>
             
             <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="text-3xl font-bold text-white mb-2">5+</div>
-              <div className="text-white/80 text-sm">Years Experience</div>
+              <div className="text-3xl font-bold text-white mb-2">150+</div>
+              <div className="text-white/80 text-sm">Matches Analyzed</div>
             </div>
             
             <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">

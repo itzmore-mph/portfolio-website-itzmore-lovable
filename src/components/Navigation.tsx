@@ -39,7 +39,7 @@ const Navigation = () => {
             <span className={`font-bold text-lg transition-colors ${
               isScrolled ? 'text-foreground' : 'text-white'
             }`}>
-              Football Analytics
+              Moritz Philipp Haaf
             </span>
           </div>
 

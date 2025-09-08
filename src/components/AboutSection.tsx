@@ -7,7 +7,8 @@ const AboutSection = () => {
     {
       icon: GraduationCap,
       title: "Education",
-      primary: "M.A. Digital Media Management",
+      primary: "M.Sc. Artificial Intelligence Applied to Sports",
+      secondary: "M.A. Digital Media Management",
       secondary: "B.Sc. Business Administration",
       color: "data-blue"
     },
@@ -101,7 +102,7 @@ const AboutSection = () => {
               <h4 className="font-semibold mb-3">Core Expertise</h4>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Data Analyst",
+                  "Sports Data Analyst",
                   "Data Science Expert", 
                   "Football Analytics",
                   "Dashboard Development",

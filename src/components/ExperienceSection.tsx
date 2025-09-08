@@ -31,8 +31,8 @@ const ExperienceSection = () => {
     },
     {
       date: "04/2024 – current", 
-      company: "Self-Employed",
-      position: "Freelance Football Data Analyst",
+      company: "Freelance",
+      position: "Football Data Scientist & Analyst",
       location: "Remote",
       details: [
         "Build end-to-end football analytics prototypes on open data (FBref, StatsBomb) using Python and SQL/DuckDB for ingestion and cleaning, run analyses, and publish results in Streamlit and Power BI/Tableau.",

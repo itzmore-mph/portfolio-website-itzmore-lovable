@@ -1,3 +1,6 @@
+import { Section } from "@/components/layout/Section";
+import { SectionHeader } from "@/components/layout/SectionHeader";
+import { AnimatedSection } from "@/components/ui/animated-section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Award, Users, Target } from "lucide-react";
@@ -36,34 +39,32 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-section-title mb-4">About Me</h2>
-          <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            Get to know more about my background, expertise, and passion for transforming complex data into actionable insights.
-          </p>
-        </div>
+    <Section id="about" background="muted" spacing="xl">
+      <SectionHeader 
+        title="About Me"
+        subtitle="Get to know more about my background, expertise, and passion for transforming complex data into actionable insights."
+      />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Profile Image */}
-          <div className="flex justify-center lg:justify-start animate-slide-up">
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
-                alt="Moritz Philipp Haaf - Professional portrait" 
-                className="w-80 h-80 rounded-full object-cover shadow-2xl border-4 border-white/80"
-              />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
-            </div>
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        {/* Profile Image */}
+        <AnimatedSection animation="slide-right" className="flex justify-center lg:justify-start">
+          <div className="relative">
+            <img 
+              src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
+              alt="Moritz Philipp Haaf - Professional portrait" 
+              className="w-72 sm:w-80 h-72 sm:h-80 rounded-full object-cover shadow-2xl border-4 border-white/80 img-responsive"
+            />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
           </div>
+        </AnimatedSection>
 
-          {/* About Content */}
-          <div className="space-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            {/* Highlight Cards */}
+        {/* About Content */}
+        <div className="space-y-8">
+          {/* Highlight Cards */}
+          <AnimatedSection animation="slide-left" delay={200}>
             <div className="grid grid-cols-2 gap-4">
               {highlights.map((highlight, index) => (
-                <Card key={highlight.title} className="border-0 bg-slate-50 hover:bg-slate-100 transition-colors">
+                <Card key={highlight.title} className="border-0 bg-background hover:bg-card-hover transition-all duration-300 portfolio-card">
                   <CardContent className="p-4 text-center">
                     <div className={`inline-flex p-3 rounded-lg bg-${highlight.color}/10 mb-3`}>
                       <highlight.icon className={`w-6 h-6 text-${highlight.color}`} />
@@ -71,36 +72,45 @@ const AboutSection = () => {
                     <h3 className="font-semibold mb-1">{highlight.title}</h3>
                     <p className="text-sm font-medium text-primary">{highlight.primary}</p>
                     <p className="text-xs text-muted-foreground">{highlight.secondary}</p>
+                    {highlight.third && (
+                      <p className="text-xs text-muted-foreground">{highlight.third}</p>
+                    )}
                   </CardContent>
                 </Card>
               ))}
             </div>
+          </AnimatedSection>
 
-            {/* About Text */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Professional Background</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                I am a <strong>Data Analyst with strong Data Science expertise</strong>, experienced in transforming complex datasets into actionable insights. My background spans <strong>sports, media, and technology</strong>, giving me a unique perspective on how data can drive performance and decision-making.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                At <strong>Publicis Media Austria</strong>, I lead international dashboard and automation projects, building real-time data visualization tools and scalable workflows. These skills translate directly into the demands of football analytics, where speed, accuracy, and clarity are critical.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Alongside this, I actively develop <strong>football analytics projects</strong> — including expected goals (xG) models, opponent analysis dashboards, and player comparison case studies using StatsBomb and other open-source data.
-              </p>
+          {/* About Text */}
+          <AnimatedSection animation="slide-left" delay={400}>
+            <div className="space-y-6">
+              <h3 className="text-subsection-title">Professional Background</h3>
+              <div className="space-y-4">
+                <p className="text-body-sm text-muted-foreground">
+                  I am a <strong>Data Analyst with strong Data Science expertise</strong>, experienced in transforming complex datasets into actionable insights. My background spans <strong>sports, media, and technology</strong>, giving me a unique perspective on how data can drive performance and decision-making.
+                </p>
+                <p className="text-body-sm text-muted-foreground">
+                  At <strong>Publicis Media Austria</strong>, I lead international dashboard and automation projects, building real-time data visualization tools and scalable workflows. These skills translate directly into the demands of football analytics, where speed, accuracy, and clarity are critical.
+                </p>
+                <p className="text-body-sm text-muted-foreground">
+                  Alongside this, I actively develop <strong>football analytics projects</strong> — including expected goals (xG) models, opponent analysis dashboards, and player comparison case studies using StatsBomb and other open-source data.
+                </p>
+              </div>
               
-              <div className="bg-pitch-green/10 border-l-4 border-pitch-green p-4 rounded-r-lg mt-6">
-                <h4 className="font-semibold text-pitch-green mb-2">Future Academic Goals</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+              <div className="bg-pitch-green/5 border-l-4 border-pitch-green p-6 rounded-r-lg mt-6">
+                <h4 className="font-semibold text-pitch-green mb-3">Future Academic Goals</h4>
+                <p className="text-body-sm text-muted-foreground">
                   In <strong>October 2025</strong>, I will begin the <strong>MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, to deepen my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong>Football Data Scientist</strong> in professional clubs, federations, or sports data companies.
                 </p>
               </div>
             </div>
+          </AnimatedSection>
 
-            {/* Certifications/Skills Tags */}
+          {/* Certifications/Skills Tags */}
+          <AnimatedSection animation="slide-left" delay={600}>
             <div>
-              <h4 className="font-semibold mb-3">Core Expertise</h4>
-              <div className="flex flex-wrap gap-2">
+              <h4 className="font-semibold mb-4">Core Expertise</h4>
+              <div className="flex flex-wrap gap-3">
                 {[
                   "Sports Data Analyst",
                   "Data Science Expert", 
@@ -111,16 +121,16 @@ const AboutSection = () => {
                   "International Projects",
                   "Future AI Student"
                 ].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-primary/5 text-primary border-primary/20">
+                  <Badge key={skill} variant="secondary" className="bg-primary/5 text-primary border-primary/20 text-sm py-1">
                     {skill}
                   </Badge>
                 ))}
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

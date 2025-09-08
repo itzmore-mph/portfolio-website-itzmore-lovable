@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <main>
-        <section id="home">
+      <main className="relative">
+        <section id="home" className="relative">
           <HeroSection />
         </section>
         <section id="about">
@@ -27,7 +27,9 @@ const Index = () => {
         <section id="projects">
           <ProjectsSection />
         </section>
-        <ContactSection />
+        <section id="contact">
+          <ContactSection />
+        </section>
       </main>
       <Footer />
     </div>

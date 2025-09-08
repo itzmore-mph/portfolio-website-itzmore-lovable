@@ -49,7 +49,7 @@ const AboutSection = () => {
           <div className="flex justify-center lg:justify-start animate-slide-up">
             <div className="relative">
               <img 
-                src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
+                src="/lovable-uploads/b458fd19-f4ad-4cb1-bc36-dcb822bb898b.png" 
                 alt="Moritz Philipp Haaf - Professional portrait" 
                 className="w-80 h-80 rounded-lg object-cover shadow-2xl border-4 border-white"
               />

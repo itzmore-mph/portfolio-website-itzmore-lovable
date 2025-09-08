@@ -27,7 +27,8 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-hero text-white mb-6 leading-tight">
-              Hello, I'm <span className="block text-data-blue">Moritz Philipp Haaf</span>
+              <span className="block">Hello, I'm</span>
+              <span className="block text-data-blue">Moritz Philipp Haaf</span>
             </h1>
             
             <p className="text-body text-white/90 mb-8 max-w-lg">
@@ -47,7 +48,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                className="bg-transparent border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
               >
                 Download CV
               </Button>

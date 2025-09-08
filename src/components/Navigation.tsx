@@ -34,9 +34,12 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img 
-              src="/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png" 
+              src={isScrolled 
+                ? "/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png" 
+                : "/lovable-uploads/71489f7b-3e18-490e-84a7-2d503590e5e9.png"
+              }
               alt="itzmore logo" 
-              className="h-8 w-auto"
+              className="h-8 w-auto transition-all duration-300"
             />
           </div>
 

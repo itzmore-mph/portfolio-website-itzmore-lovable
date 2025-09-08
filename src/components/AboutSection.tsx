@@ -1,162 +1,110 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Download, Mail, Linkedin, Twitter, MapPin, Briefcase, GraduationCap, Calendar } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { GraduationCap, Award, Users, Target } from "lucide-react";
 
 const AboutSection = () => {
-  const timeline = [
+  const highlights = [
     {
-      year: "2024",
-      title: "Senior Football Analyst",
-      company: "Premier League Data Solutions",
-      description: "Leading advanced analytics projects for top-tier football clubs",
-      type: "work"
+      icon: GraduationCap,
+      title: "Education",
+      primary: "M.A. Digital Media Management",
+      secondary: "B.Sc. Business Administration",
+      color: "data-blue"
     },
     {
-      year: "2023",
-      title: "MSc Sports Analytics",
-      company: "University College London",
-      description: "Specialized in football performance analysis and predictive modeling",
-      type: "education"
+      icon: Award,
+      title: "Experience", 
+      primary: "5+ Years",
+      secondary: "Data & Analytics",
+      color: "pitch-green"
     },
     {
-      year: "2022",
-      title: "Data Analyst",
-      company: "Championship Analytics Ltd",
-      description: "Developed tactical analysis tools and performance dashboards",
-      type: "work"
+      icon: Users,
+      title: "Specialization",
+      primary: "Football Analytics",
+      secondary: "Sports Technology",
+      color: "analytics-purple"
     },
     {
-      year: "2021",
-      title: "BSc Mathematics & Statistics",
-      company: "University of Bath",
-      description: "First-class honors with focus on statistical modeling",
-      type: "education"
+      icon: Target,
+      title: "Focus",
+      primary: "Data-Driven",
+      secondary: "Decision Making",
+      color: "data-orange"
     }
   ];
 
-  const achievements = [
-    "Published research on xG models in Journal of Sports Analytics",
-    "Consultant for 3 professional football clubs",
-    "Speaker at Football Analytics Conference 2024",
-    "Certified in Advanced Sports Analytics (BISA)",
-    "Developed predictive models with 85%+ accuracy"
-  ];
-
   return (
-    <section className="py-20 bg-slate-50">
+    <section id="about" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Personal Information */}
-          <div className="animate-fade-in">
-            <h2 className="text-section-title mb-6">About Me</h2>
-            
-            <div className="prose prose-lg text-muted-foreground mb-8">
-              <p className="text-body mb-4">
-                I'm a passionate Sports Data Enthusiast with over 5 years of experience in football analytics. 
-                My journey began with a deep love for the beautiful game and evolved into a career dedicated 
-                to uncovering insights that drive performance and success.
-              </p>
-              
-              <p className="text-body mb-4">
-                Specializing in advanced statistical analysis, machine learning, and tactical evaluation, 
-                I help football organizations make data-driven decisions that enhance player performance, 
-                optimize team strategies, and identify emerging talent.
-              </p>
-              
-              <p className="text-body">
-                When I'm not analyzing match data, you'll find me at local football matches, staying current 
-                with the latest analytics trends, or contributing to the football analytics community through 
-                research and open-source projects.
-              </p>
-            </div>
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-section-title mb-4">About Me</h2>
+          <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+            Get to know more about my background, expertise, and passion for transforming complex data into actionable insights.
+          </p>
+        </div>
 
-            {/* Key Info Cards */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <Card className="border-0 bg-background">
-                <CardContent className="p-4 text-center">
-                  <MapPin className="w-6 h-6 text-primary mx-auto mb-2" />
-                  <div className="font-semibold">London, UK</div>
-                  <div className="text-sm text-muted-foreground">Available Worldwide</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-0 bg-background">
-                <CardContent className="p-4 text-center">
-                  <Briefcase className="w-6 h-6 text-primary mx-auto mb-2" />
-                  <div className="font-semibold">5+ Years</div>
-                  <div className="text-sm text-muted-foreground">Experience</div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Contact & Social */}
-            <div className="flex flex-wrap gap-3">
-              <Button variant="default" size="lg">
-                <Mail className="w-4 h-4 mr-2" />
-                Contact Me
-              </Button>
-              <Button variant="outline" size="lg">
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
-              </Button>
-              <Button variant="outline" size="icon">
-                <Linkedin className="w-4 h-4" />
-              </Button>
-              <Button variant="outline" size="icon">
-                <Twitter className="w-4 h-4" />
-              </Button>
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Profile Image */}
+          <div className="flex justify-center lg:justify-start animate-slide-up">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
+                alt="Moritz Philipp Haaf - Professional portrait" 
+                className="w-80 h-80 rounded-2xl object-cover shadow-2xl"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
             </div>
           </div>
 
-          {/* Timeline & Achievements */}
-          <div className="space-y-8">
-            {/* Career Timeline */}
-            <div className="animate-slide-up">
-              <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-primary" />
-                Career Journey
-              </h3>
-              
-              <div className="space-y-6">
-                {timeline.map((item, index) => (
-                  <div key={index} className="relative pl-8">
-                    <div className="absolute left-0 top-1.5 w-3 h-3 bg-primary rounded-full"></div>
-                    <div className="absolute left-1.5 top-6 w-0.5 h-full bg-border"></div>
-                    
-                    <div className="bg-background rounded-lg p-4 shadow-sm">
-                      <div className="flex items-center gap-2 mb-1">
-                        {item.type === 'work' ? (
-                          <Briefcase className="w-4 h-4 text-primary" />
-                        ) : (
-                          <GraduationCap className="w-4 h-4 text-accent" />
-                        )}
-                        <span className="text-sm font-medium text-primary">{item.year}</span>
-                      </div>
-                      <h4 className="font-semibold">{item.title}</h4>
-                      <p className="text-sm text-accent font-medium">{item.company}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
+          {/* About Content */}
+          <div className="space-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            {/* Highlight Cards */}
+            <div className="grid grid-cols-2 gap-4">
+              {highlights.map((highlight, index) => (
+                <Card key={highlight.title} className="border-0 bg-slate-50 hover:bg-slate-100 transition-colors">
+                  <CardContent className="p-4 text-center">
+                    <div className={`inline-flex p-3 rounded-lg bg-${highlight.color}/10 mb-3`}>
+                      <highlight.icon className={`w-6 h-6 text-${highlight.color}`} />
                     </div>
-                  </div>
-                ))}
-              </div>
+                    <h3 className="font-semibold mb-1">{highlight.title}</h3>
+                    <p className="text-sm font-medium text-primary">{highlight.primary}</p>
+                    <p className="text-xs text-muted-foreground">{highlight.secondary}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
 
-            {/* Key Achievements */}
-            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <h3 className="text-xl font-semibold mb-6">Key Achievements</h3>
-              
-              <Card className="border-0 bg-background">
-                <CardContent className="p-6">
-                  <ul className="space-y-3">
-                    {achievements.map((achievement, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm text-muted-foreground">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+            {/* About Text */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold">Professional Background</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                I am a certified <strong>Data Analyst & Data Scientist</strong> with a passion for transforming complex datasets into actionable insights that drive business growth and operational efficiency. With a strong background in <strong>sports, media, and technology</strong>, I excel at leveraging data-driven strategies to enhance decision-making and optimize performance.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                My technical toolkit includes <strong>Python, SQL, R, Tableau, Looker Studio, Datorama, and Power BI</strong>, which I utilize to analyze data, automate workflows, and deliver results that make a difference. From football analytics to digital advertising optimization, I bring both technical expertise and strategic thinking to every project.
+              </p>
+            </div>
+
+            {/* Certifications/Skills Tags */}
+            <div>
+              <h4 className="font-semibold mb-3">Core Expertise</h4>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Certified Data Analyst",
+                  "Data Scientist", 
+                  "Football Analytics",
+                  "Business Intelligence",
+                  "Machine Learning",
+                  "Data Visualization",
+                  "Python & SQL",
+                  "Dashboard Development"
+                ].map((skill) => (
+                  <Badge key={skill} variant="secondary" className="bg-primary/5 text-primary border-primary/20">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
             </div>
           </div>
         </div>

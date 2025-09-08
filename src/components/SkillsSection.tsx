@@ -1,124 +1,142 @@
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BarChart3, Database, Brain, Code, Trophy, Target } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, BarChart3, Database, Code, Palette, Brain, Cog, TrendingUp } from "lucide-react";
 
 const SkillsSection = () => {
   const skillCategories = [
     {
+      title: "Core Competencies",
       icon: BarChart3,
-      title: "Data Analysis & Visualization",
-      skills: ["Python", "R", "SQL", "Tableau", "Power BI", "Excel", "Pandas", "NumPy"],
-      description: "Advanced statistical analysis and compelling data visualization"
+      color: "data-blue",
+      skills: [
+        { name: "Data Analytics", level: "Experienced" },
+        { name: "Data Science", level: "Intermediate" },  
+        { name: "Business Intelligence", level: "Experienced" },
+        { name: "Data Visualization", level: "Experienced" },
+        { name: "Dashboard Development", level: "Experienced" },
+        { name: "Ad Tech", level: "Experienced" },
+        { name: "Project Management", level: "Intermediate" },
+        { name: "AI & Machine Learning", level: "Basic" },
+        { name: "Football Analytics", level: "Intermediate" },
+        { name: "Sports Technology", level: "Intermediate" }
+      ]
     },
     {
-      icon: Database,
-      title: "Football Analytics Tools",
-      skills: ["StatsBomb", "Opta", "Wyscout", "InStat", "ChyronHego", "SportsCode"],
-      description: "Professional football data platforms and analysis software"
-    },
-    {
-      icon: Brain,
-      title: "Machine Learning & AI",
-      skills: ["Scikit-learn", "TensorFlow", "Predictive Modeling", "Classification", "Clustering"],
-      description: "Advanced algorithms for performance prediction and pattern recognition"
-    },
-    {
+      title: "Tools & Technologies",
       icon: Code,
-      title: "Programming & Development",
-      skills: ["Python", "R", "JavaScript", "Git", "APIs", "Web Scraping"],
-      description: "Full-stack development for custom analytics solutions"
-    },
-    {
-      icon: Trophy,
-      title: "Sports Expertise",
-      skills: ["Tactical Analysis", "Performance Metrics", "Scout Reports", "Match Analysis"],
-      description: "Deep understanding of football tactics and performance evaluation"
-    },
-    {
-      icon: Target,
-      title: "Business Intelligence",
-      skills: ["KPI Development", "Dashboard Design", "Reporting", "Strategy Consulting"],
-      description: "Translating data insights into actionable business strategies"
+      color: "pitch-green", 
+      skills: [
+        { name: "Python", level: "Experienced", link: "https://www.python.org/" },
+        { name: "SQL", level: "Experienced", link: "https://dev.mysql.com/doc/" },
+        { name: "R", level: "Basic", link: "https://www.r-project.org/" },
+        { name: "Datorama", level: "Experienced", link: "https://www.salesforce.com/de/campaign/sem/marketing-cloud/" },
+        { name: "Tableau", level: "Intermediate", link: "https://www.tableau.com/" },
+        { name: "Power BI", level: "Intermediate", link: "https://www.microsoft.com/en-us/power-platform/products/power-bi" },
+        { name: "Looker Studio", level: "Intermediate", link: "https://lookerstudio.google.com/" },
+        { name: "Streamlit", level: "Basic", link: "https://streamlit.io/" },
+        { name: "Git, GitHub", level: "Intermediate", link: "https://github.com/" }
+      ]
     }
   ];
 
+  const keyStrengths = [
+    {
+      icon: TrendingUp,
+      title: "Advanced Analytics",
+      description: "Expert in statistical modeling, predictive analytics, and machine learning techniques for sports data analysis."
+    },
+    {
+      icon: Brain,
+      title: "Strategic Insights", 
+      description: "Transform complex datasets into clear, actionable recommendations that drive business decisions."
+    },
+    {
+      icon: Cog,
+      title: "Performance Focus",
+      description: "Optimize workflows and automate reporting processes to deliver results efficiently and accurately."
+    }
+  ];
+
+  const getLevelColor = (level: string) => {
+    switch(level) {
+      case "Experienced": return "bg-pitch-green/10 text-pitch-green border-pitch-green/20";
+      case "Intermediate": return "bg-data-blue/10 text-data-blue border-data-blue/20";
+      case "Basic": return "bg-analytics-purple/10 text-analytics-purple border-analytics-purple/20";
+      default: return "bg-muted text-muted-foreground";
+    }
+  };
+
   return (
-    <section className="py-20 bg-slate-50">
+    <section id="skills" className="py-20 bg-muted/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-section-title mb-4">Technical Expertise</h2>
           <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive skill set covering all aspects of football analytics, from data collection 
-            to strategic insights and performance optimization.
+            A comprehensive toolkit of data analysis skills, technologies, and domain expertise 
+            developed through years of experience in football analytics and digital media.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Skills Categories */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card 
-              key={category.title} 
-              className="portfolio-card animate-scale-in border-0"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardHeader className="pb-4">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <category.icon className="w-6 h-6 text-primary" />
+            <Card key={category.title} className="animate-slide-up hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <div className={`p-2 rounded-lg bg-${category.color}/10`}>
+                    <category.icon className={`w-6 h-6 text-${category.color}`} />
                   </div>
-                  <CardTitle className="text-card-title">{category.title}</CardTitle>
-                </div>
-                <p className="text-caption text-muted-foreground">
-                  {category.description}
-                </p>
+                  {category.title}
+                </CardTitle>
               </CardHeader>
-              
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <Badge 
-                      key={skill}
-                      variant="secondary"
-                      className="skill-badge hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      {skill}
+              <CardContent className="space-y-3">
+                {category.skills.map((skill) => (
+                  <div key={skill.name} className="flex items-center justify-between group">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-4 h-4 text-pitch-green flex-shrink-0" />
+                      {skill.link ? (
+                        <a 
+                          href={skill.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="font-medium hover:text-primary transition-colors"
+                        >
+                          {skill.name}
+                        </a>
+                      ) : (
+                        <span className="font-medium">{skill.name}</span>
+                      )}
+                    </div>
+                    <Badge variant="secondary" className={getLevelColor(skill.level)}>
+                      {skill.level}
                     </Badge>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Key Strengths Section */}
-        <div className="mt-20 grid md:grid-cols-3 gap-8">
-          <div className="text-center animate-fade-in">
-            <div className="w-16 h-16 bg-gradient-to-br from-data-blue to-analytics-purple rounded-full flex items-center justify-center mx-auto mb-4">
-              <BarChart3 className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Advanced Analytics</h3>
-            <p className="text-muted-foreground">
-              Complex statistical modeling and predictive analytics for performance optimization
-            </p>
-          </div>
-          
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="w-16 h-16 bg-gradient-to-br from-pitch-green to-pitch-green-light rounded-full flex items-center justify-center mx-auto mb-4">
-              <Target className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Strategic Insights</h3>
-            <p className="text-muted-foreground">
-              Translating complex data into actionable tactical and strategic recommendations
-            </p>
-          </div>
-          
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="w-16 h-16 bg-gradient-to-br from-data-orange to-destructive rounded-full flex items-center justify-center mx-auto mb-4">
-              <Trophy className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Performance Focus</h3>
-            <p className="text-muted-foreground">
-              Dedicated to improving team and individual player performance through data-driven insights
-            </p>
+        {/* Key Strengths */}
+        <div className="animate-fade-in">
+          <h3 className="text-2xl font-bold text-center mb-8">Key Strengths</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {keyStrengths.map((strength, index) => (
+              <Card 
+                key={strength.title} 
+                className="text-center border-0 bg-background hover:shadow-lg transition-shadow"
+              >
+                <CardContent className="p-6">
+                  <div className="inline-flex p-3 rounded-full bg-primary/10 mb-4">
+                    <strength.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h4 className="text-lg font-semibold mb-2">{strength.title}</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {strength.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

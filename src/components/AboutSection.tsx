@@ -51,9 +51,9 @@ const AboutSection = () => {
               <img 
                 src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
                 alt="Moritz Philipp Haaf - Professional portrait" 
-                className="w-80 h-80 rounded-lg object-cover shadow-2xl border-4 border-white"
+                className="w-80 h-80 rounded-full object-cover shadow-2xl"
               />
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
             </div>
           </div>
 

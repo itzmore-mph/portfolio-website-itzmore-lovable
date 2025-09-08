@@ -12,7 +12,9 @@ const ProjectsSection = () => {
         tags: ["Python", "Streamlit", "xG Models", "Network Analysis"],
         metrics: ["XGBoost ML Model", "Passing Networks", "StatsBomb Data"],
         icon: BarChart3,
-        color: "data-blue"
+        color: "data-blue",
+        liveUrl: "https://football-analytics-dashboard.streamlit.app/",
+        githubUrl: "https://github.com/itzmore-mph/football-analytics-portfolio"
       },
       {
         title: "Bundesliga Performance & Valuation Analysis",
@@ -21,7 +23,9 @@ const ProjectsSection = () => {
         tags: ["Python", "Machine Learning", "Bundesliga", "Performance Analysis"],
         metrics: ["Ridge & Random Forest", "Market Valuation", "Feature Analysis"],
         icon: TrendingUp,
-        color: "analytics-purple"
+        color: "analytics-purple",
+        liveUrl: "https://itzmore-mph.github.io/BundesligaPerformanceAnalysis/",
+        githubUrl: "https://github.com/itzmore-mph/BundesligaPerformanceAnalysis"
       },
       {
         title: "Phoenix Firebirds Ticket Sales Analysis",
@@ -30,7 +34,9 @@ const ProjectsSection = () => {
         tags: ["Excel", "Power BI", "Sports Strategy", "Revenue Analysis"],
         metrics: ["3-Year Analysis", "Revenue Optimization", "Strategic Insights"],
         icon: Users,
-        color: "pitch-green"
+        color: "pitch-green",
+        liveUrl: "./assets/Baseball_Ticket-Sales_Analysis_09-08-2025.xlsx",
+        githubUrl: "./assets/Executive Summary Phoenix Firebirds Ticket Sales Analysis (2017–2019).pdf"
       },
       {
         title: "More Projects Coming Soon",
@@ -128,17 +134,19 @@ const ProjectsSection = () => {
                         variant="outline" 
                         size="sm"
                         className="flex-1"
+                        onClick={() => window.open(project.liveUrl, '_blank')}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        View Project
+                        {project.title.includes('Phoenix') ? 'Excel Analysis' : 'View Project'}
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm"
                         className="flex-1"
+                        onClick={() => window.open(project.githubUrl, '_blank')}
                       >
                         <Github className="w-4 h-4 mr-2" />
-                        Source Code
+                        {project.title.includes('Phoenix') ? 'Executive Summary' : 'Source Code'}
                       </Button>
                     </>
                   )}

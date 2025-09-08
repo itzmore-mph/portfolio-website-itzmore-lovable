@@ -31,6 +31,16 @@ const ProjectsSection = () => {
         metrics: ["3-Year Analysis", "Revenue Optimization", "Strategic Insights"],
         icon: Users,
         color: "pitch-green"
+      },
+      {
+        title: "More Projects Coming Soon",
+        description: "Additional football analytics projects and data visualizations are currently in development. Contact me to discuss custom analytics solutions.",
+        image: null,
+        tags: ["Python", "Machine Learning", "Analytics", "Custom Solutions"],
+        metrics: ["On Request", "Custom Analytics", "Data Solutions"],
+        icon: Award,
+        color: "muted",
+        isPlaceholder: true
       }
   ];
 
@@ -49,7 +59,11 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className="portfolio-card animate-scale-in border-0 overflow-hidden group"
+              className={`portfolio-card animate-scale-in border-0 overflow-hidden group ${
+                project.isPlaceholder 
+                  ? 'border-2 border-dashed border-muted-foreground/20 bg-muted/5' 
+                  : ''
+              }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Header with Icon */}
@@ -98,22 +112,36 @@ const ProjectsSection = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-4">
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="flex-1"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Project
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="flex-1"
-                  >
-                    <Github className="w-4 h-4 mr-2" />
-                    Source Code
-                  </Button>
+                  {project.isPlaceholder ? (
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="flex-1"
+                      disabled
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Coming Soon
+                    </Button>
+                  ) : (
+                    <>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="flex-1"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        View Project
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="flex-1"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Source Code
+                      </Button>
+                    </>
+                  )}
                 </div>
               </CardContent>
             </Card>

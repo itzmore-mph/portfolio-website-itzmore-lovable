@@ -38,11 +38,6 @@ const Navigation = () => {
               alt="itzmore logo" 
               className="h-8 w-auto"
             />
-            <span className={`font-bold text-lg transition-colors ${
-              isScrolled ? 'text-foreground' : 'text-white'
-            }`}>
-              Moritz Philipp Haaf
-            </span>
           </div>
 
           {/* Desktop Navigation */}

@@ -5,42 +5,33 @@ import { ExternalLink, Github, BarChart3, TrendingUp, Users, Award } from "lucid
 
 const ProjectsSection = () => {
   const projects = [
-    {
-      title: "Premier League Performance Dashboard",
-      description: "Interactive dashboard analyzing player performance metrics across the 2023/24 season with advanced statistical modeling and predictive analytics.",
-      image: "/placeholder-project1.jpg",
-      tags: ["Python", "Tableau", "Premier League", "Performance Analysis"],
-      metrics: ["500+ Players Analyzed", "20 Teams Covered", "38 Match Weeks"],
-      icon: BarChart3,
-      color: "data-blue"
-    },
-    {
-      title: "Expected Goals (xG) Model",
-      description: "Machine learning model predicting goal probability from shot data, achieving 85% accuracy in goal prediction across major European leagues.",
-      image: "/placeholder-project2.jpg",
-      tags: ["Machine Learning", "Python", "Statistical Modeling", "xG"],
-      metrics: ["85% Accuracy", "50,000+ Shots", "5 Leagues Covered"],
-      icon: TrendingUp,
-      color: "analytics-purple"
-    },
-    {
-      title: "Team Tactical Analysis System",
-      description: "Comprehensive tactical analysis tool examining formations, pressing patterns, and defensive structures using video analysis and tracking data.",
-      image: "/placeholder-project3.jpg",
-      tags: ["Tactical Analysis", "Video Analysis", "Formation Study"],
-      metrics: ["100+ Matches", "15 Formations", "Tactical Insights"],
-      icon: Users,
-      color: "pitch-green"
-    },
-    {
-      title: "Transfer Market Valuation Model",
-      description: "Data-driven player valuation system using performance metrics, age, contract length, and market factors to predict transfer values.",
-      image: "/placeholder-project4.jpg",
-      tags: ["Market Analysis", "Valuation", "Transfer Insights"],
-      metrics: ["€2B+ Valuations", "1000+ Players", "Market Trends"],
-      icon: Award,
-      color: "data-orange"
-    }
+      {
+        title: "Football Analytics Portfolio – Expected Goals (xG) & Passing Networks",
+        description: "Interactive dashboard analyzing player performance metrics and tactical insights with advanced statistical modeling using StatsBomb data.",
+        image: "/lovable-uploads/58741acb-2f0e-4f70-97e0-a1c20ca0bee8.png",
+        tags: ["Python", "Streamlit", "xG Models", "Network Analysis"],
+        metrics: ["XGBoost ML Model", "Passing Networks", "StatsBomb Data"],
+        icon: BarChart3,
+        color: "data-blue"
+      },
+      {
+        title: "Bundesliga Performance & Valuation Analysis",
+        description: "Comprehensive analysis of Bayer Leverkusen's historic unbeaten season using performance metrics, valuation trends, and machine learning models.",
+        image: "/lovable-uploads/fcdfc32d-a94f-4445-b24b-ffbb89a5c8e6.png",
+        tags: ["Python", "Machine Learning", "Bundesliga", "Performance Analysis"],
+        metrics: ["Ridge & Random Forest", "Market Valuation", "Feature Analysis"],
+        icon: TrendingUp,
+        color: "analytics-purple"
+      },
+      {
+        title: "Phoenix Firebirds Ticket Sales Analysis",
+        description: "Strategic analysis of Minor League Baseball ticket sales data identifying key drivers of attendance and revenue optimization opportunities.",
+        image: "/lovable-uploads/e1798b1e-2ff3-4c5c-98b4-8a94faf3b4b4.png",
+        tags: ["Excel", "Power BI", "Sports Strategy", "Revenue Analysis"],
+        metrics: ["3-Year Analysis", "Revenue Optimization", "Strategic Insights"],
+        icon: Users,
+        color: "pitch-green"
+      }
   ];
 
   return (

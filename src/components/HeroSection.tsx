@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-analytics.jpg";
+import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
 import { ArrowDown, BarChart3, TrendingUp } from "lucide-react";
 
 const HeroSection = () => {
@@ -53,26 +54,41 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Stats Cards */}
-          <div className="grid grid-cols-2 gap-6 animate-slide-up">
-            <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="text-3xl font-bold text-white mb-2">5+</div>
-              <div className="text-white/80 text-sm">Years Experience</div>
+          {/* Profile Photo & Stats Cards */}
+          <div className="space-y-6 animate-slide-up">
+            {/* Profile Photo */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative">
+                <img 
+                  src={profilePhoto} 
+                  alt="Moritz Philipp Haaf - Data Analyst" 
+                  className="w-32 h-32 rounded-full border-4 border-white/30 shadow-2xl"
+                />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-data-blue/20 to-transparent"></div>
+              </div>
             </div>
             
-            <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="text-3xl font-bold text-white mb-2">25+</div>
-              <div className="text-white/80 text-sm">Projects Completed</div>
-            </div>
-            
-            <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="text-3xl font-bold text-white mb-2">150+</div>
-              <div className="text-white/80 text-sm">Matches Analyzed</div>
-            </div>
-            
-            <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="text-3xl font-bold text-white mb-2">100%</div>
-              <div className="text-white/80 text-sm">Client Satisfaction</div>
+            {/* Stats Cards */}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">5+</div>
+                <div className="text-white/80 text-sm">Years Experience</div>
+              </div>
+              
+              <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">25+</div>
+                <div className="text-white/80 text-sm">Projects Completed</div>
+              </div>
+              
+              <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">150+</div>
+                <div className="text-white/80 text-sm">Matches Analyzed</div>
+              </div>
+              
+              <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">100%</div>
+                <div className="text-white/80 text-sm">Client Satisfaction</div>
+              </div>
             </div>
           </div>
         </div>

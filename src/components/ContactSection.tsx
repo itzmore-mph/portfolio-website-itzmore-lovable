@@ -9,31 +9,44 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "analytics@example.com",
+      value: "itzmore.dev@gmail.com",
       description: "Send me an email anytime",
       color: "data-blue"
     },
     {
-      icon: Phone,
-      title: "Phone",
-      value: "+44 7XXX XXX XXX",
-      description: "Available Mon-Fri, 9AM-6PM GMT",
-      color: "pitch-green"
-    },
-    {
       icon: MapPin,
       title: "Location",
-      value: "London, United Kingdom",
+      value: "Austria",
       description: "Available for remote work worldwide",
       color: "analytics-purple"
     }
   ];
 
   const socialLinks = [
-    { icon: Linkedin, name: "LinkedIn", href: "#", color: "data-blue" },
-    { icon: Twitter, name: "Twitter", href: "#", color: "data-blue" },
-    { icon: Github, name: "GitHub", href: "#", color: "slate-700" },
-    { icon: Mail, name: "Email", href: "#", color: "pitch-green" }
+    { 
+      name: "LinkedIn", 
+      href: "https://www.linkedin.com/in/moritz-philipp-haaf/", 
+      logo: "/lovable-uploads/3dbf94c1-8b1e-4164-9b4e-66b876fb1c55.png",
+      color: "bg-blue-600" 
+    },
+    { 
+      name: "GitHub", 
+      href: "https://github.com/itzmore-mph", 
+      logo: "/lovable-uploads/34ef4087-06b0-4169-8894-d784144a83d3.png",
+      color: "bg-gray-800"
+    },
+    { 
+      name: "Upwork", 
+      href: "https://www.upwork.com/freelancers/~01924c4b6089ef56d8", 
+      logo: "/lovable-uploads/3b9fdfb7-6fd1-4f4e-9f7a-ba9320d49e93.png",
+      color: "bg-green-600"
+    },
+    { 
+      name: "Malt", 
+      href: "https://www.malt.de/profile/moritzphilipphaaf", 
+      logo: "/lovable-uploads/c315e1c6-6753-46ba-a8d5-cf8fdfd50248.png",
+      color: "bg-purple-600"
+    }
   ];
 
   return (
@@ -74,16 +87,26 @@ const ContactSection = () => {
             {/* Social Links */}
             <div>
               <h4 className="font-semibold mb-4">Connect With Me</h4>
-              <div className="flex gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((social) => (
-                  <Button
+                  <a
                     key={social.name}
-                    variant="outline"
-                    size="icon"
-                    className="hover:scale-105 transition-transform"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors group"
                   >
-                    <social.icon className="w-5 h-5" />
-                  </Button>
+                    <div className={`p-2 rounded-lg ${social.color} flex-shrink-0`}>
+                      <img 
+                        src={social.logo}
+                        alt={social.name}
+                        className="w-4 h-4 invert"
+                      />
+                    </div>
+                    <span className="font-medium group-hover:text-primary transition-colors">
+                      {social.name}
+                    </span>
+                  </a>
                 ))}
               </div>
             </div>

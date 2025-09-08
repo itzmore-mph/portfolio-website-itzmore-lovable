@@ -33,9 +33,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="p-2 bg-primary rounded-lg">
-              <BarChart3 className="w-6 h-6 text-primary-foreground" />
-            </div>
+            <img 
+              src="/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png" 
+              alt="itzmore logo" 
+              className="h-8 w-auto"
+            />
             <span className={`font-bold text-lg transition-colors ${
               isScrolled ? 'text-foreground' : 'text-white'
             }`}>

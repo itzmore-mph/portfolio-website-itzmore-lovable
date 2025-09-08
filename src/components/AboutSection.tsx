@@ -79,11 +79,21 @@ const AboutSection = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-semibold">Professional Background</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I am a certified <strong>Data Analyst & Data Scientist</strong> with a passion for transforming complex datasets into actionable insights that drive business growth and operational efficiency. With a strong background in <strong>sports, media, and technology</strong>, I excel at leveraging data-driven strategies to enhance decision-making and optimize performance.
+                I am a <strong>Data Analyst with strong Data Science expertise</strong>, experienced in transforming complex datasets into actionable insights. My background spans <strong>sports, media, and technology</strong>, giving me a unique perspective on how data can drive performance and decision-making.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                My technical toolkit includes <strong>Python, SQL, R, Tableau, Looker Studio, Datorama, and Power BI</strong>, which I utilize to analyze data, automate workflows, and deliver results that make a difference. From football analytics to digital advertising optimization, I bring both technical expertise and strategic thinking to every project.
+                At <strong>Publicis Media Austria</strong>, I lead international dashboard and automation projects, building real-time data visualization tools and scalable workflows. These skills translate directly into the demands of football analytics, where speed, accuracy, and clarity are critical.
               </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Alongside this, I actively develop <strong>football analytics projects</strong> — including expected goals (xG) models, opponent analysis dashboards, and player comparison case studies using StatsBomb and other open-source data.
+              </p>
+              
+              <div className="bg-pitch-green/10 border-l-4 border-pitch-green p-4 rounded-r-lg mt-6">
+                <h4 className="font-semibold text-pitch-green mb-2">Future Academic Goals</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  In <strong>October 2025</strong>, I will begin the <strong>MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, to deepen my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong>Football Data Scientist</strong> in professional clubs, federations, or sports data companies.
+                </p>
+              </div>
             </div>
 
             {/* Certifications/Skills Tags */}
@@ -91,14 +101,14 @@ const AboutSection = () => {
               <h4 className="font-semibold mb-3">Core Expertise</h4>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Certified Data Analyst",
-                  "Data Scientist", 
+                  "Data Analyst",
+                  "Data Science Expert", 
                   "Football Analytics",
-                  "Business Intelligence",
+                  "Dashboard Development",
                   "Machine Learning",
-                  "Data Visualization",
-                  "Python & SQL",
-                  "Dashboard Development"
+                  "Real-time Visualization",
+                  "International Projects",
+                  "Future AI Student"
                 ].map((skill) => (
                   <Badge key={skill} variant="secondary" className="bg-primary/5 text-primary border-primary/20">
                     {skill}

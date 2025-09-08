@@ -42,18 +42,18 @@ const SkillsSection = () => {
   const keyStrengths = [
     {
       icon: TrendingUp,
-      title: "Advanced Analytics",
-      description: "Expert in statistical modeling, predictive analytics, and machine learning techniques for sports data analysis."
+      title: "Corporate Analytics Excellence",
+      description: "Leading international dashboard and automation projects at Publicis Media Austria, building real-time visualization tools and scalable workflows."
     },
     {
       icon: Brain,
-      title: "Strategic Insights", 
-      description: "Transform complex datasets into clear, actionable recommendations that drive business decisions."
+      title: "Applied Football Analytics", 
+      description: "Actively developing xG models, opponent analysis dashboards, and player comparison studies using StatsBomb and open-source data."
     },
     {
       icon: Cog,
-      title: "Performance Focus",
-      description: "Optimize workflows and automate reporting processes to deliver results efficiently and accurately."
+      title: "Future AI Specialization",
+      description: "Preparing for MSc in AI Applied to Sports (Oct 2025) to become a Football Data Scientist in professional clubs or federations."
     }
   ];
 
@@ -72,8 +72,8 @@ const SkillsSection = () => {
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-section-title mb-4">Technical Expertise</h2>
           <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit of data analysis skills, technologies, and domain expertise 
-            developed through years of experience in football analytics and digital media.
+            A comprehensive toolkit spanning corporate dashboard development, football analytics, and upcoming AI specialization — 
+            built through international projects at Publicis Media Austria and hands-on sports data analysis.
           </p>
         </div>
 

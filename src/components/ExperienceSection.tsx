@@ -122,7 +122,8 @@ const ExperienceSection = () => {
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-section-title mb-4">Professional Journey</h2>
           <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            5+ years of experience transforming data into actionable insights across sports, media, and technology industries.
+            From corporate dashboard development to football analytics innovation, with upcoming AI specialization — 
+            building expertise across sports, media, and technology sectors.
           </p>
         </div>
 

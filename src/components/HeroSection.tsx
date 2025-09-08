@@ -31,7 +31,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-body text-white/90 mb-8 max-w-lg">
-              Certified Data Analyst & Data Scientist with 5+ years experience transforming complex datasets into actionable insights for football analytics, business intelligence, and digital media.
+              Data Analyst with strong Data Science expertise, experienced in transforming complex datasets into actionable insights. Currently leading international dashboard and automation projects at Publicis Media Austria while developing cutting-edge football analytics solutions.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

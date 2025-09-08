@@ -8,8 +8,7 @@ const AboutSection = () => {
       icon: GraduationCap,
       title: "Education",
       primary: "M.Sc. Artificial Intelligence Applied to Sports",
-      secondary: "M.A. Digital Media Management",
-      secondary: "B.Sc. Business Administration",
+      secondary: "M.A. Digital Media Management & B.Sc. Business Administration",
       color: "data-blue"
     },
     {

@@ -176,7 +176,7 @@ const ContactSection = () => {
               <Button 
                 variant="outline"
                 size="lg"
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm bg-transparent"
               >
                 View My Work
               </Button>

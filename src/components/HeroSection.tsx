@@ -57,12 +57,12 @@ const HeroSection = () => {
           {/* Profile Photo & Stats Cards */}
           <div className="space-y-6 animate-slide-up">
             {/* Profile Photo */}
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center">
               <div className="relative">
                 <img 
                   src={profilePhoto} 
                   alt="Moritz Philipp Haaf - Data Analyst" 
-                  className="w-32 h-32 rounded-full border-4 border-white/30 shadow-2xl"
+                  className="w-48 h-48 rounded-full border-4 border-white/30 shadow-2xl"
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-data-blue/20 to-transparent"></div>
               </div>

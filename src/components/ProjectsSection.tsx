@@ -35,7 +35,7 @@ const ProjectsSection = () => {
         metrics: ["3-Year Analysis", "Revenue Optimization", "Strategic Insights"],
         icon: Users,
         color: "pitch-green",
-        liveUrl: "./assets/Baseball_Ticket-Sales_Analysis_09-08-2025.xlsx",
+        liveUrl: "https://docs.google.com/spreadsheets/d/1mPcusY0ESo4krszRta6Yul3MsqbyMYKV/export?format=xlsx",
         githubUrl: "./assets/Executive Summary Phoenix Firebirds Ticket Sales Analysis (2017–2019).pdf"
       },
       {

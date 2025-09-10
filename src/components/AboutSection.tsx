@@ -45,31 +45,31 @@ const AboutSection = () => {
         subtitle="Get to know more about my background, expertise, and passion for transforming complex data into actionable insights."
       />
 
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Profile Image */}
-        <AnimatedSection animation="slide-right" className="flex justify-center lg:justify-start">
+        <AnimatedSection animation="slide-right" className="flex justify-center">
           <div className="relative">
             <img 
               src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
               alt="Moritz Philipp Haaf - Professional portrait" 
-              className="w-72 sm:w-80 h-72 sm:h-80 rounded-full object-cover shadow-2xl border-4 border-white/80 img-responsive"
+              className="w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white/80 img-responsive"
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
           </div>
         </AnimatedSection>
 
         {/* About Content */}
-        <div className="space-y-8">
+        <div className="space-y-8 flex flex-col justify-center">
           {/* Highlight Cards */}
           <AnimatedSection animation="slide-left" delay={200}>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 mb-8">
               {highlights.map((highlight, index) => (
                 <Card key={highlight.title} className="border-0 bg-background hover:bg-card-hover transition-all duration-300 portfolio-card">
                   <CardContent className="p-4 text-center">
                     <div className={`inline-flex p-3 rounded-lg bg-${highlight.color}/10 mb-3`}>
                       <highlight.icon className={`w-6 h-6 text-${highlight.color}`} />
                     </div>
-                    <h3 className="font-semibold mb-1">{highlight.title}</h3>
+                    <h3 className="font-semibold mb-1 text-sm">{highlight.title}</h3>
                     <p className="text-sm font-medium text-primary">{highlight.primary}</p>
                     <p className="text-xs text-muted-foreground">{highlight.secondary}</p>
                     {highlight.third && (
@@ -84,8 +84,8 @@ const AboutSection = () => {
           {/* About Text */}
           <AnimatedSection animation="slide-left" delay={400}>
             <div className="space-y-6">
-              <h3 className="text-subsection-title">Professional Background</h3>
-              <div className="space-y-4">
+              <h3 className="text-subsection-title text-center lg:text-left">Professional Background</h3>
+              <div className="space-y-4 text-justify lg:text-left">
                 <p className="text-body-sm text-muted-foreground">
                   I am a <strong>Data Analyst with strong Data Science expertise</strong>, experienced in transforming complex datasets into actionable insights. My background spans <strong>sports, media, and technology</strong>, giving me a unique perspective on how data can drive performance and decision-making.
                 </p>
@@ -99,7 +99,7 @@ const AboutSection = () => {
               
               <div className="bg-pitch-green/5 border-l-4 border-pitch-green p-6 rounded-r-lg mt-6">
                 <h4 className="font-semibold text-pitch-green mb-3">Future Academic Goals</h4>
-                <p className="text-body-sm text-muted-foreground">
+                <p className="text-body-sm text-muted-foreground text-justify lg:text-left">
                   In <strong>October 2025</strong>, I will begin the <strong>MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, to deepen my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong>Football Data Scientist</strong> in professional clubs, federations, or sports data companies.
                 </p>
               </div>
@@ -108,9 +108,9 @@ const AboutSection = () => {
 
           {/* Certifications/Skills Tags */}
           <AnimatedSection animation="slide-left" delay={600}>
-            <div>
+            <div className="text-center lg:text-left">
               <h4 className="font-semibold mb-4">Core Expertise</h4>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 {[
                   "Sports Data Analyst",
                   "Data Science Expert", 

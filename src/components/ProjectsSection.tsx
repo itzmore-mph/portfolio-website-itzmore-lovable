@@ -168,6 +168,12 @@ const ProjectsSection = () => {
               variant="secondary"
               size="lg"
               className="bg-white text-pitch-green hover:bg-white/90"
+              onClick={() => {
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               Get In Touch
             </Button>

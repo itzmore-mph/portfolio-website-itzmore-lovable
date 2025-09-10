@@ -65,6 +65,12 @@ const Navigation = () => {
               variant={isScrolled ? "default" : "secondary"}
               size="sm"
               className={!isScrolled ? "bg-white text-pitch-green hover:bg-white/90" : ""}
+              onClick={() => {
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
               Get In Touch
             </Button>
@@ -100,7 +106,18 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="px-3 py-2">
-                <Button variant="default" size="sm" className="w-full">
+                <Button 
+                  variant="default" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => {
+                    const contactSection = document.querySelector('#contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
                   Get In Touch
                 </Button>
               </div>

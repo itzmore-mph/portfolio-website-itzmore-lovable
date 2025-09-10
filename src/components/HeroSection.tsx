@@ -4,6 +4,16 @@ import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.
 import { ArrowDown, BarChart3, TrendingUp } from "lucide-react";
 
 const HeroSection = () => {
+  const scrollToNext = () => {
+    const nextSection = document.querySelector('#about');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback: scroll down by viewport height
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -103,10 +113,14 @@ const HeroSection = () => {
       
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="flex flex-col items-center text-white/80 animate-bounce">
-          <span className="text-sm mb-2">Scroll to explore</span>
-          <ArrowDown className="w-5 h-5" />
-        </div>
+        <button 
+          onClick={scrollToNext}
+          className="flex flex-col items-center text-white/80 animate-bounce hover:text-white transition-colors cursor-pointer group"
+          aria-label="Scroll to next section"
+        >
+          <span className="text-sm mb-2 group-hover:text-white">Scroll to explore</span>
+          <ArrowDown className="w-5 h-5 group-hover:scale-110 transition-transform" />
+        </button>
       </div>
     </section>
   );

@@ -49,8 +49,14 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 className="bg-transparent border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                asChild
               >
-                Download CV
+                <a 
+                  href="https://drive.google.com/uc?export=download&id=1sKlbdaqoneWQ_vm0x7HKHWyceHQYhEid"
+                  download="Moritz_Philipp_Haaf_CV.pdf"
+                >
+                  Download CV
+                </a>
               </Button>
             </div>
           </div>

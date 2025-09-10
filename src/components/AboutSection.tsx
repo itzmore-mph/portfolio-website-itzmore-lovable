@@ -39,7 +39,33 @@ const AboutSection = () => {
   ];
 
   return (
-    <Section id="about" background="muted" spacing="xl">
+    <Section id="about" background="muted" spacing="xl" className="relative overflow-hidden">
+      {/* Background Graphics */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-pitch-green/10 to-transparent rounded-full blur-xl"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-data-blue/10 to-transparent rounded-full blur-lg"></div>
+        <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-gradient-to-br from-analytics-purple/10 to-transparent rounded-full blur-lg"></div>
+        <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-gradient-to-br from-data-orange/10 to-transparent rounded-full blur-md"></div>
+      </div>
+
+      {/* Floating Icons */}
+      <div className="absolute inset-0 pointer-events-none hidden lg:block">
+        <div className="absolute top-1/4 left-12 animate-pulse">
+          <div className="w-8 h-8 bg-pitch-green/5 rounded-lg flex items-center justify-center">
+            <svg className="w-4 h-4 text-pitch-green/20" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+        <div className="absolute top-2/3 right-16 animate-pulse" style={{animationDelay: '1s'}}>
+          <div className="w-8 h-8 bg-data-blue/5 rounded-lg flex items-center justify-center">
+            <svg className="w-4 h-4 text-data-blue/20" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
       <SectionHeader 
         title="About Me"
         subtitle="Get to know more about my background, expertise, and passion for transforming complex data into actionable insights."
@@ -47,14 +73,18 @@ const AboutSection = () => {
 
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Profile Image */}
-        <AnimatedSection animation="slide-right" className="flex justify-center">
+        <AnimatedSection animation="slide-right" className="flex justify-center relative">
           <div className="relative">
             <img 
               src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
               alt="Moritz Philipp Haaf - Professional portrait" 
-              className="w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white/80 img-responsive"
+              className="w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white/80 img-responsive relative z-10"
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
+            
+            {/* Decorative rings */}
+            <div className="absolute -inset-4 rounded-full border-2 border-pitch-green/10 animate-pulse"></div>
+            <div className="absolute -inset-8 rounded-full border border-data-blue/10 animate-pulse" style={{animationDelay: '0.5s'}}></div>
           </div>
         </AnimatedSection>
 

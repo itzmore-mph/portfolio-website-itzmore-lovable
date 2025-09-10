@@ -6,8 +6,52 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Send } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
+
+interface ContactFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
 const ContactSection = () => {
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: data
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      
+      reset();
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact me directly at itzmore.dev@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactMethods = [
     {
       icon: Mail,
@@ -117,41 +161,87 @@ const ContactSection = () => {
             <CardHeader>
               <CardTitle>Send Message</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium mb-2 block">First Name</label>
-                  <Input placeholder="John" className="focus-ring" />
+            <CardContent>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">First Name</label>
+                    <Input 
+                      placeholder="John" 
+                      className="focus-ring" 
+                      {...register("firstName", { required: "First name is required" })}
+                    />
+                    {errors.firstName && (
+                      <p className="text-sm text-destructive mt-1">{errors.firstName.message}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Last Name</label>
+                    <Input 
+                      placeholder="Doe" 
+                      className="focus-ring" 
+                      {...register("lastName", { required: "Last name is required" })}
+                    />
+                    {errors.lastName && (
+                      <p className="text-sm text-destructive mt-1">{errors.lastName.message}</p>
+                    )}
+                  </div>
                 </div>
+                
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Last Name</label>
-                  <Input placeholder="Doe" className="focus-ring" />
+                  <label className="text-sm font-medium mb-2 block">Email</label>
+                  <Input 
+                    type="email" 
+                    placeholder="john@example.com" 
+                    className="focus-ring" 
+                    {...register("email", { 
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address"
+                      }
+                    })}
+                  />
+                  {errors.email && (
+                    <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
+                  )}
                 </div>
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium mb-2 block">Email</label>
-                <Input type="email" placeholder="john@example.com" className="focus-ring" />
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium mb-2 block">Subject</label>
-                <Input placeholder="Football Analytics Consultation" className="focus-ring" />
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium mb-2 block">Message</label>
-                <Textarea 
-                  placeholder="Tell me about your project requirements, analytics needs, or any questions you have about football data analysis..."
-                  rows={6}
-                  className="focus-ring"
-                />
-              </div>
-              
-              <Button className="w-full" size="lg">
-                <Send className="w-4 h-4 mr-2" />
-                Send Message
-              </Button>
+                
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Subject</label>
+                  <Input 
+                    placeholder="Football Analytics Consultation" 
+                    className="focus-ring" 
+                    {...register("subject", { required: "Subject is required" })}
+                  />
+                  {errors.subject && (
+                    <p className="text-sm text-destructive mt-1">{errors.subject.message}</p>
+                  )}
+                </div>
+                
+                <div>
+                  <label className="text-sm font-medium mb-2 block">Message</label>
+                  <Textarea 
+                    placeholder="Tell me about your project requirements, analytics needs, or any questions you have about football data analysis..."
+                    rows={6}
+                    className="focus-ring"
+                    {...register("message", { required: "Message is required" })}
+                  />
+                  {errors.message && (
+                    <p className="text-sm text-destructive mt-1">{errors.message.message}</p>
+                  )}
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  className="w-full" 
+                  size="lg" 
+                  disabled={isSubmitting}
+                >
+                  <Send className="w-4 h-4 mr-2" />
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </AnimatedSection>

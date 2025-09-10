@@ -63,6 +63,18 @@
     <div class="loading-fallback">
       <div class="loading-spinner"></div>
     </div>
+    <!-- Safari mobile compatibility -->
+    <script>
+      // Safari mobile support check
+      if (!window.customElements || !window.fetch) {
+        document.querySelector('.loading-fallback').innerHTML = 
+          '<div style="text-align: center; padding: 20px; font-family: Arial, sans-serif;">This browser is not supported. Please use a modern browser.</div>';
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
+    <script nomodule>
+      document.querySelector('.loading-fallback').innerHTML = 
+        '<div style="text-align: center; padding: 20px; font-family: Arial, sans-serif;">This browser does not support modern JavaScript. Please update your browser.</div>';
+    </script>
   </body>
 </html>

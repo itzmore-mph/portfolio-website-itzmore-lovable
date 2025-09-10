@@ -114,7 +114,7 @@ const CookieConsent = () => {
               <Button onClick={acceptCookies} size="sm" className="text-xs">
                 {language === 'en' ? 'Accept All' : 'Alle akzeptieren'}
               </Button>
-              <Button onClick={declineCookies} variant="outline" size="sm" className="text-xs">
+              <Button onClick={declineCookies} variant="secondary" size="sm" className="text-xs">
                 {language === 'en' ? 'Decline' : 'Ablehnen'}
               </Button>
             </div>

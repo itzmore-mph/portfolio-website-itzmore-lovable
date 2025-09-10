@@ -46,18 +46,27 @@ export const AnimatedSection = ({
 
   const styles = animationStyles[animation];
 
+  // Safari compatibility - show content immediately if needed
+  const isSafariMobile = () => {
+    if (typeof window === "undefined") return false;
+    const userAgent = navigator.userAgent;
+    return /iPhone|iPad|iPod/i.test(userAgent) && /Safari/i.test(userAgent);
+  };
+
+  const shouldAnimate = !isSafariMobile();
+
   return (
     <div
       ref={elementRef}
       className={cn(
-        "transition-all ease-out",
-        isIntersecting ? styles.animate : styles.initial,
+        shouldAnimate ? "transition-all ease-out" : "",
+        isIntersecting || !shouldAnimate ? styles.animate : styles.initial,
         className
       )}
-      style={{
+      style={shouldAnimate ? {
         transitionDuration: `${duration}ms`,
         transitionDelay: `${delay}ms`
-      }}
+      } : {}}
     >
       {children}
     </div>

@@ -36,7 +36,7 @@ const ProjectsSection = () => {
         icon: Users,
         color: "pitch-green",
         liveUrl: "https://docs.google.com/spreadsheets/d/1mPcusY0ESo4krszRta6Yul3MsqbyMYKV/export?format=xlsx",
-        githubUrl: "./assets/Executive Summary Phoenix Firebirds Ticket Sales Analysis (2017–2019).pdf"
+        githubUrl: "https://drive.google.com/uc?export=download&id=1DQgAIAjWY7UDYFkX2LIfXYARIH57JuER"
       },
       {
         title: "More Projects Coming Soon",

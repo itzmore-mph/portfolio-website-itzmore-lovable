@@ -167,6 +167,18 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
+    /* Safari mobile fixes */
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Safari mobile viewport fix */
+  #root {
+    min-height: 100vh;
+    width: 100%;
   }
   
   /* Enhanced Typography System */

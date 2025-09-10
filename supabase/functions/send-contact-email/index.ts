@@ -17,6 +17,27 @@ interface ContactFormData {
   message: string;
 }
 
+// Helper: basic HTML escaping to prevent HTML injection in emails
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// Helper: sanitize strings (trim and length limit)
+function sanitize(input: unknown, max = 500): string {
+  const str = typeof input === "string" ? input.trim() : "";
+  return str.slice(0, max);
+}
+
+// Helper: simple email validation
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+}
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -24,15 +45,63 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { firstName, lastName, email, subject, message }: ContactFormData = await req.json();
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const userAgent = req.headers.get("user-agent") || "unknown";
 
-    // Initialize Supabase client
+    const payload: ContactFormData = await req.json();
+
+    const firstName = sanitize(payload.firstName, 100);
+    const lastName = sanitize(payload.lastName, 100);
+    const email = sanitize(payload.email, 320);
+    const subject = sanitize(payload.subject, 150);
+    const message = sanitize(payload.message, 5000);
+
+    if (!firstName || !lastName || !subject || !message || !email) {
+      return new Response(
+        JSON.stringify({ error: "All fields are required" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if (!isValidEmail(email)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid email address" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // Initialize Supabase client with service role to bypass RLS for safe server-side checks
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_ANON_KEY") ?? ""
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
     );
 
-    // Store the contact message in the database
+    // Rate limiting: max 3 submissions per 15 minutes per email
+    const windowMs = 15 * 60 * 1000;
+    const windowStartIso = new Date(Date.now() - windowMs).toISOString();
+    const { count: recentCount, error: rateError } = await supabase
+      .from("contact_messages")
+      .select("id", { count: "exact", head: true })
+      .gte("created_at", windowStartIso)
+      .eq("email", email);
+
+    if (rateError) {
+      console.error("Rate limit check error:", rateError);
+      return new Response(
+        JSON.stringify({ error: "Internal error" }),
+        { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if ((recentCount ?? 0) >= 3) {
+      console.warn(`Rate limit exceeded for email ${email} from IP ${ip}, UA: ${userAgent}`);
+      return new Response(
+        JSON.stringify({ error: "Too many submissions. Please try again later." }),
+        { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // Store the contact message in the database (server-side controlled)
     const { error: dbError } = await supabase
       .from("contact_messages")
       .insert({
@@ -48,19 +117,27 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Failed to store contact message");
     }
 
+    // Prepare safe HTML content
+    const safeFirstName = escapeHtml(firstName);
+    const safeLastName = escapeHtml(lastName);
+    const safeEmail = escapeHtml(email);
+    const safeSubject = escapeHtml(subject);
+    const safeMessageHtml = escapeHtml(message).replace(/\n/g, '<br>');
+
     // Send notification email to you
     const emailResponse = await resend.emails.send({
       from: "Contact Form <contact@itzmore.dev>",
       to: ["itzmore.dev@gmail.com"],
-      subject: `New Contact Form Submission: ${subject}`,
+      subject: `New Contact Form Submission: ${safeSubject}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>From:</strong> ${firstName} ${lastName} (${email})</p>
-        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>From:</strong> ${safeFirstName} ${safeLastName} (${safeEmail})</p>
+        <p><strong>Subject:</strong> ${safeSubject}</p>
         <p><strong>Message:</strong></p>
         <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 10px 0;">
-          ${message.replace(/\n/g, '<br>')}
+          ${safeMessageHtml}
         </div>
+        <p style="color:#666; font-size:12px;">IP: ${escapeHtml(ip)} | User-Agent: ${escapeHtml(userAgent)}</p>
         <p><em>Submitted at: ${new Date().toLocaleString()}</em></p>
       `,
     });

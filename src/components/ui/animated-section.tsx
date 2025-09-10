@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { safariCompat } from "@/utils/safariCompatibility";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -46,14 +47,8 @@ export const AnimatedSection = ({
 
   const styles = animationStyles[animation];
 
-  // Safari compatibility - show content immediately if needed
-  const isSafariMobile = () => {
-    if (typeof window === "undefined") return false;
-    const userAgent = navigator.userAgent;
-    return /iPhone|iPad|iPod/i.test(userAgent) && /Safari/i.test(userAgent);
-  };
-
-  const shouldAnimate = !isSafariMobile();
+  // Enhanced Safari compatibility - check for WebKit flag issues
+  const shouldAnimate = safariCompat.supportsAnimations() && !safariCompat.shouldSkipAnimations();
 
   return (
     <div

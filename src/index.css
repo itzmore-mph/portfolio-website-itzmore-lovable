@@ -158,6 +158,35 @@
   }
 }
 
+/* Safari WebKit Feature Flag Compatibility */
+:root {
+  --vh: 1vh; /* Fallback for Safari mobile */
+}
+
+.is-safari {
+  /* Safari-specific overrides */
+}
+
+.is-safari-mobile {
+  /* Safari mobile specific overrides */
+  height: 100vh; /* Fallback */
+  height: calc(var(--vh, 1vh) * 100); /* Use JS-calculated vh */
+}
+
+.safari-no-animations * {
+  /* Disable animations for problematic WebKit flag combinations */
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+.safari-no-animations .animate-fade-in,
+.safari-no-animations .animate-slide-in,
+.safari-no-animations .animate-scale-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 @layer base {
   * {
     @apply border-border;

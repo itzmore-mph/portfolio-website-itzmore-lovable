@@ -1,13 +1,10 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import { initSafariCompat } from '@/utils/safariCompatibility'
 
-// Enhanced Safari compatibility check
-const isSafariMobile = () => {
-  if (typeof window === "undefined") return false;
-  const userAgent = navigator.userAgent;
-  return /iPhone|iPad|iPod/i.test(userAgent) && /Safari/i.test(userAgent);
-};
+// Initialize Safari compatibility system
+initSafariCompat();
 
 // Safari mobile compatibility wrapper
 const rootElement = document.getElementById("root");
@@ -25,7 +22,7 @@ if (rootElement) {
           if (fallback && rootElement.children.length > 0) {
             fallback.style.display = 'none';
           }
-        }, isSafariMobile() ? 300 : 100); // Longer timeout for Safari
+        }, document.documentElement.classList.contains('is-safari-mobile') ? 300 : 100);
         
       } catch (error) {
         console.error('Failed to render React app:', error);
@@ -60,7 +57,7 @@ if (rootElement) {
     };
 
     // For Safari mobile, wait for DOM to be fully ready
-    if (isSafariMobile() && document.readyState !== 'complete') {
+    if (document.documentElement.classList.contains('is-safari-mobile') && document.readyState !== 'complete') {
       window.addEventListener('load', renderApp);
     } else {
       renderApp();

@@ -43,7 +43,7 @@ const ExperienceSection = () => {
       ],
       current: true,
       links: [
-        { name: "Portfolio", url: "https://itzmore.dev" },
+        { name: "GitHub", url: "https://github.com/itzmore-mph" },
         { name: "Upwork", url: "https://www.upwork.com/freelancers/~01924c4b6089ef56d8" },
         { name: "Malt", url: "https://www.malt.de/profile/moritzphilipphaaf" }
       ]

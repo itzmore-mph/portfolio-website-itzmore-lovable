@@ -115,11 +115,16 @@ const HeroSection = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <button 
           onClick={scrollToNext}
-          className="flex flex-col items-center text-white/80 animate-bounce hover:text-white transition-colors cursor-pointer group"
+          className="flex flex-col items-center text-white/80 cursor-pointer group animate-pulse hover:animate-none transition-all duration-500 ease-out"
           aria-label="Scroll to next section"
         >
-          <span className="text-sm mb-2 group-hover:text-white">Scroll to explore</span>
-          <ArrowDown className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          <span className="text-sm mb-3 group-hover:text-white transition-all duration-300 group-hover:scale-105">
+            Scroll to explore
+          </span>
+          <div className="relative">
+            <ArrowDown className="w-6 h-6 group-hover:scale-110 group-hover:text-white transition-all duration-500 ease-out group-hover:translate-y-1" />
+            <div className="absolute inset-0 w-6 h-6 rounded-full bg-white/10 scale-150 opacity-0 group-hover:opacity-30 group-hover:scale-200 transition-all duration-700 ease-out"></div>
+          </div>
         </button>
       </div>
     </section>

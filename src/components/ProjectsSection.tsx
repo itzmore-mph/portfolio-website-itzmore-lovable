@@ -24,7 +24,7 @@ const ProjectsSection = () => {
         metrics: ["Ridge & Random Forest", "Market Valuation", "Feature Analysis"],
         icon: TrendingUp,
         color: "analytics-purple",
-        liveUrl: "https://itzmore-mph.github.io/BundesligaPerformanceAnalysis/",
+        liveUrl: "https://itzmore-mph.github.io/bundesliga-performance-analysis/",
         githubUrl: "https://github.com/itzmore-mph/BundesligaPerformanceAnalysis"
       },
       {

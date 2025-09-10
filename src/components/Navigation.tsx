@@ -47,15 +47,15 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className={`font-medium transition-colors hover:text-primary ${
                   isScrolled ? 'text-foreground' : 'text-white hover:text-white/80'
                 }`}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -90,14 +90,14 @@ const Navigation = () => {
           <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   className="block px-3 py-2 text-foreground hover:text-primary font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
               <div className="px-3 py-2">
                 <Button variant="default" size="sm" className="w-full">

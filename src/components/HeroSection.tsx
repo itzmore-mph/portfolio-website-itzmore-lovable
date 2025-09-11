@@ -50,6 +50,7 @@ const HeroSection = () => {
                 variant="secondary" 
                 size="lg"
                 className="bg-white text-pitch-green hover:bg-white/90 font-semibold w-full sm:w-auto"
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View My Projects
                 <TrendingUp className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />

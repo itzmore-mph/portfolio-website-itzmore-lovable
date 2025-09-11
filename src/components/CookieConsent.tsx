@@ -97,14 +97,14 @@ const CookieConsent = () => {
             {language === 'en' ? (
               <p className="text-sm mb-4">
                 This website uses essential cookies and, with your consent, Google Analytics to analyze usage. 
-                <a href="/impressum" className="text-primary hover:text-primary/80 underline ml-1">
+                <a href="/privacy" className="text-primary hover:text-primary/80 underline ml-1">
                   Learn more
                 </a>.
               </p>
             ) : (
               <p className="text-sm mb-4">
                 Diese Website verwendet nur technisch notwendige Cookies sowie – mit Ihrer Zustimmung – Google Analytics zur Analyse der Nutzung. 
-                <a href="/impressum" className="text-primary hover:text-primary/80 underline ml-1">
+                <a href="/privacy" className="text-primary hover:text-primary/80 underline ml-1">
                   Mehr erfahren
                 </a>.
               </p>

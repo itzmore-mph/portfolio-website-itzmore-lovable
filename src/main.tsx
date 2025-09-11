@@ -3,9 +3,6 @@ import App from './App.tsx'
 import './index.css'
 import { initSafariCompat } from '@/utils/safariCompatibility'
 
-// Initialize Safari compatibility system
-initSafariCompat();
-
 // Enhanced Safari detection and fallback system
 const isSafari = () => {
   if (typeof window === "undefined") return false;
@@ -16,11 +13,85 @@ const isSafari = () => {
 const isSafariMobile = () => {
   if (typeof window === "undefined") return false;
   const ua = navigator.userAgent;
-  return /iPhone|iPad|iPod/i.test(ua) && /Safari/i.test(ua);
+  return (/iPhone|iPad|iPod/i.test(ua) && /Safari/i.test(ua)) || 
+         (/iPhone|iPad|iPod/i.test(ua) && /Version/i.test(ua));
 };
 
+const isIOSWebView = () => {
+  if (typeof window === "undefined") return false;
+  const ua = navigator.userAgent;
+  return /iPhone|iPad|iPod/i.test(ua) && !/Safari/i.test(ua);
+};
+
+// Initialize Safari compatibility system early
+if (typeof window !== "undefined") {
+  initSafariCompat();
+  
+  // Add immediate mobile Safari optimizations
+  if ((/iPhone|iPad|iPod/i.test(navigator.userAgent))) {
+    // Add critical CSS immediately
+    const style = document.createElement('style');
+    style.textContent = `
+      html, body { 
+        -webkit-overflow-scrolling: touch;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+        height: 100%;
+        overflow-x: hidden;
+      }
+      * { 
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+      }
+      #root {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Show immediate loading indicator for mobile Safari
+    const loadingDiv = document.createElement('div');
+    loadingDiv.id = 'mobile-safari-loader';
+    loadingDiv.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      ">
+        <div style="text-align: center; color: white;">
+          <div style="
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          "></div>
+          <p style="font-size: 1.1rem; opacity: 0.9;">Loading ITzMore.dev...</p>
+        </div>
+      </div>
+      <style>
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      </style>
+    `;
+    document.body.appendChild(loadingDiv);
+    
+    console.log('Mobile Safari: Loading indicator added');
+  }
+}
+
 // Safari-specific loading timeout
-let safariLoadingTimeout: NodeJS.Timeout;
+let safariLoadingTimeout: NodeJS.Timeout | null = null;
 
 const showSafariFallback = () => {
   const rootElement = document.getElementById("root");
@@ -119,45 +190,100 @@ const showSafariFallback = () => {
   `;
 };
 
-// Safari mobile compatibility wrapper
+// Mobile Safari specific initialization
+const initializeMobileSafari = () => {
+  console.log('Initializing for mobile Safari...');
+  
+  // Add mobile Safari specific styles immediately
+  const style = document.createElement('style');
+  style.textContent = `
+    * { 
+      -webkit-transform: translateZ(0); 
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    body { 
+      -webkit-overflow-scrolling: touch; 
+      overflow-x: hidden;
+    }
+    #root {
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Force viewport meta tag
+  let viewport = document.querySelector('meta[name="viewport"]');
+  if (!viewport) {
+    viewport = document.createElement('meta');
+    viewport.setAttribute('name', 'viewport');
+    document.head.appendChild(viewport);
+  }
+  viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+};
+
+// Main initialization logic
 const rootElement = document.getElementById("root");
 if (rootElement) {
   try {
-    // Set Safari loading timeout
-    if (isSafari()) {
-      safariLoadingTimeout = setTimeout(() => {
-        console.warn('Safari loading timeout - showing fallback');
-        showSafariFallback();
-      }, isSafariMobile() ? 8000 : 5000); // Longer timeout for mobile
+    // Early mobile Safari initialization
+    if (isSafariMobile() || isIOSWebView()) {
+      initializeMobileSafari();
     }
+    
+    // Set up loading timeout based on device
+    let timeoutDuration = 3000; // Default
+    if (isSafariMobile() || isIOSWebView()) {
+      timeoutDuration = 10000; // 10 seconds for mobile Safari
+    } else if (isSafari()) {
+      timeoutDuration = 5000; // 5 seconds for desktop Safari
+    }
+    
+    safariLoadingTimeout = setTimeout(() => {
+      console.warn('Loading timeout - showing fallback');
+      showSafariFallback();
+    }, timeoutDuration);
 
-    // For Safari mobile, ensure DOM is ready
+    // Simplified render function
     const renderApp = () => {
       try {
+        console.log('Attempting to render React app...');
         const root = createRoot(rootElement);
         root.render(<App />);
         
-        // Clear Safari timeout on successful render
+        // Clear timeout on successful render
         if (safariLoadingTimeout) {
           clearTimeout(safariLoadingTimeout);
+          safariLoadingTimeout = null;
         }
         
-        // Hide loading fallback once React renders
+        // Remove mobile Safari loader
         setTimeout(() => {
-          const fallback = document.querySelector('.loading-fallback') as HTMLElement;
-          if (fallback && rootElement.children.length > 0) {
-            fallback.style.display = 'none';
+          const loader = document.getElementById('mobile-safari-loader');
+          if (loader) {
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.3s ease-out';
+            setTimeout(() => {
+              loader.remove();
+            }, 300);
           }
-        }, isSafariMobile() ? 500 : 200); // Increased timeout for Safari
+        }, 100);
         
-        // Add success indicator for debugging
-        if (isSafari()) {
-          console.log('Safari: React app rendered successfully');
+        console.log('React app rendered successfully');
+        
+        // Additional check for mobile Safari
+        if (isSafariMobile()) {
+          setTimeout(() => {
+            if (rootElement.children.length === 0) {
+              console.warn('Mobile Safari: No React content detected after render');
+              showSafariFallback();
+            }
+          }, 1000);
         }
         
       } catch (error) {
         console.error('Failed to render React app:', error);
-        // Clear timeout and show fallback
         if (safariLoadingTimeout) {
           clearTimeout(safariLoadingTimeout);
         }
@@ -165,31 +291,50 @@ if (rootElement) {
       }
     };
 
-    // Enhanced Safari initialization
-    const initializeApp = () => {
-      if (isSafari()) {
-        // For Safari, add additional checks
+    // Device-specific initialization strategy
+    if (isSafariMobile() || isIOSWebView()) {
+      console.log('Mobile Safari/WebView detected');
+      
+      // For mobile Safari, wait for everything to be fully ready
+      const waitForReady = () => {
         if (document.readyState === 'complete') {
-          // DOM is fully loaded
-          setTimeout(renderApp, 100);
-        } else if (document.readyState === 'interactive') {
-          // DOM is ready, but resources may still be loading
-          setTimeout(renderApp, 200);
+          // Wait a bit more for mobile Safari
+          setTimeout(renderApp, 300);
         } else {
-          // Still loading
-          window.addEventListener('DOMContentLoaded', renderApp);
+          // Wait for window load event
+          window.addEventListener('load', () => {
+            setTimeout(renderApp, 300);
+          }, { once: true });
         }
+      };
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitForReady, { once: true });
       } else {
-        // Non-Safari browsers
+        waitForReady();
+      }
+      
+    } else if (isSafari()) {
+      console.log('Desktop Safari detected');
+      
+      // Desktop Safari - more aggressive but still careful
+      if (document.readyState === 'complete') {
+        setTimeout(renderApp, 100);
+      } else if (document.readyState === 'interactive') {
+        setTimeout(renderApp, 200);
+      } else {
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(renderApp, 100);
+        }, { once: true });
+      }
+      
+    } else {
+      // Non-Safari browsers - immediate render
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderApp, { once: true });
+      } else {
         renderApp();
       }
-    };
-
-    // For Safari mobile, ensure everything is ready
-    if (isSafariMobile() && document.readyState !== 'complete') {
-      window.addEventListener('load', initializeApp);
-    } else {
-      initializeApp();
     }
     
   } catch (error) {
@@ -201,33 +346,5 @@ if (rootElement) {
   }
 } else {
   console.error('Root element not found');
-  // Show fallback even without root element
-  document.body.innerHTML = `
-    <div style="
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f5f5f5;
-      text-align: center;
-      padding: 2rem;
-    ">
-      <div>
-        <h1 style="color: #d32f2f; margin-bottom: 1rem;">Application Error</h1>
-        <p style="color: #666; margin-bottom: 1rem;">Could not find root element. Please refresh the page.</p>
-        <button onclick="window.location.reload()" style="
-          background: #1976d2;
-          color: white;
-          border: none;
-          padding: 0.75rem 1.5rem;
-          border-radius: 0.5rem;
-          cursor: pointer;
-          font-size: 1rem;
-        ">
-          Refresh Page
-        </button>
-      </div>
-    </div>
-  `;
+  showSafariFallback();
 }

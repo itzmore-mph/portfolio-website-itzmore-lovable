@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,14 +34,17 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <img 
+          <Link to="/" className="flex items-center gap-2" aria-label="Go to homepage">
+            <OptimizedImage 
               src={isScrolled 
                 ? "/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png" 
                 : "/lovable-uploads/71489f7b-3e18-490e-84a7-2d503590e5e9.png"
               }
-              alt="itzmore logo" 
+              alt="itzmore logo - Data Analytics and Football Analytics Portfolio" 
               className="h-8 w-auto transition-all duration-300"
+              width={32}
+              height={32}
+              priority={true}
             />
           </Link>
 

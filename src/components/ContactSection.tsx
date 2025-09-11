@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/components/ui/use-toast";
@@ -149,10 +150,13 @@ const ContactSection = () => {
                   className="flex items-center gap-3 p-3 bg-muted/30 hover:bg-muted/50 rounded-lg transition-all duration-300 group focus-ring"
                 >
                   <div className={`p-2 rounded-lg ${social.color} flex-shrink-0`}>
-                    <img 
+                    <OptimizedImage 
                       src={social.logo}
-                      alt={social.name}
+                      alt={`${social.name} platform logo icon`}
                       className="w-4 h-4 invert"
+                      width={16}
+                      height={16}
+                      lazy={true}
                     />
                   </div>
                   <span className="font-medium group-hover:text-primary transition-colors">

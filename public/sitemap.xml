@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://itzmore.dev/</loc>
+    <lastmod>2025-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://itzmore.dev/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png</image:loc>
+      <image:title>Moritz Philipp Haaf - Data Analyst Portfolio</image:title>
+      <image:caption>Professional portrait of Moritz Philipp Haaf, Data Analyst specializing in football analytics</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://itzmore.dev/src/assets/hero-analytics.jpg</image:loc>
+      <image:title>Football Analytics Dashboard</image:title>
+      <image:caption>Football analytics stadium view with data visualizations and modern dashboard overlays</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://itzmore.dev/privacy</loc>
+    <lastmod>2025-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Impressum -->
+  <url>
+    <loc>https://itzmore.dev/impressum</loc>
+    <lastmod>2025-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

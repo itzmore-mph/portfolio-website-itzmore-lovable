@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import heroImage from "@/assets/hero-analytics.jpg";
 import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
 import { ArrowDown, BarChart3, TrendingUp } from "lucide-react";
@@ -15,13 +16,17 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
+      <div className="absolute inset-0 z-0" aria-hidden="true">
+        <OptimizedImage 
           src={heroImage} 
-          alt="Football analytics stadium view with data visualizations"
+          alt="Football analytics stadium view with data visualizations and modern dashboard overlays"
           className="w-full h-full object-cover"
+          priority={true}
+          lazy={false}
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-pitch-green/90 via-pitch-green/70 to-transparent" />
       </div>
@@ -31,8 +36,8 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="text-left animate-fade-in order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 mb-4 sm:mb-6 text-xs sm:text-sm">
-              <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 mb-4 sm:mb-6 text-xs sm:text-sm" role="banner">
+              <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
               <span className="text-white font-medium">Data Analyst • Football Analytics</span>
             </div>
             
@@ -65,6 +70,7 @@ const HeroSection = () => {
                 <a 
                   href="https://drive.google.com/uc?export=download&id=1sKlbdaqoneWQ_vm0x7HKHWyceHQYhEid"
                   download="Moritz_Philipp_Haaf_CV.pdf"
+                  aria-label="Download Moritz Philipp Haaf's CV as PDF"
                 >
                   Download CV
                 </a>
@@ -77,10 +83,13 @@ const HeroSection = () => {
             {/* Profile Photo */}
             <div className="flex justify-center">
               <div className="relative">
-                <img 
+                <OptimizedImage 
                   src={profilePhoto} 
-                  alt="Moritz Philipp Haaf - Data Analyst" 
-                  className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-white/30 shadow-2xl"
+                  alt="Moritz Philipp Haaf - Professional portrait of Data Analyst specializing in football analytics" 
+                  className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-white/30 shadow-2xl object-cover"
+                  width={192}
+                  height={192}
+                  priority={true}
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-data-blue/20 to-transparent"></div>
               </div>

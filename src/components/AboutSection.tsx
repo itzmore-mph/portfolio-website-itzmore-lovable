@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { AnimatedSection } from "@/components/ui/animated-section";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Award, Users, Target } from "lucide-react";
@@ -49,10 +50,13 @@ const AboutSection = () => {
         {/* Profile Image */}
         <AnimatedSection animation="slide-right" className="flex justify-center">
           <div className="relative">
-            <img 
+            <OptimizedImage 
               src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
-              alt="Moritz Philipp Haaf - Professional portrait" 
-              className="w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white/80 img-responsive"
+              alt="Moritz Philipp Haaf - Professional portrait showing data analyst and football analytics expert in business attire" 
+              className="w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white/80"
+              width={384}
+              height={384}
+              lazy={true}
             />
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
           </div>

@@ -42,7 +42,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-sm sm:text-base lg:text-body text-white/90 mb-6 sm:mb-8 max-w-lg leading-relaxed">
-              Data Analyst with strong Data Science expertise, experienced in transforming complex datasets into actionable insights. Currently leading international dashboard and automation projects at Publicis Media Austria while developing cutting-edge football analytics solutions.
+              Data Analyst with strong Data Science expertise, experienced in transforming complex datasets into actionable insights. Moritz Haaf currently leads international dashboard and automation projects at Publicis Media Austria while developing cutting-edge football analytics solutions.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

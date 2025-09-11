@@ -18,7 +18,6 @@ export const ProfilePhoto = ({ src, alt, className }: ProfilePhotoProps) => {
           height={192}
           priority={true}
         />
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-data-blue/20 to-transparent transition-opacity duration-300 group-hover:opacity-75"></div>
       </div>
     </div>
   );

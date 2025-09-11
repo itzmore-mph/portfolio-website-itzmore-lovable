@@ -118,7 +118,16 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">{method.title}</h4>
-                      <p className="font-medium text-primary mb-1">{method.value}</p>
+                      {method.title === "Email" ? (
+                        <a 
+                          href={`mailto:${method.value}`}
+                          className="font-medium text-primary mb-1 hover:text-data-blue transition-colors duration-200 underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                        >
+                          {method.value}
+                        </a>
+                      ) : (
+                        <p className="font-medium text-primary mb-1">{method.value}</p>
+                      )}
                       <p className="text-sm text-muted-foreground">{method.description}</p>
                     </div>
                   </div>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
-import heroImage from "@/assets/hero-analytics.jpg";
+import heroImage from "@/assets/realistic-stadium-hero.jpg";
 import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
 import { ArrowDown, BarChart3, TrendingUp } from "lucide-react";
 
@@ -21,7 +21,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <OptimizedImage 
           src={heroImage} 
-          alt="Football analytics stadium view with data visualizations and modern dashboard overlays"
+          alt="Realistic football stadium view showing pristine green pitch with proper field markings and stadium seating"
           className="w-full h-full object-cover"
           priority={true}
           lazy={false}

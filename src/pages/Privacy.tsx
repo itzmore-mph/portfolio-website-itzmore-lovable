@@ -72,7 +72,7 @@ const Privacy = () => {
               <CardContent className="p-8 prose prose-lg max-w-none">
                 <div className="space-y-6">
                   <p className="text-muted-foreground">
-                    <strong>Last Updated:</strong> December 2024
+                    <strong>Last Updated:</strong> September 2025
                   </p>
 
                   <section>
@@ -150,7 +150,7 @@ const Privacy = () => {
               <CardContent className="p-8 prose prose-lg max-w-none">
                 <div className="space-y-6">
                   <p className="text-muted-foreground">
-                    <strong>Stand:</strong> Dezember 2024
+                    <strong>Stand:</strong> September 2025
                   </p>
 
                   <section>

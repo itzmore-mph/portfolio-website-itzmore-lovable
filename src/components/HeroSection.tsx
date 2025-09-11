@@ -18,7 +18,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf">
+    <section className="relative min-h-dvh flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <OptimizedImage 

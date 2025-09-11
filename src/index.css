@@ -163,6 +163,36 @@
   --vh: 1vh; /* Fallback for Safari mobile */
 }
 
+/* Safari compatibility fixes */
+html { 
+  -webkit-text-size-adjust: 100%; 
+}
+
+body { 
+  min-height: 100dvh; 
+}
+
+@supports (height: 100svh) {
+  .min-h-screen { 
+    min-height: 100svh !important; 
+  }
+  .min-h-dvh {
+    min-height: 100dvh !important;
+  }
+}
+
+/* Glass/blur effects with Safari fallback */
+.glass { 
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px); 
+}
+
+@supports not ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+  .glass { 
+    background-color: rgba(0,0,0,.5); 
+  }
+}
+
 .is-safari {
   /* Safari-specific overrides */
 }
@@ -175,9 +205,10 @@
 
 .safari-no-animations * {
   /* Disable animations for problematic WebKit flag combinations */
-  animation: none !important;
-  transition: none !important;
-  transform: none !important;
+  animation-duration: 0.01ms !important;
+  animation-delay: 0.01ms !important;
+  transition-duration: 0.01ms !important;
+  transition-delay: 0.01ms !important;
 }
 
 .safari-no-animations .animate-fade-in,

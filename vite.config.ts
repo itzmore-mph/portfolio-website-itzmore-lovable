@@ -14,7 +14,6 @@ export default defineConfig(({ mode }) => ({
     react(),
     legacy({
       targets: ['defaults', 'safari >= 15'],
-      additionalLegacyPolyfills: ['whatwg-fetch']
     }),
     mode === 'development' &&
     componentTagger(),

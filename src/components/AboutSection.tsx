@@ -53,12 +53,12 @@ const AboutSection = () => {
             <OptimizedImage 
               src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png" 
               alt="Moritz Philipp Haaf - Professional portrait showing data analyst and football analytics expert in business attire" 
-              className="w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 rounded-full object-cover shadow-2xl border-4 border-white/80"
+              className="w-72 sm:w-80 lg:w-96 h-72 sm:h-80 lg:h-96 rounded-full object-cover border-4 border-white/80"
+              containerClassName="rounded-full"
               width={384}
               height={384}
               lazy={true}
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pitch-green/10 to-data-blue/10"></div>
           </div>
         </AnimatedSection>
 

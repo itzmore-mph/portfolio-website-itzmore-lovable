@@ -76,51 +76,29 @@ const handler = async (req: Request): Promise<Response> => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
     );
 
-    // Enhanced rate limiting: email-based (3 per 15 min) + IP-based (5 per 15 min)
+    // Rate limiting: max 3 submissions per 15 minutes per email
     const windowMs = 15 * 60 * 1000;
     const windowStartIso = new Date(Date.now() - windowMs).toISOString();
-    
-    // Check email-based rate limit (3 submissions per 15 minutes per email)
-    const { count: emailCount, error: emailRateError } = await supabase
+    const { count: recentCount, error: rateError } = await supabase
       .from("contact_messages")
       .select("id", { count: "exact", head: true })
       .gte("created_at", windowStartIso)
       .eq("email", email);
 
-    if (emailRateError) {
-      console.error("Email rate limit check error:", emailRateError);
+    if (rateError) {
+      console.error("Rate limit check error:", rateError);
       return new Response(
         JSON.stringify({ error: "Internal error" }),
         { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
 
-    if ((emailCount ?? 0) >= 3) {
-      console.warn(`Email rate limit exceeded for ${email} from IP ${ip}, UA: ${userAgent}`);
+    if ((recentCount ?? 0) >= 3) {
+      console.warn(`Rate limit exceeded for email ${email} from IP ${ip}, UA: ${userAgent}`);
       return new Response(
-        JSON.stringify({ error: "Too many submissions from this email. Please try again later." }),
+        JSON.stringify({ error: "Too many submissions. Please try again later." }),
         { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
-    }
-
-    // Check IP-based rate limit (5 submissions per 15 minutes per IP) - only if IP is known
-    if (ip !== "unknown") {
-      const { count: ipCount, error: ipRateError } = await supabase
-        .from("contact_messages")
-        .select("id", { count: "exact", head: true })
-        .gte("created_at", windowStartIso)
-        .eq("ip_address", ip);
-
-      if (ipRateError) {
-        console.error("IP rate limit check error:", ipRateError);
-        // Continue processing if IP rate limit check fails (degraded mode)
-      } else if ((ipCount ?? 0) >= 5) {
-        console.warn(`IP rate limit exceeded for IP ${ip}, email: ${email}, UA: ${userAgent}`);
-        return new Response(
-          JSON.stringify({ error: "Too many submissions from your network. Please try again later." }),
-          { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
-        );
-      }
     }
 
     // Store the contact message in the database (server-side controlled)
@@ -132,8 +110,6 @@ const handler = async (req: Request): Promise<Response> => {
         email: email,
         subject: subject,
         message: message,
-        ip_address: ip !== "unknown" ? ip : null,
-        user_agent: userAgent !== "unknown" ? userAgent : null,
       });
 
     if (dbError) {

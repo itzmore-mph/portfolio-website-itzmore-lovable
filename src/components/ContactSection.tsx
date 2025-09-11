@@ -261,7 +261,7 @@ const ContactSection = () => {
                 variant="secondary"
                 size="lg"
                 className="bg-white text-pitch-green hover:bg-white/90 font-semibold"
-                onClick={() => window.open('https://calendly.com/itzmore-dev/30min', '_blank')}
+                onClick={() => window.open('https://calendly.com/itzmore-dev', '_blank')}
               >
                 Schedule a Call
               </Button>

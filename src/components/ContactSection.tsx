@@ -269,8 +269,9 @@ const ContactSection = () => {
                 variant="outline"
                 size="lg"
                 className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm bg-transparent"
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                View My Work
+                View My Projects
               </Button>
             </div>
           </div>

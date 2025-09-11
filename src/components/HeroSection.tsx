@@ -1,8 +1,10 @@
-import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { HeroContent } from "./hero/HeroContent";
+import { ProfilePhoto } from "./hero/ProfilePhoto";
+import { StatsGrid } from "./hero/StatsGrid";
 import heroImage from "@/assets/realistic-stadium-hero.jpg";
 import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
-import { ArrowDown, BarChart3, TrendingUp } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToNext = () => {
@@ -34,93 +36,20 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Text Content */}
-          <div className="text-left animate-fade-in order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 mb-4 sm:mb-6 text-xs sm:text-sm" role="banner">
-              <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
-              <span className="text-white font-medium">Football Analytics</span>
-            </div>
-            
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-hero text-white mb-4 sm:mb-6 leading-tight font-bold">
-              <span className="block">Sports Data Scientist</span>
-              <span className="block text-data-blue">& Analyst (Football)</span>
-            </h1>
-            
-            <p className="text-sm sm:text-base lg:text-body text-white/90 mb-4 sm:mb-6 max-w-lg leading-relaxed">
-              Reproducible Python/SQL (DuckDB) pipelines and Streamlit/Power BI tools for scouting, opponent & set-piece insights.
-            </p>
-            
-            <p className="text-xs sm:text-sm text-white/70 mb-6 sm:mb-8 max-w-lg leading-relaxed">
-              Currently: Senior Digital Data & Dashboard Manager, Publicis Media Austria (Salesforce Marketing Intelligence/Datorama).
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Button 
-                variant="secondary" 
-                size="lg"
-                className="bg-white text-pitch-green hover:bg-white/90 font-semibold w-full sm:w-auto"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                View My Projects
-                <TrendingUp className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="bg-transparent border-white/30 text-white hover:bg-white/10 backdrop-blur-sm w-full sm:w-auto"
-                asChild
-              >
-                <a 
-                  href="https://drive.google.com/uc?export=download&id=1sKlbdaqoneWQ_vm0x7HKHWyceHQYhEid"
-                  download="Moritz_Philipp_Haaf_CV.pdf"
-                  aria-label="Download Moritz Philipp Haaf's CV as PDF"
-                >
-                  Download CV
-                </a>
-              </Button>
-            </div>
+          {/* Content */}
+          <div className="order-2 lg:order-1">
+            <HeroContent 
+              onProjectsClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            />
           </div>
           
-          {/* Profile Photo & Stats Cards */}
+          {/* Profile & Stats */}
           <div className="space-y-4 sm:space-y-6 animate-slide-up order-1 lg:order-2">
-            {/* Profile Photo */}
-            <div className="flex justify-center">
-              <div className="relative">
-                <OptimizedImage 
-                  src={profilePhoto} 
-                  alt="Moritz Philipp Haaf - Professional portrait of Data Analyst specializing in football analytics" 
-                  className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full border-4 border-white/30 shadow-2xl object-cover"
-                  width={192}
-                  height={192}
-                  priority={true}
-                />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-data-blue/20 to-transparent"></div>
-              </div>
-            </div>
-            
-            {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 max-w-md mx-auto">
-              <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20 p-3 sm:p-4 rounded-lg border text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">5+</div>
-                <div className="text-white/80 text-xs sm:text-sm">Years Experience</div>
-              </div>
-              
-              <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20 p-3 sm:p-4 rounded-lg border text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">25+</div>
-                <div className="text-white/80 text-xs sm:text-sm">Projects Completed</div>
-              </div>
-              
-              <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20 p-3 sm:p-4 rounded-lg border text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">150+</div>
-                <div className="text-white/80 text-xs sm:text-sm">Matches Analyzed</div>
-              </div>
-              
-              <div className="stat-card bg-white/10 backdrop-blur-sm border-white/20 p-3 sm:p-4 rounded-lg border text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">100%</div>
-                <div className="text-white/80 text-xs sm:text-sm">Client Satisfaction</div>
-              </div>
-            </div>
+            <ProfilePhoto 
+              src={profilePhoto}
+              alt="Moritz Philipp Haaf - Professional portrait of Sports Data Scientist specializing in football analytics"
+            />
+            <StatsGrid />
           </div>
         </div>
       </div>

@@ -22,10 +22,9 @@ const ExperienceSection = () => {
       position: "Senior Digital Data & Dashboard Manager",
       location: "Austria",
       details: [
-        "Develop and implement dashboards and automation for digital campaigns.",
-        "Consult on AI-driven data strategy and product development.",
-        "Facilitate cross-functional collaboration within the agency and network.",
-        "Lead data visualization and automation initiatives."
+        "Lead dashboard development and analytics engineering in Salesforce Marketing Intelligence (Datorama) for international stakeholders; build Data Streams/Transformations pipelines and create efficient reporting.",
+        "Implement scalable metrics and dimensions using Datorama's JS-style expression language.",
+        "Design cross-source data models and reusable components; maintain a metric dictionary, naming conventions, and QA/alerting for consistent reporting."
       ],
       current: true
     },
@@ -35,11 +34,10 @@ const ExperienceSection = () => {
       position: "Sports Data Scientist & Analyst (Football)",
       location: "Remote",
       details: [
-        "Build end-to-end football analytics prototypes on open data (FBref, StatsBomb) using Python and SQL/DuckDB for ingestion and cleaning, run analyses, and publish results in Streamlit and Power BI/Tableau.",
-        "Train and evaluate a baseline xG model and derive player/team metrics (passing networks, shot maps, possession-adjusted comparisons); document methods and evaluation in README files.",
-        "Produce season case studies (e.g., Bundesliga 2023/24 — Bayer 04 Leverkusen) to demonstrate workflow and reporting style.",
-        "Standardize metric definitions and implement QA checks for reproducibility across competitions; use Git/GitHub for version control.",
-        "Maintain portfolio at itzmore.dev and client presence on Upwork and Malt."
+        "Build end-to-end football analytics prototypes on open data (FBref, StatsBomb): data ingestion/cleaning in Python + SQL/DuckDB, analysis, and publication via Streamlit and Power BI/Tableau.",
+        "Train and evaluate a baseline xG model; derive player/team metrics (passing networks, shot maps, possession-adjusted comparisons) with methods documented in README files.",
+        "Produce season case studies (e.g., Bundesliga 2023/24) to demonstrate workflow and reporting style.",
+        "Portfolio: itzmore.dev - Upwork - Malt."
       ],
       current: true,
       links: [
@@ -54,31 +52,31 @@ const ExperienceSection = () => {
       position: "Analytics & Ad Tech Development Manager", 
       location: "Austria",
       details: [
-        "Optimized RMA's Ad-Tech-Stack and implemented data-driven strategies.",
-        "Analyzed user flow with Google Analytics & Piano Analytics.",
-        "Managed data platforms and Looker dashboard development."
+        "Analyzing traffic and user flow assessments using Google Analytics & Piano Analytics.",
+        "Supported development of internal Looker KPI dashboards.",
+        "Responsible for Data Management Platform to build and maintain user segments."
       ]
     },
     {
       date: "08/2022 – 04/2024",
-      company: "Red Bull Media House",
-      position: "Digital Competence & Ad Tech Specialist",
+      company: "Red Bull Media Brand Network | Red Bull Media House",
+      position: "Digital Competence Specialist",
       location: "Austria", 
       details: [
-        "Analyzed digital user data and optimized monetization.",
-        "Managed YouTube & Red Bull campaign operations.",
-        "Introduced technical ad solutions with internal teams."
+        "Optimization of advertising monetization and analysis of digital user data.",
+        "Management of advertising campaigns in Google Ad Manager for YouTube & Red Bull platforms.",
+        "Implementation of new ad formats & technical solutions in/with internal teams."
       ]
     },
     {
       date: "10/2021 – 09/2022",
-      company: "Sportradar Media Services GmbH", 
-      position: "Manager Digital Advertising",
+      company: "Sportradar AG | Sportradar Media Services GmbH", 
+      position: "Media Advertising Manager",
       location: "Austria",
       details: [
-        "Optimized programmatic ads using data analysis & ML.",
-        "Built audience segmentation models.",
-        "Ran A/B tests for digital performance insights."
+        "Development of audience segmentation models to improve advertising strategies.",
+        "Optimization of programmatic advertising through data analysis & machine learning.",
+        "Execution of A/B testing and performance analysis for digital campaigns."
       ]
     },
     {
@@ -87,31 +85,21 @@ const ExperienceSection = () => {
       position: "Football Systems Operator",
       location: "Remote",
       details: [
-        "Operated VAR and video replay systems for UEFA & Bundesliga.",
-        "Supported match decisions via replay technology.",
-        "Improved processes with project management skills."
+        "Operated VAR/replay systems for Austrian Bundesliga & UEFA fixtures for the Austrian Bundesliga & UEFA competitions.",
+        "Replay Operator for professional football matches; supporting decision-making through video technology.",
+        "Application of project management skills to optimize sports technology processes."
       ]
     },
     {
       date: "02/2019 – 09/2022", 
       company: "E2 Communications GmbH",
-      position: "Oddsserve & Ad Operations Manager",
+      position: "Addserve & Ad Operations Manager",
       location: "Austria",
       details: [
-        "Managed ad operations across platforms like Adform & Epom.",
-        "Built client websites with analytics in WordPress.",
-        "Enhanced campaign reporting with data-driven tools."
-      ]
-    },
-    {
-      date: "08/2016",
-      company: "TorAlarm GmbH",
-      position: "Internship", 
-      location: "Germany",
-      details: [
-        "Improved database structures for better efficiency.",
-        "Contributed to user growth & sales initiatives.",
-        "Helped integrate Alexa skills into products."
+        "Managed ad campaign setups and operations across platforms like Adition, Epom, and Adform, using data analytics to optimize performance.",
+        "Developed and maintained client websites using WordPress, integrating analytics to enhance user engagement.",
+        "Created comprehensive tracking and conversion tracking.",
+        "Supported key account management and project execution, implementing data-driven reporting mechanisms to increase business efficiency."
       ]
     }
   ];

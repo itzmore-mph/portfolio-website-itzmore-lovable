@@ -38,16 +38,20 @@ const HeroSection = () => {
           <div className="text-left animate-fade-in order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 mb-4 sm:mb-6 text-xs sm:text-sm" role="banner">
               <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
-              <span className="text-white font-medium">Data Analyst • Football Analytics</span>
+              <span className="text-white font-medium">Football Analytics</span>
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-hero text-white mb-4 sm:mb-6 leading-tight font-bold">
-              <span className="block">Hello, I'm</span>
-              <span className="block text-data-blue">Moritz Philipp Haaf</span>
+              <span className="block">Sports Data Scientist</span>
+              <span className="block text-data-blue">& Analyst (Football)</span>
             </h1>
             
-            <p className="text-sm sm:text-base lg:text-body text-white/90 mb-6 sm:mb-8 max-w-lg leading-relaxed">
-              Data Analyst with strong Data Science expertise, experienced in transforming complex datasets into actionable insights. Moritz Haaf currently leads international dashboard and automation projects at Publicis Media Austria while developing cutting-edge football analytics solutions.
+            <p className="text-sm sm:text-base lg:text-body text-white/90 mb-4 sm:mb-6 max-w-lg leading-relaxed">
+              Reproducible Python/SQL (DuckDB) pipelines and Streamlit/Power BI tools for scouting, opponent & set-piece insights.
+            </p>
+            
+            <p className="text-xs sm:text-sm text-white/70 mb-6 sm:mb-8 max-w-lg leading-relaxed">
+              Currently: Senior Digital Data & Dashboard Manager, Publicis Media Austria (Salesforce Marketing Intelligence/Datorama).
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

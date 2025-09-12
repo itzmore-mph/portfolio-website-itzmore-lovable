@@ -2,7 +2,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import { HeroContent } from "./hero/HeroContent";
 import { ProfilePhoto } from "./hero/ProfilePhoto";
 import { StatsGrid } from "./hero/StatsGrid";
-import heroImage from "@/assets/realistic-stadium-hero.jpg";
+import heroImage from "@/assets/stadium-hero-corrected.jpg";
 import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
 import { ArrowDown } from "lucide-react";
 

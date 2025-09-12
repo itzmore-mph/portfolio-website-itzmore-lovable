@@ -39,12 +39,22 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60 text-sm">
           <p>Transforming football data into winning insights • Available for freelance projects and consulting</p>
-          <button 
-            onClick={() => (window as any).manageCookiePreferences?.()}
-            className="text-primary hover:text-primary/80 underline mt-2 text-xs bg-transparent border-none cursor-pointer"
-          >
-            Manage Cookie Preferences
-          </button>
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 mt-2">
+            <button 
+              onClick={() => (window as any).manageCookiePreferences?.()}
+              className="text-primary hover:text-primary/80 underline text-xs bg-transparent border-none cursor-pointer"
+            >
+              Manage Cookie Preferences
+            </button>
+            <a 
+              href="https://www.freepik.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-white/60 text-xs"
+            >
+              Stadium image by Freepik
+            </a>
+          </div>
         </div>
       </div>
     </footer>

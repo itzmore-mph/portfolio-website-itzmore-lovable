@@ -24,7 +24,7 @@ const HeroSection = () => {
         <OptimizedImage 
           src={heroImage} 
           alt="Realistic football stadium view showing pristine green pitch with proper field markings and stadium seating"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center scale-110"
           priority={true}
           lazy={false}
           width={1920}

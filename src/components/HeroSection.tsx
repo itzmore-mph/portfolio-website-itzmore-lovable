@@ -2,7 +2,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import { HeroContent } from "./hero/HeroContent";
 import { ProfilePhoto } from "./hero/ProfilePhoto";
 import { StatsGrid } from "./hero/StatsGrid";
-import heroImage from "@/assets/stadium-hero-corrected.jpg";
+import heroImage from "@/assets/stadium-hero-vertical.jpg";
 import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
 import { ArrowDown } from "lucide-react";
 
@@ -28,7 +28,7 @@ const HeroSection = () => {
           priority={true}
           lazy={false}
           width={1920}
-          height={1080}
+          height={1440}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-pitch-green/90 via-pitch-green/70 to-transparent" />
       </div>

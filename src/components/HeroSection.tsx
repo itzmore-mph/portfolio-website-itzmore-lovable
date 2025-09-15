@@ -2,7 +2,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import { HeroContent } from "./hero/HeroContent";
 import { ProfilePhoto } from "./hero/ProfilePhoto";
 import { StatsGrid } from "./hero/StatsGrid";
-import heroImage from "@/assets/stadium-hero-new.jpg";
+import heroImage from "@/assets/stadium-hero-mobile-optimized.jpg";
 import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
 import { ArrowDown } from "lucide-react";
 
@@ -18,7 +18,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-dvh overflow-hidden" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf">
+    <section className="relative min-h-dvh flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <OptimizedImage 
@@ -30,67 +30,21 @@ const HeroSection = () => {
           width={1536}
           height={1152}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-pitch-green/85 via-pitch-green/75 to-pitch-green/90 lg:bg-gradient-to-r lg:from-pitch-green/90 lg:via-pitch-green/70 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-pitch-green/90 via-pitch-green/70 to-transparent" />
       </div>
       
-      {/* Mobile Layout */}
-      <div className="relative z-10 flex flex-col min-h-dvh lg:hidden">
-        {/* Top Section - Profile and Stats */}
-        <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 pt-16">
-          <div className="text-center space-y-6 animate-fade-in">
-            <ProfilePhoto 
-              src={profilePhoto}
-              alt="Moritz Philipp Haaf - Professional portrait of Sports Data Scientist specializing in football analytics"
-            />
-            <div className="space-y-4">
-              <div className="inline-flex items-center px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full border border-white/20">
-                <span className="text-white/90 text-sm font-medium">Football Analytics</span>
-              </div>
-              <h1 className="text-2xl font-bold text-white leading-tight">
-                Sports Data Scientist
-              </h1>
-            </div>
-            <StatsGrid />
-          </div>
-        </div>
-        
-        {/* Bottom Section - CTA */}
-        <div className="px-4 pb-20">
-          <div className="space-y-4 text-center">
-            <p className="text-white/80 text-sm leading-relaxed max-w-xs mx-auto">
-              Transforming football data into winning strategies through advanced analytics
-            </p>
-            <div className="flex flex-col space-y-3">
-              <button 
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full bg-white text-pitch-green font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-white/90 hover:scale-105 shadow-lg"
-              >
-                View My Projects
-              </button>
-              <a 
-                href="/cv-moritz-philipp-haaf.pdf" 
-                download 
-                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-white/15 hover:scale-105"
-              >
-                Download CV
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Desktop Layout */}
-      <div className="relative z-10 hidden lg:block max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100dvh-10rem)]">
+      {/* Hero Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-[calc(100dvh-8rem)] sm:min-h-[calc(100dvh-12rem)] lg:min-h-[calc(100dvh-20rem)]">
           {/* Content */}
-          <div>
+          <div className="order-2 lg:order-1 px-2 sm:px-0">
             <HeroContent 
               onProjectsClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             />
           </div>
           
           {/* Profile & Stats */}
-          <div className="space-y-6 animate-slide-up">
+          <div className="space-y-3 sm:space-y-4 lg:space-y-6 animate-slide-up order-1 lg:order-2 px-2 sm:px-0">
             <ProfilePhoto 
               src={profilePhoto}
               alt="Moritz Philipp Haaf - Professional portrait of Sports Data Scientist specializing in football analytics"

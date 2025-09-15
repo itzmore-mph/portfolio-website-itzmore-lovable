@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, Target, Briefcase, User, Mail } from "lucide-react";
+import { Menu, X, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 
@@ -18,11 +18,11 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/#home', icon: Home },
-    { name: 'Skills', href: '/#skills', icon: Target },
-    { name: 'Projects', href: '/#projects', icon: Briefcase },
-    { name: 'About', href: '/#about', icon: User },
-    { name: 'Contact', href: '/#contact', icon: Mail }
+    { name: 'Home', href: '/#home' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'About', href: '/#about' },
+    { name: 'Contact', href: '/#contact' }
   ];
 
   return (
@@ -84,80 +84,50 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className={`md:hidden relative z-50 ${isScrolled ? 'text-foreground' : 'text-white'}`}
+            className={`md:hidden ${isScrolled ? 'text-foreground' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <div className="relative w-5 h-5">
-              <Menu className={`w-5 h-5 absolute inset-0 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'}`} />
-              <X className={`w-5 h-5 absolute inset-0 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'}`} />
-            </div>
+            {isMobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </Button>
         </div>
-      </div>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
-        isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}>
-        {/* Backdrop */}
-        <div 
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-        
-        {/* Menu Panel */}
-        <div className={`absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 ease-out ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
-          {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-100">
-            <div className="flex items-center gap-2">
-              <OptimizedImage 
-                src="/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png"
-                alt="itzmore logo" 
-                className="h-8 w-auto"
-                width={32}
-                height={32}
-                priority={true}
-              />
-            </div>
-          </div>
-
-          {/* Navigation Items */}
-          <div className="px-6 py-8">
-            <nav className="space-y-2">
-              {navItems.map((item, index) => (
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-pitch-green font-medium transition-all duration-200 group animate-fade-in`}
-                  style={{ animationDelay: `${index * 50}ms` }}
+                  className="block px-3 py-2 text-foreground hover:text-primary font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <item.icon className="w-5 h-5 text-gray-400 group-hover:text-pitch-green transition-colors" />
-                  <span className="text-base">{item.name}</span>
+                  {item.name}
                 </a>
               ))}
-            </nav>
-
-            {/* CTA Button */}
-            <div className="mt-8 pt-6 border-t border-gray-100">
-              <Button 
-                className="w-full bg-pitch-green hover:bg-pitch-green/90 text-white font-semibold py-3 px-6 rounded-xl shadow-lg"
-                onClick={() => {
-                  const contactSection = document.querySelector('#contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                Get In Touch
-              </Button>
+              <div className="px-3 py-2">
+                <Button 
+                  variant="default" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => {
+                    const contactSection = document.querySelector('#contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  Get In Touch
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );

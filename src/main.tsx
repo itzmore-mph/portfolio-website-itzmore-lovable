@@ -265,20 +265,14 @@ let safariLoadingTimeout: NodeJS.Timeout | null = null;
 const rootElement = document.getElementById("root");
 if (rootElement) {
   try {
-    // Set up loading timeout based on device
-    let timeoutDuration = 4000; // Default
-    if (isSafariMobile()) {
-      timeoutDuration = 5000; // 5 seconds for mobile Safari
-    } else if (isSafari()) {
-      timeoutDuration = 4000; // 4 seconds for desktop Safari
-    }
+    // Set up loading timeout based on device - but allow React app for all browsers
+    let timeoutDuration = 8000; // Increased timeout to allow React app to load
     
-    if (!isSafariMobile()) { // Only set timeout if not already handled above
-      safariLoadingTimeout = setTimeout(() => {
-        console.warn('Loading timeout - showing fallback');
-        showSafariMobileFallback();
-      }, timeoutDuration);
-    }
+    // Only use fallback as last resort after timeout
+    safariLoadingTimeout = setTimeout(() => {
+      console.warn('Loading timeout - showing fallback');
+      showSafariMobileFallback();
+    }, timeoutDuration);
 
     // Simplified render function
     const renderApp = () => {
@@ -316,47 +310,26 @@ if (rootElement) {
       }
     };
 
-    // Device-specific initialization strategy
-    if (isSafariMobile()) {
-      console.log('Mobile Safari detected');
-      
-      // For mobile Safari, wait for everything to be fully ready
-      const waitForReady = () => {
-        if (document.readyState === 'complete') {
-          setTimeout(renderApp, 500); // Increased delay for mobile
-        } else {
-          window.addEventListener('load', () => {
-            setTimeout(renderApp, 500);
-          }, { once: true });
-        }
-      };
-      
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', waitForReady, { once: true });
-      } else {
-        waitForReady();
-      }
-      
-    } else if (isSafari()) {
-      console.log('Desktop Safari detected');
-      
+    // Unified initialization strategy for all browsers
+    console.log('Browser detected:', isSafariMobile() ? 'Mobile Safari' : isSafari() ? 'Desktop Safari' : 'Other');
+    
+    const initApp = () => {
       if (document.readyState === 'complete') {
-        setTimeout(renderApp, 100);
-      } else if (document.readyState === 'interactive') {
-        setTimeout(renderApp, 200);
+        // Give Safari mobile a bit more time to be ready
+        const delay = isSafariMobile() ? 300 : isSafari() ? 100 : 0;
+        setTimeout(renderApp, delay);
       } else {
-        document.addEventListener('DOMContentLoaded', () => {
-          setTimeout(renderApp, 100);
+        window.addEventListener('load', () => {
+          const delay = isSafariMobile() ? 300 : isSafari() ? 100 : 0;
+          setTimeout(renderApp, delay);
         }, { once: true });
       }
-      
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initApp, { once: true });
     } else {
-      // Non-Safari browsers - immediate render
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', renderApp, { once: true });
-      } else {
-        renderApp();
-      }
+      initApp();
     }
     
   } catch (error) {

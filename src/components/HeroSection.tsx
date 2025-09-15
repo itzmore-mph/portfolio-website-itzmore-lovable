@@ -24,7 +24,7 @@ const HeroSection = () => {
         <OptimizedImage 
           src={heroImage} 
           alt="Realistic football stadium view showing pristine green pitch with proper field markings and stadium seating"
-          className="w-full h-full object-cover object-center scale-125"
+          className="w-full h-full object-cover object-center"
           priority={true}
           lazy={false}
           width={1920}
@@ -34,8 +34,8 @@ const HeroSection = () => {
       </div>
       
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100dvh-12rem)] sm:min-h-[calc(100dvh-16rem)] lg:min-h-[calc(100dvh-20rem)]">
           {/* Content */}
           <div className="order-2 lg:order-1">
             <HeroContent 
@@ -54,19 +54,19 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      {/* Scroll Indicator - Responsive positioning */}
+      <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <button 
           onClick={scrollToNext}
           className="flex flex-col items-center text-white/80 cursor-pointer group animate-pulse hover:animate-none transition-all duration-500 ease-out"
           aria-label="Scroll to next section"
         >
-          <span className="text-sm mb-3 group-hover:text-white transition-all duration-300 group-hover:scale-105">
+          <span className="text-xs sm:text-sm mb-2 sm:mb-3 group-hover:text-white transition-all duration-300 group-hover:scale-105 hidden sm:block">
             Scroll to explore
           </span>
           <div className="relative">
-            <ArrowDown className="w-6 h-6 group-hover:scale-110 group-hover:text-white transition-all duration-500 ease-out group-hover:translate-y-1" />
-            <div className="absolute inset-0 w-6 h-6 rounded-full bg-white/10 scale-150 opacity-0 group-hover:opacity-30 group-hover:scale-200 transition-all duration-700 ease-out"></div>
+            <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 group-hover:text-white transition-all duration-500 ease-out group-hover:translate-y-1" />
+            <div className="absolute inset-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 scale-150 opacity-0 group-hover:opacity-30 group-hover:scale-200 transition-all duration-700 ease-out"></div>
           </div>
         </button>
       </div>

@@ -18,7 +18,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-dvh flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf">
+    <section className="relative min-h-dvh flex items-center justify-center overflow-hidden pt-[calc(env(safe-area-inset-top)+4rem)] lg:pt-0" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <OptimizedImage 
@@ -38,7 +38,7 @@ const HeroSection = () => {
         {/* Mobile Layout */}
         <div className="flex flex-col items-center justify-center min-h-dvh py-8 space-y-8 lg:hidden">
           {/* Profile Photo - Mobile */}
-          <div className="flex-shrink-0 mt-16">
+          <div className="flex-shrink-0">
             <ProfilePhoto 
               src={profilePhoto}
               alt="Moritz Philipp Haaf - Professional portrait of Sports Data Scientist specializing in football analytics"
@@ -79,7 +79,7 @@ const HeroSection = () => {
       </div>
       
       {/* Scroll Indicator - Better positioned for mobile */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      <div className="hidden sm:block absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <button 
           onClick={scrollToNext}
           className="flex flex-col items-center text-white/90 cursor-pointer group animate-pulse hover:animate-none transition-all duration-300"

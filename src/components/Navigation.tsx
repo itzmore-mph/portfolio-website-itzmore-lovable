@@ -83,51 +83,79 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
-            size="icon"
-            className={`md:hidden ${isScrolled ? 'text-foreground' : 'text-white'}`}
+            size="icon" 
+            className={`md:hidden p-2 ${
+              isScrolled 
+                ? 'text-foreground hover:bg-accent' 
+                : 'text-white hover:bg-white/10'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
+            <div className="relative w-6 h-6 flex items-center justify-center">
+              <div className={`absolute transition-all duration-300 ${
+                isMobileMenuOpen 
+                  ? 'rotate-45 translate-y-0' 
+                  : 'rotate-0 -translate-y-1.5'
+              } w-4 h-0.5 ${isScrolled ? 'bg-foreground' : 'bg-white'} rounded-full`} />
+              <div className={`absolute transition-all duration-300 ${
+                isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+              } w-4 h-0.5 ${isScrolled ? 'bg-foreground' : 'bg-white'} rounded-full`} />
+              <div className={`absolute transition-all duration-300 ${
+                isMobileMenuOpen 
+                  ? '-rotate-45 translate-y-0' 
+                  : 'rotate-0 translate-y-1.5'
+              } w-4 h-0.5 ${isScrolled ? 'bg-foreground' : 'bg-white'} rounded-full`} />
+            </div>
           </Button>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-foreground hover:text-primary font-medium transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-              <div className="px-3 py-2">
-                <Button 
-                  variant="default" 
-                  size="sm" 
-                  className="w-full"
-                  onClick={() => {
-                    const contactSection = document.querySelector('#contact');
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    setIsMobileMenuOpen(false);
-                  }}
-                >
-                  Get In Touch
-                </Button>
+        <div className={`
+          md:hidden fixed top-16 left-0 right-0 z-50 
+          transition-all duration-300 ease-in-out
+          ${isMobileMenuOpen 
+            ? 'opacity-100 translate-y-0 pointer-events-auto' 
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+          }
+        `}>
+          <div className="bg-background/95 backdrop-blur-md border-b border-border shadow-lg">
+            <div className="max-w-7xl mx-auto px-6 py-6">
+              <div className="space-y-4">
+                {navItems.map((item, index) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className={`
+                      block text-lg font-medium text-foreground hover:text-primary 
+                      transition-all duration-200 transform hover:translate-x-2
+                      animate-slide-right animate-delay-${index * 100 + 100}
+                    `}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+                <div className="pt-4 border-t border-border/50">
+                  <Button 
+                    variant="default" 
+                    size="lg" 
+                    className="w-full font-semibold"
+                    onClick={() => {
+                      const contactSection = document.querySelector('#contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Get In Touch
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

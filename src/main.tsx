@@ -3,20 +3,35 @@ import App from './App.tsx'
 import './index.css'
 import { initSafariCompat } from '@/utils/safariCompatibility'
 
-// Immediate Safari mobile detection - before anything else
+// Enhanced Safari mobile detection - more robust approach
 const isIOSDevice = () => {
-  return /iPad|iPhone|iPod/.test(navigator.userAgent);
+  try {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+           (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  } catch {
+    return false;
+  }
 };
 
 const isSafariMobile = () => {
-  const ua = navigator.userAgent;
-  return isIOSDevice() && (/Safari/i.test(ua) || /Version/i.test(ua));
+  try {
+    const ua = navigator.userAgent;
+    const isIOS = isIOSDevice();
+    const isSafariUA = /Safari/i.test(ua) && !/Chrome|CriOS|FxiOS|EdgiOS/i.test(ua);
+    return isIOS && isSafariUA;
+  } catch {
+    return false;
+  }
 };
 
 const isSafari = () => {
-  if (typeof window === "undefined") return false;
-  const ua = navigator.userAgent;
-  return /Safari/.test(ua) && !/Chrome|Chromium|Edge/.test(ua);
+  try {
+    if (typeof window === "undefined") return false;
+    const ua = navigator.userAgent;
+    return /Safari/.test(ua) && !/Chrome|Chromium|Edge/.test(ua);
+  } catch {
+    return false;
+  }
 };
 
 // Safari Mobile Fallback - Simple static portfolio
@@ -173,80 +188,53 @@ const showSafariMobileFallback = () => {
   `;
 };
 
-// Show immediate loading screen for Safari mobile
-if (isSafariMobile()) {
-  console.log('Safari Mobile detected - showing immediate loading screen');
-  
-  // Add critical mobile Safari CSS immediately
-  const criticalStyle = document.createElement('style');
-  criticalStyle.textContent = `
-    html, body { 
-      height: 100%;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      -webkit-text-size-adjust: 100%;
-      -webkit-tap-highlight-color: transparent;
-    }
-    * { 
-      -webkit-transform: translateZ(0);
-      -webkit-backface-visibility: hidden;
-      box-sizing: border-box;
-    }
-    #root {
-      min-height: 100vh;
-      min-height: -webkit-fill-available;
-    }
-    .safari-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    .safari-loader-content {
-      text-align: center;
-      color: white;
-      padding: 2rem;
-    }
-    .safari-spinner {
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(255,255,255,0.3);
-      border-top: 3px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 1rem;
-    }
-    @keyframes spin { 
-      0% { transform: rotate(0deg); } 
-      100% { transform: rotate(360deg); } 
-    }
-  `;
-  document.head.appendChild(criticalStyle);
-  
-  // Show immediate loading screen
-  const loaderDiv = document.createElement('div');
-  loaderDiv.className = 'safari-loader';
-  loaderDiv.innerHTML = `
-    <div class="safari-loader-content">
-      <div class="safari-spinner"></div>
-      <h2 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">ITzMore.dev</h2>
-      <p style="margin: 0; opacity: 0.9; font-size: 1rem;">Loading Portfolio...</p>
-    </div>
-  `;
-  document.body.appendChild(loaderDiv);
-  
-  // Set very aggressive timeout for Safari mobile
-  setTimeout(() => {
-    console.warn('Safari Mobile: Timeout reached - showing static fallback');
-    showSafariMobileFallback();
-  }, 3000); // Only 3 seconds for mobile
+// Immediate Safari Mobile Check and Fallback
+try {
+  if (isSafariMobile()) {
+    console.log('Safari Mobile detected - implementing immediate compatibility mode');
+    
+    // Critical Safari mobile styles - applied immediately
+    const safariStyles = document.createElement('style');
+    safariStyles.textContent = `
+      html, body { 
+        height: 100vh;
+        height: -webkit-fill-available;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+        margin: 0;
+        padding: 0;
+      }
+      * { 
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-backface-visibility: hidden;
+        box-sizing: border-box;
+      }
+      #root {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+      }
+    `;
+    document.head.appendChild(safariStyles);
+    
+    // Very short timeout for Safari mobile - show fallback quickly
+    const safariTimer = setTimeout(() => {
+      console.warn('Safari Mobile: Quick timeout - showing optimized fallback');
+      showSafariMobileFallback();
+    }, 1500); // Reduced to 1.5 seconds
+    
+    // Clear timeout if React loads successfully
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        if (document.querySelector('#root .react-app-loaded')) {
+          clearTimeout(safariTimer);
+        }
+      }, 100);
+    });
+  }
+} catch (error) {
+  console.error('Safari mobile detection failed:', error);
 }
 
 // Initialize Safari compatibility system early
@@ -318,23 +306,29 @@ if (rootElement) {
 
     // Device-specific initialization strategy
     if (isSafariMobile()) {
-      console.log('Mobile Safari detected');
+      console.log('Mobile Safari detected - using optimized loading');
       
-      // For mobile Safari, wait for everything to be fully ready
-      const waitForReady = () => {
-        if (document.readyState === 'complete') {
-          setTimeout(renderApp, 500); // Increased delay for mobile
-        } else {
-          window.addEventListener('load', () => {
-            setTimeout(renderApp, 500);
-          }, { once: true });
+      // Immediate render attempt for Safari mobile
+      const attemptRender = () => {
+        try {
+          renderApp();
+          // Mark as successfully loaded for timeout clearing
+          setTimeout(() => {
+            const root = document.getElementById('root');
+            if (root && root.children.length > 0) {
+              root.classList.add('react-app-loaded');
+            }
+          }, 100);
+        } catch (error) {
+          console.error('Safari mobile render failed:', error);
+          showSafariMobileFallback();
         }
       };
       
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', waitForReady, { once: true });
+      if (document.readyState === 'complete') {
+        attemptRender();
       } else {
-        waitForReady();
+        document.addEventListener('DOMContentLoaded', attemptRender, { once: true });
       }
       
     } else if (isSafari()) {

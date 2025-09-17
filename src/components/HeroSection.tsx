@@ -34,17 +34,41 @@ const HeroSection = () => {
       </div>
       
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100dvh-12rem)] sm:min-h-[calc(100dvh-16rem)] lg:min-h-[calc(100dvh-20rem)]">
-          {/* Content */}
-          <div className="order-2 lg:order-1">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Mobile Layout */}
+        <div className="flex flex-col items-center justify-center min-h-dvh py-8 space-y-8 lg:hidden">
+          {/* Profile Photo - Mobile */}
+          <div className="flex-shrink-0 mt-16">
+            <ProfilePhoto 
+              src={profilePhoto}
+              alt="Moritz Philipp Haaf - Professional portrait of Sports Data Scientist specializing in football analytics"
+            />
+          </div>
+          
+          {/* Content - Mobile */}
+          <div className="text-center max-w-lg mx-auto px-2">
             <HeroContent 
               onProjectsClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             />
           </div>
           
-          {/* Profile & Stats */}
-          <div className="space-y-4 sm:space-y-6 animate-slide-up order-1 lg:order-2">
+          {/* Stats Grid - Mobile */}
+          <div className="w-full max-w-md mx-auto px-2">
+            <StatsGrid />
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center min-h-dvh py-20">
+          {/* Content - Desktop */}
+          <div className="order-1">
+            <HeroContent 
+              onProjectsClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            />
+          </div>
+          
+          {/* Profile & Stats - Desktop */}
+          <div className="space-y-6 animate-slide-up order-2">
             <ProfilePhoto 
               src={profilePhoto}
               alt="Moritz Philipp Haaf - Professional portrait of Sports Data Scientist specializing in football analytics"
@@ -54,19 +78,18 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Scroll Indicator - Responsive positioning */}
-      <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+      {/* Scroll Indicator - Better positioned for mobile */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <button 
           onClick={scrollToNext}
-          className="flex flex-col items-center text-white/80 cursor-pointer group animate-pulse hover:animate-none transition-all duration-500 ease-out"
+          className="flex flex-col items-center text-white/90 cursor-pointer group animate-bounce hover:animate-none transition-all duration-300"
           aria-label="Scroll to next section"
         >
-          <span className="text-xs sm:text-sm mb-2 sm:mb-3 group-hover:text-white transition-all duration-300 group-hover:scale-105 hidden sm:block">
+          <span className="text-sm mb-3 group-hover:text-white transition-all duration-300 hidden sm:block font-medium">
             Scroll to explore
           </span>
-          <div className="relative">
-            <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 group-hover:text-white transition-all duration-500 ease-out group-hover:translate-y-1" />
-            <div className="absolute inset-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 scale-150 opacity-0 group-hover:opacity-30 group-hover:scale-200 transition-all duration-700 ease-out"></div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-full p-2 group-hover:bg-white/20 transition-all duration-300">
+            <ArrowDown className="w-5 h-5 group-hover:scale-110 group-hover:translate-y-0.5 transition-all duration-300" />
           </div>
         </button>
       </div>

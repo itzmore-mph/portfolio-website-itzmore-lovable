@@ -1,10 +1,10 @@
 import { StatCard } from "./StatCard";
 
 const statsData = [
-  { value: "5+", label: "Years Experience" },
-  { value: "25+", label: "Projects Completed" },
-  { value: "150+", label: "Matches Analyzed" },
-  { value: "100%", label: "Client Satisfaction" }
+  { value: 2, suffix: "+", label: "Years Experience" },
+  { value: 15, suffix: "+", label: "Projects Created" },
+  { value: 150, suffix: "+", label: "Matches Analyzed" },
+  { value: 8, suffix: "+", label: "Tools Mastered" }
 ];
 
 export const StatsGrid = () => {
@@ -14,7 +14,9 @@ export const StatsGrid = () => {
         <StatCard
           key={stat.label}
           value={stat.value}
+          suffix={stat.suffix}
           label={stat.label}
+          delay={index * 200}
           className={`animate-fade-in [animation-delay:${index * 100}ms]`}
         />
       ))}

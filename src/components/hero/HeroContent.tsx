@@ -16,7 +16,6 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
       
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-hero text-white mb-4 sm:mb-6 leading-tight font-bold">
         <span className="block">Sports Data Scientist</span>
-        <span className="block text-data-blue">& Analyst (Football)</span>
       </h1>
       
       <p className="text-sm sm:text-base lg:text-body text-white/90 mb-4 sm:mb-6 max-w-lg leading-relaxed">
@@ -24,7 +23,7 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
       </p>
       
       <p className="text-xs sm:text-sm text-white/70 mb-6 sm:mb-8 max-w-lg leading-relaxed">
-        Currently: Senior Digital Data & Dashboard Manager, Publicis Media Austria (Salesforce Marketing Intelligence/Datorama).
+        Currently: Senior Digital Data & Dashboard Manager, Publicis Media Austria.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

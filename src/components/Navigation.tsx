@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { OptimizedImage } from "@/components/ui/optimized-image";
+import { navItems } from "@/data/navigation";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,14 +17,6 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { name: 'Home', href: '/#home' },
-    { name: 'Skills', href: '/#skills' },
-    { name: 'Projects', href: '/#projects' },
-    { name: 'About', href: '/#about' },
-    { name: 'Contact', href: '/#contact' }
-  ];
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${

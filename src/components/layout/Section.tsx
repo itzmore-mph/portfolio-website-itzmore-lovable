@@ -1,38 +1,33 @@
 import { cn } from "@/lib/utils";
-import { Container } from "./Container";
+import { ReactNode } from "react";
 
 interface SectionProps {
-  children: React.ReactNode;
-  className?: string;
-  containerClassName?: string;
   id?: string;
-  background?: "default" | "muted" | "gradient" | "transparent";
+  children: ReactNode;
+  className?: string;
+  background?: "default" | "muted" | "card";
   spacing?: "sm" | "md" | "lg" | "xl";
-  containerSize?: "sm" | "md" | "lg" | "xl" | "full";
 }
 
 const backgroundStyles = {
   default: "bg-background",
-  muted: "bg-muted/30",
-  gradient: "bg-gradient-to-br from-background to-muted/20",
-  transparent: "bg-transparent"
+  muted: "bg-muted/50", 
+  card: "bg-card"
 };
 
 const spacingStyles = {
-  sm: "py-12 sm:py-16",
-  md: "py-16 sm:py-20", 
-  lg: "py-20 sm:py-24",
-  xl: "py-24 sm:py-32"
+  sm: "py-12",
+  md: "py-16", 
+  lg: "py-20",
+  xl: "py-24"
 };
 
 export const Section = ({ 
+  id, 
   children, 
-  className, 
-  containerClassName,
-  id,
+  className,
   background = "default",
-  spacing = "lg",
-  containerSize = "xl"
+  spacing = "lg"
 }: SectionProps) => {
   return (
     <section 
@@ -40,13 +35,12 @@ export const Section = ({
       className={cn(
         backgroundStyles[background],
         spacingStyles[spacing],
-        "relative",
         className
       )}
     >
-      <Container size={containerSize} className={containerClassName}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {children}
-      </Container>
+      </div>
     </section>
   );
 };

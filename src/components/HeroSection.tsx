@@ -82,7 +82,7 @@ const HeroSection = () => {
       <div className="hidden sm:block absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <button 
           onClick={scrollToNext}
-          className="flex flex-col items-center text-white/90 cursor-pointer group animate-pulse hover:animate-none transition-all duration-300"
+          className="flex flex-col items-center text-white/90 cursor-pointer group animate-bounce hover:animate-none transition-all duration-300"
           aria-label="Scroll to next section"
         >
           <span className="text-sm mb-3 group-hover:text-white transition-colors duration-300 hidden sm:block font-medium">

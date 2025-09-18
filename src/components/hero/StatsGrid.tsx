@@ -1,10 +1,10 @@
 import { StatCard } from "./StatCard";
 
 const statsData = [
-  { value: "2+", label: "Years Experience" },
-  { value: "8+", label: "Projects Created" },
+  { value: "5+", label: "Years Experience" },
+  { value: "15+", label: "Projects Created" },
   { value: "50+", label: "Matches Analyzed" },
-  { value: "Active", label: "Client Contracts" }
+  { value: "10+", label: "Tools Mastered" }
 ];
 
 export const StatsGrid = () => {

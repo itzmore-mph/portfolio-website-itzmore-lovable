@@ -6,6 +6,8 @@ import { useState } from "react";
 import { experiences } from "@/data/experience";
 
 const ExperienceSection = () => {
+  const [expandedCards, setExpandedCards] = useState<number[]>([]);
+  
   const toggleCard = (index: number) => {
     setExpandedCards(prev => 
       prev.includes(index) 

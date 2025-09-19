@@ -72,63 +72,61 @@ const CookieConsent = () => {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-900 text-white p-4 shadow-lg border-t border-slate-700">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-start gap-4">
-          <div className="flex-1">
-            <div className="flex gap-2 mb-3">
-              <Button
-                size="sm"
-                variant={language === 'en' ? 'default' : 'ghost'}
-                onClick={() => setLanguage('en')}
-                className="text-xs px-2 py-1 h-auto"
-              >
-                EN
-              </Button>
-              <Button
-                size="sm"
-                variant={language === 'de' ? 'default' : 'ghost'}
-                onClick={() => setLanguage('de')}
-                className="text-xs px-2 py-1 h-auto"
-              >
-                DE
-              </Button>
-            </div>
-            
-            {language === 'en' ? (
-              <p className="text-sm mb-4">
-                This website uses essential cookies and, with your consent, Google Analytics to analyze usage. 
-                <a href="/privacy" className="text-primary hover:text-primary/80 underline ml-1">
-                  Learn more
-                </a>.
-              </p>
-            ) : (
-              <p className="text-sm mb-4">
-                Diese Website verwendet nur technisch notwendige Cookies sowie – mit Ihrer Zustimmung – Google Analytics zur Analyse der Nutzung. 
-                <a href="/privacy" className="text-primary hover:text-primary/80 underline ml-1">
-                  Mehr erfahren
-                </a>.
-              </p>
-            )}
-            
-            <div className="flex flex-wrap gap-2">
-              <Button onClick={acceptCookies} size="sm" className="text-xs">
-                {language === 'en' ? 'Accept All' : 'Alle akzeptieren'}
-              </Button>
-              <Button onClick={declineCookies} variant="secondary" size="sm" className="text-xs">
-                {language === 'en' ? 'Decline' : 'Ablehnen'}
-              </Button>
-            </div>
+      <div className="max-w-4xl mx-auto relative">
+        <div className="text-center">
+          <div className="flex justify-center gap-2 mb-3">
+            <Button
+              size="sm"
+              variant={language === 'en' ? 'default' : 'ghost'}
+              onClick={() => setLanguage('en')}
+              className="text-xs px-2 py-1 h-auto"
+            >
+              EN
+            </Button>
+            <Button
+              size="sm"
+              variant={language === 'de' ? 'default' : 'ghost'}
+              onClick={() => setLanguage('de')}
+              className="text-xs px-2 py-1 h-auto"
+            >
+              DE
+            </Button>
           </div>
           
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={declineCookies}
-            className="p-1 h-auto text-white/60 hover:text-white"
-          >
-            <X className="w-4 h-4" />
-          </Button>
+          {language === 'en' ? (
+            <p className="text-sm mb-4 max-w-2xl mx-auto">
+              This website uses essential cookies and, with your consent, Google Analytics to analyze usage. 
+              <a href="/privacy" className="text-primary hover:text-primary/80 underline ml-1">
+                Learn more
+              </a>.
+            </p>
+          ) : (
+            <p className="text-sm mb-4 max-w-2xl mx-auto">
+              Diese Website verwendet nur technisch notwendige Cookies sowie – mit Ihrer Zustimmung – Google Analytics zur Analyse der Nutzung. 
+              <a href="/privacy" className="text-primary hover:text-primary/80 underline ml-1">
+                Mehr erfahren
+              </a>.
+            </p>
+          )}
+          
+          <div className="flex justify-center flex-wrap gap-2">
+            <Button onClick={acceptCookies} size="sm" className="text-xs">
+              {language === 'en' ? 'Accept All' : 'Alle akzeptieren'}
+            </Button>
+            <Button onClick={declineCookies} variant="secondary" size="sm" className="text-xs">
+              {language === 'en' ? 'Decline' : 'Ablehnen'}
+            </Button>
+          </div>
         </div>
+        
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={declineCookies}
+          className="absolute top-0 right-0 p-1 h-auto text-white/60 hover:text-white"
+        >
+          <X className="w-4 h-4" />
+        </Button>
       </div>
     </div>
   );

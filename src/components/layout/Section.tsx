@@ -5,21 +5,29 @@ interface SectionProps {
   id?: string;
   children: ReactNode;
   className?: string;
-  background?: "default" | "muted" | "card";
+  background?: "default" | "muted" | "gradient" | "card";
   spacing?: "sm" | "md" | "lg" | "xl";
+  containerSize?: "content" | "narrow" | "text";
 }
 
 const backgroundStyles = {
-  default: "bg-background",
-  muted: "bg-muted/50", 
+  default: "section-background-default",
+  muted: "section-background-muted", 
+  gradient: "section-background-gradient",
   card: "bg-card"
 };
 
 const spacingStyles = {
-  sm: "py-12",
-  md: "py-16", 
-  lg: "py-20",
-  xl: "py-24"
+  sm: "section-padding-sm",
+  md: "section-padding-md", 
+  lg: "section-padding-lg",
+  xl: "section-padding-xl"
+};
+
+const containerStyles = {
+  content: "container-content",
+  narrow: "container-narrow",
+  text: "container-text"
 };
 
 export const Section = ({ 
@@ -27,18 +35,20 @@ export const Section = ({
   children, 
   className,
   background = "default",
-  spacing = "lg"
+  spacing = "lg",
+  containerSize = "content"
 }: SectionProps) => {
   return (
     <section 
       id={id}
       className={cn(
+        "relative w-full",
         backgroundStyles[background],
         spacingStyles[spacing],
         className
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className={containerStyles[containerSize]}>
         {children}
       </div>
     </section>

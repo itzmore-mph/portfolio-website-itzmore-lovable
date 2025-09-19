@@ -5,21 +5,30 @@ interface SectionHeaderProps {
   subtitle?: string;
   className?: string;
   alignment?: "left" | "center";
+  size?: "default" | "large";
 }
 
 export const SectionHeader = ({ 
   title, 
   subtitle, 
   className,
-  alignment = "center"
+  alignment = "center",
+  size = "default"
 }: SectionHeaderProps) => {
   const alignmentStyles = alignment === "center" ? "text-center" : "text-left";
+  const titleSize = size === "large" ? "text-hero" : "text-section-title";
+  const subtitleMaxWidth = alignment === "center" ? "max-w-3xl mx-auto" : "max-w-3xl";
   
   return (
-    <div className={cn(alignmentStyles, "mb-16 animate-fade-in", className)}>
-      <h2 className="text-section-title mb-4">{title}</h2>
+    <div className={cn(alignmentStyles, "mb-16 lg:mb-20 animate-fade-in", className)}>
+      <h2 className={cn(titleSize, "mb-6 font-bold tracking-tight text-foreground")}>
+        {title}
+      </h2>
       {subtitle && (
-        <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+        <p className={cn(
+          "text-body text-muted-foreground leading-relaxed",
+          subtitleMaxWidth
+        )}>
           {subtitle}
         </p>
       )}

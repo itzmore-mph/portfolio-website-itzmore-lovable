@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Briefcase, Calendar, MapPin, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { experiences } from "@/data/experience";
+import { Section } from "@/components/layout/Section";
+import { SectionHeader } from "@/components/layout/SectionHeader";
 
 const ExperienceSection = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
@@ -17,106 +19,102 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section id="experience" className="py-20 bg-muted/50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-section-title mb-4">Professional Journey</h2>
-          <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            From corporate dashboard development to football analytics innovation, with upcoming AI specialization — 
-            building expertise across sports, media, and technology sectors.
-          </p>
-        </div>
+    <Section background="muted" spacing="xl" containerSize="content">
+      <SectionHeader 
+        title="Professional Journey"
+        subtitle="From corporate dashboard development to football analytics innovation, with upcoming AI specialization — building expertise across sports, media, and technology sectors."
+        size="default"
+      />
 
-        <div className="space-y-6 animate-slide-up">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <CardContent className="p-0">
-                <div className="p-6">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <Briefcase className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold text-foreground">{exp.company}</h3>
-                          {exp.current && (
-                            <Badge variant="secondary" className="bg-pitch-green/10 text-pitch-green border-pitch-green/20">
-                              Current Position
-                            </Badge>
-                          )}
-                        </div>
+      <div className="space-y-8">
+        {experiences.map((exp, index) => (
+          <Card key={index} className="portfolio-card-elevated overflow-hidden group will-change-transform">
+            <CardContent className="p-0">
+              <div className="p-8">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 bg-gradient-to-br from-primary/15 to-primary/5 rounded-xl border border-primary/20">
+                        <Briefcase className="w-6 h-6 text-primary" />
                       </div>
-                      
-                      <p className="text-lg font-medium text-primary mb-2">{exp.position}</p>
-                      
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {exp.date}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {exp.location}
-                        </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-foreground mb-2">{exp.company}</h3>
+                        {exp.current && (
+                          <Badge variant="secondary" className="bg-pitch-green/10 text-pitch-green border-pitch-green/30 font-medium">
+                            Current Position
+                          </Badge>
+                        )}
                       </div>
-
-                      {exp.links && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {exp.links.map((link, linkIndex) => (
-                            <Button
-                              key={linkIndex}
-                              variant="outline"
-                              size="sm"
-                              className="h-7 text-xs"
-                              onClick={() => window.open(link.url, '_blank')}
-                            >
-                              <ExternalLink className="w-3 h-3 mr-1" />
-                              {link.name}
-                            </Button>
-                          ))}
-                        </div>
-                      )}
+                    </div>
+                    
+                    <p className="text-xl font-semibold text-primary mb-4">{exp.position}</p>
+                    
+                    <div className="flex flex-wrap gap-6 text-muted-foreground mb-6">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-5 h-5" />
+                        <span className="font-medium">{exp.date}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-5 h-5" />
+                        <span className="font-medium">{exp.location}</span>
+                      </div>
                     </div>
 
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => toggleCard(index)}
-                      className="lg:self-start"
-                    >
-                      {expandedCards.includes(index) ? (
-                        <>
-                          Hide Details <ChevronUp className="w-4 h-4 ml-1" />
-                        </>
-                      ) : (
-                        <>
-                          Show Details <ChevronDown className="w-4 h-4 ml-1" />
-                        </>
-                      )}
-                    </Button>
+                    {exp.links && (
+                      <div className="flex flex-wrap gap-3 mb-6">
+                        {exp.links.map((link, linkIndex) => (
+                          <Button
+                            key={linkIndex}
+                            variant="outline"
+                            size="sm"
+                            className="h-8 text-sm interactive-element focus-ring-primary"
+                            onClick={() => window.open(link.url, '_blank')}
+                          >
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            {link.name}
+                          </Button>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                </div>
 
-                {expandedCards.includes(index) && (
-                  <div className="border-t bg-muted/30 p-6 animate-fade-in">
-                    <h4 className="font-semibold mb-3">Key Responsibilities & Achievements</h4>
-                    <ul className="space-y-2">
-                      {exp.details.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="flex items-start gap-2 text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => toggleCard(index)}
+                    className="lg:self-start interactive-element focus-ring-primary"
+                  >
+                    {expandedCards.includes(index) ? (
+                      <>
+                        Hide Details <ChevronUp className="w-4 h-4 ml-2" />
+                      </>
+                    ) : (
+                      <>
+                        Show Details <ChevronDown className="w-4 h-4 ml-2" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </div>
+
+              {expandedCards.includes(index) && (
+                <div className="border-t bg-gradient-to-r from-muted/30 to-muted/10 p-8 animate-fade-in">
+                  <h4 className="font-bold text-lg mb-4 text-foreground">Key Responsibilities & Achievements</h4>
+                  <ul className="space-y-3">
+                    {exp.details.map((detail, detailIndex) => (
+                      <li key={detailIndex} className="flex items-start gap-3 text-muted-foreground">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2.5 flex-shrink-0" />
+                        <span className="leading-relaxed">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

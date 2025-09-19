@@ -169,53 +169,45 @@ html {
 }
 
 body { 
-  min-height: 100dvh; 
+  min-height: 100vh;
+  min-height: -webkit-fill-available; 
 }
 
-@supports (height: 100svh) {
-  .min-h-screen { 
-    min-height: 100svh !important; 
-  }
-  .min-h-dvh {
-    min-height: 100dvh !important;
-  }
-}
-
-/* Glass/blur effects with Safari fallback */
-.glass { 
-  backdrop-filter: blur(8px); 
-  -webkit-backdrop-filter: blur(8px); 
-}
-
-@supports not ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
-  .glass { 
-    background-color: rgba(0,0,0,.5); 
+/* Safari viewport fixes */
+@supports (height: 100dvh) {
+  body {
+    min-height: 100dvh;
   }
 }
 
-.is-safari {
-  /* Safari-specific overrides */
+/* Simplified Safari animation compatibility */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-down,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale-in {
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+  }
 }
 
-.is-safari-mobile {
-  /* Safari mobile specific overrides */
-  height: 100vh; /* Fallback */
-  height: calc(var(--vh, 1vh) * 100); /* Use JS-calculated vh */
-}
-
-.safari-no-animations * {
-  /* Disable animations for problematic WebKit flag combinations */
-  animation-duration: 0.01ms !important;
-  animation-delay: 0.01ms !important;
-  transition-duration: 0.01ms !important;
-  transition-delay: 0.01ms !important;
-}
-
-.safari-no-animations .animate-fade-in,
-.safari-no-animations .animate-slide-in,
-.safari-no-animations .animate-scale-in {
-  opacity: 1 !important;
-  transform: none !important;
+/* Reduce motion for accessibility and Safari issues */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-down,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale-in {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @layer base {
@@ -238,7 +230,9 @@ body {
   /* Safari mobile viewport fix */
   #root {
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     width: 100%;
+    position: relative;
   }
   
   /* Enhanced Typography System */

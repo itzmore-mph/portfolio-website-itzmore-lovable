@@ -6,7 +6,7 @@ import { skillCategories, keyStrengths } from "@/data/skills";
 const SkillsSection = () => {
   const getLevelColor = (level: string) => {
     switch(level) {
-      case "Experienced": return "bg-primary/10 text-primary border-primary/20";
+      case "Experienced": return "bg-pitch-green/10 text-pitch-green border-pitch-green/20";
       case "Intermediate": return "bg-data-blue/10 text-data-blue border-data-blue/20";
       case "Basic": return "bg-analytics-purple/10 text-analytics-purple border-analytics-purple/20";
       default: return "bg-muted text-muted-foreground";
@@ -40,7 +40,7 @@ const SkillsSection = () => {
                 {category.skills.map((skill) => (
                   <div key={skill.name} className="flex items-center justify-between group">
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-pitch-green flex-shrink-0" />
                       {skill.link ? (
                         <a 
                           href={skill.link} 

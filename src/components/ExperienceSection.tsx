@@ -40,7 +40,7 @@ const ExperienceSection = () => {
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-2">{exp.company}</h3>
                         {exp.current && (
-                          <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/30 font-medium">
+                          <Badge variant="secondary" className="bg-pitch-green/10 text-pitch-green border-pitch-green/30 font-medium">
                             Current Position
                           </Badge>
                         )}

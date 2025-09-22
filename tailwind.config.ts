@@ -25,11 +25,11 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				
-				// Modern Professional Color Palette
-				'navy': {
-					DEFAULT: 'hsl(var(--navy-primary))',
-					light: 'hsl(var(--navy-light))',
-					dark: 'hsl(var(--navy-dark))'
+				// Football Analytics Color Palette
+				'pitch-green': {
+					DEFAULT: 'hsl(var(--pitch-green))',
+					light: 'hsl(var(--pitch-green-light))',
+					dark: 'hsl(var(--pitch-green-dark))'
 				},
 				'data-blue': 'hsl(var(--data-blue))',
 				'data-orange': 'hsl(var(--data-orange))',

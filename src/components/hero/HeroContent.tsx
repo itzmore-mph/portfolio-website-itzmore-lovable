@@ -28,9 +28,9 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
       
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
         <Button 
-          variant="white-on-dark" 
+          variant="secondary" 
           size="lg"
-          className="w-full sm:w-auto transition-all duration-300 hover:scale-105"
+          className="bg-white text-pitch-green hover:bg-white/90 font-semibold w-full sm:w-auto transition-all duration-300 hover:scale-105"
           onClick={onProjectsClick}
         >
           View My Projects
@@ -38,9 +38,9 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         </Button>
         
         <Button 
-          variant="outline-light" 
+          variant="outline" 
           size="lg"
-          className="w-full sm:w-auto transition-all duration-300 hover:scale-105"
+          className="bg-transparent border-white/30 text-white hover:bg-white/10 backdrop-blur-sm w-full sm:w-auto transition-all duration-300 hover:scale-105"
           asChild
         >
           <a 

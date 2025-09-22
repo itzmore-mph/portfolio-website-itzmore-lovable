@@ -61,7 +61,7 @@ const Navigation = () => {
             <Button 
               variant={isScrolled ? "default" : "secondary"}
               size="sm"
-              className={!isScrolled ? "bg-white text-primary hover:bg-white/90" : ""}
+              className={!isScrolled ? "bg-white text-pitch-green hover:bg-white/90" : ""}
               onClick={() => {
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

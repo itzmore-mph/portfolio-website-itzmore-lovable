@@ -21,7 +21,7 @@ const AboutSection = () => {
       title: "Experience", 
       primary: "5+ Years",
       secondary: "Data & Analytics",
-      color: "pitch-green"
+      color: "primary"
     },
     {
       icon: Users,
@@ -101,8 +101,8 @@ const AboutSection = () => {
                 </p>
               </div>
               
-              <div className="bg-pitch-green/5 border-l-4 border-pitch-green p-6 rounded-r-lg mt-6">
-                <h4 className="font-semibold text-pitch-green mb-3">Future Academic Goals</h4>
+              <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg mt-6">
+                <h4 className="font-semibold text-primary mb-3">Future Academic Goals</h4>
                 <p className="text-body-sm text-muted-foreground text-justify lg:text-left">
                   In <strong>October 2025</strong>, I will begin the <strong>MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, to deepen my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong>Football Data Scientist</strong> in professional clubs, federations, or sports data companies.
                 </p>

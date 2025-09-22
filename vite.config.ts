@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     legacy({
-      targets: ['defaults', 'safari >= 15'],
+      targets: ['defaults', 'not IE 11', 'iOS >= 13', 'Safari >= 13'],
     }),
     mode === 'development' &&
     componentTagger(),

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { getItem, setItem, removeItem } from '@/lib/safeStorage';
 
 declare global {
   interface Window {
@@ -14,7 +15,7 @@ const CookieConsent = () => {
   const [language, setLanguage] = useState<'en' | 'de'>('en');
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookieConsent');
+    const consent = getItem('cookieConsent');
     if (!consent) {
       setShowBanner(true);
     } else if (consent === 'accepted') {
@@ -46,18 +47,18 @@ const CookieConsent = () => {
   };
 
   const acceptCookies = () => {
-    localStorage.setItem('cookieConsent', 'accepted');
+    setItem('cookieConsent', 'accepted');
     setShowBanner(false);
     loadGoogleAnalytics();
   };
 
   const declineCookies = () => {
-    localStorage.setItem('cookieConsent', 'declined');
+    setItem('cookieConsent', 'declined');
     setShowBanner(false);
   };
 
   const manageCookies = () => {
-    localStorage.removeItem('cookieConsent');
+    removeItem('cookieConsent');
     setShowBanner(true);
   };
 

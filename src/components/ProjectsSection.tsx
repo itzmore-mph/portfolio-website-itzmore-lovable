@@ -127,7 +127,7 @@ const ProjectsSection = () => {
             <Button 
               variant="secondary"
               size="lg"
-              className="text-pitch-green hover:bg-white/90 font-semibold px-8 py-4 text-lg interactive-element focus-ring-accent"
+              className="w-full sm:w-auto transition-all duration-300 hover:scale-105"
               onClick={() => {
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

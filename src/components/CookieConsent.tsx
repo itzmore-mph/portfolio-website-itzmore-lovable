@@ -97,7 +97,7 @@ const CookieConsent = () => {
           {language === 'en' ? (
             <p className="text-sm mb-4 max-w-2xl mx-auto">
               This website uses essential cookies and, with your consent, Google Analytics to analyze usage. 
-              <a href="/privacy" className="text-primary hover:text-primary/80 underline ml-1">
+              <a href="/privacy" className="text-xs hover:text-primary/80 underline ml-1">
                 Learn more
               </a>.
             </p>

@@ -125,9 +125,9 @@ const ProjectsSection = () => {
               Let's discuss how data can drive your team's success.
             </p>
             <Button 
-              variant="secondary"
+              variant="white-on-dark"
               size="lg"
-              className="bg-white text-pitch-green hover:bg-white/90 font-semibold px-8 py-4 text-lg interactive-element focus-ring-accent"
+              className="interactive-element focus-ring-accent"
               onClick={() => {
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

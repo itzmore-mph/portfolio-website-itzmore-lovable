@@ -263,25 +263,23 @@ const ContactSection = () => {
       {/* Call to Action */}
       <AnimatedSection animation="fade" delay={400}>
         <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-pitch-green to-pitch-green-light p-8 lg:p-12 rounded-2xl text-white">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">Ready to Elevate Your Football Analytics?</h3>
-            <p className="text-white/90 mb-6 max-w-2xl mx-auto text-lg">
+          <div className="bg-gradient-to-r from-navy-primary to-navy-light p-8 lg:p-12 rounded-2xl text-white shadow-2xl">
+            <h3 className="text-subsection-title mb-4 text-white">Ready to Elevate Your Football Analytics?</h3>
+            <p className="text-white/90 mb-6 max-w-2xl mx-auto text-body">
               Whether you're a football club, sports organization, or fellow analyst, 
               I'm always excited to collaborate on challenging projects that push the boundaries of football analytics.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                variant="secondary"
+                variant="white-on-dark"
                 size="lg"
-                className="bg-white text-pitch-green hover:bg-white/90 font-semibold"
                 onClick={() => window.open('https://calendly.com/itzmore-dev', '_blank')}
               >
                 Schedule a Call
               </Button>
               <Button 
-                variant="outline"
+                variant="outline-light"
                 size="lg"
-                className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm bg-transparent"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View My Projects

@@ -28,8 +28,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "SQL", level: "Experienced", link: "https://dev.mysql.com/doc/" },
       { name: "R", level: "Basic", link: "https://www.r-project.org/" },
       { name: "Datorama", level: "Experienced", link: "https://www.salesforce.com/de/campaign/sem/marketing-cloud/" },
-      { name: "Tableau", level: "Intermediate", link: "https://www.tableau.com/" },
-      { name: "Power BI", level: "Intermediate", link: "https://www.microsoft.com/en-us/power-platform/products/power-bi" },
+      { name: "Tableau", level: "Experienced", link: "https://www.tableau.com/" },
+      { name: "Power BI", level: "Experienced", link: "https://www.microsoft.com/en-us/power-platform/products/power-bi" },
       { name: "Looker Studio", level: "Intermediate", link: "https://lookerstudio.google.com/" },
       { name: "Streamlit", level: "Basic", link: "https://streamlit.io/" },
       { name: "Git, GitHub", level: "Intermediate", link: "https://github.com/" }

@@ -104,7 +104,7 @@ const CookieConsent = () => {
           ) : (
             <p className="text-sm mb-4 max-w-2xl mx-auto">
               Diese Website verwendet nur technisch notwendige Cookies sowie – mit Ihrer Zustimmung – Google Analytics zur Analyse der Nutzung. 
-              <a href="/privacy" className="text-primary hover:text-primary/80 underline ml-1">
+              <a href="/privacy" className="text-xs hover:text-primary/80 underline ml-1">
                 Mehr erfahren
               </a>.
             </p>

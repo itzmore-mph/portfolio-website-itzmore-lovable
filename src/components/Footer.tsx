@@ -41,7 +41,7 @@ const Footer = () => {
           <p>Transforming football data into winning insights • Available for freelance projects and consulting</p>
           <button 
             onClick={() => (window as any).manageCookiePreferences?.()}
-            className="text-primary hover:text-primary/80 underline mt-2 text-xs bg-transparent border-none cursor-pointer"
+            className="text-xs hover:text-primary/80 underline mt-2 text-xs bg-transparent border-none cursor-pointer"
           >
             Manage Cookie Preferences
           </button>

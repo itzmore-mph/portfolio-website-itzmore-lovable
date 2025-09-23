@@ -78,7 +78,7 @@ export const experiences: Experience[] = [
   {
     date: "02/2019 – 09/2022", 
     company: "E2 Communications GmbH",
-    position: "Addserve & Ad Operations Manager",
+    position: "Oddserve & Ad Operations Manager",
     location: "Austria",
     details: [
       "Managed ad campaign setups and operations across platforms like Adition, Epom, and Adform, using data analytics to optimize performance.",

@@ -25,20 +25,50 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				
-				// Modern Professional Color Palette
+				// Enhanced Professional Color Palette
 				'navy': {
 					DEFAULT: 'hsl(var(--navy-primary))',
 					light: 'hsl(var(--navy-light))',
-					dark: 'hsl(var(--navy-dark))'
+					dark: 'hsl(var(--navy-dark))',
+					accent: 'hsl(var(--navy-accent))'
 				},
-				'data-blue': 'hsl(var(--data-blue))',
-				'data-orange': 'hsl(var(--data-orange))',
-				'analytics-purple': 'hsl(var(--analytics-purple))',
 				
-				// Professional Slate Palette
+				// Enhanced Data Visualization Colors
+				'data-blue': {
+					DEFAULT: 'hsl(var(--data-blue))',
+					light: 'hsl(var(--data-blue-light))',
+					dark: 'hsl(var(--data-blue-dark))'
+				},
+				'data-orange': {
+					DEFAULT: 'hsl(var(--data-orange))',
+					light: 'hsl(var(--data-orange-light))'
+				},
+				'analytics-purple': {
+					DEFAULT: 'hsl(var(--analytics-purple))',
+					light: 'hsl(var(--analytics-purple-light))',
+					dark: 'hsl(var(--analytics-purple-dark))'
+				},
+				
+				// Enhanced Status Colors
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					light: 'hsl(var(--success-light))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					light: 'hsl(var(--warning-light))'
+				},
+				error: {
+					DEFAULT: 'hsl(var(--error))',
+					light: 'hsl(var(--error-light))'
+				},
+				
+				// Professional Enhanced Slate Palette
 				slate: {
+					25: 'hsl(var(--slate-25))',
 					50: 'hsl(var(--slate-50))',
 					100: 'hsl(var(--slate-100))',
+					150: 'hsl(var(--slate-150))',
 					200: 'hsl(var(--slate-200))',
 					300: 'hsl(var(--slate-300))',
 					400: 'hsl(var(--slate-400))',
@@ -49,11 +79,12 @@ export default {
 					900: 'hsl(var(--slate-900))'
 				},
 				
-				// Semantic Design Tokens
+				// Enhanced Semantic Design Tokens
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					hover: 'hsl(var(--primary-hover))'
+					hover: 'hsl(var(--primary-hover))',
+					light: 'hsl(var(--primary-light))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -62,7 +93,8 @@ export default {
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+					foreground: 'hsl(var(--destructive-foreground))',
+					hover: 'hsl(var(--destructive-hover))'
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
@@ -71,7 +103,8 @@ export default {
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))',
-					hover: 'hsl(var(--accent-hover))'
+					hover: 'hsl(var(--accent-hover))',
+					light: 'hsl(var(--accent-light))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -99,17 +132,52 @@ export default {
 				'100': '25rem',
 				'104': '26rem',
 				'112': '28rem',
-				'128': '32rem'
+				'128': '32rem',
+				'144': '36rem',
+				'160': '40rem'
 			},
 			maxWidth: {
 				'8xl': '88rem',
-				'9xl': '96rem'
+				'9xl': '96rem',
+				'10xl': '104rem'
 			},
 			fontSize: {
 				'2xs': ['0.625rem', { lineHeight: '0.75rem' }],
+				'xs': ['0.75rem', { lineHeight: '1rem' }],
+				'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+				'base': ['1rem', { lineHeight: '1.5rem' }],
+				'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+				'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+				'2xl': ['1.5rem', { lineHeight: '2rem' }],
+				'3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+				'4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+				'5xl': ['3rem', { lineHeight: '1.2' }],
+				'6xl': ['3.75rem', { lineHeight: '1.1' }],
+				'7xl': ['4.5rem', { lineHeight: '1' }],
+				'8xl': ['6rem', { lineHeight: '1' }],
+				'9xl': ['8rem', { lineHeight: '1' }],
 				'10xl': ['10rem', { lineHeight: '1' }],
 				'11xl': ['12rem', { lineHeight: '1' }],
 				'12xl': ['14rem', { lineHeight: '1' }]
+			},
+			fontWeight: {
+				thin: '100',
+				extralight: '200',
+				light: '300',
+				normal: '400',
+				medium: '500',
+				semibold: '600',
+				bold: '700',
+				extrabold: '800',
+				black: '900'
+			},
+			lineHeight: {
+				'none': '1',
+				'tight': '1.25',
+				'snug': '1.375',
+				'normal': '1.5',
+				'relaxed': '1.625',
+				'loose': '2'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

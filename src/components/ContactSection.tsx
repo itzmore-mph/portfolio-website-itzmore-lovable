@@ -109,33 +109,33 @@ const ContactSection = () => {
         <AnimatedSection animation="slide-right">
           <h3 className="text-subsection-title mb-6">Get In Touch</h3>
           
-          <div className="space-y-6 mb-8">
-            {contactMethods.map((method, index) => (
-              <Card key={method.title} className="border-0 bg-muted/30 hover:bg-muted/50 transition-all duration-300 portfolio-card">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className={`p-3 rounded-lg bg-${method.color}/10`}>
-                      <method.icon className={`w-6 h-6 text-${method.color}`} />
+            <div className="space-y-6 mb-8">
+              {contactMethods.map((method, index) => (
+                <Card key={method.title} className="border-0 bg-muted/30 hover:bg-muted/50 transition-all duration-300 portfolio-card">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-lg bg-accent/10 border border-accent/20">
+                        <method.icon className="icon-lg text-accent" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1 text-card-title">{method.title}</h4>
+                        {method.title === "Email" ? (
+                          <a 
+                            href={`mailto:${method.value}`}
+                            className="font-medium text-primary mb-1 hover:text-accent transition-colors duration-200 underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                          >
+                            {method.value}
+                          </a>
+                        ) : (
+                          <p className="font-medium text-primary mb-1">{method.value}</p>
+                        )}
+                        <p className="text-caption text-muted-foreground">{method.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">{method.title}</h4>
-                      {method.title === "Email" ? (
-                        <a 
-                          href={`mailto:${method.value}`}
-                          className="font-medium text-primary mb-1 hover:text-data-blue transition-colors duration-200 underline decoration-dotted underline-offset-2 hover:decoration-solid"
-                        >
-                          {method.value}
-                        </a>
-                      ) : (
-                        <p className="font-medium text-primary mb-1">{method.value}</p>
-                      )}
-                      <p className="text-sm text-muted-foreground">{method.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
 
           {/* Social Links */}
           <div>
@@ -170,43 +170,43 @@ const ContactSection = () => {
 
         {/* Contact Form */}
         <AnimatedSection animation="slide-left" delay={200}>
-          <Card className="border-0 shadow-lg portfolio-card">
-            <CardHeader>
-              <CardTitle>Send Message</CardTitle>
+          <Card className="portfolio-card-elevated">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-section-title">Send Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium mb-2 block">First Name</label>
+                    <label className="text-body-sm font-medium mb-2 block">First Name</label>
                     <Input 
                       placeholder="John" 
-                      className="focus-ring" 
+                      className="focus-ring border-input-border" 
                       {...register("firstName", { required: "First name is required" })}
                     />
                     {errors.firstName && (
-                      <p className="text-sm text-destructive mt-1">{errors.firstName.message}</p>
+                      <p className="text-caption text-error mt-1">{errors.firstName.message}</p>
                     )}
                   </div>
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Last Name</label>
+                    <label className="text-body-sm font-medium mb-2 block">Last Name</label>
                     <Input 
                       placeholder="Doe" 
-                      className="focus-ring" 
+                      className="focus-ring border-input-border" 
                       {...register("lastName", { required: "Last name is required" })}
                     />
                     {errors.lastName && (
-                      <p className="text-sm text-destructive mt-1">{errors.lastName.message}</p>
+                      <p className="text-caption text-error mt-1">{errors.lastName.message}</p>
                     )}
                   </div>
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Email</label>
+                  <label className="text-body-sm font-medium mb-2 block">Email</label>
                   <Input 
                     type="email" 
                     placeholder="john@example.com" 
-                    className="focus-ring" 
+                    className="focus-ring border-input-border" 
                     {...register("email", { 
                       required: "Email is required",
                       pattern: {
@@ -216,42 +216,43 @@ const ContactSection = () => {
                     })}
                   />
                   {errors.email && (
-                    <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
+                    <p className="text-caption text-error mt-1">{errors.email.message}</p>
                   )}
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Subject</label>
+                  <label className="text-body-sm font-medium mb-2 block">Subject</label>
                   <Input 
                     placeholder="Football Analytics Consultation" 
-                    className="focus-ring" 
+                    className="focus-ring border-input-border" 
                     {...register("subject", { required: "Subject is required" })}
                   />
                   {errors.subject && (
-                    <p className="text-sm text-destructive mt-1">{errors.subject.message}</p>
+                    <p className="text-caption text-error mt-1">{errors.subject.message}</p>
                   )}
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Message</label>
+                  <label className="text-body-sm font-medium mb-2 block">Message</label>
                   <Textarea 
                     placeholder="Tell me about your project requirements, analytics needs, or any questions you have about football data analysis..."
                     rows={6}
-                    className="focus-ring"
+                    className="focus-ring border-input-border"
                     {...register("message", { required: "Message is required" })}
                   />
                   {errors.message && (
-                    <p className="text-sm text-destructive mt-1">{errors.message.message}</p>
+                    <p className="text-caption text-error mt-1">{errors.message.message}</p>
                   )}
                 </div>
                 
                 <Button 
                   type="submit" 
-                  className="w-full" 
+                  variant="gradient-primary"
                   size="lg" 
+                  className="w-full" 
                   disabled={isSubmitting}
                 >
-                  <Send className="w-4 h-4 mr-2" />
+                  <Send className="icon-sm mr-2" />
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>

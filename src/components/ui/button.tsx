@@ -9,25 +9,34 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-sm",
         outline:
-          "border border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
+          "border border-border bg-background text-foreground hover:bg-accent/50 hover:text-accent-foreground shadow-sm",
         "outline-light":
-          "border border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white backdrop-blur-sm",
+          "border border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white backdrop-blur-sm shadow-sm",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-sm",
         "secondary-solid":
-          "bg-white text-primary hover:bg-white/90 font-semibold shadow-sm",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "bg-white text-primary hover:bg-slate-50 font-semibold shadow-md border border-slate-200/50",
+        accent:
+          "bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm",
+        ghost: "hover:bg-accent/50 hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        "gradient-primary": 
+          "bg-gradient-to-r from-primary to-primary-light text-white hover:from-primary/90 hover:to-primary-light/90 shadow-md",
+        "gradient-accent":
+          "bg-gradient-to-r from-accent to-accent-light text-white hover:from-accent/90 hover:to-accent-light/90 shadow-md",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        default: "h-10 px-4 py-2 text-sm",
+        sm: "h-8 rounded-md px-3 text-xs font-medium",
+        lg: "h-12 rounded-lg px-6 text-base font-medium",
+        xl: "h-14 rounded-xl px-8 text-lg font-semibold",
         icon: "h-10 w-10",
+        "icon-sm": "h-8 w-8",
+        "icon-lg": "h-12 w-12",
       },
     },
     defaultVariants: {

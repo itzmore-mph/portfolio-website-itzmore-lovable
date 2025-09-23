@@ -14,28 +14,28 @@ const AboutSection = () => {
       primary: "M.Sc. AI Applied to Sports",
       secondary: "M.A. Digital Media Management",
       third: "B.Sc. Business Administration",
-      color: "data-blue"
+      colorClass: "accent"
     },
     {
       icon: Award,
       title: "Experience", 
       primary: "5+ Years",
       secondary: "Data & Analytics",
-      color: "pitch-green"
+      colorClass: "success"
     },
     {
       icon: Users,
       title: "Specialization",
       primary: "Football Analytics",
       secondary: "Sports Technology",
-      color: "analytics-purple"
+      colorClass: "analytics-purple"
     },
     {
       icon: Target,
       title: "Focus",
       primary: "Data-Driven",
       secondary: "Decision Making",
-      color: "data-orange"
+      colorClass: "data-orange"
     }
   ];
 
@@ -68,16 +68,16 @@ const AboutSection = () => {
           <AnimatedSection animation="slide-left" delay={200}>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {highlights.map((highlight, index) => (
-                <Card key={highlight.title} className="border-0 bg-background hover:bg-card-hover transition-all duration-300 portfolio-card">
+                <Card key={highlight.title} className="portfolio-card-interactive">
                   <CardContent className="p-4 text-center">
-                    <div className={`inline-flex p-3 rounded-lg bg-${highlight.color}/10 mb-3`}>
-                      <highlight.icon className={`w-6 h-6 text-${highlight.color}`} />
+                    <div className={`inline-flex p-3 rounded-lg bg-${highlight.colorClass}/10 border border-${highlight.colorClass}/20 mb-3`}>
+                      <highlight.icon className={`icon-lg text-${highlight.colorClass}`} />
                     </div>
-                    <h3 className="font-semibold mb-1 text-sm">{highlight.title}</h3>
-                    <p className="text-sm font-medium text-primary">{highlight.primary}</p>
-                    <p className="text-xs text-muted-foreground">{highlight.secondary}</p>
+                    <h3 className="font-semibold mb-1 text-caption">{highlight.title}</h3>
+                    <p className="text-body-sm font-medium text-primary">{highlight.primary}</p>
+                    <p className="text-caption text-muted-foreground">{highlight.secondary}</p>
                     {highlight.third && (
-                      <p className="text-xs text-muted-foreground">{highlight.third}</p>
+                      <p className="text-caption text-muted-foreground">{highlight.third}</p>
                     )}
                   </CardContent>
                 </Card>
@@ -101,8 +101,8 @@ const AboutSection = () => {
                 </p>
               </div>
               
-              <div className="bg-pitch-green/5 border-l-4 border-pitch-green p-6 rounded-r-lg mt-6">
-                <h4 className="font-semibold text-pitch-green mb-3">Future Academic Goals</h4>
+              <div className="bg-accent/5 border-l-4 border-accent p-6 rounded-r-lg mt-6">
+                <h4 className="font-semibold text-accent mb-3 text-body-sm">Future Academic Goals</h4>
                 <p className="text-body-sm text-muted-foreground text-justify lg:text-left">
                   In <strong>October 2025</strong>, I will begin the <strong>MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, to deepen my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong>Football Data Scientist</strong> in professional clubs, federations, or sports data companies.
                 </p>
@@ -113,7 +113,7 @@ const AboutSection = () => {
           {/* Certifications/Skills Tags */}
           <AnimatedSection animation="slide-left" delay={600}>
             <div className="text-center lg:text-left">
-              <h4 className="font-semibold mb-4">Core Expertise</h4>
+              <h4 className="font-semibold mb-4 text-body">Core Expertise</h4>
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 {[
                   "Sports Data Analyst",
@@ -125,7 +125,7 @@ const AboutSection = () => {
                   "International Projects",
                   "Future AI Student"
                 ].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="bg-primary/5 text-primary border-primary/20 text-sm py-1">
+                  <Badge key={skill} variant="secondary" className="skill-badge-accent text-caption py-1.5">
                     {skill}
                   </Badge>
                 ))}

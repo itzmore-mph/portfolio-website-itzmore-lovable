@@ -30,7 +30,7 @@ const HeroSection = () => {
           width={1920}
           height={1440}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-pitch-green/90 via-pitch-green/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-primary/95 via-navy-dark/85 to-navy-primary/75" />
       </div>
       
       {/* Hero Content */}

@@ -9,20 +9,20 @@ interface HeroContentProps {
 export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
   return (
     <div className="text-left animate-fade-in">
-      <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 mb-4 sm:mb-6 text-xs sm:text-sm border border-white/20" role="banner">
-        <BarChart3 className="icon-sm text-white" aria-hidden="true" />
-        <span className="text-white font-medium">Football Analytics</span>
+      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2 mb-4 sm:mb-6 text-xs sm:text-sm border border-white/40 shadow-lg" role="banner">
+        <BarChart3 className="icon-sm text-white drop-shadow-sm" aria-hidden="true" />
+        <span className="text-white font-semibold drop-shadow-sm">Football Analytics</span>
       </div>
       
-      <h1 className="text-hero text-white mb-4 sm:mb-6 font-bold">
+      <h1 className="text-hero text-white mb-4 sm:mb-6 font-bold drop-shadow-lg">
         <span className="block">Sports Data Scientist</span>
       </h1>
       
-      <p className="text-body text-white/90 mb-4 sm:mb-6 max-w-lg leading-relaxed">
+      <p className="text-body text-white mb-4 sm:mb-6 max-w-lg leading-relaxed drop-shadow-md font-medium">
         Reproducible Python/SQL (DuckDB) pipelines and Streamlit/Power BI tools for scouting, opponent & set-piece insights.
       </p>
       
-      <p className="text-caption text-white/70 mb-6 sm:mb-8 max-w-lg leading-relaxed">
+      <p className="text-caption text-white/95 mb-6 sm:mb-8 max-w-lg leading-relaxed drop-shadow-sm font-medium">
         Currently: Senior Digital Data & Dashboard Manager, Publicis Media Austria.
       </p>
       

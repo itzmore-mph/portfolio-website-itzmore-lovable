@@ -113,7 +113,7 @@ const AboutSection = () => {
           {/* Certifications/Skills Tags */}
           <AnimatedSection animation="slide-left" delay={600}>
             <div className="text-center lg:text-left">
-              <h4 className="font-semibold mb-4 text-body">Core Expertise</h4>
+              <h4 className="font-semibold mb-6 text-card-title text-foreground">Core Expertise</h4>
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 {[
                   "Sports Data Analyst",
@@ -124,8 +124,12 @@ const AboutSection = () => {
                   "Real-time Visualization",
                   "International Projects",
                   "Future AI Student"
-                ].map((skill) => (
-                  <Badge key={skill} variant="secondary" className="skill-badge-accent text-caption py-1.5">
+                ].map((skill, index) => (
+                  <Badge 
+                    key={skill} 
+                    variant={index % 3 === 0 ? "expertise" : index % 3 === 1 ? "expertise-alt" : "modern"} 
+                    className="px-4 py-2 text-sm font-medium hover:scale-105 transition-all duration-200 shadow-sm"
+                  >
                     {skill}
                   </Badge>
                 ))}

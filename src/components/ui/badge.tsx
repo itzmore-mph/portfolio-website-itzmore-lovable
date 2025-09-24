@@ -15,6 +15,12 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
+        expertise:
+          "border-accent/30 bg-accent/15 text-accent-foreground hover:bg-accent/25 hover:border-accent/40 shadow-sm",
+        "expertise-alt":
+          "border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/40 shadow-sm",
+        modern:
+          "border-slate-300/50 bg-slate-100 text-slate-700 hover:bg-slate-200 hover:border-slate-400/50 shadow-sm",
       },
     },
     defaultVariants: {

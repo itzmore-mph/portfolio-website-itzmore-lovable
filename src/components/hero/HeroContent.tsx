@@ -9,7 +9,7 @@ interface HeroContentProps {
 export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
   return (
     <div className="text-left animate-fade-in">
-      <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2 mb-4 sm:mb-6 text-xs sm:text-sm border border-white/40 shadow-lg" role="banner">
+      <div className="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md rounded-full px-4 py-2 mb-4 sm:mb-6 text-xs sm:text-sm border border-white/50 shadow-lg" role="banner">
         <BarChart3 className="icon-sm text-white drop-shadow-sm" aria-hidden="true" />
         <span className="text-white font-semibold drop-shadow-sm">Football Analytics</span>
       </div>

@@ -18,10 +18,10 @@ const ProjectsSection = () => {
 
       <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
         {projects.map((project, index) => (
-          <Card 
+           <Card 
             key={project.title} 
             className={cn(
-              "portfolio-card-elevated border-0 overflow-hidden group will-change-transform",
+              "portfolio-card-elevated border-0 overflow-hidden group will-change-transform h-full flex flex-col",
               project.isPlaceholder 
                 ? "border-2 border-dashed border-muted-foreground/20 bg-muted/5" 
                 : ""
@@ -47,36 +47,42 @@ const ProjectsSection = () => {
               </div>
             </CardHeader>
 
-            <CardContent className="space-y-6">
+            <CardContent className="flex flex-col h-full">
               {/* Project Description */}
-              <p className="text-body-sm text-muted-foreground leading-relaxed">
-                {project.description}
-              </p>
+              <div className="mb-6">
+                <p className="text-body-sm text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
 
               {/* Key Metrics */}
-              <div className="grid grid-cols-3 gap-3">
-                {project.metrics.map((metric, idx) => (
-                  <div key={idx} className="stat-card">
-                    <div className="text-sm font-semibold text-foreground">{metric}</div>
-                  </div>
-                ))}
+              <div className="mb-6">
+                <div className="grid grid-cols-3 gap-3">
+                  {project.metrics.map((metric, idx) => (
+                    <div key={idx} className="stat-card p-3 min-h-[60px] flex items-center justify-center">
+                      <div className="text-xs sm:text-sm font-semibold text-foreground text-center leading-tight">{metric}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Technologies */}
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <Badge 
-                    key={tag}
-                    variant="secondary"
-                    className="skill-badge"
-                  >
-                    {tag}
-                  </Badge>
-                ))}
+              <div className="mb-8 flex-grow">
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <Badge 
+                      key={tag}
+                      variant="secondary"
+                      className="skill-badge text-xs px-2.5 py-1"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-3 pt-4">
+              <div className="flex gap-3 mt-auto">
                 {project.isPlaceholder ? (
                   <Button 
                     variant="outline" 

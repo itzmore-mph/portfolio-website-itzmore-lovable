@@ -16,11 +16,17 @@ const badgeVariants = cva(
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
         expertise:
-          "border-accent/30 bg-accent/15 text-accent-foreground hover:bg-accent/25 hover:border-accent/40 shadow-sm",
+          "border-accent/40 bg-accent text-white hover:bg-accent-hover hover:border-accent/60 shadow-md font-medium",
         "expertise-alt":
-          "border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/40 shadow-sm",
+          "border-primary/40 bg-primary text-primary-foreground hover:bg-primary-hover hover:border-primary/60 shadow-md font-medium",
         modern:
-          "border-slate-300/50 bg-slate-100 text-slate-700 hover:bg-slate-200 hover:border-slate-400/50 shadow-sm",
+          "border-slate-400/60 bg-slate-700 text-white hover:bg-slate-600 hover:border-slate-500/60 shadow-md font-medium",
+        professional:
+          "border-data-blue/40 bg-data-blue text-white hover:bg-data-blue-dark hover:border-data-blue/60 shadow-md font-medium",
+        analytics:
+          "border-analytics-purple/40 bg-analytics-purple text-white hover:bg-analytics-purple-dark hover:border-analytics-purple/60 shadow-md font-medium",
+        success:
+          "border-success/40 bg-success text-white hover:bg-success/90 hover:border-success/60 shadow-md font-medium",
       },
     },
     defaultVariants: {

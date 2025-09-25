@@ -124,15 +124,19 @@ const AboutSection = () => {
                   "Real-time Visualization",
                   "International Projects",
                   "Future AI Student"
-                ].map((skill, index) => (
-                  <Badge 
-                    key={skill} 
-                    variant={index % 3 === 0 ? "expertise" : index % 3 === 1 ? "expertise-alt" : "modern"} 
-                    className="px-4 py-2 text-sm font-medium hover:scale-105 transition-all duration-200 shadow-sm"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
+                ].map((skill, index) => {
+                  const variants = ["expertise", "professional", "analytics", "success", "expertise-alt", "modern"];
+                  const variant = variants[index % variants.length];
+                  return (
+                    <Badge 
+                      key={skill} 
+                      variant={variant as any}
+                      className="px-4 py-2.5 text-sm font-medium hover:scale-105 transition-all duration-200 shadow-lg"
+                    >
+                      {skill}
+                    </Badge>
+                  );
+                })}
               </div>
             </div>
           </AnimatedSection>

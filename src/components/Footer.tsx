@@ -18,11 +18,11 @@ const Footer = () => {
           {/* Navigation */}
           <div className="flex justify-center">
             <nav className="flex flex-wrap justify-center gap-4 lg:gap-6 text-sm lg:text-base">
-              <a href="#home" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Home</a>
-              <a href="#skills" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Skills</a>
-              <a href="#projects" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Projects</a>
-              <a href="#about" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">About</a>
-              <a href="#contact" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Contact</a>
+              <a href="/index#home" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Home</a>
+              <a href="index#skills" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Skills</a>
+              <a href="/index#projects" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Projects</a>
+              <a href="/index#about" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">About</a>
+              <a href="/index#contact" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Contact</a>
               <a href="/impressum" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Legal Notice</a>
               <a href="/privacy" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Privacy Policy</a>
             </nav>

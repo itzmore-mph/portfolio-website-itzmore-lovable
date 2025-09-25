@@ -9,25 +9,25 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-background via-slate-25 to-muted">
       <Navigation />
       <main className="relative" id="main-content">
         <section id="home" className="relative">
           <HeroSection />
         </section>
-        <section id="about">
+        <section id="about" className="relative">
           <AboutSection />
         </section>
-        <section id="experience">
+        <section id="experience" className="relative">
           <ExperienceSection />
         </section>
-        <section id="skills">
+        <section id="skills" className="relative">
           <SkillsSection />
         </section>
-        <section id="projects">
+        <section id="projects" className="relative">
           <ProjectsSection />
         </section>
-        <section id="contact">
+        <section id="contact" className="relative">
           <ContactSection />
         </section>
       </main>

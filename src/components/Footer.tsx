@@ -4,27 +4,27 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white py-12">
+    <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 lg:items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-12 lg:items-center">
           {/* Brand */}
-          <div className="flex items-center justify-center lg:justify-start gap-2">
-            <div className="p-2 bg-primary rounded-lg">
-              <BarChart3 className="w-6 h-6 text-primary-foreground" />
+          <div className="flex items-center justify-center lg:justify-start gap-3">
+            <div className="p-3 bg-primary rounded-xl shadow-lg">
+              <BarChart3 className="w-7 h-7 text-primary-foreground" />
             </div>
-            <span className="font-bold text-lg">Football Analytics</span>
+            <span className="font-bold text-xl">Football Analytics</span>
           </div>
 
           {/* Navigation */}
           <div className="flex justify-center">
-            <nav className="flex flex-wrap justify-center gap-3 lg:gap-4 text-sm lg:text-base">
-              <a href="#home" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">Home</a>
-              <a href="#skills" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">Skills</a>
-              <a href="#projects" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">Projects</a>
-              <a href="#about" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">About</a>
-              <a href="#contact" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">Contact</a>
-              <a href="/impressum" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">Legal Notice</a>
-              <a href="/privacy" className="text-white/80 hover:text-white transition-colors whitespace-nowrap">Privacy Policy</a>
+            <nav className="flex flex-wrap justify-center gap-4 lg:gap-6 text-sm lg:text-base">
+              <a href="#home" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Home</a>
+              <a href="#skills" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Skills</a>
+              <a href="#projects" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Projects</a>
+              <a href="#about" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">About</a>
+              <a href="#contact" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Contact</a>
+              <a href="/impressum" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Legal Notice</a>
+              <a href="/privacy" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Privacy Policy</a>
             </nav>
           </div>
 
@@ -37,11 +37,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60 text-sm">
-          <p>Transforming football data into winning insights • Available for freelance projects and consulting</p>
+        <div className="border-t border-white/20 mt-12 pt-10 text-center text-white/70 text-sm">
+          <p className="mb-3">Transforming football data into winning insights • Available for freelance projects and consulting</p>
           <button 
             onClick={() => (window as any).manageCookiePreferences?.()}
-            className="text-xs hover:text-primary/80 underline mt-2 text-xs bg-transparent border-none cursor-pointer"
+            className="text-xs hover:text-primary/80 underline bg-transparent border-none cursor-pointer px-3 py-1 rounded-lg hover:bg-white/5 transition-colors"
           >
             Manage Cookie Preferences
           </button>

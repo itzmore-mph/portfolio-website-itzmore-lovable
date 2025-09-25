@@ -21,11 +21,11 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border' 
+        ? 'bg-background/98 backdrop-blur-xl shadow-lg border-b border-border/80' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-18">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" aria-label="Go to homepage">
             <OptimizedImage 
@@ -105,15 +105,15 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         <div className={`
-          md:hidden fixed top-16 left-0 right-0 z-50 
+          md:hidden fixed top-18 left-0 right-0 z-50 
           transition-all duration-300 ease-in-out
           ${isMobileMenuOpen 
             ? 'opacity-100 translate-y-0 pointer-events-auto' 
             : 'opacity-0 -translate-y-4 pointer-events-none'
           }
         `}>
-          <div className="bg-background/95 backdrop-blur-md border-b border-border shadow-lg">
-            <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="bg-background/98 backdrop-blur-xl border-b border-border/80 shadow-xl">
+            <div className="max-w-7xl mx-auto px-6 py-8">
               <div className="space-y-4">
                 {navItems.map((item, index) => (
                   <a

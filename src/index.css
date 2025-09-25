@@ -7,14 +7,14 @@
 @layer base {
   :root {
     /* Enhanced Professional Color System - Optimized for UX */
-    --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --background: 0 0% 99%;
+    --foreground: 215 25% 12%;
     
     /* Primary Brand Colors - Navy Blue System */
-    --navy-primary: 215 28% 17%;
-    --navy-light: 215 20% 25%;
-    --navy-dark: 215 35% 12%;
-    --navy-accent: 215 15% 92%;
+    --navy-primary: 215 35% 18%;
+    --navy-light: 215 25% 28%;
+    --navy-dark: 215 40% 15%;
+    --navy-accent: 215 20% 95%;
     
     /* Enhanced Data Visualization Colors */
     --data-blue: 213 94% 68%;
@@ -50,24 +50,24 @@
 
     /* Enhanced Semantic Design Tokens */
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
-    --card-hover: 215 25% 98%;
-    --card-border: 215 20% 92%;
+    --card-foreground: 215 25% 12%;
+    --card-hover: 215 25% 97%;
+    --card-border: 215 20% 88%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    --primary: 215 28% 17%;
+    --primary: 215 35% 18%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 215 35% 12%;
-    --primary-light: 215 20% 25%;
+    --primary-hover: 215 40% 15%;
+    --primary-light: 215 25% 28%;
 
-    --secondary: 215 20% 92%;
-    --secondary-foreground: 215 28% 17%;
-    --secondary-hover: 215 25% 89%;
+    --secondary: 215 25% 93%;
+    --secondary-foreground: 215 35% 18%;
+    --secondary-hover: 215 30% 90%;
 
-    --muted: 215 20% 95%;
-    --muted-foreground: 215 16% 46%;
+    --muted: 215 25% 96%;
+    --muted-foreground: 215 18% 42%;
 
     --accent: 213 94% 68%;
     --accent-foreground: 0 0% 100%;
@@ -91,16 +91,16 @@
     --gradient-overlay: linear-gradient(135deg, hsl(var(--navy-primary) / 0.95) 0%, hsl(var(--navy-dark) / 0.85) 100%);
     --gradient-accent: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%);
     
-    /* Professional Shadow System */
-    --shadow-xs: 0 1px 2px 0 hsl(var(--slate-900) / 0.05);
-    --shadow-sm: 0 1px 3px 0 hsl(var(--slate-900) / 0.1), 0 1px 2px -1px hsl(var(--slate-900) / 0.1);
-    --shadow-md: 0 4px 6px -1px hsl(var(--slate-900) / 0.1), 0 2px 4px -2px hsl(var(--slate-900) / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(var(--slate-900) / 0.1), 0 4px 6px -4px hsl(var(--slate-900) / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(var(--slate-900) / 0.1), 0 8px 10px -6px hsl(var(--slate-900) / 0.1);
-    --shadow-2xl: 0 25px 50px -12px hsl(var(--slate-900) / 0.25);
-    --shadow-card: 0 4px 20px -2px hsl(var(--slate-900) / 0.08);
-    --shadow-card-hover: 0 8px 30px -4px hsl(var(--slate-900) / 0.12);
-    --shadow-hero: 0 25px 50px -12px hsl(var(--navy-primary) / 0.3);
+    /* Enhanced Professional Shadow System */
+    --shadow-xs: 0 1px 3px 0 hsl(var(--slate-900) / 0.06);
+    --shadow-sm: 0 2px 4px 0 hsl(var(--slate-900) / 0.08), 0 1px 2px -1px hsl(var(--slate-900) / 0.06);
+    --shadow-md: 0 4px 8px -1px hsl(var(--slate-900) / 0.12), 0 2px 4px -2px hsl(var(--slate-900) / 0.08);
+    --shadow-lg: 0 8px 16px -3px hsl(var(--slate-900) / 0.12), 0 4px 8px -4px hsl(var(--slate-900) / 0.08);
+    --shadow-xl: 0 16px 32px -5px hsl(var(--slate-900) / 0.14), 0 8px 16px -6px hsl(var(--slate-900) / 0.1);
+    --shadow-2xl: 0 24px 48px -8px hsl(var(--slate-900) / 0.18);
+    --shadow-card: 0 4px 16px -2px hsl(var(--slate-900) / 0.06), 0 2px 8px -2px hsl(var(--slate-900) / 0.04);
+    --shadow-card-hover: 0 8px 24px -4px hsl(var(--slate-900) / 0.12), 0 4px 12px -2px hsl(var(--slate-900) / 0.08);
+    --shadow-hero: 0 20px 40px -8px hsl(var(--navy-primary) / 0.25), 0 8px 16px -4px hsl(var(--navy-primary) / 0.15);
     
     /* Enhanced Typography Scale */
     --font-size-xs: 0.75rem;      /* 12px */
@@ -355,7 +355,7 @@ body {
   }
   
   .section-background-muted {
-    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--slate-25)) 30%, hsl(var(--muted)) 100%);
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--slate-25)) 40%, hsl(var(--muted)) 100%);
   }
   
   .section-background-gradient {
@@ -363,7 +363,7 @@ body {
   }
   
   .section-background-accent {
-    background: linear-gradient(135deg, hsl(var(--accent) / 0.03) 0%, hsl(var(--primary) / 0.02) 100%);
+    background: linear-gradient(135deg, hsl(var(--accent) / 0.05) 0%, hsl(var(--primary) / 0.03) 100%);
   }
 
   /* Enhanced Hero Components */
@@ -389,24 +389,27 @@ body {
   
   /* Enhanced Professional Card System */
   .portfolio-card {
-    @apply bg-card border border-border rounded-xl transition-all duration-300 ease-out;
+    @apply bg-card border border-border rounded-2xl transition-all duration-300 ease-out;
     box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
   }
   
   .portfolio-card:hover {
-    @apply border-border/60;
+    @apply border-accent/30;
     box-shadow: var(--shadow-card-hover);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
   }
   
   .portfolio-card-elevated {
-    @apply bg-card border border-border rounded-2xl transition-all duration-300 ease-out;
+    @apply bg-card border border-border rounded-3xl transition-all duration-300 ease-out;
     box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(12px);
   }
   
   .portfolio-card-elevated:hover {
+    @apply border-accent/40;
     box-shadow: var(--shadow-xl);
-    transform: translateY(-4px);
+    transform: translateY(-5px) scale(1.01);
   }
   
   .portfolio-card-interactive {

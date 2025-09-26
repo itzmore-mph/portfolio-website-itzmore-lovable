@@ -5,6 +5,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Award, Users, Target } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const AboutSection = () => {
   const highlights = [
@@ -110,33 +111,37 @@ const AboutSection = () => {
             </div>
           </AnimatedSection>
 
-          {/* Certifications/Skills Tags */}
+          {/* Enhanced Core Expertise Tags */}
           <AnimatedSection animation="slide-left" delay={600}>
             <div className="text-center lg:text-left">
-              <h4 className="font-semibold mb-6 text-card-title text-foreground">Core Expertise</h4>
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <h4 className="font-bold mb-8 text-2xl text-foreground bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Core Expertise</h4>
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 {[
-                  "Sports Data Analyst",
-                  "Data Science Expert", 
-                  "Football Analytics",
-                  "Dashboard Development",
-                  "Machine Learning",
-                  "Real-time Visualization",
-                  "International Projects",
-                  "Future AI Student"
-                ].map((skill, index) => {
-                  const variants = ["expertise", "professional", "analytics", "success", "expertise-alt", "modern"];
-                  const variant = variants[index % variants.length];
-                  return (
-                    <Badge 
-                      key={skill} 
-                      variant={variant as any}
-                      className="px-4 py-2.5 text-sm font-medium hover:scale-105 transition-all duration-200 shadow-lg"
-                    >
-                      {skill}
-                    </Badge>
-                  );
-                })}
+                  { skill: "Sports Data Analyst", color: "from-blue-500 to-blue-600" },
+                  { skill: "Data Science Expert", color: "from-purple-500 to-purple-600" }, 
+                  { skill: "Football Analytics", color: "from-green-500 to-green-600" },
+                  { skill: "Dashboard Development", color: "from-orange-500 to-orange-600" },
+                  { skill: "Machine Learning", color: "from-pink-500 to-pink-600" },
+                  { skill: "Real-time Visualization", color: "from-cyan-500 to-cyan-600" },
+                  { skill: "International Projects", color: "from-indigo-500 to-indigo-600" },
+                  { skill: "Future AI Student", color: "from-violet-500 to-violet-600" }
+                ].map(({ skill, color }, index) => (
+                  <div
+                    key={skill}
+                    className={cn(
+                      "group relative overflow-hidden rounded-2xl px-6 py-3 text-sm font-bold text-white shadow-xl backdrop-blur-sm border border-white/20",
+                      "transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:border-white/40 cursor-pointer",
+                      "bg-gradient-to-r", color
+                    )}
+                    style={{
+                      animationDelay: `${index * 100}ms`
+                    }}
+                  >
+                    <span className="relative z-10">{skill}</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                ))}
               </div>
             </div>
           </AnimatedSection>

@@ -290,13 +290,13 @@ body {
 
 .card-power {
   @apply bg-gradient-to-br from-card to-card-hover border border-border/50 rounded-2xl shadow-xl;
-  @apply hover:shadow-2xl hover:border-primary/30 hover:scale-[1.01] transition-all duration-400;
+  @apply hover:shadow-2xl hover:border-primary/30 hover:scale-[1.01] transition-all duration-300;
   background: var(--gradient-power);
 }
 
 .card-hero {
   @apply bg-gradient-to-br from-black/40 via-black/50 to-black/60 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl;
-  @apply hover:from-black/50 hover:via-black/60 hover:to-black/70 hover:border-white/30 hover:scale-[1.01] transition-all duration-400;
+  @apply hover:from-black/50 hover:via-black/60 hover:to-black/70 hover:border-white/30 hover:scale-[1.01] transition-all duration-300;
 }
 
 /* Ultra Modern Button Styles */

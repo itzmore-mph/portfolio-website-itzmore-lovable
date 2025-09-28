@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const ProjectsSection = () => {
   return (
-    <Section background="power" spacing="xl" containerSize="content">
+    <Section background="muted" spacing="xl" containerSize="content">
       <SectionHeader 
         title="Featured Projects"
         subtitle="A showcase of my football analytics projects, demonstrating expertise in data analysis, machine learning, and strategic insights across various aspects of the beautiful game."
@@ -21,7 +21,7 @@ const ProjectsSection = () => {
            <Card 
             key={project.title} 
             className={cn(
-              "card-power border-0 overflow-hidden group will-change-transform h-full flex flex-col",
+              "portfolio-card-elevated border-0 overflow-hidden group will-change-transform h-full flex flex-col",
               project.isPlaceholder 
                 ? "border-2 border-dashed border-muted-foreground/20 bg-muted/5" 
                 : ""
@@ -123,17 +123,17 @@ const ProjectsSection = () => {
 
       {/* Enhanced Call to Action */}
       <div className="mt-20 lg:mt-24 animate-fade-in">
-        <div className="bg-card border border-border rounded-2xl p-8 lg:p-12 shadow-xl">
+        <div className="hero-gradient rounded-3xl p-8 lg:p-12 text-white shadow-xl">
           <div className="text-center">
-            <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground">Interested in Collaboration?</h3>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+            <h3 className="text-3xl lg:text-4xl font-bold mb-6">Interested in Collaboration?</h3>
+            <p className="text-white/95 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
               I'm always excited to work on challenging football analytics projects. 
               Let's discuss how data can drive your team's success.
             </p>
             <Button 
-              variant="default"
+              variant="secondary"
               size="lg"
-              className="w-full sm:w-auto transition-all duration-300 hover:scale-105 shadow-glow"
+              className="w-full sm:w-auto transition-all duration-300 hover:scale-105"
               onClick={() => {
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

@@ -41,7 +41,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <Section id="about" background="muted" spacing="xl">
+    <Section id="about" background="power" spacing="xl">
       <SectionHeader 
         title="About Me"
         subtitle="Get to know more about my background, expertise, and passion for transforming complex data into actionable insights."
@@ -69,12 +69,12 @@ const AboutSection = () => {
           <AnimatedSection animation="slide-left" delay={200}>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {highlights.map((highlight, index) => (
-                <Card key={highlight.title} className="portfolio-card-interactive">
+                <Card key={highlight.title} className="card-power">
                   <CardContent className="p-4 text-center">
                     <div className={`inline-flex p-3 rounded-lg bg-${highlight.colorClass}/10 border border-${highlight.colorClass}/20 mb-3`}>
                       <highlight.icon className={`icon-lg text-${highlight.colorClass}`} />
                     </div>
-                    <h3 className="font-semibold mb-1 text-caption">{highlight.title}</h3>
+                    <h3 className="font-semibold mb-1 text-caption text-foreground">{highlight.title}</h3>
                     <p className="text-body-sm font-medium text-primary">{highlight.primary}</p>
                     <p className="text-caption text-muted-foreground">{highlight.secondary}</p>
                     {highlight.third && (
@@ -102,7 +102,7 @@ const AboutSection = () => {
                 </p>
               </div>
               
-              <div className="bg-accent/5 border-l-4 border-accent p-6 rounded-r-lg mt-6">
+              <div className="bg-card border border-border/30 rounded-2xl p-6 shadow-lg">
                 <h4 className="font-semibold text-accent mb-3 text-body-sm">Future Academic Goals</h4>
                 <p className="text-body-sm text-muted-foreground text-justify lg:text-left">
                   In <strong>October 2025</strong>, I will begin the <strong>MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, to deepen my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong>Football Data Scientist</strong> in professional clubs, federations, or sports data companies.

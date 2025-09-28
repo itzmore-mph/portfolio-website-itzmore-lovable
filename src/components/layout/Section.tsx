@@ -5,7 +5,7 @@ interface SectionProps {
   id?: string;
   children: ReactNode;
   className?: string;
-  background?: "default" | "muted" | "gradient" | "card";
+  background?: "default" | "muted" | "gradient" | "card" | "power";
   spacing?: "sm" | "md" | "lg" | "xl";
   containerSize?: "content" | "narrow" | "text";
 }
@@ -14,7 +14,8 @@ const backgroundStyles = {
   default: "section-background-default",
   muted: "section-background-muted", 
   gradient: "section-background-gradient",
-  card: "bg-card"
+  card: "bg-card",
+  power: "section-background-power"
 };
 
 const spacingStyles = {

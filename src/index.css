@@ -2,62 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Professional Analytics Design System */
+/* Ultra Modern Design System - Power Theme */
 :root {
-  /* Professional Analytics Color Palette */
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --card-hover: 0 0% 98%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 210 100% 50%;
+  /* Power Theme - Dark Professional Palette */
+  --background: 220 15% 3%;
+  --foreground: 0 0% 98%;
+  --card: 220 15% 6%;
+  --card-foreground: 0 0% 98%;
+  --card-hover: 220 15% 8%;
+  --popover: 220 15% 6%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 217 91% 60%;
   --primary-foreground: 0 0% 98%;
-  --secondary: 210 40% 98%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 210 40% 98%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 210 40% 98%;
-  --accent-foreground: 240 5.9% 10%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 210 100% 50%;
+  --secondary: 220 15% 12%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 220 15% 8%;
+  --muted-foreground: 215 15% 70%;
+  --accent: 142 76% 50%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 15% 15%;
+  --input: 220 15% 12%;
+  --ring: 217 91% 60%;
   
-  /* Professional Analytics Colors - Fixed HSL Values */
-  --analytics-blue: 210 100% 50%;
-  --analytics-navy: 217 33% 17%;
-  --analytics-green: 142 76% 36%;
-  --analytics-orange: 25 95% 53%;
-  --analytics-purple: 262 83% 58%;
-  --analytics-gray: 220 14% 96%;
-  
-  /* Data visualization colors */
-  --data-blue: 210 100% 50%;
-  --pitch-green: 142 76% 36%;
-  --data-orange: 25 95% 53%;
-  --chart-1: 210 100% 50%;
-  --chart-2: 142 76% 36%;
-  --chart-3: 25 95% 53%;
-  --chart-4: 262 83% 58%;
-  --chart-5: 43 74% 66%;
+  /* Power Theme Chart Colors */
+  --chart-1: 217 91% 60%;
+  --chart-2: 142 76% 50%;
+  --chart-3: 47 96% 53%;
+  --chart-4: 358 75% 59%;
+  --chart-5: 271 81% 56%;
 
-  /* Professional Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(142 76% 36%) 100%);
-  --gradient-hero: linear-gradient(135deg, hsl(217 33% 17%) 0%, hsl(217 33% 14%) 50%, hsl(217 33% 10%) 100%);
-  --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
-  --gradient-analytics: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(262 83% 58%) 100%);
-  --gradient-section: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+  /* Power Theme Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 76% 50%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(220 15% 6%) 0%, hsl(220 15% 12%) 100%);
+  --gradient-hero: linear-gradient(135deg, hsl(220 15% 3%) 0%, hsl(220 15% 6%) 40%, hsl(220 15% 8%) 100%);
+  --gradient-card: linear-gradient(145deg, hsl(220 15% 6%) 0%, hsl(220 15% 8%) 100%);
+  --gradient-power: linear-gradient(135deg, hsl(220 15% 4%) 0%, hsl(220 15% 7%) 100%);
+  --gradient-glass: linear-gradient(135deg, hsl(0 0% 98% / 0.08) 0%, hsl(0 0% 98% / 0.03) 100%);
+  --gradient-border: linear-gradient(135deg, hsl(217 91% 60% / 0.4) 0%, hsl(142 76% 50% / 0.4) 100%);
 
-  /* Professional Shadows */
-  --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
-  --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
-  --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
-  --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
-  --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
-  --shadow-card-hover: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+  /* Power Theme Shadows */
+  --shadow-sm: 0 2px 12px hsl(0 0% 0% / 0.3);
+  --shadow-md: 0 4px 24px hsl(0 0% 0% / 0.4);
+  --shadow-lg: 0 8px 40px hsl(0 0% 0% / 0.5);
+  --shadow-xl: 0 16px 56px hsl(0 0% 0% / 0.6);
+  --shadow-glow: 0 0 48px hsl(217 91% 60% / 0.5);
+  --shadow-accent: 0 8px 48px hsl(142 76% 50% / 0.4);
 
   /* Smooth Interactive States */
   --hover-lift: translateY(-3px);
@@ -78,30 +69,39 @@
 }
 
 .dark {
-  --background: 217 33% 17%;
+  --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
-  --card: 217 33% 20%;
+
+  --card: 222.2 84% 4.9%;
   --card-foreground: 210 40% 98%;
-  --card-hover: 217 33% 23%;
-  --popover: 217 33% 20%;
+  --card-hover: 217.2 32.6% 15%;
+  --card-border: 217.2 32.6% 12%;
+
+  --popover: 222.2 84% 4.9%;
   --popover-foreground: 210 40% 98%;
-  --primary: 210 100% 50%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 217 33% 23%;
+
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+
+  --secondary: 217.2 32.6% 17.5%;
   --secondary-foreground: 210 40% 98%;
-  --muted: 217 33% 23%;
+
+  --muted: 217.2 32.6% 15%;
   --muted-foreground: 215 20.2% 65.1%;
-  --accent: 217 33% 23%;
+
+  --accent: 217.2 32.6% 17.5%;
   --accent-foreground: 210 40% 98%;
+
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
-  --border: 217 33% 25%;
-  --input: 217 33% 25%;
-  --ring: 210 100% 50%;
+
+  --border: 217.2 32.6% 12%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
   
   /* Dark mode shadows */
-  --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.4);
-  --shadow-card-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.5);
+  --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+  --shadow-card-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
 
   --sidebar-background: 240 5.9% 10%;
   --sidebar-foreground: 240 4.8% 95.9%;
@@ -233,21 +233,25 @@ body {
 }
 
 @layer components {
-  /* Enhanced Professional Section Backgrounds */
+  /* Power Theme Section Backgrounds */
   .section-background-default {
-    background: hsl(var(--background));
+    background: var(--gradient-hero);
   }
   
   .section-background-muted {
-    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--slate-25)) 40%, hsl(var(--muted)) 100%);
+    background: var(--gradient-power);
   }
   
   .section-background-gradient {
-    background: var(--gradient-section);
+    background: var(--gradient-secondary);
+  }
+  
+  .section-background-power {
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
   }
   
   .section-background-accent {
-    background: linear-gradient(135deg, hsl(var(--accent) / 0.05) 0%, hsl(var(--primary) / 0.03) 100%);
+    background: linear-gradient(135deg, hsl(var(--accent) / 0.03) 0%, hsl(var(--primary) / 0.02) 100%);
   }
 
   /* Enhanced Hero Components */
@@ -271,74 +275,47 @@ body {
     background: var(--gradient-accent);
   }
   
-/* Modern Professional Card Styles - Enhanced */
-.portfolio-card {
-  @apply bg-card border border-border rounded-xl transition-all duration-300 p-6;
-  box-shadow: var(--shadow-card);
+/* Power Theme Card Styles */
+.card-modern {
+  @apply bg-card border border-border rounded-2xl shadow-lg backdrop-blur-sm;
+  @apply hover:shadow-xl hover:border-primary/40 hover:bg-card-hover hover:scale-[1.01] transition-all duration-300;
+  background: var(--gradient-card);
 }
 
-.portfolio-card:hover {
-  @apply border-primary/20;
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-2px);
+.card-glass {
+  @apply bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg;
+  @apply hover:bg-white/[0.06] hover:border-white/20 hover:scale-[1.01] transition-all duration-300;
+  box-shadow: var(--shadow-lg), inset 0 1px 0 hsl(0 0% 98% / 0.05);
 }
 
-.portfolio-card-elevated {
-  @apply bg-card border border-border rounded-xl transition-all duration-300 p-8;
-  box-shadow: var(--shadow-lg);
+.card-power {
+  @apply bg-gradient-to-br from-card to-card-hover border border-border/50 rounded-2xl shadow-xl;
+  @apply hover:shadow-2xl hover:border-primary/30 hover:scale-[1.01] transition-all duration-300;
+  background: var(--gradient-power);
 }
 
-.portfolio-card-elevated:hover {
-  @apply border-primary/20;
-  box-shadow: var(--shadow-xl);
-  transform: translateY(-4px);
+.card-hero {
+  @apply bg-gradient-to-br from-black/40 via-black/50 to-black/60 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl;
+  @apply hover:from-black/50 hover:via-black/60 hover:to-black/70 hover:border-white/30 hover:scale-[1.01] transition-all duration-300;
 }
 
-.portfolio-card-interactive {
-  @apply bg-card border border-border rounded-lg transition-all duration-300 cursor-pointer p-4;
-  box-shadow: var(--shadow-card);
+/* Ultra Modern Button Styles */
+.btn-modern {
+  @apply bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground rounded-2xl px-10 py-4 shadow-xl;
+  @apply hover:shadow-2xl hover:scale-[1.05] hover:from-primary/90 hover:to-accent/90 transition-all duration-400 font-bold;
+  box-shadow: var(--shadow-glow);
 }
 
-.portfolio-card-interactive:hover {
-  @apply border-primary/20;
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-1px);
+.btn-glass {
+  @apply bg-white/[0.12] backdrop-blur-xl border border-white/25 text-white rounded-2xl px-10 py-4;
+  @apply hover:bg-white/[0.18] hover:border-white/35 hover:scale-[1.05] transition-all duration-400 font-semibold;
+  box-shadow: var(--shadow-lg), inset 0 1px 0 hsl(210 40% 98% / 0.1);
 }
 
-/* Professional Button Styles */
-.btn-primary {
-  @apply bg-primary text-primary-foreground rounded-lg px-6 py-3 font-semibold;
-  @apply hover:bg-primary/90 transition-all duration-300;
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-primary:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
-}
-
-/* Enhanced Project Card Styles */
-.project-card {
-  @apply bg-card border border-border rounded-xl overflow-hidden transition-all duration-300;
-  box-shadow: var(--shadow-card);
-}
-
-.project-card:hover {
-  @apply border-primary/20;
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
-}
-
-.project-card-content {
-  @apply p-6 space-y-4;
-}
-
-.project-card-header {
-  @apply p-6 pb-4;
-}
-
-.project-card-footer {
-  @apply p-6 pt-4 border-t border-border/50;
+.btn-outline-modern {
+  @apply border-2 border-primary/60 text-primary bg-transparent rounded-2xl px-10 py-4 relative overflow-hidden;
+  @apply hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-[1.05] transition-all duration-400 font-semibold;
+  @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/0 before:to-primary/10 before:translate-x-[-100%] hover:before:translate-x-0 before:transition-transform before:duration-500;
 }
   
   /* Enhanced Professional Stats & Data Elements */

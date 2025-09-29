@@ -17,9 +17,9 @@ export const useCounterAnimation = ({
   const animationFrameRef = useRef<number>();
   
   const { elementRef, isIntersecting } = useIntersectionObserver({
-    threshold: 0.2,
-    triggerOnce: false,
-    rootMargin: "50px"
+    threshold: 0.1, // Lower threshold for mobile
+    triggerOnce: true, // Only trigger once for better performance
+    rootMargin: "20px" // Smaller margin for mobile
   });
 
   const startAnimation = useCallback(() => {
@@ -36,9 +36,9 @@ export const useCounterAnimation = ({
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       
-      // Smooth easing function (ease-out-cubic)
-      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-      const currentCount = Math.round(startValue + (end - startValue) * easeOutCubic);
+      // Enhanced easing for mobile - more dramatic effect
+      const easeOutExpo = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const currentCount = Math.round(startValue + (end - startValue) * easeOutExpo);
       
       setCount(currentCount);
 
@@ -47,13 +47,14 @@ export const useCounterAnimation = ({
       }
     };
 
+    // Immediate start for better mobile experience
     animationFrameRef.current = requestAnimationFrame(animate);
   }, [end, duration, hasAnimated]);
 
   useEffect(() => {
     if (isIntersecting && startOnView && !hasAnimated) {
-      // Small delay to ensure smooth start
-      const timeout = setTimeout(startAnimation, 100);
+      // Reduced delay for faster mobile response
+      const timeout = setTimeout(startAnimation, 50);
       return () => clearTimeout(timeout);
     } else if (!startOnView && !hasAnimated) {
       startAnimation();

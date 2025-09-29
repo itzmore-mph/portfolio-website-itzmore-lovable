@@ -150,13 +150,13 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gradient-to-r from-muted/40 to-muted/60 hover:from-muted/60 hover:to-muted/80 rounded-xl transition-all duration-300 group focus-ring shadow-sm hover:shadow-md"
                 >
-                  <div className={`p-3 rounded-xl ${social.color} flex-shrink-0 shadow-md`}>
+                  <div className={`${social.name === 'Malt' ? 'p-4' : 'p-3'} rounded-xl ${social.name === 'Malt' ? 'bg-gradient-to-br from-purple-500 to-purple-700' : social.color} flex-shrink-0 shadow-md`}>
                     <OptimizedImage 
                       src={social.logo}
                       alt={`${social.name} platform logo icon`}
-                      className="w-5 h-5 invert"
-                      width={20}
-                      height={20}
+                      className={`${social.name === 'Malt' ? 'w-6 h-6' : 'w-5 h-5'} invert`}
+                      width={social.name === 'Malt' ? 24 : 20}
+                      height={social.name === 'Malt' ? 24 : 20}
                       lazy={true}
                     />
                   </div>

@@ -112,18 +112,18 @@ const AboutSection = () => {
             <div className="grid md:grid-cols-2 gap-6">
               {highlights.map((highlight, index) => (
                 <Card key={highlight.title} className="portfolio-card-interactive group">
-                  <CardContent className="p-6">
+                  <CardContent className="p-8">
                     <div className="flex items-start gap-4">
-                      <div className={`p-3 rounded-lg bg-${highlight.color}/10 group-hover:bg-${highlight.color}/15 transition-colors`}>
-                        <highlight.icon className={`w-6 h-6 text-${highlight.color}`} />
+                      <div className="p-4 rounded-xl bg-analytics-blue/10 group-hover:bg-analytics-blue/15 transition-colors border border-analytics-blue/20">
+                        <highlight.icon className="w-7 h-7 text-analytics-blue" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold mb-3 text-foreground">{highlight.title}</h3>
-                        <ul className="space-y-1">
+                        <h3 className="font-bold mb-4 text-foreground text-lg">{highlight.title}</h3>
+                        <ul className="space-y-2">
                           {highlight.items.map((item, idx) => (
-                            <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                              <div className="w-1 h-1 bg-analytics-blue rounded-full mr-2 flex-shrink-0" />
-                              {item}
+                            <li key={idx} className="text-muted-foreground flex items-center">
+                              <div className="w-2 h-2 bg-analytics-blue rounded-full mr-3 flex-shrink-0" />
+                              <span className="font-medium">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -135,23 +135,23 @@ const AboutSection = () => {
             </div>
 
             {/* Professional Background */}
-            <Card className="portfolio-card">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-foreground">Professional Background</h3>
-                <div className="space-y-6">
-                  <div className="prose prose-gray max-w-none">
-                    <p className="text-muted-foreground leading-relaxed">
+            <Card className="portfolio-card-elevated">
+              <CardContent className="p-10">
+                <h3 className="text-3xl font-bold mb-8 text-foreground">Professional Background</h3>
+                <div className="space-y-8">
+                  <div className="prose prose-gray max-w-none space-y-6">
+                    <p className="text-muted-foreground leading-relaxed text-lg">
                       I am a <strong className="text-foreground">Data Analyst with strong Data Science expertise</strong>, 
                       experienced in transforming complex datasets into actionable insights. My background spans 
                       <strong className="text-foreground"> sports, media, and technology</strong>, giving me a unique 
                       perspective on how data can drive performance and decision-making.
                     </p>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-lg">
                       At <strong className="text-foreground">Publicis Media Austria</strong>, I lead international 
                       dashboard and automation projects, building real-time data visualization tools and scalable workflows. 
                       These skills translate directly into the demands of football analytics, where speed, accuracy, and clarity are critical.
                     </p>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-lg">
                       Alongside this, I actively develop <strong className="text-foreground">football analytics projects</strong> 
                       — including expected goals (xG) models, opponent analysis dashboards, and player comparison case studies 
                       using StatsBomb and other open-source data.
@@ -159,9 +159,9 @@ const AboutSection = () => {
                   </div>
                   
                   {/* Future Goals Highlight */}
-                  <div className="bg-analytics-blue/5 border-l-4 border-analytics-blue p-6 rounded-r-lg">
-                    <h4 className="font-semibold text-analytics-blue mb-3">Future Academic Goals</h4>
-                    <p className="text-muted-foreground leading-relaxed">
+                  <div className="bg-analytics-blue/5 border border-analytics-blue/20 p-8 rounded-xl">
+                    <h4 className="font-bold text-analytics-blue mb-4 text-xl">Future Academic Goals</h4>
+                    <p className="text-muted-foreground leading-relaxed text-lg">
                       In <strong className="text-foreground">October 2025</strong>, I will begin the 
                       <strong className="text-foreground"> MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, 
                       to deepen my expertise in AI, machine learning, and applied football analytics. My goal is to combine 

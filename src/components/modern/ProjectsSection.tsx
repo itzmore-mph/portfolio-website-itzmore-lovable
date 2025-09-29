@@ -77,57 +77,59 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className={`portfolio-card-elevated overflow-hidden group h-full flex flex-col ${
+              className={`project-card group h-full flex flex-col ${
                 project.isPlaceholder ? 'border-dashed border-2 border-muted-foreground/20 bg-muted/5' : ''
               }`}
             >
               {/* Project Image */}
               {project.image && (
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <OptimizedImage 
                     src={project.image}
                     alt={`${project.title} - Project showcase`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     width={600}
-                    height={240}
+                    height={280}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div className={`absolute top-4 right-4 p-2 rounded-lg bg-white/90 backdrop-blur-sm`}>
-                    <project.icon className={`w-5 h-5 text-${project.color}`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute top-6 right-6 p-3 rounded-lg bg-white shadow-lg">
+                    <project.icon className="w-6 h-6 text-analytics-blue" />
                   </div>
                 </div>
               )}
 
               {/* Project Header */}
-              <CardHeader className="pb-4">
+              <CardHeader className="project-card-header">
                 <div className="flex items-start justify-between gap-4">
                   {!project.image && (
-                    <div className={`p-3 rounded-xl bg-${project.color}/10 border border-${project.color}/20 group-hover:scale-110 transition-transform`}>
-                      <project.icon className={`w-7 h-7 text-${project.color}`} />
+                    <div className="p-4 rounded-xl bg-analytics-blue/10 border border-analytics-blue/20 group-hover:scale-110 transition-transform">
+                      <project.icon className="w-8 h-8 text-analytics-blue" />
                     </div>
                   )}
                   <div className="flex-1">
-                    <CardTitle className="text-lg leading-tight group-hover:text-analytics-blue transition-colors">
+                    <CardTitle className="text-xl leading-tight text-foreground group-hover:text-analytics-blue transition-colors">
                       {project.title}
                     </CardTitle>
                   </div>
                 </div>
               </CardHeader>
 
-              <CardContent className="flex flex-col flex-1 pt-0">
+              <CardContent className="project-card-content flex flex-col flex-1">
                 {/* Description */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+                <div className="mb-6">
+                  <p className="text-muted-foreground leading-relaxed text-base">
+                    {project.description}
+                  </p>
+                </div>
 
                 {/* Key Metrics */}
                 <div className="mb-6">
-                  <h4 className="font-semibold mb-3 text-sm text-foreground">Key Features</h4>
-                  <div className="grid grid-cols-1 gap-2">
+                  <h4 className="font-semibold mb-4 text-foreground">Key Features</h4>
+                  <div className="grid grid-cols-1 gap-3">
                     {project.metrics.map((metric, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-analytics-blue rounded-full mr-3 flex-shrink-0" />
-                        {metric}
+                      <div key={idx} className="flex items-center p-3 rounded-lg bg-analytics-blue/5 border border-analytics-blue/10">
+                        <div className="w-2 h-2 bg-analytics-blue rounded-full mr-3 flex-shrink-0" />
+                        <span className="text-sm font-medium text-foreground">{metric}</span>
                       </div>
                     ))}
                   </div>
@@ -135,13 +137,13 @@ const ProjectsSection = () => {
 
                 {/* Technologies */}
                 <div className="mb-8 flex-grow">
-                  <h4 className="font-semibold mb-3 text-sm text-foreground">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <h4 className="font-semibold mb-4 text-foreground">Technologies</h4>
+                  <div className="flex flex-wrap gap-3">
                     {project.tags.map((tag) => (
                       <Badge 
                         key={tag}
                         variant="secondary"
-                        className="text-xs bg-analytics-blue/10 text-analytics-blue border-analytics-blue/20"
+                        className="px-3 py-1 bg-analytics-blue/10 text-analytics-blue border-analytics-blue/20 hover:bg-analytics-blue/15 transition-colors"
                       >
                         {tag}
                       </Badge>
@@ -149,13 +151,16 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-3 mt-auto">
+              </CardContent>
+              
+              {/* Action Buttons */}
+              <div className="project-card-footer">
+                <div className="flex gap-4">
                   {project.isPlaceholder ? (
                     <Button 
                       variant="outline" 
-                      size="sm"
-                      className="flex-1"
+                      size="default"
+                      className="flex-1 py-3"
                       disabled
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
@@ -165,8 +170,8 @@ const ProjectsSection = () => {
                     <>
                       <Button 
                         variant="outline" 
-                        size="sm"
-                        className="flex-1 hover:bg-analytics-blue/5 hover:border-analytics-blue/30"
+                        size="default"
+                        className="flex-1 py-3 hover:bg-analytics-blue/5 hover:border-analytics-blue/30 hover:text-analytics-blue transition-colors"
                         onClick={() => window.open(project.liveUrl, '_blank')}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
@@ -174,8 +179,8 @@ const ProjectsSection = () => {
                       </Button>
                       <Button 
                         variant="outline" 
-                        size="sm"
-                        className="flex-1 hover:bg-analytics-blue/5 hover:border-analytics-blue/30"
+                        size="default"
+                        className="flex-1 py-3 hover:bg-analytics-blue/5 hover:border-analytics-blue/30 hover:text-analytics-blue transition-colors"
                         onClick={() => window.open(project.githubUrl, '_blank')}
                       >
                         <Github className="w-4 h-4 mr-2" />
@@ -184,7 +189,7 @@ const ProjectsSection = () => {
                     </>
                   )}
                 </div>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>

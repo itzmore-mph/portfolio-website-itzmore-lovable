@@ -86,31 +86,31 @@ const SkillsSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
             <Card key={category.title} className="portfolio-card-elevated group">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className={`p-3 rounded-lg bg-${category.color}/10 group-hover:bg-${category.color}/15 transition-colors`}>
-                    <category.icon className={`w-6 h-6 text-${category.color}`} />
+              <CardHeader className="pb-6">
+                <CardTitle className="flex items-center gap-4">
+                  <div className="p-4 rounded-xl bg-analytics-blue/10 group-hover:bg-analytics-blue/15 transition-colors border border-analytics-blue/20">
+                    <category.icon className="w-7 h-7 text-analytics-blue" />
                   </div>
-                  <span className="text-xl">{category.title}</span>
+                  <span className="text-2xl text-foreground">{category.title}</span>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6 px-8 pb-8">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex items-center justify-between">
+                  <div key={skill.name} className="p-4 rounded-lg bg-card border border-border/50 hover:border-analytics-blue/20 transition-colors">
+                    <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <CheckCircle className={`w-4 h-4 text-${category.color} flex-shrink-0`} />
+                        <CheckCircle className="w-5 h-5 text-analytics-blue flex-shrink-0" />
                         {skill.link ? (
                           <a 
                             href={skill.link} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="font-medium hover:text-analytics-blue transition-colors"
+                            className="font-semibold text-foreground hover:text-analytics-blue transition-colors"
                           >
                             {skill.name}
                           </a>
                         ) : (
-                          <span className="font-medium">{skill.name}</span>
+                          <span className="font-semibold text-foreground">{skill.name}</span>
                         )}
                       </div>
                       <Badge variant="secondary" className={getLevelColor(skill.level)}>
@@ -118,14 +118,16 @@ const SkillsSection = () => {
                       </Badge>
                     </div>
                     {/* Proficiency Bar */}
-                    <div className="ml-7">
-                      <div className="w-full bg-muted rounded-full h-2">
+                    <div className="space-y-2">
+                      <div className="w-full bg-muted rounded-full h-3">
                         <div 
-                          className={`h-2 rounded-full bg-${category.color} transition-all duration-1000 ease-out`}
+                          className="h-3 rounded-full bg-analytics-blue transition-all duration-1000 ease-out"
                           style={{ width: `${skill.proficiency}%` }}
                         />
                       </div>
-                      <span className="text-xs text-muted-foreground mt-1 block">{skill.proficiency}% proficiency</span>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">{skill.proficiency}% proficiency</span>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -147,16 +149,16 @@ const SkillsSection = () => {
             {keyStrengths.map((strength, index) => (
               <Card 
                 key={strength.title} 
-                className="portfolio-card text-center group hover:shadow-xl transition-all duration-300"
+                className="portfolio-card-elevated text-center group hover:shadow-xl transition-all duration-300"
               >
-                <CardContent className="p-8">
-                  <div className="inline-flex p-4 rounded-full bg-analytics-blue/10 mb-6 group-hover:bg-analytics-blue/15 transition-colors">
-                    <strength.icon className="w-8 h-8 text-analytics-blue" />
+                <CardContent className="p-10">
+                  <div className="inline-flex p-6 rounded-full bg-analytics-blue/10 mb-8 group-hover:bg-analytics-blue/15 transition-colors border border-analytics-blue/20">
+                    <strength.icon className="w-10 h-10 text-analytics-blue" />
                   </div>
-                  <h4 className="text-xl font-semibold mb-4 text-foreground group-hover:text-analytics-blue transition-colors">
+                  <h4 className="text-2xl font-bold mb-6 text-foreground group-hover:text-analytics-blue transition-colors">
                     {strength.title}
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
                     {strength.description}
                   </p>
                 </CardContent>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 interface HeroContentProps {
   onProjectsClick: () => void;
@@ -16,45 +16,62 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
   };
 
   return (
-    <div className="text-center lg:text-left space-y-10 animate-fade-in">
-      {/* Enhanced Badge */}
-      <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-xl border border-white/25 rounded-full px-6 py-3 text-sm text-white font-semibold shadow-xl">
-        <Sparkles className="w-4 h-4 text-blue-400 animate-pulse" />
-        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-        Football Analytics Expert
+    <div className="text-center lg:text-left space-y-8 lg:space-y-10 animate-fade-in">
+      {/* Pill Badge */}
+      <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/30 rounded-full px-5 py-2 text-sm text-primary font-semibold shadow-lg">
+        <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+        Football Analytics
       </div>
       
-      {/* Enhanced Main Heading */}
-      <div className="space-y-6">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[0.9] tracking-tight">
+      {/* Main Heading */}
+      <div className="space-y-4 lg:space-y-6">
+        <h1 className="font-black text-white leading-[0.95] tracking-tight" 
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
           Sports Data
           <br />
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-pulse bg-[length:200%_100%]">
+          <span className="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
             Scientist
           </span>
         </h1>
         
-        <p className="text-lg sm:text-xl lg:text-2xl text-white/95 max-w-2xl leading-relaxed font-medium">
-          Reproducible Python/SQL (DuckDB) pipelines and Streamlit/Power BI tools for scouting, 
-          opponent & set-piece insights.
+        {/* Desktop Tagline */}
+        <h2 className="hidden md:block text-white/90 font-medium leading-relaxed" 
+            style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}>
+          Turning football data into insight — one byte at a time.
+        </h2>
+        
+        {/* Subline - Desktop */}
+        <p className="hidden md:block text-white/80 font-normal leading-relaxed max-w-2xl" 
+           style={{ fontSize: 'clamp(1rem, 1.2vw, 1.125rem)' }}>
+          Transforming complex football data into clear, actionable insights for scouting, opponent analysis, and set-pieces.
         </p>
         
-        <p className="text-base sm:text-lg text-white/85 font-medium bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 inline-block">
-          Currently: Senior Digital Data & Dashboard Manager, Publicis Media Austria.
+        {/* Subline - Mobile (shorter) */}
+        <p className="md:hidden text-white/80 font-normal leading-relaxed" 
+           style={{ fontSize: 'clamp(0.875rem, 3vw, 1rem)' }}>
+          Actionable scouting, opponent & set-piece insights from football data.
         </p>
+        
+        {/* Role Meta Box */}
+        <div className="inline-flex items-start text-left bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 shadow-md">
+          <p className="text-white/85 font-medium leading-snug" 
+             style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}>
+            <span className="text-primary font-semibold">Currently:</span> Senior Digital Data & Dashboard Manager, Publicis Media Austria.
+          </p>
+        </div>
       </div>
       
-      {/* Enhanced Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start pt-6">
+      {/* Action Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 lg:pt-4">
         <Button 
           onClick={onProjectsClick}
           size="lg" 
-          className="bg-gradient-to-r from-white via-white/95 to-white text-black hover:from-white/90 hover:to-white/85 hover:scale-[1.05] transition-all duration-500 shadow-2xl px-10 py-4 rounded-2xl font-bold group relative overflow-hidden"
+          className="bg-primary hover:bg-primary-hover text-white hover:scale-[1.03] transition-all duration-200 shadow-lg hover:shadow-glow px-8 py-3 rounded-xl font-semibold group h-auto"
+          style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
-          <span className="relative flex items-center">
+          <span className="flex items-center">
             View My Projects
-            <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
           </span>
         </Button>
         
@@ -62,11 +79,11 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
           onClick={handleDownloadCV}
           variant="outline" 
           size="lg"
-          className="border-2 border-white/40 text-white hover:bg-white/15 hover:border-white/60 hover:scale-[1.05] transition-all duration-500 px-10 py-4 rounded-2xl font-bold backdrop-blur-xl shadow-xl group relative overflow-hidden"
+          className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-primary/50 hover:scale-[1.03] transition-all duration-200 px-8 py-3 rounded-xl font-semibold backdrop-blur-sm shadow-md group h-auto"
+          style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
-          <span className="relative flex items-center">
-            <Download className="mr-3 h-5 w-5 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+          <span className="flex items-center">
+            <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
             Download CV
           </span>
         </Button>

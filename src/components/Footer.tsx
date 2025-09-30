@@ -4,44 +4,44 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white py-16">
+    <footer className="bg-card border-t border-border text-foreground py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:grid lg:grid-cols-3 gap-12 lg:items-center">
           {/* Brand */}
           <div className="flex items-center justify-center lg:justify-start gap-3">
             <div className="p-3 bg-primary rounded-xl shadow-lg">
-              <BarChart3 className="w-7 h-7 text-primary-foreground" />
+              <BarChart3 className="w-7 h-7 text-white" />
             </div>
-            <span className="font-bold text-xl">Football Analytics</span>
+            <span className="font-bold text-xl text-foreground">Football Analytics</span>
           </div>
 
           {/* Navigation */}
           <div className="flex justify-center">
             <nav className="flex flex-wrap justify-center gap-4 lg:gap-6 text-sm lg:text-base">
-              <a href="/index#home" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Home</a>
-              <a href="index#skills" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Skills</a>
-              <a href="/index#projects" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Projects</a>
-              <a href="/index#about" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">About</a>
-              <a href="/index#contact" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Contact</a>
-              <a href="/impressum" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Legal Notice</a>
-              <a href="/privacy" className="text-white/80 hover:text-white transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-white/5">Privacy Policy</a>
+              <a href="/index#home" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Home</a>
+              <a href="index#skills" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Skills</a>
+              <a href="/index#projects" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Projects</a>
+              <a href="/index#about" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">About</a>
+              <a href="/index#contact" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Contact</a>
+              <a href="/impressum" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Legal Notice</a>
+              <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Privacy Policy</a>
             </nav>
           </div>
 
           {/* Copyright */}
-          <div className="text-center lg:text-right text-white/60">
+          <div className="text-center lg:text-right text-muted-foreground">
             <p className="flex items-center justify-center lg:justify-end gap-1 text-sm">
-              Made with <Heart className="w-4 h-4 text-red-400 fill-current" /> for football analytics
+              Made with <Heart className="w-4 h-4 text-primary fill-current" /> for football analytics
             </p>
             <p className="text-sm mt-1">© {currentYear} Football Analytics Portfolio</p>
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-12 pt-10 text-center text-white/70 text-sm">
+        <div className="border-t border-border mt-12 pt-10 text-center text-muted-foreground text-sm">
           <p className="mb-3">Transforming football data into winning insights • Available for freelance projects and consulting</p>
           <button 
             onClick={() => (window as any).manageCookiePreferences?.()}
-            className="text-xs hover:text-primary/80 underline bg-transparent border-none cursor-pointer px-3 py-1 rounded-lg hover:bg-white/5 transition-colors"
+            className="text-xs hover:text-primary underline bg-transparent border-none cursor-pointer px-3 py-1 rounded-lg hover:bg-muted transition-colors"
           >
             Manage Cookie Preferences
           </button>

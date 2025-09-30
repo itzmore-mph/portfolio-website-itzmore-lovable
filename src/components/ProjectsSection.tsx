@@ -68,12 +68,12 @@ const ProjectsSection = () => {
 
               {/* Technologies */}
               <div className="mb-8 flex-grow">
-                <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge 
                       key={tag}
-                      variant="secondary"
-                      className="skill-badge text-xs px-2.5 py-1"
+                      variant="emerald"
+                      className="text-xs px-2.5 py-1"
                     >
                       {tag}
                     </Badge>
@@ -133,7 +133,7 @@ const ProjectsSection = () => {
             <Button 
               variant="default"
               size="lg"
-              className="w-full sm:w-auto transition-all duration-300 hover:scale-105 shadow-glow"
+              className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-glow"
               onClick={() => {
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

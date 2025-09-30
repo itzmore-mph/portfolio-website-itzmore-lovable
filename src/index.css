@@ -2,70 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ultra Modern Design System - Power Theme */
+/* Football Analytics Design System - Emerald Theme */
 :root {
-  /* Power Theme - Dark Professional Palette */
-  --background: 220 15% 3%;
-  --foreground: 0 0% 98%;
-  --card: 220 15% 6%;
-  --card-foreground: 0 0% 98%;
-  --card-hover: 220 15% 8%;
-  --popover: 220 15% 6%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 217 91% 60%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 220 15% 12%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 220 15% 8%;
-  --muted-foreground: 215 15% 70%;
-  --accent: 142 76% 50%;
-  --accent-foreground: 0 0% 98%;
+  /* Dark Professional Palette */
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --card: 217 33% 17%;
+  --card-foreground: 210 40% 98%;
+  --card-hover: 217 33% 20%;
+  --popover: 217 33% 17%;
+  --popover-foreground: 210 40% 98%;
+  
+  /* Emerald Accent System */
+  --primary: 142 76% 36%;
+  --primary-foreground: 0 0% 100%;
+  --primary-hover: 142 76% 30%;
+  --primary-light: 142 76% 45%;
+  
+  --secondary: 217 33% 24%;
+  --secondary-foreground: 210 40% 98%;
+  --secondary-hover: 217 33% 28%;
+  
+  --muted: 217 33% 15%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 142 76% 36%;
+  --accent-foreground: 0 0% 100%;
+  --accent-hover: 142 76% 30%;
+  --accent-light: 142 76% 45%;
+  
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 98%;
-  --border: 220 15% 15%;
-  --input: 220 15% 12%;
-  --ring: 217 91% 60%;
+  --destructive-hover: 0 72% 45%;
   
-  /* Power Theme Chart Colors */
-  --chart-1: 217 91% 60%;
+  --border: 217 33% 22%;
+  --input: 217 33% 20%;
+  --ring: 142 76% 36%;
+  
+  /* Chart Colors - Emerald focused */
+  --chart-1: 142 76% 36%;
   --chart-2: 142 76% 50%;
-  --chart-3: 47 96% 53%;
-  --chart-4: 358 75% 59%;
-  --chart-5: 271 81% 56%;
+  --chart-3: 142 60% 60%;
+  --chart-4: 160 84% 39%;
+  --chart-5: 173 80% 40%;
 
-  /* Power Theme Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(142 76% 50%) 100%);
-  --gradient-secondary: linear-gradient(135deg, hsl(220 15% 6%) 0%, hsl(220 15% 12%) 100%);
-  --gradient-hero: linear-gradient(135deg, hsl(220 15% 3%) 0%, hsl(220 15% 6%) 40%, hsl(220 15% 8%) 100%);
-  --gradient-card: linear-gradient(145deg, hsl(220 15% 6%) 0%, hsl(220 15% 8%) 100%);
-  --gradient-power: linear-gradient(135deg, hsl(220 15% 4%) 0%, hsl(220 15% 7%) 100%);
-  --gradient-glass: linear-gradient(135deg, hsl(0 0% 98% / 0.08) 0%, hsl(0 0% 98% / 0.03) 100%);
-  --gradient-border: linear-gradient(135deg, hsl(217 91% 60% / 0.4) 0%, hsl(142 76% 50% / 0.4) 100%);
+  /* Emerald Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 45%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(217 33% 17%) 0%, hsl(217 33% 24%) 100%);
+  --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(217 33% 15%) 40%, hsl(217 33% 17%) 100%);
+  --gradient-card: linear-gradient(145deg, hsl(217 33% 17%) 0%, hsl(217 33% 20%) 100%);
+  --gradient-glass: linear-gradient(135deg, hsl(0 0% 98% / 0.05) 0%, hsl(0 0% 98% / 0.02) 100%);
+  --gradient-border: linear-gradient(135deg, hsl(142 76% 36% / 0.4) 0%, hsl(142 76% 45% / 0.4) 100%);
 
-  /* Power Theme Shadows */
+  /* Emerald Shadows */
   --shadow-sm: 0 2px 12px hsl(0 0% 0% / 0.3);
   --shadow-md: 0 4px 24px hsl(0 0% 0% / 0.4);
   --shadow-lg: 0 8px 40px hsl(0 0% 0% / 0.5);
   --shadow-xl: 0 16px 56px hsl(0 0% 0% / 0.6);
-  --shadow-glow: 0 0 48px hsl(217 91% 60% / 0.5);
-  --shadow-accent: 0 8px 48px hsl(142 76% 50% / 0.4);
+  --shadow-glow: 0 0 48px hsl(142 76% 36% / 0.3);
+  --shadow-accent: 0 8px 48px hsl(142 76% 36% / 0.25);
 
   /* Smooth Interactive States */
-  --hover-lift: translateY(-3px);
-  --hover-scale: scale(1.03);
-  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --transition-spring: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
+  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
   /* Professional Sidebar Variables */
   --sidebar-background: 0 0% 99%;
   --sidebar-foreground: 215 25% 15%;
-  --sidebar-primary: 215 28% 17%;
+  --sidebar-primary: 142 76% 36%;
   --sidebar-primary-foreground: 0 0% 98%;
   --sidebar-accent: 215 20% 95%;
   --sidebar-accent-foreground: 215 28% 17%;
   --sidebar-border: 215 20% 89%;
-  --sidebar-ring: 215 28% 17%;
+  --sidebar-ring: 142 76% 36%;
 }
 
 .dark {
@@ -190,133 +198,90 @@ body {
     position: relative;
   }
   
-  /* Enhanced Typography System */
+  /* Fluid Typography with clamp() */
   .text-display {
-    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-none;
+    font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    @apply font-extrabold tracking-tight leading-none;
   }
   
   .text-hero {
-    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight;
+    font-size: clamp(2rem, 4vw + 0.5rem, 4rem);
+    @apply font-bold tracking-tight leading-tight;
   }
   
   .text-section-title {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight;
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+    @apply font-bold tracking-tight leading-tight;
   }
   
   .text-subsection-title {
-    @apply text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug;
+    font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2.5rem);
+    @apply font-semibold tracking-tight leading-snug;
   }
   
   .text-card-title {
-    @apply text-lg sm:text-xl lg:text-2xl font-semibold leading-tight;
+    font-size: clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem);
+    @apply font-semibold leading-tight;
   }
   
   .text-body {
-    @apply text-base sm:text-lg leading-relaxed;
+    font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
+    @apply leading-relaxed;
   }
   
   .text-body-sm {
-    @apply text-sm sm:text-base leading-relaxed;
+    font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+    @apply leading-relaxed;
   }
   
   .text-caption {
-    @apply text-xs sm:text-sm leading-normal;
+    font-size: clamp(0.75rem, 0.5vw + 0.625rem, 0.875rem);
+    @apply leading-normal;
   }
   
   .text-lead {
-    @apply text-lg sm:text-xl lg:text-2xl leading-relaxed font-light;
+    font-size: clamp(1.125rem, 1vw + 0.75rem, 1.5rem);
+    @apply leading-relaxed font-light;
   }
   
   .text-overline {
-    @apply text-xs sm:text-sm uppercase tracking-wider font-medium;
+    font-size: clamp(0.75rem, 0.5vw + 0.625rem, 0.875rem);
+    @apply uppercase tracking-wider font-medium;
   }
 }
 
 @layer components {
-  /* Power Theme Section Backgrounds */
+  /* Section Backgrounds */
   .section-background-default {
     background: var(--gradient-hero);
   }
   
   .section-background-muted {
-    background: var(--gradient-power);
-  }
-  
-  .section-background-gradient {
     background: var(--gradient-secondary);
   }
   
-  .section-background-power {
-    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
-  }
-  
-  .section-background-accent {
-    background: linear-gradient(135deg, hsl(var(--accent) / 0.03) 0%, hsl(var(--primary) / 0.02) 100%);
-  }
-
-  /* Enhanced Hero Components */
-  .hero-gradient {
-    background: var(--gradient-hero);
-  }
-  
-  .hero-overlay {
-    background: var(--gradient-overlay);
-  }
-  
-  .card-gradient {
+  .section-background-gradient {
     background: var(--gradient-card);
   }
-  
-  .data-gradient {
-    background: var(--gradient-data);
+
+  /* Card Styles */
+  .card-modern {
+    @apply bg-card border border-border rounded-2xl shadow-lg;
+    @apply hover:shadow-xl hover:border-primary/40 hover:bg-card-hover transition-all duration-200;
+    background: var(--gradient-card);
   }
-  
-  .accent-gradient {
-    background: var(--gradient-accent);
+
+  .card-glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg;
+    @apply hover:bg-white/[0.06] hover:border-primary/20 transition-all duration-200;
+    box-shadow: var(--shadow-lg), inset 0 1px 0 hsl(0 0% 98% / 0.03);
   }
-  
-/* Power Theme Card Styles */
-.card-modern {
-  @apply bg-card border border-border rounded-2xl shadow-lg backdrop-blur-sm;
-  @apply hover:shadow-xl hover:border-primary/40 hover:bg-card-hover hover:scale-[1.01] transition-all duration-300;
-  background: var(--gradient-card);
-}
 
-.card-glass {
-  @apply bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg;
-  @apply hover:bg-white/[0.06] hover:border-white/20 hover:scale-[1.01] transition-all duration-300;
-  box-shadow: var(--shadow-lg), inset 0 1px 0 hsl(0 0% 98% / 0.05);
-}
-
-.card-power {
-  @apply bg-gradient-to-br from-card to-card-hover border border-border/50 rounded-2xl shadow-xl;
-  @apply hover:shadow-2xl hover:border-primary/30 hover:scale-[1.01] transition-all duration-300;
-  background: var(--gradient-power);
-}
-
-.card-hero {
-  @apply bg-gradient-to-br from-black/40 via-black/50 to-black/60 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl;
-  @apply hover:from-black/50 hover:via-black/60 hover:to-black/70 hover:border-white/30 hover:scale-[1.01] transition-all duration-300;
-}
-
-/* Ultra Modern Button Styles */
-.btn-modern {
-  @apply bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground rounded-2xl px-10 py-4 shadow-xl;
-  @apply hover:shadow-2xl hover:scale-[1.05] hover:from-primary/90 hover:to-accent/90 transition-all duration-400 font-bold;
-  box-shadow: var(--shadow-glow);
-}
-
-.btn-glass {
-  @apply bg-white/[0.12] backdrop-blur-xl border border-white/25 text-white rounded-2xl px-10 py-4;
-  @apply hover:bg-white/[0.18] hover:border-white/35 hover:scale-[1.05] transition-all duration-400 font-semibold;
-  box-shadow: var(--shadow-lg), inset 0 1px 0 hsl(210 40% 98% / 0.1);
-}
-
-.btn-outline-modern {
-  @apply border-2 border-primary/60 text-primary bg-transparent rounded-2xl px-10 py-4 relative overflow-hidden;
-  @apply hover:bg-primary hover:text-primary-foreground hover:border-primary hover:scale-[1.05] transition-all duration-400 font-semibold;
-  @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/0 before:to-primary/10 before:translate-x-[-100%] hover:before:translate-x-0 before:transition-transform before:duration-500;
-}
+  .card-power {
+    @apply bg-card border border-border/50 rounded-2xl shadow-xl;
+    @apply hover:shadow-2xl hover:border-primary/30 transition-all duration-200;
+    background: var(--gradient-card);
+  }
   
   /* Enhanced Professional Stats & Data Elements */
   .stat-card {
@@ -331,22 +296,22 @@ body {
   }
   
   .skill-badge {
-    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ease-out;
-    @apply bg-secondary/60 text-secondary-foreground border border-border/40;
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200;
+    @apply bg-muted/50 text-foreground border border-border/30;
   }
   
   .skill-badge:hover {
-    @apply bg-secondary text-secondary-foreground border-border/60;
+    @apply bg-muted text-foreground border-primary/40;
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
   }
   
-  .skill-badge-accent {
-    @apply skill-badge bg-accent/10 text-accent-foreground border-accent/20;
+  .skill-badge-primary {
+    @apply skill-badge bg-primary/10 text-primary border-primary/20;
   }
   
-  .skill-badge-accent:hover {
-    @apply bg-accent/15 border-accent/30;
+  .skill-badge-primary:hover {
+    @apply bg-primary/15 border-primary/30;
   }
   
   /* Enhanced Section Spacing */

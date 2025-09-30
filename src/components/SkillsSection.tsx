@@ -4,17 +4,17 @@ import { CheckCircle } from "lucide-react";
 import { skillCategories, keyStrengths } from "@/data/skills";
 
 const SkillsSection = () => {
-  const getLevelColor = (level: string) => {
-    switch(level) {
-      case "Experienced": return "bg-pitch-green/10 text-pitch-green border-pitch-green/20";
-      case "Intermediate": return "bg-data-blue/10 text-data-blue border-data-blue/20";
-      case "Basic": return "bg-analytics-purple/10 text-analytics-purple border-analytics-purple/20";
-      default: return "bg-muted text-muted-foreground";
-    }
+  const getDotIndicator = (level: string) => {
+    const dots = {
+      "Experienced": "● ● ●",
+      "Intermediate": "● ● ○",
+      "Basic": "● ○ ○"
+    };
+    return dots[level as keyof typeof dots] || "○ ○ ○";
   };
 
   return (
-    <section id="skills" className="py-20 bg-muted/50">
+    <section id="skills" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-section-title mb-4">Technical Expertise</h2>
@@ -26,12 +26,12 @@ const SkillsSection = () => {
 
         {/* Skills Categories */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {skillCategories.map((category, index) => (
-            <Card key={category.title} className="animate-slide-up hover:shadow-lg transition-shadow">
+          {skillCategories.map((category) => (
+            <Card key={category.title} className="animate-slide-up hover:shadow-lg transition-all duration-200 border-border/50 bg-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <div className={`p-2 rounded-lg bg-${category.color}/10`}>
-                    <category.icon className={`w-6 h-6 text-${category.color}`} />
+                  <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
+                    <category.icon className="w-6 h-6 text-primary" />
                   </div>
                   {category.title}
                 </CardTitle>
@@ -40,7 +40,7 @@ const SkillsSection = () => {
                 {category.skills.map((skill) => (
                   <div key={skill.name} className="flex items-center justify-between group">
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-4 h-4 text-pitch-green flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                       {skill.link ? (
                         <a 
                           href={skill.link} 
@@ -54,8 +54,8 @@ const SkillsSection = () => {
                         <span className="font-medium">{skill.name}</span>
                       )}
                     </div>
-                    <Badge variant="secondary" className={getLevelColor(skill.level)}>
-                      {skill.level}
+                    <Badge variant="secondary" className="font-mono text-xs tabular-nums">
+                      {getDotIndicator(skill.level)}
                     </Badge>
                   </div>
                 ))}
@@ -68,13 +68,13 @@ const SkillsSection = () => {
         <div className="animate-fade-in">
           <h3 className="text-2xl font-bold text-center mb-8">Key Strengths</h3>
           <div className="grid md:grid-cols-3 gap-8">
-            {keyStrengths.map((strength, index) => (
+            {keyStrengths.map((strength) => (
               <Card 
                 key={strength.title} 
-                className="text-center border-0 bg-background hover:shadow-lg transition-shadow"
+                className="text-center border-border/50 bg-card hover:shadow-lg transition-all duration-200"
               >
                 <CardContent className="p-6">
-                  <div className="inline-flex p-3 rounded-full bg-primary/10 mb-4">
+                  <div className="inline-flex p-3 rounded-full bg-primary/10 border border-primary/20 mb-4">
                     <strength.icon className="w-8 h-8 text-primary" />
                   </div>
                   <h4 className="text-lg font-semibold mb-2">{strength.title}</h4>

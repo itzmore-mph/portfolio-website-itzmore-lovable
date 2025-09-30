@@ -72,7 +72,7 @@ const CookieConsent = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-900 text-white p-4 shadow-lg border-t border-slate-700">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm text-white p-3 shadow-lg border-t border-slate-700">
       <div className="max-w-4xl mx-auto relative">
         <div className="text-center">
           <div className="flex justify-center gap-2 mb-3">
@@ -95,14 +95,14 @@ const CookieConsent = () => {
           </div>
           
           {language === 'en' ? (
-            <p className="text-sm mb-4 max-w-2xl mx-auto">
+            <p className="text-xs mb-3 max-w-2xl mx-auto">
               This website uses essential cookies and, with your consent, Google Analytics to analyze usage. 
               <a href="/privacy" className="text-xs hover:text-primary/80 underline ml-1">
                 Learn more
               </a>.
             </p>
           ) : (
-            <p className="text-sm mb-4 max-w-2xl mx-auto">
+            <p className="text-xs mb-3 max-w-2xl mx-auto">
               Diese Website verwendet nur technisch notwendige Cookies sowie – mit Ihrer Zustimmung – Google Analytics zur Analyse der Nutzung. 
               <a href="/privacy" className="text-xs hover:text-primary/80 underline ml-1">
                 Mehr erfahren

@@ -36,7 +36,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile Layout */}
-        <div className="flex flex-col items-center justify-center min-h-dvh py-8 pb-40 space-y-8 lg:hidden">
+        <div className="flex flex-col items-center justify-center min-h-dvh py-8 space-y-8 lg:hidden">
           {/* Profile Photo - Mobile */}
           <div className="flex-shrink-0">
             <ProfilePhoto 
@@ -59,7 +59,7 @@ const HeroSection = () => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center min-h-dvh py-20 pb-32">
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center min-h-dvh py-20">
           {/* Content - Desktop */}
           <div className="order-1">
             <HeroContent 

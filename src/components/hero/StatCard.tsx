@@ -21,26 +21,29 @@ export const StatCard = ({ value, label, className }: StatCardProps) => {
     <div 
       ref={elementRef}
       className={cn(
-        "bg-gradient-to-br from-black/30 via-black/40 to-black/50 backdrop-blur-xl border border-white/25 rounded-3xl text-center shadow-2xl relative overflow-hidden group",
-        "transition-all duration-500 hover:from-black/40 hover:via-black/50 hover:to-black/60 hover:scale-[1.08] hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:border-white/40",
-        "p-4 sm:p-6 lg:p-8 interactive-element will-change-transform", // Better mobile padding
-        "before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-400/10 before:to-purple-400/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500",
-        // Mobile touch optimizations
+        "bg-gradient-to-br from-black/40 via-black/50 to-black/60 backdrop-blur-xl border border-primary/20 rounded-2xl text-center shadow-2xl relative overflow-hidden group",
+        "transition-all duration-500 hover:from-black/50 hover:via-black/60 hover:to-black/70 hover:scale-[1.05] hover:shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:border-primary/40",
+        "p-6 sm:p-8 lg:p-10 interactive-element will-change-transform",
+        "before:absolute before:inset-0 before:bg-gradient-to-br before:from-primary/5 before:to-primary-light/5 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500",
         "active:scale-[1.02] touch-manipulation",
         className
       )}
     >
       <div className="relative z-10">
-        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 sm:mb-3 lg:mb-4 drop-shadow-2xl bg-gradient-to-br from-white via-blue-100 to-white bg-clip-text group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-500">
-          {count}{suffix}
+        <div className="font-black text-white mb-2 sm:mb-3 lg:mb-4 tracking-tight leading-none" 
+             style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', fontFamily: "'Inter', system-ui, -apple-system, sans-serif" }}>
+          <span className="bg-gradient-to-br from-primary via-primary-light to-white bg-clip-text text-transparent drop-shadow-2xl group-hover:from-primary-light group-hover:to-primary transition-all duration-500">
+            {count}{suffix}
+          </span>
         </div>
-        <div className="text-white/90 text-xs sm:text-sm md:text-base lg:text-lg font-semibold drop-shadow-lg group-hover:text-white transition-colors duration-300">
+        <div className="text-white/90 font-bold tracking-wide drop-shadow-lg group-hover:text-white transition-colors duration-300" 
+             style={{ fontSize: 'clamp(0.875rem, 2vw, 1.125rem)' }}>
           {label}
         </div>
       </div>
       
-      {/* Subtle glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+      {/* Subtle emerald glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-light/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
     </div>
   );
 };

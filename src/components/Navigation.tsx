@@ -28,17 +28,19 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-18">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" aria-label="Go to homepage">
-            <OptimizedImage 
-              src={isScrolled 
-                ? "/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png" 
-                : "/lovable-uploads/71489f7b-3e18-490e-84a7-2d503590e5e9.png"
-              }
-              alt="itzmore logo - Data Analytics and Football Analytics Portfolio" 
-              className="h-8 w-auto transition-all duration-300"
-              width={32}
-              height={32}
-              priority={true}
-            />
+            <div className={`transition-all duration-300 rounded-xl p-2 ${isScrolled ? 'bg-primary/10' : 'bg-white/10 backdrop-blur-sm'}`}>
+              <OptimizedImage 
+                src={isScrolled 
+                  ? "/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png" 
+                  : "/lovable-uploads/71489f7b-3e18-490e-84a7-2d503590e5e9.png"
+                }
+                alt="itzmore logo - Data Analytics and Football Analytics Portfolio" 
+                className="h-6 w-auto transition-all duration-300"
+                width={32}
+                height={32}
+                priority={true}
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -61,7 +63,10 @@ const Navigation = () => {
             <Button 
               variant={isScrolled ? "default" : "secondary"}
               size="sm"
-              className={!isScrolled ? "bg-primary hover:bg-primary-hover text-white hover:scale-[1.03] transition-all duration-200 shadow-lg hover:shadow-glow px-8 py-3 rounded-xl font-semibold group h-auto" : ""}
+              className={isScrolled 
+                ? "rounded-xl px-8 py-3 font-semibold hover:scale-[1.03] transition-all duration-200 shadow-md hover:shadow-lg h-auto" 
+                : "bg-primary hover:bg-primary-hover text-white hover:scale-[1.03] transition-all duration-200 shadow-lg hover:shadow-glow px-8 py-3 rounded-xl font-semibold group h-auto"
+              }
               onClick={() => {
                 const contactSection = document.querySelector('#contact');
                 if (contactSection) {

@@ -56,7 +56,7 @@ export const experiences: Experience[] = [
   {
     date: "10/2021 – 09/2022",
     company: "Sportradar AG | Sportradar Media Services GmbH", 
-    position: "Media Advertising Manager",
+    position: "Manager Digital Advertising",
     location: "Austria",
     details: [
       "Development of audience segmentation models to improve advertising strategies.",

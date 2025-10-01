@@ -77,9 +77,9 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         
         <Button 
           onClick={handleDownloadCV}
-          variant="outline" 
+          variant="outline-light" 
           size="lg"
-          className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-primary/50 hover:scale-[1.03] transition-all duration-200 px-8 py-3 rounded-xl font-semibold backdrop-blur-sm shadow-md group h-auto"
+          className="hover:scale-[1.03] transition-all duration-200 px-8 py-3 rounded-xl font-semibold group h-auto"
           style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}
         >
           <span className="flex items-center">

@@ -87,7 +87,7 @@ const ProjectsSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="flex-1 focus-ring-primary"
+                    className="flex-1 focus-ring-primary opacity-50"
                     disabled
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />

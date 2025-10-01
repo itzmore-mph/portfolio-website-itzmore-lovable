@@ -285,7 +285,7 @@ const ContactSection = () => {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 border-2 border-border hover:border-primary/50 hover:bg-muted"
+                  className="px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   View My Projects

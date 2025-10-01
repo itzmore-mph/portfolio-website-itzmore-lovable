@@ -285,7 +285,7 @@ body {
   
   /* Enhanced Professional Stats & Data Elements */
   .stat-card {
-    @apply bg-card border border-border rounded-xl p-6 text-center transition-all duration-300 ease-out;
+    @apply bg-card border border-border rounded-2xl p-6 text-center transition-all duration-300 ease-out;
     box-shadow: var(--shadow-sm);
   }
   

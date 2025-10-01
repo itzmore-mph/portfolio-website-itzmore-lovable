@@ -67,7 +67,7 @@ const ExperienceSection = () => {
                             key={linkIndex}
                             variant="outline"
                             size="sm"
-                            className="h-8 text-sm interactive-element focus-ring-primary"
+                            className="interactive-element focus-ring-primary"
                             onClick={() => window.open(link.url, '_blank')}
                           >
                             <ExternalLink className="icon-sm mr-2" />

@@ -37,7 +37,7 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         {/* Desktop Tagline */}
         <h2 className="hidden md:block text-white/90 font-normal leading-relaxed"
             style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}>
-          Turning football data into insight.<br>
+          Turning football data into insight.<br/>
           One byte at a time.
         </h2>
         

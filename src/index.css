@@ -180,7 +180,7 @@ body {
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     /* Safari mobile fixes */
     -webkit-text-size-adjust: 100%;

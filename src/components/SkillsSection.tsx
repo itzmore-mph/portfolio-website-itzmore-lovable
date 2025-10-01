@@ -1,24 +1,31 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle } from "lucide-react";
 import { skillCategories, keyStrengths } from "@/data/skills";
 
 const SkillsSection = () => {
-  const getDotIndicator = (level: string) => {
-    const dots = {
-      "Experienced": "● ● ●",
-      "Intermediate": "● ● ○",
-      "Basic": "● ○ ○"
+  const getProgressPercentage = (level: string) => {
+    const percentages = {
+      "Experienced": 100,
+      "Intermediate": 66,
+      "Basic": 33
     };
-    return dots[level as keyof typeof dots] || "○ ○ ○";
+    return percentages[level as keyof typeof percentages] || 0;
+  };
+
+  const getProgressColor = (level: string) => {
+    const colors = {
+      "Experienced": "bg-primary",
+      "Intermediate": "bg-primary/70",
+      "Basic": "bg-primary/40"
+    };
+    return colors[level as keyof typeof colors] || "bg-muted";
   };
 
   return (
     <section id="skills" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-section-title mb-4">Technical Expertise</h2>
-          <p className="text-body text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">Technical Expertise</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
             A comprehensive toolkit spanning corporate dashboard development, football analytics, and upcoming AI specialization — 
             built through international projects at Publicis Media Austria and hands-on sports data analysis.
           </p>
@@ -29,34 +36,37 @@ const SkillsSection = () => {
           {skillCategories.map((category) => (
             <Card key={category.title} className="animate-slide-up hover:shadow-lg transition-all duration-200 border-border/50 bg-card">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
+                <CardTitle className="flex items-center gap-3 text-xl font-semibold">
                   <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
-                    <category.icon className="w-6 h-6 text-primary" />
+                    <category.icon className="w-5 h-5 text-primary" />
                   </div>
                   {category.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-4">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between group">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                  <div key={skill.name} className="space-y-2">
+                    <div className="flex items-center justify-between">
                       {skill.link ? (
                         <a 
                           href={skill.link} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="font-medium hover:text-primary transition-colors"
+                          className="font-medium hover:text-primary transition-colors text-base"
                         >
                           {skill.name}
                         </a>
                       ) : (
-                        <span className="font-medium">{skill.name}</span>
+                        <span className="font-medium text-base">{skill.name}</span>
                       )}
+                      <span className="text-xs text-muted-foreground font-normal">{skill.level}</span>
                     </div>
-                    <Badge variant="secondary" className="font-mono text-xs tabular-nums">
-                      {getDotIndicator(skill.level)}
-                    </Badge>
+                    <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                      <div 
+                        className={`h-full ${getProgressColor(skill.level)} transition-all duration-500 rounded-full`}
+                        style={{ width: `${getProgressPercentage(skill.level)}%` }}
+                      />
+                    </div>
                   </div>
                 ))}
               </CardContent>
@@ -66,7 +76,7 @@ const SkillsSection = () => {
 
         {/* Key Strengths */}
         <div className="animate-fade-in">
-          <h3 className="text-2xl font-bold text-center mb-8">Key Strengths</h3>
+          <h3 className="text-3xl font-semibold text-center mb-8 tracking-tight">Key Strengths</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {keyStrengths.map((strength) => (
               <Card 
@@ -78,7 +88,7 @@ const SkillsSection = () => {
                     <strength.icon className="w-8 h-8 text-primary" />
                   </div>
                   <h4 className="text-lg font-semibold mb-2">{strength.title}</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed font-normal">
                     {strength.description}
                   </p>
                 </CardContent>

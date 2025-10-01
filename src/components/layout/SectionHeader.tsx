@@ -21,7 +21,7 @@ export const SectionHeader = ({
   
   return (
     <div className={cn(alignmentStyles, "mb-16 lg:mb-20 animate-fade-in", className)}>
-      <h2 className={cn(titleSize, "mb-6 font-bold tracking-tight text-foreground")}>
+      <h2 className={cn(titleSize, "mb-6 font-semibold tracking-tight text-foreground")}>
         {title}
       </h2>
       {subtitle && (

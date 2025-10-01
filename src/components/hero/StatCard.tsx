@@ -30,13 +30,13 @@ export const StatCard = ({ value, label, className }: StatCardProps) => {
       )}
     >
       <div className="relative z-10">
-        <div className="font-black text-white mb-2 sm:mb-3 lg:mb-4 tracking-tight leading-none" 
-             style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', fontFamily: "'Inter', system-ui, -apple-system, sans-serif" }}>
+        <div className="font-semibold text-white mb-2 sm:mb-3 lg:mb-4 tracking-tight leading-none" 
+             style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', fontFamily: "'DM Sans', system-ui, sans-serif" }}>
           <span className="bg-gradient-to-br from-primary via-primary-light to-white bg-clip-text text-transparent drop-shadow-2xl group-hover:from-primary-light group-hover:to-primary transition-all duration-500">
             {count}{suffix}
           </span>
         </div>
-        <div className="text-white/90 font-bold tracking-wide drop-shadow-lg group-hover:text-white transition-colors duration-300" 
+        <div className="text-white/90 font-medium tracking-wide drop-shadow-lg group-hover:text-white transition-colors duration-300"
              style={{ fontSize: 'clamp(0.875rem, 2vw, 1.125rem)' }}>
           {label}
         </div>

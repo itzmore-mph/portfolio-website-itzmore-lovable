@@ -25,7 +25,7 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
       
       {/* Main Heading */}
       <div className="space-y-4 lg:space-y-6">
-        <h1 className="font-black text-white leading-[0.95] tracking-tight" 
+        <h1 className="font-semibold text-white leading-[0.95] tracking-tight" 
             style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
           Sports Data
           <br />
@@ -35,7 +35,7 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         </h1>
         
         {/* Desktop Tagline */}
-        <h2 className="hidden md:block text-white/90 font-medium leading-relaxed" 
+        <h2 className="hidden md:block text-white/90 font-normal leading-relaxed"
             style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}>
           Turning football data into insight — one byte at a time.
         </h2>

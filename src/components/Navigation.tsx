@@ -25,7 +25,7 @@ const Navigation = () => {
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2" aria-label="Go to homepage">
             <OptimizedImage 
@@ -108,7 +108,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         <div className={`
-          md:hidden fixed top-18 left-0 right-0 z-50 
+          md:hidden fixed top-20 left-0 right-0 z-50
           transition-all duration-300 ease-in-out
           ${isMobileMenuOpen 
             ? 'opacity-100 translate-y-0 pointer-events-auto' 
@@ -136,7 +136,7 @@ const Navigation = () => {
                   <Button 
                     variant="default" 
                     size="lg" 
-                    className="w-full font-semibold"
+                    className="w-full font-semibold rounded-xl"
                     onClick={() => {
                       const contactSection = document.querySelector('#contact');
                       if (contactSection) {

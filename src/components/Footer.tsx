@@ -18,11 +18,11 @@ const Footer = () => {
           {/* Navigation */}
           <div className="flex justify-center">
             <nav className="flex flex-wrap justify-center gap-4 lg:gap-6 text-sm lg:text-base">
-              <a href="/index#home" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Home</a>
-              <a href="index#skills" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Skills</a>
-              <a href="/index#projects" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Projects</a>
-              <a href="/index#about" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">About</a>
-              <a href="/index#contact" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Contact</a>
+              <a href="/#home" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Home</a>
+              <a href="/#skills" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Skills</a>
+              <a href="/#projects" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Projects</a>
+              <a href="/#about" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">About</a>
+              <a href="/#contact" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Contact</a>
               <a href="/impressum" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Legal Notice</a>
               <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors whitespace-nowrap px-2 py-1 rounded-lg hover:bg-muted">Privacy Policy</a>
             </nav>

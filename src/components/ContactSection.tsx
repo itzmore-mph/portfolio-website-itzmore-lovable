@@ -6,11 +6,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/ui/optimized-image";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
+import { contactMethods, socialLinks } from "@/data/contact";
 
 interface ContactFormData {
   firstName: string;
@@ -53,49 +54,6 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }
   };
-  const contactMethods = [
-    {
-      icon: Mail,
-      title: "Email",
-      value: "itzmore.dev@gmail.com",
-      description: "Send me an email anytime",
-      color: "data-blue"
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      value: "Austria",
-      description: "Available for remote work worldwide",
-      color: "analytics-purple"
-    }
-  ];
-
-  const socialLinks = [
-    { 
-      name: "LinkedIn", 
-      href: "https://www.linkedin.com/in/moritz-philipp-haaf/", 
-      logo: "/lovable-uploads/3dbf94c1-8b1e-4164-9b4e-66b876fb1c55.png",
-      color: "bg-blue-600" 
-    },
-    { 
-      name: "GitHub", 
-      href: "https://github.com/itzmore-mph", 
-      logo: "/lovable-uploads/34ef4087-06b0-4169-8894-d784144a83d3.png",
-      color: "bg-gray-800"
-    },
-    { 
-      name: "Upwork", 
-      href: "https://www.upwork.com/freelancers/~01924c4b6089ef56d8", 
-      logo: "/lovable-uploads/3b9fdfb7-6fd1-4f4e-9f7a-ba9320d49e93.png",
-      color: "bg-green-600"
-    },
-    { 
-      name: "Malt", 
-      href: "https://www.malt.de/profile/moritzphilipphaaf", 
-      logo: "/lovable-uploads/c315e1c6-6753-46ba-a8d5-cf8fdfd50248.png",
-      color: "bg-purple-600"
-    }
-  ];
 
   return (
     <Section id="contact" background="default" spacing="xl">
@@ -141,23 +99,24 @@ const ContactSection = () => {
           {/* Social Links */}
           <div>
             <h4 className="font-semibold mb-6 text-lg">Connect With Me</h4>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {socialLinks.map((social) => (
-          <a
+                <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-muted/50 hover:bg-muted rounded-xl transition-all duration-200 group focus-ring shadow-sm hover:shadow-md border border-border/50 hover:border-primary/30"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-muted/50 hover:bg-muted rounded-xl transition-all duration-200 group focus-ring shadow-sm hover:shadow-md border border-border/50 hover:border-primary/30"
                 >
-                  <div className={`${social.name === 'Malt' ? 'p-4' : 'p-3'} rounded-xl ${social.color} flex-shrink-0 shadow-md`}>
-                    <OptimizedImage 
+                  <div className={`p-3 sm:p-3.5 rounded-xl ${social.color} flex-shrink-0 shadow-md`}>
+                    <img 
                       src={social.logo}
-                      alt={`${social.name} platform logo icon`}
-                      className={`${social.name === 'Malt' ? 'w-6 h-6' : 'w-5 h-5'} invert`}
-                      width={social.name === 'Malt' ? 24 : 20}
-                      height={social.name === 'Malt' ? 24 : 20}
-                      lazy={true}
+                      alt={`${social.name} logo`}
+                      className="w-6 h-6 sm:w-5 sm:h-5 invert"
+                      width="24"
+                      height="24"
+                      loading="lazy"
+                      fetchPriority="low"
                     />
                   </div>
                   <span className="font-medium group-hover:text-primary transition-colors text-sm">

@@ -112,9 +112,9 @@ const ContactSection = () => {
                     <img 
                       src={social.logo}
                       alt={`${social.name} logo`}
-                      className="w-5 h-5 invert"
-                      width="20"
-                      height="20"
+                      className="w-6 h-6 invert"
+                      width="24"
+                      height="24"
                       loading="lazy"
                       fetchPriority="low"
                     />

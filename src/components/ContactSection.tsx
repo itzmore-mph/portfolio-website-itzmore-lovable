@@ -108,7 +108,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-muted/50 hover:bg-muted rounded-xl transition-all duration-200 group focus-ring shadow-sm hover:shadow-md border border-border/50 hover:border-primary/30"
                 >
-                  <div className={`p-3.5 rounded-xl ${social.color} flex-shrink-0 shadow-md`}>
+                  <div className={`p-5 rounded-xl ${social.color} flex-shrink-0 shadow-md`}>
                     <img 
                       src={social.logo}
                       alt={`${social.name} logo`}

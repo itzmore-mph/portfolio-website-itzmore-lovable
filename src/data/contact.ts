@@ -40,7 +40,7 @@ export const socialLinks: SocialLink[] = [
   { 
     name: "Malt", 
     href: "https://www.malt.de/profile/moritzphilipphaaf", 
-    logo: "/lovable-uploads/malt-logo-white.png",
+    logo: "/lovable-uploads/malt-m-icon.png",
     color: "bg-[#FC5757]"
   }
 ];

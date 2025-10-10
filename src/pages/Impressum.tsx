@@ -6,9 +6,9 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Impressum = () => {
-  const [language, setLanguage] = useState<'en' | 'de'>('en');
+  const [language, setLanguage] = useState<"en" | "de">("en");
 
-  const toggleLanguage = (lang: 'en' | 'de') => {
+  const toggleLanguage = (lang: "en" | "de") => {
     setLanguage(lang);
   };
 
@@ -21,15 +21,15 @@ const Impressum = () => {
           <div className="text-center mb-8">
             <div className="flex justify-center gap-4">
               <Button
-                variant={language === 'en' ? 'default' : 'outline'}
-                onClick={() => toggleLanguage('en')}
+                variant={language === "en" ? "default" : "outline"}
+                onClick={() => toggleLanguage("en")}
                 className="px-6"
               >
                 English
               </Button>
               <Button
-                variant={language === 'de' ? 'default' : 'outline'}
-                onClick={() => toggleLanguage('de')}
+                variant={language === "de" ? "default" : "outline"}
+                onClick={() => toggleLanguage("de")}
                 className="px-6"
               >
                 Deutsch
@@ -38,16 +38,47 @@ const Impressum = () => {
           </div>
 
           {/* English Content */}
-          {language === 'en' && (
+          {language === "en" && (
             <div className="prose prose-lg max-w-none">
               <h1 className="text-4xl font-bold text-center mb-8 text-foreground">Legal Notice</h1>
-              
+
               <div className="space-y-4 text-foreground/90">
-                <p><strong className="text-foreground">Name:</strong> Moritz Philipp Haaf</p>
-                <p><strong className="text-foreground">Address:</strong> Rupertgasse 3/9, 1140 Vienna, Austria</p>
-                <p><strong className="text-foreground">Email:</strong> <a href="mailto:itzmore.dev@gmail.com" className="text-primary hover:text-primary/80">itzmore.dev@gmail.com</a></p>
-                <p><strong className="text-foreground">Responsible Authority (ECG):</strong> Magistratisches Bezirksamt für den 13. und 14. Bezirk, City of Vienna</p>
-                <p><strong className="text-foreground">Business Regulation:</strong> Gewerbeordnung, <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" className="text-primary hover:text-primary/80">www.ris.bka.gv.at</a></p>
+                <p>
+                  <strong className="text-foreground">Name:</strong> Moritz Philipp Haaf
+                </p>
+                <p>
+                  <strong className="text-foreground">Address:</strong> Rupertgasse 3/9, 1140 Vienna, Austria
+                </p>
+                <p>
+                  <strong className="text-foreground">Email:</strong>{" "}
+                  <a href="mailto:itzmore.dev@gmail.com" className="text-primary hover:text-primary/80">
+                    itzmore.dev@gmail.com
+                  </a>
+                </p>
+                <p>
+                  <strong className="text-foreground">Business Activity:</strong> Services in automated data processing
+                  and information technology
+                </p>
+                <p>
+                  <strong className="text-foreground">GISA Number:</strong> 38884122
+                </p>
+                <p>
+                  <strong className="text-foreground">Responsible Authority (ECG):</strong> Magistratisches Bezirksamt
+                  für den 13. und 14. Bezirk, City of Vienna
+                </p>
+                <p>
+                  <strong className="text-foreground">Business Regulation:</strong> Gewerbeordnung,{" "}
+                  <a
+                    href="https://www.ris.bka.gv.at"
+                    target="_blank"
+                    rel="noopener"
+                    className="text-primary hover:text-primary/80"
+                  >
+                    www.ris.bka.gv.at
+                  </a>
+                </p>
+                {/* Optional VAT note for small business exemption: */}
+                {/* <p><strong className="text-foreground">VAT Status:</strong> Exempt according to § 6 Abs. 1 Z 27 UStG (Austrian small business regulation).</p> */}
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 text-foreground">Disclaimer</h2>
@@ -66,21 +97,54 @@ const Impressum = () => {
           )}
 
           {/* German Content */}
-          {language === 'de' && (
+          {language === "de" && (
             <div className="prose prose-lg max-w-none">
               <h1 className="text-4xl font-bold text-center mb-8 text-foreground">Impressum</h1>
-              
+
               <div className="space-y-4 text-foreground/90">
-                <p><strong className="text-foreground">Name:</strong> Moritz Philipp Haaf</p>
-                <p><strong className="text-foreground">Anschrift:</strong> Rupertgasse 3/9, 1140 Wien, Österreich</p>
-                <p><strong className="text-foreground">E-Mail:</strong> <a href="mailto:itzmore.dev@gmail.com" className="text-primary hover:text-primary/80">itzmore.dev@gmail.com</a></p>
-                <p><strong className="text-foreground">Behörde (ECG):</strong> Magistratisches Bezirksamt für den 13. und 14. Bezirk, Stadt Wien</p>
-                <p><strong className="text-foreground">Anwendbare Vorschriften:</strong> Gewerbeordnung, <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener" className="text-primary hover:text-primary/80">www.ris.bka.gv.at</a></p>
+                <p>
+                  <strong className="text-foreground">Name:</strong> Moritz Philipp Haaf
+                </p>
+                <p>
+                  <strong className="text-foreground">Anschrift:</strong> Rupertgasse 3/9, 1140 Wien, Österreich
+                </p>
+                <p>
+                  <strong className="text-foreground">E-Mail:</strong>{" "}
+                  <a href="mailto:itzmore.dev@gmail.com" className="text-primary hover:text-primary/80">
+                    itzmore.dev@gmail.com
+                  </a>
+                </p>
+                <p>
+                  <strong className="text-foreground">Tätigkeit:</strong> Dienstleistungen in der automatischen
+                  Datenverarbeitung und Informationstechnik
+                </p>
+                <p>
+                  <strong className="text-foreground">GISA-Zahl:</strong> 38884122
+                </p>
+                <p>
+                  <strong className="text-foreground">Behörde (ECG):</strong> Magistratisches Bezirksamt für den 13. und
+                  14. Bezirk, Stadt Wien
+                </p>
+                <p>
+                  <strong className="text-foreground">Anwendbare Vorschriften:</strong> Gewerbeordnung,{" "}
+                  <a
+                    href="https://www.ris.bka.gv.at"
+                    target="_blank"
+                    rel="noopener"
+                    className="text-primary hover:text-primary/80"
+                  >
+                    www.ris.bka.gv.at
+                  </a>
+                </p>
+                {/* Optionaler Hinweis zur Kleinunternehmerregelung: */}
+                {/* <p><strong className="text-foreground">USt-Status:</strong> Steuerbefreit gemäß § 6 Abs. 1 Z 27 UStG (Kleinunternehmerregelung).</p> */}
               </div>
 
               <h2 className="text-2xl font-semibold mt-8 mb-4 text-foreground">Haftungsausschluss</h2>
               <div className="space-y-4 text-foreground/90">
-                <p>Diese Website enthält Links zu externen Inhalten; für deren Richtigkeit wird keine Haftung übernommen.</p>
+                <p>
+                  Diese Website enthält Links zu externen Inhalten; für deren Richtigkeit wird keine Haftung übernommen.
+                </p>
                 <p>Alle Inhalte wurden sorgfältig erstellt, jedoch ohne Gewähr für Vollständigkeit oder Aktualität.</p>
               </div>
 

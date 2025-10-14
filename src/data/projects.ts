@@ -11,7 +11,7 @@ export const projects: Project[] = [
     metrics: ["XGBoost ML Model", "Passing Networks", "StatsBomb Data"],
     icon: BarChart3,
     color: "data-blue",
-    liveUrl: "https://football-analytics-dashboard.streamlit.app/",
+    liveUrl: "https://football-xgcloud.streamlit.app/",
     githubUrl: "https://github.com/itzmore-mph/football-analytics-portfolio",
   },
   {

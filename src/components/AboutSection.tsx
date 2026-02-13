@@ -108,9 +108,9 @@ const AboutSection = () => {
               </div>
               
               <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 shadow-lg">
-                <h4 className="font-semibold text-primary mb-3 text-body-sm">Academic Progress</h4>
+                <h4 className="font-semibold text-primary mb-3 text-body-sm">Academic Background</h4>
                 <p className="text-body-sm text-muted-foreground text-justify lg:text-left">
-                  I am currently pursuing the <strong className="text-foreground">MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, having completed <strong className="text-foreground">4 out of 9 modules</strong> so far. The program deepens my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong className="text-foreground">Football Data Scientist</strong> in professional clubs, federations, or sports data companies.
+                  I am currently pursuing the <strong className="text-foreground">MSc in Artificial Intelligence Applied to Sports</strong> at Sports Data Campus, deepening my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong className="text-foreground">Football Data Scientist</strong> in professional clubs, federations, or sports data companies.
                 </p>
               </div>
             </div>

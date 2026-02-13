@@ -103,7 +103,7 @@ const AboutSection = () => {
                   At <strong className="text-foreground">Publicis Media Austria</strong>, I lead international dashboard and automation projects, building real-time data visualization tools and scalable workflows. These skills translate directly into the demands of football analytics, where speed, accuracy, and clarity are critical.
                 </p>
                 <p className="text-body-sm text-muted-foreground">
-                  Alongside this, I actively develop <strong className="text-foreground">football analytics projects</strong> — including expected goals (xG) models, opponent analysis dashboards, and player comparison case studies using StatsBomb and other open-source data.
+                  Alongside this, I actively develop <strong className="text-foreground">football analytics projects</strong>, including expected goals (xG) models, opponent analysis dashboards, and player comparison case studies using StatsBomb and other open-source data.
                 </p>
               </div>
               

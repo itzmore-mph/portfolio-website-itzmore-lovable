@@ -26,7 +26,7 @@ const SkillsSection = () => {
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">Technical Expertise</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
-            A comprehensive toolkit spanning corporate dashboard development, football analytics, and upcoming AI specialization — 
+            A comprehensive toolkit spanning corporate dashboard development, football analytics, and upcoming AI specialization, 
             built through international projects at Publicis Media Austria and hands-on sports data analysis.
           </p>
         </div>

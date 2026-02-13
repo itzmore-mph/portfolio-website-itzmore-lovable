@@ -57,7 +57,7 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         <div className="inline-flex items-start text-left bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 shadow-md">
           <p className="text-white/85 font-medium leading-snug" 
              style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}>
-            <span className="text-primary font-semibold">Currently:</span> Senior Digital Data & Dashboard Manager @ Publicis
+            <span className="text-primary font-semibold">Currently:</span> Senior Data Analyst @ Publicis
           </p>
         </div>
       </div>

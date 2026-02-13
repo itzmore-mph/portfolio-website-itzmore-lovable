@@ -14,7 +14,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Dashboard Development", level: "Experienced" },
       { name: "Ad Tech", level: "Experienced" },
       { name: "Project Management", level: "Intermediate" },
-      { name: "AI & Machine Learning", level: "Basic" },
+      { name: "AI & Machine Learning", level: "Intermediate" },
       { name: "Football Analytics", level: "Intermediate" },
       { name: "Sports Technology", level: "Intermediate" }
     ]

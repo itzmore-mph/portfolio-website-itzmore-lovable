@@ -22,7 +22,7 @@ const ExperienceSection = () => {
     <Section background="muted" spacing="xl" containerSize="content">
       <SectionHeader 
         title="Professional Journey"
-        subtitle="From corporate dashboard development to football analytics innovation, with upcoming AI specialization — building expertise across sports, media, and technology sectors."
+        subtitle="From corporate dashboard development to football analytics innovation, with upcoming AI specialization, building expertise across sports, media, and technology sectors."
         size="default"
       />
 

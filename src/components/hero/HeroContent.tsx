@@ -7,12 +7,7 @@ interface HeroContentProps {
 
 export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
   const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = 'https://drive.google.com/uc?export=download&id=1sKlbdaqoneWQ_vm0x7HKHWyceHQYhEid';
-    link.download = 'Moritz_Philipp_Haaf_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open('/CV_Moritz-Philipp-Haaf.pdf', '_blank');
   };
 
   return (

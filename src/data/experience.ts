@@ -32,17 +32,6 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    date: "07/2024 – 12/2024",
-    company: "Regionalmedien Austria AG",
-    position: "Analytics & Ad Tech Development Manager",
-    location: "Austria",
-    details: [
-      "Analyzing traffic and user flow assessments using Google Analytics & Piano Analytics.",
-      "Supported development of internal Looker KPI dashboards.",
-      "Responsible for Data Management Platform to build and maintain user segments.",
-    ],
-  },
-  {
     date: "08/2022 – 04/2024",
     company: "Red Bull Media House",
     position: "Digital Competence Specialist",

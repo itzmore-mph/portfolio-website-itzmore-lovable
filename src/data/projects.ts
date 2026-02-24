@@ -47,6 +47,7 @@ export const projects: Project[] = [
     metrics: ["UCL Final 2018", "Network Analysis", "Tactical Insights"],
     icon: Network,
     color: "pitch-green",
+    liveUrl: "/passing-network-analysis-statsbomb-report.pdf",
     githubUrl: "https://github.com/itzmore-mph/statsbomb-passing-network-analysis",
   },
   {

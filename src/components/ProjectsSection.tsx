@@ -17,14 +17,17 @@ const ProjectsSection = () => {
       />
 
       <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-        {projects.map((project, index) => (
+        {projects.map((project, index) => {
+          const isLastAndOdd = index === projects.length - 1 && projects.length % 2 !== 0;
+          return (
            <Card 
             key={project.title} 
             className={cn(
               "card-power border-0 overflow-hidden group will-change-transform h-full flex flex-col",
               project.isPlaceholder 
                 ? "border-2 border-dashed border-muted-foreground/20 bg-muted/5" 
-                : ""
+                : "",
+              isLastAndOdd ? "md:col-span-2 md:max-w-xl md:mx-auto" : ""
             )}
             style={{ animationDelay: `${index * 150}ms` }}
           >
@@ -102,7 +105,7 @@ const ProjectsSection = () => {
                       onClick={() => window.open(project.liveUrl, '_blank')}
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      {project.title.includes('Phoenix') ? 'Excel Analysis' : 'View Project'}
+                      {project.title.includes('Phoenix') ? 'Excel Analysis' : project.title.includes('StatsBomb') ? 'View Report' : 'View Project'}
                     </Button>
                     <Button 
                       variant="outline" 
@@ -118,7 +121,8 @@ const ProjectsSection = () => {
               </div>
             </CardContent>
           </Card>
-        ))}
+          );
+        })}
       </div>
 
       {/* Enhanced Call to Action */}

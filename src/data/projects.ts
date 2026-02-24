@@ -1,4 +1,4 @@
-import { BarChart3, TrendingUp, Users, Award } from "lucide-react";
+import { BarChart3, TrendingUp, Users, Award, Network } from "lucide-react";
 import { Project } from "./types";
 
 export const projects: Project[] = [
@@ -37,6 +37,17 @@ export const projects: Project[] = [
     color: "pitch-green",
     liveUrl: "https://docs.google.com/spreadsheets/d/1mPcusY0ESo4krszRta6Yul3MsqbyMYKV/export?format=xlsx",
     githubUrl: "https://drive.google.com/uc?export=download&id=1DQgAIAjWY7UDYFkX2LIfXYARIH57JuER",
+  },
+  {
+    title: "StatsBomb Passing Network Analysis",
+    description:
+      "Built a football passing network analysis using open event data from Hudl StatsBomb to evaluate team structure and player connectivity. Transforms individual pass events into a network representation to identify key distribution hubs, structural build-up patterns, and player roles in possession.",
+    image: "/lovable-uploads/passing-network-analysis.png",
+    tags: ["Python", "pandas", "mplsoccer", "Jupyter Notebook"],
+    metrics: ["UCL Final 2018", "Network Analysis", "Tactical Insights"],
+    icon: Network,
+    color: "pitch-green",
+    githubUrl: "https://github.com/itzmore-mph/statsbomb-passing-network-analysis",
   },
   {
     title: "More Projects Coming Soon",

@@ -76,4 +76,15 @@ export const experiences: Experience[] = [
       "Supported key account management and project execution, implementing data-driven reporting mechanisms to increase business efficiency.",
     ],
   },
+  {
+    date: "08/2016",
+    company: "TorAlarm GmbH",
+    position: "Internship",
+    location: "Düsseldorf",
+    details: [
+      "Developed and maintained databases, improving data organization and operational efficiency.",
+      "Assisted in User Growth & Sales, contributing to strategic initiatives to enhance user acquisition.",
+      "Participated in product development, particularly in integrating Amazon Alexa skills, enhancing product usability and expanding market reach.",
+    ],
+  },
 ];

@@ -80,7 +80,7 @@ export const experiences: Experience[] = [
     date: "08/2016",
     company: "TorAlarm GmbH",
     position: "Internship",
-    location: "Düsseldorf",
+    location: "Germany",
     details: [
       "Developed and maintained databases, improving data organization and operational efficiency.",
       "Assisted in User Growth & Sales, contributing to strategic initiatives to enhance user acquisition.",

@@ -7,16 +7,16 @@ export const skillCategories: SkillCategory[] = [
     icon: BarChart3,
     color: "data-blue",
     skills: [
-      { name: "Data Analytics", level: "Experienced" },
-      { name: "Data Science", level: "Intermediate" },  
-      { name: "Business Intelligence", level: "Experienced" },
-      { name: "Data Visualization", level: "Experienced" },
-      { name: "Dashboard Development", level: "Experienced" },
-      { name: "Ad Tech", level: "Experienced" },
-      { name: "Project Management", level: "Intermediate" },
-      { name: "AI & Machine Learning", level: "Intermediate" },
       { name: "Football Analytics", level: "Experienced" },
-      { name: "Sports Technology", level: "Intermediate" }
+      { name: "Data Analytics", level: "Experienced" },
+      { name: "Data Science", level: "Intermediate" },
+      { name: "Data Visualization", level: "Experienced" },
+      { name: "AI & Machine Learning", level: "Intermediate" },
+      { name: "Statistical Modeling", level: "Intermediate" },
+      { name: "Performance Analysis", level: "Intermediate" },
+      { name: "Sports Technology", level: "Intermediate" },
+      { name: "Dashboard Development", level: "Experienced" },
+      { name: "Business Intelligence", level: "Experienced" }
     ]
   },
   {

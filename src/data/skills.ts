@@ -7,16 +7,16 @@ export const skillCategories: SkillCategory[] = [
     icon: BarChart3,
     color: "data-blue",
     skills: [
-      { name: "Data Analytics", level: "Experienced" },
-      { name: "Data Science", level: "Intermediate" },  
-      { name: "Business Intelligence", level: "Experienced" },
-      { name: "Data Visualization", level: "Experienced" },
-      { name: "Dashboard Development", level: "Experienced" },
-      { name: "Ad Tech", level: "Experienced" },
-      { name: "Project Management", level: "Intermediate" },
-      { name: "AI & Machine Learning", level: "Intermediate" },
       { name: "Football Analytics", level: "Experienced" },
-      { name: "Sports Technology", level: "Intermediate" }
+      { name: "Data Analytics", level: "Experienced" },
+      { name: "Data Science", level: "Intermediate" },
+      { name: "Data Visualization", level: "Experienced" },
+      { name: "AI & Machine Learning", level: "Intermediate" },
+      { name: "Statistical Modeling", level: "Intermediate" },
+      { name: "Performance Analysis", level: "Intermediate" },
+      { name: "Sports Technology", level: "Intermediate" },
+      { name: "Dashboard Development", level: "Experienced" },
+      { name: "Business Intelligence", level: "Experienced" }
     ]
   },
   {
@@ -25,7 +25,7 @@ export const skillCategories: SkillCategory[] = [
     color: "pitch-green", 
     skills: [
       { name: "Python", level: "Experienced", link: "https://www.python.org/" },
-      { name: "SQL", level: "Experienced", link: "https://dev.mysql.com/doc/" },
+      { name: "SQL", level: "Intermediate", link: "https://dev.mysql.com/doc/" },
       { name: "R", level: "Basic", link: "https://www.r-project.org/" },
       { name: "Datorama", level: "Experienced", link: "https://www.salesforce.com/de/campaign/sem/marketing-cloud/" },
       { name: "Tableau", level: "Experienced", link: "https://www.tableau.com/" },

@@ -25,7 +25,7 @@ export const skillCategories: SkillCategory[] = [
     color: "pitch-green", 
     skills: [
       { name: "Python", level: "Experienced", link: "https://www.python.org/" },
-      { name: "SQL", level: "Experienced", link: "https://dev.mysql.com/doc/" },
+      { name: "SQL", level: "Intermediate", link: "https://dev.mysql.com/doc/" },
       { name: "R", level: "Basic", link: "https://www.r-project.org/" },
       { name: "Datorama", level: "Experienced", link: "https://www.salesforce.com/de/campaign/sem/marketing-cloud/" },
       { name: "Tableau", level: "Experienced", link: "https://www.tableau.com/" },

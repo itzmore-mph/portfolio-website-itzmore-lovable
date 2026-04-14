@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { AnimatedSection } from "@/components/ui/animated-section";
+import { ParallaxSection } from "@/components/ui/parallax-section";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Award, Users, Target } from "lucide-react";
@@ -47,7 +48,8 @@ const AboutSection = () => {
 
   return (
     <Section id="about" background="power" spacing="xl">
-      <SectionHeader 
+      <ParallaxSection fadeIn slideUp>
+      <SectionHeader
         title="About Me"
         subtitle="Get to know more about my background, expertise, and passion for transforming complex data into actionable insights."
       />
@@ -137,6 +139,7 @@ const AboutSection = () => {
           </AnimatedSection>
         </div>
       </div>
+      </ParallaxSection>
     </Section>
   );
 };

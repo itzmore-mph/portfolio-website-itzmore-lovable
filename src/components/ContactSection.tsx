@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { AnimatedSection } from "@/components/ui/animated-section";
+import { ParallaxSection } from "@/components/ui/parallax-section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -57,7 +58,8 @@ const ContactSection = () => {
 
   return (
     <Section id="contact" background="default" spacing="xl">
-      <SectionHeader 
+      <ParallaxSection fadeIn slideUp>
+      <SectionHeader
         title="Let's Work Together"
         subtitle="Ready to transform your football data into winning insights? Let's discuss your analytics needs and how I can help drive your success."
       />
@@ -222,8 +224,10 @@ const ContactSection = () => {
         </AnimatedSection>
       </div>
 
+      </ParallaxSection>
+
       {/* Call to Action */}
-      <AnimatedSection animation="fade" delay={400}>
+      <ParallaxSection fadeIn slideUp scale>
         <div className="mt-24 text-center">
           <div className="bg-card border border-border/50 p-12 lg:p-16 rounded-3xl shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 rounded-3xl"></div>
@@ -253,7 +257,7 @@ const ContactSection = () => {
             </div>
           </div>
         </div>
-      </AnimatedSection>
+      </ParallaxSection>
     </Section>
   );
 };

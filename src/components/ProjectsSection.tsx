@@ -6,11 +6,13 @@ import { projects } from "@/data/projects";
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { cn } from "@/lib/utils";
+import { ParallaxSection } from "@/components/ui/parallax-section";
 
 const ProjectsSection = () => {
   return (
     <Section background="power" spacing="xl" containerSize="content">
-      <SectionHeader 
+      <ParallaxSection fadeIn slideUp>
+      <SectionHeader
         title="Featured Projects"
         subtitle="A showcase of my football analytics projects, demonstrating expertise in data analysis, machine learning, and strategic insights across various aspects of the beautiful game."
         size="default"
@@ -125,8 +127,11 @@ const ProjectsSection = () => {
         })}
       </div>
 
+      </ParallaxSection>
+
       {/* Enhanced Call to Action */}
-      <div className="mt-20 lg:mt-24 animate-fade-in">
+      <ParallaxSection fadeIn slideUp scale>
+      <div className="mt-20 lg:mt-24">
         <div className="bg-card border border-border rounded-2xl p-8 lg:p-12 shadow-xl">
           <div className="text-center">
             <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground">Interested in Collaboration?</h3>
@@ -150,6 +155,7 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
+      </ParallaxSection>
     </Section>
   );
 };

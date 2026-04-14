@@ -6,6 +6,7 @@ import { useState } from "react";
 import { experiences } from "@/data/experience";
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
+import { ParallaxSection } from "@/components/ui/parallax-section";
 
 const ExperienceSection = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
@@ -20,7 +21,8 @@ const ExperienceSection = () => {
 
   return (
     <Section background="muted" spacing="xl" containerSize="content">
-      <SectionHeader 
+      <ParallaxSection fadeIn slideUp>
+      <SectionHeader
         title="Professional Journey"
         subtitle="From corporate dashboard development to football analytics innovation, with upcoming AI specialization, building expertise across sports, media, and technology sectors."
         size="default"
@@ -114,6 +116,7 @@ const ExperienceSection = () => {
           </Card>
         ))}
       </div>
+      </ParallaxSection>
     </Section>
   );
 };

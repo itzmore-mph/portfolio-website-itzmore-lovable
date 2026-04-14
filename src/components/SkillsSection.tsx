@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skillCategories, keyStrengths } from "@/data/skills";
+import { ParallaxSection } from "@/components/ui/parallax-section";
 
 const SkillsSection = () => {
   const getProgressPercentage = (level: string) => {
@@ -23,7 +24,8 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
+        <ParallaxSection fadeIn slideUp>
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">Technical Expertise</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
             A data science toolkit built for football analytics — from statistical modeling and performance analysis to AI-driven insights, 
@@ -31,7 +33,10 @@ const SkillsSection = () => {
           </p>
         </div>
 
+        </ParallaxSection>
+
         {/* Skills Categories */}
+        <ParallaxSection fadeIn slideUp>
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category) => (
             <Card key={category.title} className="animate-slide-up hover:shadow-lg transition-all duration-200 border-border/50 bg-card">
@@ -74,8 +79,10 @@ const SkillsSection = () => {
           ))}
         </div>
 
+        </ParallaxSection>
+
         {/* Key Strengths */}
-        <div className="animate-fade-in">
+        <ParallaxSection fadeIn slideUp scale>
           <h3 className="text-3xl font-semibold text-center mb-8 tracking-tight">Key Strengths</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {keyStrengths.map((strength) => (
@@ -95,7 +102,7 @@ const SkillsSection = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </ParallaxSection>
       </div>
     </section>
   );

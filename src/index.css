@@ -251,17 +251,21 @@ body {
 }
 
 @layer components {
-  /* Section Backgrounds */
+  /* Section Backgrounds - Modern depth system */
   .section-background-default {
-    background: var(--gradient-hero);
+    background: linear-gradient(180deg, hsl(222 47% 11%) 0%, hsl(217 33% 13%) 100%);
   }
   
   .section-background-muted {
-    background: var(--gradient-secondary);
+    background: linear-gradient(180deg, hsl(217 33% 13%) 0%, hsl(222 47% 11%) 100%);
   }
   
   .section-background-gradient {
-    background: var(--gradient-card);
+    background: linear-gradient(180deg, hsl(217 33% 15%) 0%, hsl(217 33% 17%) 100%);
+  }
+
+  .section-background-power {
+    background: linear-gradient(180deg, hsl(217 33% 14%) 0%, hsl(222 47% 11%) 100%);
   }
 
   /* Card Styles */

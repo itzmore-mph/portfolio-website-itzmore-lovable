@@ -6,28 +6,56 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import {
+  SectionDecorSet1,
+  SectionDecorSet2,
+  SectionDecorSet3,
+  SectionDecorSet4,
+  SectionDecorSet5,
+  SectionGradientDivider,
+} from "@/components/ui/floating-background";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-slate-25 to-muted">
+    <div className="min-h-screen bg-background">
       <Navigation />
       <main className="relative" id="main-content">
         <section id="home" className="relative">
           <HeroSection />
         </section>
-        <section id="about" className="relative">
+
+        <SectionGradientDivider variant="accent" />
+
+        <section id="about" className="relative overflow-hidden">
+          <SectionDecorSet1 />
           <AboutSection />
         </section>
-        <section id="experience" className="relative">
+
+        <SectionGradientDivider variant="default" />
+
+        <section id="experience" className="relative overflow-hidden">
+          <SectionDecorSet2 />
           <ExperienceSection />
         </section>
-        <section id="skills" className="relative">
+
+        <SectionGradientDivider variant="reverse" />
+
+        <section id="skills" className="relative overflow-hidden">
+          <SectionDecorSet3 />
           <SkillsSection />
         </section>
-        <section id="projects" className="relative">
+
+        <SectionGradientDivider variant="accent" />
+
+        <section id="projects" className="relative overflow-hidden">
+          <SectionDecorSet4 />
           <ProjectsSection />
         </section>
-        <section id="contact" className="relative">
+
+        <SectionGradientDivider variant="default" />
+
+        <section id="contact" className="relative overflow-hidden">
+          <SectionDecorSet5 />
           <ContactSection />
         </section>
       </main>

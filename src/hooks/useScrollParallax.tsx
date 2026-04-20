@@ -38,10 +38,11 @@ export const useScrollParallax = (options: ParallaxOptions = {}) => {
 
     const rect = el.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const elementCenter = rect.top + rect.height / 2;
-    
-    // Progress: 0 = element just entering bottom, 1 = element at center/past
-    const rawProgress = 1 - (elementCenter - windowHeight * 0.5) / (windowHeight * 0.6);
+
+    // Progress based on element top entering viewport.
+    // 0 = top is at bottom of viewport, 1 = top has moved up by 40% of viewport height.
+    // Works for tall sections on mobile where center never reaches viewport middle.
+    const rawProgress = (windowHeight - rect.top) / (windowHeight * 0.4);
     const progress = Math.min(Math.max(rawProgress, 0), 1);
 
     // Easing function for smoother animation

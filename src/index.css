@@ -520,3 +520,22 @@ body {
 .focus-ring {
   @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
 }
+/* Floating orb ambient drift — pure CSS, no JS scroll listeners */
+@keyframes orb-drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -20px, 0) scale(1.05);
+  }
+}
+
+.animate-orb-drift {
+  animation: orb-drift 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb-drift {
+    animation: none;
+  }
+}

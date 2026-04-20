@@ -14,6 +14,16 @@ interface ParallaxState {
   scale: number;
 }
 
+// Detect mobile / reduced-motion / coarse-pointer environments where the parallax
+// math is unreliable (tall stacked sections, iOS scroll quirks). On those, we
+// skip the effect entirely and render content fully visible.
+const shouldDisableParallax = () => {
+  if (typeof window === "undefined") return false;
+  const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return isSmallScreen || prefersReduced;
+};
+
 export const useScrollParallax = (options: ParallaxOptions = {}) => {
   const {
     speed = 0.15,
@@ -24,10 +34,13 @@ export const useScrollParallax = (options: ParallaxOptions = {}) => {
   } = options;
 
   const ref = useRef<HTMLDivElement>(null);
+  const [disabled, setDisabled] = useState<boolean>(() => shouldDisableParallax());
   const [state, setState] = useState<ParallaxState>({
-    opacity: fadeIn ? 0 : 1,
-    translateY: slideUp ? 60 : 0,
-    scale: scale ? 0.95 : 1,
+    // If parallax is disabled (mobile / reduced motion), start fully visible
+    // so content always renders even if scroll handlers never fire correctly.
+    opacity: disabled || !fadeIn ? 1 : 0,
+    translateY: disabled || !slideUp ? 0 : 60,
+    scale: disabled || !scale ? 1 : 0.95,
   });
   const hasAnimated = useRef(false);
   const rafId = useRef<number>(0);
@@ -64,6 +77,19 @@ export const useScrollParallax = (options: ParallaxOptions = {}) => {
   }, [speed, fadeIn, slideUp, scale, threshold]);
 
   useEffect(() => {
+    // Re-evaluate on resize in case viewport crosses the breakpoint.
+    const updateDisabled = () => {
+      const next = shouldDisableParallax();
+      setDisabled((prev) => (prev !== next ? next : prev));
+    };
+
+    if (disabled) {
+      // Ensure content is fully visible and skip all scroll work.
+      setState({ opacity: 1, translateY: 0, scale: 1 });
+      window.addEventListener("resize", updateDisabled, { passive: true });
+      return () => window.removeEventListener("resize", updateDisabled);
+    }
+
     const handleScroll = () => {
       cancelAnimationFrame(rafId.current);
       rafId.current = requestAnimationFrame(updateParallax);
@@ -74,20 +100,31 @@ export const useScrollParallax = (options: ParallaxOptions = {}) => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll, { passive: true });
+    window.addEventListener("resize", updateDisabled, { passive: true });
+
+    // Safety net: if for any reason content stays hidden after mount,
+    // force it visible after a short delay so users never see a blank section.
+    const safety = window.setTimeout(() => {
+      setState((s) => (s.opacity < 0.05 ? { opacity: 1, translateY: 0, scale: 1 } : s));
+    }, 1500);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("resize", updateDisabled);
       cancelAnimationFrame(rafId.current);
+      window.clearTimeout(safety);
     };
-  }, [updateParallax]);
+  }, [updateParallax, disabled]);
 
-  const style: React.CSSProperties = {
-    opacity: state.opacity,
-    transform: `translateY(${state.translateY}px) scale(${state.scale})`,
-    willChange: "transform, opacity",
-    transition: "transform 0.1s linear, opacity 0.1s linear",
-  };
+  const style: React.CSSProperties = disabled
+    ? { opacity: 1 }
+    : {
+        opacity: state.opacity,
+        transform: `translateY(${state.translateY}px) scale(${state.scale})`,
+        willChange: "transform, opacity",
+        transition: "transform 0.1s linear, opacity 0.1s linear",
+      };
 
   return { ref, style, progress: state.opacity };
 };

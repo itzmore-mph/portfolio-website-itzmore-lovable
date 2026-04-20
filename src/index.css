@@ -4,13 +4,13 @@
 
 /* Football Analytics Design System - Emerald Theme */
 :root {
-  /* Dark Professional Palette */
-  --background: 222 47% 11%;
+  /* Dark Professional Palette - Unified deep slate */
+  --background: 222 47% 9%;
   --foreground: 210 40% 98%;
-  --card: 217 33% 17%;
+  --card: 222 40% 13%;
   --card-foreground: 210 40% 98%;
-  --card-hover: 217 33% 20%;
-  --popover: 217 33% 17%;
+  --card-hover: 222 40% 16%;
+  --popover: 222 40% 13%;
   --popover-foreground: 210 40% 98%;
   
   /* Emerald Accent System */

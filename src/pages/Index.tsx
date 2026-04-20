@@ -39,29 +39,39 @@ const Index = () => {
             }}
           />
 
-          <div className="relative z-10">
-            <section id="about" className="relative overflow-hidden">
-              <SectionDecorSet1 />
+          <div className="relative z-10 overflow-hidden">
+            <section id="about" className="relative">
+              <div className="hidden md:block" aria-hidden="true">
+                <SectionDecorSet1 />
+              </div>
               <AboutSection />
             </section>
 
-            <section id="experience" className="relative overflow-hidden">
-              <SectionDecorSet2 />
+            <section id="experience" className="relative">
+              <div className="hidden md:block" aria-hidden="true">
+                <SectionDecorSet2 />
+              </div>
               <ExperienceSection />
             </section>
 
-            <section id="skills" className="relative overflow-hidden">
-              <SectionDecorSet3 />
+            <section id="skills" className="relative">
+              <div className="hidden md:block" aria-hidden="true">
+                <SectionDecorSet3 />
+              </div>
               <SkillsSection />
             </section>
 
-            <section id="projects" className="relative overflow-hidden">
-              <SectionDecorSet4 />
+            <section id="projects" className="relative">
+              <div className="hidden md:block" aria-hidden="true">
+                <SectionDecorSet4 />
+              </div>
               <ProjectsSection />
             </section>
 
-            <section id="contact" className="relative overflow-hidden">
-              <SectionDecorSet5 />
+            <section id="contact" className="relative">
+              <div className="hidden md:block" aria-hidden="true">
+                <SectionDecorSet5 />
+              </div>
               <ContactSection />
             </section>
           </div>

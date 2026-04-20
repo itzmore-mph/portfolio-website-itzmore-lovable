@@ -12,7 +12,6 @@ import {
   SectionDecorSet3,
   SectionDecorSet4,
   SectionDecorSet5,
-  SectionGradientDivider,
 } from "@/components/ui/floating-background";
 
 const Index = () => {
@@ -24,40 +23,49 @@ const Index = () => {
           <HeroSection />
         </section>
 
-        <SectionGradientDivider variant="accent" />
+        {/* Unified continuous surface for all content sections */}
+        <div className="relative bg-background">
+          {/* Global ambient gradient layer spanning all sections */}
+          <div
+            className="pointer-events-none absolute inset-0 z-0"
+            aria-hidden="true"
+            style={{
+              backgroundImage: `
+                radial-gradient(ellipse 60% 30% at 80% 10%, hsl(var(--primary) / 0.06), transparent 70%),
+                radial-gradient(ellipse 70% 35% at 10% 40%, hsl(var(--primary) / 0.04), transparent 70%),
+                radial-gradient(ellipse 60% 30% at 90% 70%, hsl(var(--primary) / 0.05), transparent 70%),
+                radial-gradient(ellipse 70% 35% at 20% 95%, hsl(var(--primary) / 0.04), transparent 70%)
+              `,
+            }}
+          />
 
-        <section id="about" className="relative overflow-hidden">
-          <SectionDecorSet1 />
-          <AboutSection />
-        </section>
+          <div className="relative z-10">
+            <section id="about" className="relative overflow-hidden">
+              <SectionDecorSet1 />
+              <AboutSection />
+            </section>
 
-        <SectionGradientDivider variant="default" />
+            <section id="experience" className="relative overflow-hidden">
+              <SectionDecorSet2 />
+              <ExperienceSection />
+            </section>
 
-        <section id="experience" className="relative overflow-hidden">
-          <SectionDecorSet2 />
-          <ExperienceSection />
-        </section>
+            <section id="skills" className="relative overflow-hidden">
+              <SectionDecorSet3 />
+              <SkillsSection />
+            </section>
 
-        <SectionGradientDivider variant="reverse" />
+            <section id="projects" className="relative overflow-hidden">
+              <SectionDecorSet4 />
+              <ProjectsSection />
+            </section>
 
-        <section id="skills" className="relative overflow-hidden">
-          <SectionDecorSet3 />
-          <SkillsSection />
-        </section>
-
-        <SectionGradientDivider variant="accent" />
-
-        <section id="projects" className="relative overflow-hidden">
-          <SectionDecorSet4 />
-          <ProjectsSection />
-        </section>
-
-        <SectionGradientDivider variant="default" />
-
-        <section id="contact" className="relative overflow-hidden">
-          <SectionDecorSet5 />
-          <ContactSection />
-        </section>
+            <section id="contact" className="relative overflow-hidden">
+              <SectionDecorSet5 />
+              <ContactSection />
+            </section>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

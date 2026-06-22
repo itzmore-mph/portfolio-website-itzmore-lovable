@@ -71,3 +71,14 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Security: Row Level Security (RLS)
+
+All Supabase tables in this project MUST enforce Row Level Security. When adding a new table:
+
+1. `alter table public.<table> enable row level security;`
+2. Add explicit `create policy` statements for every role that needs access (`anon`, `authenticated`, `service_role`).
+3. Never store roles on `profiles` or `users`. Use a dedicated `user_roles` table with a `has_role(uuid, app_role)` security-definer function.
+4. Review with `select * from pg_policies where schemaname = 'public';` before shipping.
+
+A table without RLS is a privilege-escalation risk and should fail review.

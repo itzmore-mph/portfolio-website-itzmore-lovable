@@ -151,8 +151,30 @@
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium transition-all">
       Skip to main content
     </a>
-    
+
     <div id="root" role="main" aria-label="Main application content"></div>
+
+    <!--
+      Crawler-visible SEO fallback. Hidden from sighted users via inline styles,
+      surfaced to non-JS crawlers (Bing, social previews) so the page is never
+      empty before React hydrates. Hydration replaces the root above; this block
+      is independent and remains parseable on first byte.
+    -->
+    <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+      <h1>Moritz Philipp Haaf, Football Data Scientist</h1>
+      <p>Football analytics portfolio: tracking-data analytics, pitch-control from broadcast video, expected goals (xG) models, and passing-network analysis. Currently Senior Data Analyst at Publicis Media Austria. EMEA finalist of the AWS World Sports Innovation Cup 2026 with the Football Body Intelligence Platform built on 700M plus TRACAB tracking data points using AWS S3, SageMaker and Bedrock.</p>
+      <h2>Featured projects</h2>
+      <ul>
+        <li>Football Body Intelligence Platform, AWS WSIC 2026 EMEA finalist, AWI and PQI metrics on TRACAB tracking data.</li>
+        <li>Pitch-Control from Broadcast Video, MSc capstone using YOLOv11n, ByteTrack, TVCalib and Shaw TTI, validated against SoccerNet GSR (ICC 0.83 to 0.92).</li>
+        <li>Football Analytics Dashboard with XGBoost xG baseline and passing networks on StatsBomb open data.</li>
+        <li>Bundesliga 2023 to 2024 performance and valuation analysis with Ridge and Random Forest.</li>
+        <li>StatsBomb passing-network analysis, UEFA Champions League Final 2018.</li>
+      </ul>
+      <h2>Skills</h2>
+      <p>Python, SQL, AWS SageMaker, Streamlit, PyTorch, computer vision, tracking data, xG models, pitch control, passing networks, Power BI, Tableau.</p>
+    </div>
+
     <div class="loading-fallback">
       <div class="loading-spinner"></div>
     </div>

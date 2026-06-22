@@ -35,20 +35,22 @@ const ProjectsSection = () => {
           >
             {/* Project Header with Icon */}
             <CardHeader className="pb-6">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-4">
-                  <div className={cn(
-                    "p-3 rounded-xl bg-gradient-to-br transition-all duration-300 group-hover:scale-110",
-                    `from-${project.color}/10 to-${project.color}/5 border border-${project.color}/20`
-                  )}>
-                    <project.icon className={`w-7 h-7 text-${project.color}`} />
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center gap-4 min-w-0">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/25 transition-all duration-300 group-hover:scale-110">
+                    <project.icon className="w-7 h-7 text-primary" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <CardTitle className="text-card-title group-hover:text-primary transition-colors">
                       {project.title}
                     </CardTitle>
                   </div>
                 </div>
+                {project.metricBadge && (
+                  <span className="font-mono text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/25 whitespace-nowrap shrink-0">
+                    {project.metricBadge}
+                  </span>
+                )}
               </div>
             </CardHeader>
 
@@ -65,7 +67,7 @@ const ProjectsSection = () => {
                 <div className="grid grid-cols-3 gap-3">
                   {project.metrics.map((metric, idx) => (
                     <div key={idx} className="stat-card p-3 min-h-[60px] flex items-center justify-center">
-                      <div className="text-xs sm:text-sm font-semibold text-foreground text-center leading-tight">{metric}</div>
+                      <div className="font-mono text-[11px] sm:text-xs font-semibold text-foreground text-center leading-tight">{metric}</div>
                     </div>
                   ))}
                 </div>
@@ -100,24 +102,28 @@ const ProjectsSection = () => {
                   </Button>
                 ) : (
                   <>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="flex-1 focus-ring-primary interactive-element"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      {project.title.includes('Phoenix') ? 'Excel Analysis' : project.title.includes('StatsBomb') ? 'View Report' : 'View Project'}
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="flex-1 focus-ring-primary interactive-element"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      {project.title.includes('Phoenix') ? 'Executive Summary' : 'Source Code'}
-                    </Button>
+                    {project.liveUrl && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 focus-ring-primary interactive-element"
+                        onClick={() => window.open(project.liveUrl, '_blank')}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        {project.title.includes('StatsBomb') ? 'View Report' : 'View Project'}
+                      </Button>
+                    )}
+                    {project.githubUrl && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 focus-ring-primary interactive-element"
+                        onClick={() => window.open(project.githubUrl, '_blank')}
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Source Code
+                      </Button>
+                    )}
                   </>
                 )}
               </div>

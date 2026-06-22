@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
   {
     date: "04/2024 – current",
     company: "Freelance",
-    position: "Sports Data Scientist & Analyst",
+    position: "Football Data Scientist & Analyst",
     location: "Remote",
     details: [
       "Build end-to-end football analytics prototypes on open data (FBref, StatsBomb): data ingestion/cleaning in Python + SQL/DuckDB, analysis, and publication via Streamlit and Power BI/Tableau.",

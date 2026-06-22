@@ -1,64 +1,70 @@
-import { BarChart3, TrendingUp, Users, Award, Network } from "lucide-react";
+import { BarChart3, TrendingUp, Network, Video } from "lucide-react";
 import { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    title: "Football Analytics Dashboard – Expected Goals (xG) & Passing Networks",
+    title: "Football Body Intelligence Platform",
     description:
-      "Interactive dashboard analyzing player performance metrics and tactical insights with advanced statistical modeling using StatsBomb data.",
+      "AWS World Sports Innovation Cup 2026 submission, EMEA finalist (DFB Campus Frankfurt). Two proprietary metrics, AWI (cognitive scanning via head rotation) and PQI (pressing quality), derived from 700M plus TRACAB tracking data points on AWS (S3, SageMaker, Bedrock).",
+    image: null,
+    tags: ["Python", "AWS", "Tracking Data", "Streamlit"],
+    metrics: ["TRACAB Tracking", "AWS SageMaker", "AWI and PQI"],
+    metricBadge: "cross-half R = 0.854",
+    icon: TrendingUp,
+    color: "primary",
+    liveUrl: "https://github.com/itzmore-mph",
+    githubUrl: "https://github.com/itzmore-mph",
+  },
+  {
+    title: "Pitch-Control from Broadcast Video",
+    description:
+      "MSc capstone. End-to-end computer-vision pipeline (YOLOv11n detection, ByteTrack identity, TVCalib camera calibration, Shaw TTI pitch-control) that turns broadcast footage into spatial pressure surfaces, validated against SoccerNet GSR ground truth.",
+    image: null,
+    tags: ["Python", "Computer Vision", "PyTorch", "Validation"],
+    metrics: ["YOLOv11n + ByteTrack", "TVCalib Homography", "Shaw TTI Model"],
+    metricBadge: "ICC 0.83 to 0.92",
+    icon: Video,
+    color: "primary",
+    githubUrl: "https://github.com/itzmore-mph",
+  },
+  {
+    title: "Football Analytics Dashboard, Expected Goals and Passing Networks",
+    description:
+      "Interactive Streamlit dashboard for player performance and tactical insight, with an XGBoost xG baseline and pass-network views built on open StatsBomb event data.",
     image: "/lovable-uploads/58741acb-2f0e-4f70-97e0-a1c20ca0bee8.png",
     tags: ["Python", "Streamlit", "xG Models", "Network Analysis"],
-    metrics: ["XGBoost ML Model", "Passing Networks", "StatsBomb Data"],
+    metrics: ["XGBoost xG", "Passing Networks", "StatsBomb Data"],
+    metricBadge: "open StatsBomb data",
     icon: BarChart3,
-    color: "data-blue",
+    color: "primary",
     liveUrl: "https://football-xgcloud.streamlit.app/",
     githubUrl: "https://github.com/itzmore-mph/football-analytics-portfolio",
   },
   {
-    title: "Bundesliga Performance & Valuation Analysis",
+    title: "Bundesliga Performance and Valuation Analysis",
     description:
-      "Comprehensive analysis of Bayer Leverkusen's historic unbeaten season using performance metrics, valuation trends, and machine learning models.",
+      "Season-long study of Bayer Leverkusen's unbeaten campaign combining performance metrics, market valuation, and ML feature importance via Ridge and Random Forest.",
     image: "/lovable-uploads/fcdfc32d-a94f-4445-b24b-ffbb89a5c8e6.png",
     tags: ["Python", "Machine Learning", "Bundesliga", "Performance Analysis"],
-    metrics: ["Ridge & Random Forest", "Market Valuation", "Feature Analysis"],
+    metrics: ["Ridge Regression", "Random Forest", "Feature Importance"],
+    metricBadge: "age feature importance = 0.44",
     icon: TrendingUp,
-    color: "analytics-purple",
+    color: "primary",
     liveUrl: "https://itzmore-mph.github.io/bundesliga-performance-analysis/",
     githubUrl: "https://github.com/itzmore-mph/BundesligaPerformanceAnalysis",
   },
   {
-    title: "Phoenix Firebirds Ticket Sales Analysis",
-    description:
-      "Strategic analysis of Minor League Baseball ticket sales data identifying key drivers of attendance and revenue optimization opportunities.",
-    image: "/lovable-uploads/e1798b1e-2ff3-4c5c-98b4-8a94faf3b4b4.png",
-    tags: ["Excel", "Power BI", "Sports Strategy", "Revenue Analysis"],
-    metrics: ["3-Year Analysis", "Revenue Optimization", "Strategic Insights"],
-    icon: Users,
-    color: "pitch-green",
-    liveUrl: "https://docs.google.com/spreadsheets/d/1mPcusY0ESo4krszRta6Yul3MsqbyMYKV/export?format=xlsx",
-    githubUrl: "https://drive.google.com/uc?export=download&id=1DQgAIAjWY7UDYFkX2LIfXYARIH57JuER",
-  },
-  {
     title: "StatsBomb Passing Network Analysis",
     description:
-      "Built a football passing network analysis using open event data from Hudl StatsBomb to evaluate team structure and player connectivity. Transforms individual pass events into a network representation to identify key distribution hubs, structural build-up patterns, and player roles in possession.",
+      "Built a passing-network analysis on open StatsBomb event data to evaluate team structure and player connectivity, surfacing distribution hubs, build-up patterns, and possession roles.",
     image: "/lovable-uploads/passing-network-analysis.png",
     tags: ["Python", "pandas", "mplsoccer", "Jupyter Notebook"],
-    metrics: ["UCL Final 2018", "Network Analysis", "Tactical Insights"],
+    metrics: ["pandas + mplsoccer", "Network Graph", "Tactical Roles"],
+    metricBadge: "UCL Final 2018",
     icon: Network,
-    color: "pitch-green",
-    liveUrl: "https://github.com/itzmore-mph/statsbomb-passing-network-analysis/blob/main/report/passing-network-analysis-statsbomb-report.pdf",
+    color: "primary",
+    liveUrl:
+      "https://github.com/itzmore-mph/statsbomb-passing-network-analysis/blob/main/report/passing-network-analysis-statsbomb-report.pdf",
     githubUrl: "https://github.com/itzmore-mph/statsbomb-passing-network-analysis",
-  },
-  {
-    title: "More Projects Coming Soon",
-    description:
-      "Additional football analytics projects and data visualizations are currently in development. Contact me to discuss custom analytics solutions.",
-    image: null,
-    tags: ["Python", "Machine Learning", "Analytics", "Custom Solutions"],
-    metrics: ["On Request", "Custom Analytics", "Data Solutions"],
-    icon: Award,
-    color: "muted",
-    isPlaceholder: true,
   },
 ];

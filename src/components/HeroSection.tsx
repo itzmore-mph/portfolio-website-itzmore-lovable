@@ -1,8 +1,7 @@
-import { OptimizedImage } from "@/components/ui/optimized-image";
 import { HeroContent } from "./hero/HeroContent";
 import { ProfilePhoto } from "./hero/ProfilePhoto";
 import { StatsGrid } from "./hero/StatsGrid";
-import heroImage from "@/assets/stadium-hero-vertical.jpg";
+import { HeroDataMotif } from "./hero/HeroDataMotif";
 import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
 import { ArrowDown } from "lucide-react";
 
@@ -18,19 +17,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-dvh flex items-center justify-center overflow-hidden pt-20 lg:pt-0" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf">
-      {/* Background Image with Overlay */}
+    <section className="relative min-h-dvh flex items-center justify-center overflow-hidden pt-20 lg:pt-0" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf, Football Data Scientist">
+      {/* Abstract data-viz motif (pitch-control + passing network), replaces stadium photo */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
-        <OptimizedImage 
-          src={heroImage} 
-          alt="Realistic football stadium view showing pristine green pitch with proper field markings and stadium seating"
-          className="w-full h-full object-cover object-center"
-          priority={true}
-          lazy={false}
-          width={1920}
-          height={1440}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60" />
+        <HeroDataMotif />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/60" />
       </div>
       
       {/* Hero Content */}
@@ -41,7 +32,7 @@ const HeroSection = () => {
           <div className="flex-shrink-0">
             <ProfilePhoto 
               src={profilePhoto}
-              alt="Moritz Philipp Haaf - Professional portrait of Sports Data Scientist specializing in football analytics"
+              alt="Moritz Philipp Haaf, Football Data Scientist, professional portrait"
             />
           </div>
           
@@ -71,7 +62,7 @@ const HeroSection = () => {
           <div className="space-y-6 animate-slide-up order-2">
             <ProfilePhoto 
               src={profilePhoto}
-              alt="Moritz Philipp Haaf - Professional portrait of Sports Data Scientist specializing in football analytics"
+              alt="Moritz Philipp Haaf, Football Data Scientist, professional portrait"
             />
             <StatsGrid />
           </div>

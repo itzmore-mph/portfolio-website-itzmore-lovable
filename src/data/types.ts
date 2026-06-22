@@ -13,6 +13,7 @@ export interface Project {
   image: string | null;
   tags: string[];
   metrics: string[];
+  metricBadge?: string;
   icon: LucideIcon;
   color: string;
   liveUrl?: string;

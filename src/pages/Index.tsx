@@ -47,25 +47,25 @@ const Index = () => {
               <AboutSection />
             </section>
 
-            <section id="experience" className="relative">
+            <section id="projects" className="relative">
               <div className="hidden md:block" aria-hidden="true">
                 <SectionDecorSet2 />
+              </div>
+              <ProjectsSection />
+            </section>
+
+            <section id="experience" className="relative">
+              <div className="hidden md:block" aria-hidden="true">
+                <SectionDecorSet3 />
               </div>
               <ExperienceSection />
             </section>
 
             <section id="skills" className="relative">
               <div className="hidden md:block" aria-hidden="true">
-                <SectionDecorSet3 />
-              </div>
-              <SkillsSection />
-            </section>
-
-            <section id="projects" className="relative">
-              <div className="hidden md:block" aria-hidden="true">
                 <SectionDecorSet4 />
               </div>
-              <ProjectsSection />
+              <SkillsSection />
             </section>
 
             <section id="contact" className="relative">

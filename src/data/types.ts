@@ -10,7 +10,7 @@ export interface NavItem {
 export interface Project {
   title: string;
   description: string;
-  image: string | null;
+  image?: string | null;
   tags: string[];
   metrics: string[];
   metricBadge?: string;

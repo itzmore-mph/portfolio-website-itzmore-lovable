@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { getItem, setItem, removeItem } from '@/lib/safeStorage';
+import { cn } from '@/lib/utils';
 
 declare global {
   interface Window {

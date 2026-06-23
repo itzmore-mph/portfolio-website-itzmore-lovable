@@ -33,6 +33,18 @@ const ProjectsSection = () => {
             )}
             style={{ animationDelay: `${index * 150}ms` }}
           >
+            {/* Optional Project Thumbnail */}
+            {project.image && (
+              <div className="h-44 bg-muted/30 p-3 rounded-t-2xl overflow-hidden flex items-center justify-center">
+                <img
+                  src={project.image}
+                  alt={`${project.title} preview figure`}
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            )}
+
             {/* Project Header with Icon */}
             <CardHeader className="pb-6">
               <div className="flex items-start justify-between gap-4">
@@ -53,6 +65,7 @@ const ProjectsSection = () => {
                 )}
               </div>
             </CardHeader>
+
 
             <CardContent className="flex flex-col h-full">
               {/* Project Description */}

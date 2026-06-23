@@ -21,19 +21,13 @@ export interface Project {
   isPlaceholder?: boolean;
 }
 
-// Skills Types
-export interface Skill {
-  name: string;
-  level: "Basic" | "Intermediate" | "Experienced";
-  link?: string;
-}
-
 export interface SkillCategory {
   title: string;
   icon: LucideIcon;
   color: string;
-  skills: Skill[];
+  skills: string[];
 }
+
 
 export interface KeyStrength {
   icon: LucideIcon;

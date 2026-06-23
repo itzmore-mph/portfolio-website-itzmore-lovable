@@ -3,82 +3,50 @@ import { skillCategories, keyStrengths } from "@/data/skills";
 import { ParallaxSection } from "@/components/ui/parallax-section";
 
 const SkillsSection = () => {
-  const getProgressPercentage = (level: string) => {
-    const percentages = {
-      "Experienced": 100,
-      "Intermediate": 66,
-      "Basic": 33
-    };
-    return percentages[level as keyof typeof percentages] || 0;
-  };
-
-  const getProgressColor = (level: string) => {
-    const colors = {
-      "Experienced": "bg-primary",
-      "Intermediate": "bg-primary/70",
-      "Basic": "bg-primary/40"
-    };
-    return colors[level as keyof typeof colors] || "bg-muted";
-  };
-
   return (
     <section id="skills" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <ParallaxSection fadeIn slideUp>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">Technical Expertise</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
-            A data science toolkit built for football analytics — from statistical modeling and performance analysis to AI-driven insights, 
-            shaped by hands-on sports data projects and an ongoing MSc in AI Applied to Sports.
-          </p>
-        </div>
-
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">Technical Expertise</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
+              A data science toolkit built for football analytics — from statistical modeling and performance analysis to AI-driven insights,
+              shaped by hands-on sports data projects and an ongoing MSc in AI Applied to Sports.
+            </p>
+          </div>
         </ParallaxSection>
 
         {/* Skills Categories */}
         <ParallaxSection fadeIn slideUp>
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {skillCategories.map((category) => (
-            <Card key={category.title} className="animate-slide-up hover:shadow-lg transition-all duration-200 border-border/50 bg-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl font-semibold">
-                  <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
-                    <category.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  {category.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      {skill.link ? (
-                        <a 
-                          href={skill.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="font-medium hover:text-primary transition-colors text-base"
-                        >
-                          {skill.name}
-                        </a>
-                      ) : (
-                        <span className="font-medium text-base">{skill.name}</span>
-                      )}
-                      <span className="text-xs text-muted-foreground font-normal">{skill.level}</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {skillCategories.map((category) => (
+              <Card
+                key={category.title}
+                className="animate-slide-up hover:shadow-lg transition-all duration-200 border-border/50 bg-card"
+              >
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3 text-xl font-semibold">
+                    <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
+                      <category.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <div className="h-1.5 bg-muted rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full ${getProgressColor(skill.level)} transition-all duration-500 rounded-full`}
-                        style={{ width: `${getProgressPercentage(skill.level)}%` }}
-                      />
-                    </div>
+                    {category.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full bg-muted/50 border border-border px-4 py-1.5 text-sm text-foreground"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </ParallaxSection>
 
         {/* Key Strengths */}
@@ -86,8 +54,8 @@ const SkillsSection = () => {
           <h3 className="text-3xl font-semibold text-center mb-8 tracking-tight">Key Strengths</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {keyStrengths.map((strength) => (
-              <Card 
-                key={strength.title} 
+              <Card
+                key={strength.title}
                 className="text-center border-border/50 bg-card hover:shadow-lg transition-all duration-200"
               >
                 <CardContent className="p-6">

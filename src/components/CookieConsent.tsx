@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { getItem, setItem, removeItem } from '@/lib/safeStorage';
+import { cn } from '@/lib/utils';
 
 declare global {
   interface Window {
@@ -24,8 +25,7 @@ const CookieConsent = () => {
   }, []);
 
   const loadGoogleAnalytics = () => {
-    // Replace with your actual GA4 measurement ID
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    const GA_MEASUREMENT_ID = 'G-65F9PL28LL';
     
     // Load gtag script
     const script1 = document.createElement('script');
@@ -72,62 +72,61 @@ const CookieConsent = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm text-white p-3 shadow-lg border-t border-slate-700">
-      <div className="max-w-4xl mx-auto relative">
-        <div className="text-center">
-          <div className="flex justify-center gap-2 mb-3">
-            <Button
-              size="sm"
-              variant={language === 'en' ? 'default' : 'ghost'}
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm text-foreground border-t border-border shadow-lg">
+      <div className="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+        <p className="text-xs text-muted-foreground flex-1 text-center sm:text-left">
+          {language === 'en' ? (
+            <>
+              This site uses essential cookies and, with your consent, Google Analytics.{' '}
+              <a href="/privacy" className="underline hover:text-foreground">Learn more</a>.
+            </>
+          ) : (
+            <>
+              Diese Seite verwendet notwendige Cookies und, mit Ihrer Zustimmung, Google Analytics.{' '}
+              <a href="/privacy" className="underline hover:text-foreground">Mehr erfahren</a>.
+            </>
+          )}
+          <span className="ml-2 inline-flex gap-2">
+            <button
+              type="button"
               onClick={() => setLanguage('en')}
-              className="text-xs px-2 py-1 h-auto"
+              className={cn(
+                'text-xs underline',
+                language === 'en' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
+              )}
             >
               EN
-            </Button>
-            <Button
-              size="sm"
-              variant={language === 'de' ? 'default' : 'ghost'}
+            </button>
+            <button
+              type="button"
               onClick={() => setLanguage('de')}
-              className="text-xs px-2 py-1 h-auto"
+              className={cn(
+                'text-xs underline',
+                language === 'de' ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
+              )}
             >
               DE
-            </Button>
-          </div>
-          
-          {language === 'en' ? (
-            <p className="text-xs mb-3 max-w-2xl mx-auto">
-              This website uses essential cookies and, with your consent, Google Analytics to analyze usage. 
-              <a href="/privacy" className="text-xs hover:text-primary/80 underline ml-1">
-                Learn more
-              </a>.
-            </p>
-          ) : (
-            <p className="text-xs mb-3 max-w-2xl mx-auto">
-              Diese Website verwendet nur technisch notwendige Cookies sowie – mit Ihrer Zustimmung – Google Analytics zur Analyse der Nutzung. 
-              <a href="/privacy" className="text-xs hover:text-primary/80 underline ml-1">
-                Mehr erfahren
-              </a>.
-            </p>
-          )}
-          
-          <div className="flex justify-center flex-wrap gap-2">
-            <Button onClick={acceptCookies} size="sm" className="text-xs">
-              {language === 'en' ? 'Accept All' : 'Alle akzeptieren'}
-            </Button>
-            <Button onClick={declineCookies} variant="secondary" size="sm" className="text-xs">
-              {language === 'en' ? 'Decline' : 'Ablehnen'}
-            </Button>
-          </div>
+            </button>
+          </span>
+        </p>
+
+        <div className="flex items-center gap-2 shrink-0">
+          <Button onClick={declineCookies} variant="ghost" size="sm" className="text-xs">
+            {language === 'en' ? 'Decline' : 'Ablehnen'}
+          </Button>
+          <Button onClick={acceptCookies} size="sm" className="text-xs">
+            {language === 'en' ? 'Accept All' : 'Alle akzeptieren'}
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={declineCookies}
+            aria-label="Close"
+            className="p-1 h-auto text-muted-foreground hover:text-foreground"
+          >
+            <X className="w-4 h-4" />
+          </Button>
         </div>
-        
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={declineCookies}
-          className="absolute top-0 right-0 p-1 h-auto text-white/60 hover:text-white"
-        >
-          <X className="w-4 h-4" />
-        </Button>
       </div>
     </div>
   );

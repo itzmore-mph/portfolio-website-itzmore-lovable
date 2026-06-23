@@ -1,8 +1,8 @@
 import { StatData } from "./types";
 
 export const statsData: StatData[] = [
-  { value: "700M+", label: "Data Points Processed" },
-  { value: "EMEA", label: "Finalist, AWS WSIC 2026" },
-  { value: "0.83-0.92", label: "ICC Validation Range" },
-  { value: "5+", label: "Years in Data & Analytics" },
+  { value: "Finalist", label: "AWS World Sports Innovation Cup 2026" },
+  { value: "15+", label: "Data science projects shipped" },
+  { value: "5+ yrs", label: "Data science & analytics experience" },
+  { value: "MSc", label: "AI Applied to Sports" },
 ];

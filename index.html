@@ -108,9 +108,9 @@
         100% { transform: rotate(360deg); }
       }
       
-      /* Hide fallback once React loads */
-      #root:not(:empty) + .loading-fallback {
-        display: none;
+      /* Hide fallback once React loads (general sibling: other nodes may sit between #root and the fallback) */
+      #root:not(:empty) ~ .loading-fallback {
+        display: none !important;
       }
       
       /* Screen reader only class for accessibility */

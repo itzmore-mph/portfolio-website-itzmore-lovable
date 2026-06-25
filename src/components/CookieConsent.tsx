@@ -373,14 +373,14 @@ const CookieConsent = () => {
             </p>
           </div>
 
-          <DialogFooter className="gap-2 sm:gap-2">
-            <Button type="button" variant="outline" onClick={rejectAll}>
+          <DialogFooter className="flex-col-reverse gap-2 sm:flex-row sm:gap-2">
+            <Button type="button" variant="outline" onClick={rejectAll} className="w-full sm:w-auto">
               {L.reject}
             </Button>
-            <Button type="button" variant="secondary" onClick={saveCustom}>
+            <Button type="button" variant="secondary" onClick={saveCustom} className="w-full sm:w-auto">
               {L.save}
             </Button>
-            <Button type="button" onClick={acceptAll}>
+            <Button type="button" onClick={acceptAll} className="w-full sm:w-auto">
               {L.accept}
             </Button>
           </DialogFooter>

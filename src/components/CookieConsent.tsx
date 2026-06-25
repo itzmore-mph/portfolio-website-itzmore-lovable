@@ -292,6 +292,7 @@ const CookieConsent = () => {
           </div>
         </div>
       </div>
+      )}
 
       <Dialog open={showDetails} onOpenChange={setShowDetails}>
         <DialogContent className="max-w-2xl">

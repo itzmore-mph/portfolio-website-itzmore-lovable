@@ -295,7 +295,7 @@ const CookieConsent = () => {
       )}
 
       <Dialog open={showDetails} onOpenChange={setShowDetails}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{L.detailsTitle}</DialogTitle>
             <DialogDescription>{L.detailsIntro}</DialogDescription>

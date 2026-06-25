@@ -201,6 +201,7 @@ const CookieConsent = () => {
 
   return (
     <>
+      {!showDetails && (
       <div
         role="dialog"
         aria-modal="false"

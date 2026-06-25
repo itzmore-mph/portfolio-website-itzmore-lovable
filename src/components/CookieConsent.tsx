@@ -201,6 +201,7 @@ const CookieConsent = () => {
 
   return (
     <>
+      {!showDetails && (
       <div
         role="dialog"
         aria-modal="false"
@@ -291,9 +292,10 @@ const CookieConsent = () => {
           </div>
         </div>
       </div>
+      )}
 
       <Dialog open={showDetails} onOpenChange={setShowDetails}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{L.detailsTitle}</DialogTitle>
             <DialogDescription>{L.detailsIntro}</DialogDescription>
@@ -371,14 +373,14 @@ const CookieConsent = () => {
             </p>
           </div>
 
-          <DialogFooter className="gap-2 sm:gap-2">
-            <Button type="button" variant="outline" onClick={rejectAll}>
+          <DialogFooter className="flex-col-reverse gap-2 sm:flex-row sm:gap-2">
+            <Button type="button" variant="outline" onClick={rejectAll} className="w-full sm:w-auto">
               {L.reject}
             </Button>
-            <Button type="button" variant="secondary" onClick={saveCustom}>
+            <Button type="button" variant="secondary" onClick={saveCustom} className="w-full sm:w-auto">
               {L.save}
             </Button>
-            <Button type="button" onClick={acceptAll}>
+            <Button type="button" onClick={acceptAll} className="w-full sm:w-auto">
               {L.accept}
             </Button>
           </DialogFooter>

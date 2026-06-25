@@ -17,11 +17,11 @@ export const projects: Project[] = [
   {
     title: "Pitch-Control from Broadcast Video",
     description:
-      "MSc capstone. End-to-end computer-vision pipeline (YOLOv11n detection, ByteTrack identity, TVCalib camera calibration, Shaw TTI pitch-control) that turns broadcast footage into spatial pressure surfaces, validated against SoccerNet GSR ground truth.",
+      "MSc capstone. End-to-end computer-vision pipeline (YOLOv11n detection, ByteTrack identity, TVCalib camera calibration, Shaw time-to-intercept pitch-control) that turns broadcast footage into spatial pressure surfaces, validated against SoccerNet GSR ground truth across 21 set-piece clips (651 frames).",
     image: "/lovable-uploads/pitch-control-thumb.svg",
     tags: ["Python", "Computer Vision", "PyTorch", "Validation"],
     metrics: ["YOLOv11n + ByteTrack", "TVCalib Homography", "Shaw TTI Model"],
-    metricBadge: "ICC 0.83 to 0.92",
+    metricBadge: "ICC 0.89 to 0.93",
     icon: Video,
     color: "primary",
     githubUrl: "https://github.com/itzmore-mph/soccernet-setpiece-vision",

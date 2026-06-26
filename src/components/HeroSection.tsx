@@ -59,7 +59,7 @@ const HeroSection = () => {
           </div>
           
           {/* Profile & Stats - Desktop */}
-          <div className="space-y-6 animate-slide-up order-2">
+          <div className="space-y-8 lg:space-y-10 animate-slide-up order-2">
             <ProfilePhoto 
               src={profilePhoto}
               alt="Moritz Philipp Haaf, Football Data Scientist, professional portrait"

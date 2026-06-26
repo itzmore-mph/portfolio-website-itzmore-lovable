@@ -30,11 +30,16 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         </h1>
         
         {/* Desktop Tagline */}
-        <h2 className="hidden md:block text-white/90 font-normal leading-relaxed"
-            style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}>
-          Turning football data into insight.<br/>
-          One byte at a time.
-        </h2>
+        <div className="hidden md:block space-y-1">
+          <h2 className="text-white/90 font-normal leading-tight"
+              style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}>
+            Turning football data into insight
+          </h2>
+          <p className="text-muted-foreground font-normal leading-snug italic"
+             style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1.05rem)' }}>
+            One byte at a time.
+          </p>
+        </div>
         
         {/* Subline - Desktop */}
         <p className="hidden md:block text-white/80 font-normal leading-relaxed max-w-2xl" 
@@ -52,7 +57,7 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         <div className="inline-flex items-start text-left bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 shadow-md">
           <p className="text-white/85 font-medium leading-snug" 
              style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}>
-            <span className="text-primary font-semibold">Currently:</span> Senior Data Analyst @ Publicis
+            <span className="text-primary font-semibold">Currently:</span> Senior Data & Dashboard Manager @ Publicis Media
           </p>
         </div>
       </div>

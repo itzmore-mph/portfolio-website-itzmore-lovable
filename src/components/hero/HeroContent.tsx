@@ -33,7 +33,7 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         <div className="hidden md:block space-y-1">
           <h2 className="text-white/90 font-normal leading-tight"
               style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}>
-            Turning football data into insight
+            Turning football data into insight.
           </h2>
           <p className="text-muted-foreground font-normal leading-snug italic"
              style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1.05rem)' }}>

@@ -33,14 +33,16 @@ const ProjectsSection = () => {
             )}
             style={{ animationDelay: `${index * 150}ms` }}
           >
-            {/* Flagship Project Thumbnail */}
+            {/* Project Thumbnail */}
             {project.image && (
-              <img
-                src={project.image}
-                alt={`${project.title} preview`}
-                loading="lazy"
-                className="w-full h-40 object-cover rounded-t-xl"
-              />
+              <div className="w-full h-48 bg-background/60 border-b border-border/50 flex items-center justify-center overflow-hidden rounded-t-xl">
+                <img
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             )}
 
             {/* Project Header with Icon */}

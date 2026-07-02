@@ -68,17 +68,21 @@ const AboutSection = () => {
         {/* Band 2: Photo + Text, top-aligned */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <AnimatedSection animation="slide-right" className="flex justify-center lg:sticky lg:top-24">
-            <div className="relative" style={{ width: 'clamp(18rem, 40vw, 24rem)', height: 'clamp(18rem, 40vw, 24rem)' }}>
-              <OptimizedImage
-                src="/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png"
-                alt="Moritz Philipp Haaf - Professional portrait showing data analyst and football analytics expert in business attire"
-                className="w-full h-full rounded-full object-cover border-4 border-primary/20 shadow-xl"
-                containerClassName="rounded-full"
-                width={384}
-                height={384}
-                lazy={true}
-              />
-            </div>
+            <figure className="relative w-full max-w-sm">
+              <div className="overflow-hidden rounded-2xl border border-primary/20 shadow-xl bg-black/20">
+                <OptimizedImage
+                  src={aboutPhoto.url}
+                  alt="Moritz Philipp Haaf holding the AWS World Sports Innovation Cup 2026 Finalist certificate at the DFL Bundesliga headquarters"
+                  className="w-full h-auto object-cover"
+                  width={800}
+                  height={1067}
+                  lazy={true}
+                />
+              </div>
+              <figcaption className="mt-3 text-caption text-muted-foreground text-center">
+                AWS World Sports Innovation Cup 2026, Finalist at DFL Bundesliga HQ
+              </figcaption>
+            </figure>
           </AnimatedSection>
 
           <AnimatedSection animation="slide-left" delay={200}>

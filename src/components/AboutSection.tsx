@@ -5,6 +5,7 @@ import { ParallaxSection } from "@/components/ui/parallax-section";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase, GraduationCap, Brain, Code2 } from "lucide-react";
+import aboutPhoto from "@/assets/moritz-aws-finalist.jpeg.asset.json";
 
 const AboutSection = () => {
   const highlights = [

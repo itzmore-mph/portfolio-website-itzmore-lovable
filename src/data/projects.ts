@@ -60,7 +60,7 @@ export const projects: Project[] = [
     title: "StatsBomb Passing Network Analysis",
     description:
       "Built a passing-network analysis on open StatsBomb event data to evaluate team structure and player connectivity, surfacing distribution hubs, build-up patterns, and possession roles.",
-    
+    image: passingNetworkImg.url,
     tags: ["Python", "pandas", "mplsoccer", "Jupyter Notebook"],
     metrics: ["pandas + mplsoccer", "Network Graph", "Tactical Roles"],
     metricBadge: "UCL Final 2018",

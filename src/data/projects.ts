@@ -1,5 +1,9 @@
 import { BarChart3, TrendingUp, Network, Video } from "lucide-react";
 import { Project } from "./types";
+import bodyIntelligenceImg from "@/assets/body-intelligence.png.asset.json";
+import pitchControlImg from "@/assets/pitch-control.png.asset.json";
+import passingNetworkImg from "@/assets/passing-network.png.asset.json";
+
 
 export const projects: Project[] = [
   {

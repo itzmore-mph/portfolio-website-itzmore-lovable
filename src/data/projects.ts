@@ -22,7 +22,7 @@ export const projects: Project[] = [
     title: "Pitch-Control from Broadcast Video",
     description:
       "MSc capstone. End-to-end computer-vision pipeline (YOLOv11n detection, ByteTrack identity, TVCalib camera calibration, Shaw time-to-intercept pitch-control) that turns broadcast footage into spatial pressure surfaces, validated against SoccerNet GSR ground truth across 21 set-piece clips (651 frames).",
-    image: "/lovable-uploads/pitch-control-thumb.svg",
+    image: pitchControlImg.url,
     tags: ["Python", "Computer Vision", "PyTorch", "Validation"],
     metrics: ["YOLOv11n + ByteTrack", "TVCalib Homography", "Shaw TTI Model"],
     metricBadge: "ICC 0.89 to 0.93",

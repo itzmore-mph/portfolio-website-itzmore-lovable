@@ -1,4 +1,5 @@
-import { BarChart3, Heart } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,12 +8,18 @@ const Footer = () => {
     <footer className="bg-card border-t border-border text-foreground py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:grid lg:grid-cols-3 gap-12 lg:items-center">
-          {/* Brand */}
+          {/* Brand — itzmore logo/wordmark, matches Navigation */}
           <div className="flex items-center justify-center lg:justify-start gap-3">
-            <div className="p-3 bg-primary rounded-xl shadow-lg">
-              <BarChart3 className="w-7 h-7 text-white" />
-            </div>
-            <span className="font-bold text-xl text-foreground">Football Analytics</span>
+            <Link to="/" aria-label="itzmore.dev homepage" className="flex items-center">
+              <OptimizedImage
+                src="/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png"
+                alt="itzmore logo"
+                className="h-8 w-auto"
+                width={32}
+                height={32}
+                priority
+              />
+            </Link>
           </div>
 
           {/* Navigation */}
@@ -30,18 +37,14 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center lg:text-right text-muted-foreground">
-            <p className="flex items-center justify-center lg:justify-end gap-1 text-sm">
-              Made with <Heart className="w-4 h-4 text-primary fill-current" /> for football analytics
-            </p>
-            <p className="text-sm mt-1">© {currentYear} Football Analytics Portfolio</p>
+            <p className="text-sm">© {currentYear} itzmore.dev | Moritz Philipp Haaf</p>
           </div>
         </div>
 
         <div className="border-t border-border mt-12 pt-10 text-center text-muted-foreground text-sm">
-          <p className="mb-3">Transforming football data into winning insights • Available for freelance projects and consulting</p>
-          <button 
-            onClick={() => (window as any).manageCookiePreferences?.()}
-            className="text-xs hover:text-primary underline bg-transparent border-none cursor-pointer px-3 py-1 rounded-lg hover:bg-muted transition-colors"
+          <button
+            onClick={() => (window as unknown as { manageCookiePreferences?: () => void }).manageCookiePreferences?.()}
+            className="text-xs hover:text-primary underline bg-transparent border-none cursor-pointer px-3 py-1 rounded-lg hover:bg-muted transition-colors focus-ring-primary"
           >
             Manage Cookie Preferences
           </button>

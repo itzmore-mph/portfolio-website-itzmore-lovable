@@ -6,6 +6,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import TrustStrip from "@/components/TrustStrip";
 import {
   SectionDecorSet1,
   SectionDecorSet2,

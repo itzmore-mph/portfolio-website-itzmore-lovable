@@ -8,12 +8,14 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { ParallaxSection } from "@/components/ui/parallax-section";
 
+const DEFAULT_BULLETS = 3;
+
 const ExperienceSection = () => {
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
-  
+
   const toggleCard = (index: number) => {
-    setExpandedCards(prev => 
-      prev.includes(index) 
+    setExpandedCards(prev =>
+      prev.includes(index)
         ? prev.filter(i => i !== index)
         : [...prev, index]
     );
@@ -29,7 +31,12 @@ const ExperienceSection = () => {
       />
 
       <div className="space-y-8">
-        {experiences.map((exp, index) => (
+        {experiences.map((exp, index) => {
+          const isExpanded = expandedCards.includes(index);
+          const visibleBullets = isExpanded ? exp.details : exp.details.slice(0, DEFAULT_BULLETS);
+          const hasMore = exp.details.length > DEFAULT_BULLETS;
+
+          return (
           <Card key={index} className="portfolio-card-elevated overflow-hidden group will-change-transform">
             <CardContent className="p-0">
               <div className="p-8">
@@ -46,11 +53,16 @@ const ExperienceSection = () => {
                             Current Position
                           </Badge>
                         )}
+                        {!exp.current && exp.ongoing && (
+                          <Badge variant="outline" className="font-medium border-primary/40 text-primary">
+                            Ongoing
+                          </Badge>
+                        )}
                       </div>
                     </div>
-                    
+
                     <p className="text-body text-primary mb-4 font-semibold">{exp.position}</p>
-                    
+
                     <div className="flex flex-wrap gap-6 text-muted-foreground mb-6">
                       <div className="flex items-center gap-2">
                         <Calendar className="icon-md" />
@@ -62,15 +74,26 @@ const ExperienceSection = () => {
                       </div>
                     </div>
 
+                    {/* Always-visible achievement bullets (first 2-3) */}
+                    <ul className="space-y-3 mb-6">
+                      {visibleBullets.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="flex items-start gap-3 text-muted-foreground">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2.5 flex-shrink-0" />
+                          <span className="leading-relaxed">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+
                     {exp.links && (
-                      <div className="flex flex-wrap gap-3 mb-6">
+                      <div className="flex flex-wrap gap-3 mb-2">
                         {exp.links.map((link, linkIndex) => (
                           <Button
                             key={linkIndex}
                             variant="outline"
                             size="sm"
                             className="interactive-element focus-ring-primary"
-                            onClick={() => window.open(link.url, '_blank')}
+                            onClick={() => window.open(link.url, '_blank', 'noopener,noreferrer')}
+                            aria-label={`${link.name} (opens in new tab)`}
                           >
                             <ExternalLink className="icon-sm mr-2" />
                             {link.name}
@@ -80,41 +103,31 @@ const ExperienceSection = () => {
                     )}
                   </div>
 
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => toggleCard(index)}
-                    className="lg:self-start interactive-element focus-ring-primary"
-                  >
-                    {expandedCards.includes(index) ? (
-                      <>
-                        Hide Details <ChevronUp className="icon-sm ml-2" />
-                      </>
-                    ) : (
-                      <>
-                        Show Details <ChevronDown className="icon-sm ml-2" />
-                      </>
-                    )}
-                  </Button>
+                  {hasMore && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => toggleCard(index)}
+                      className="lg:self-start interactive-element focus-ring-primary"
+                      aria-expanded={isExpanded}
+                    >
+                      {isExpanded ? (
+                        <>
+                          Hide Details <ChevronUp className="icon-sm ml-2" />
+                        </>
+                      ) : (
+                        <>
+                          Show Details <ChevronDown className="icon-sm ml-2" />
+                        </>
+                      )}
+                    </Button>
+                  )}
                 </div>
               </div>
-
-              {expandedCards.includes(index) && (
-                <div className="border-t bg-gradient-to-r from-muted/30 to-muted/10 p-8 animate-fade-in">
-                  <h4 className="font-bold text-body mb-4 text-foreground">Key Responsibilities & Achievements</h4>
-                  <ul className="space-y-3">
-                    {exp.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-3 text-muted-foreground">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2.5 flex-shrink-0" />
-                        <span className="leading-relaxed">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
             </CardContent>
           </Card>
-        ))}
+          );
+        })}
       </div>
       </ParallaxSection>
     </Section>

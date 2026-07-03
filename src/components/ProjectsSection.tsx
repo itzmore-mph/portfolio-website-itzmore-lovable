@@ -1,12 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, PlayCircle } from "lucide-react";
 import { projects } from "@/data/projects";
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { cn } from "@/lib/utils";
 import { ParallaxSection } from "@/components/ui/parallax-section";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const ProjectsSection = () => {
   return (
@@ -21,27 +23,34 @@ const ProjectsSection = () => {
       <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
         {projects.map((project, index) => {
           const isLastAndOdd = index === projects.length - 1 && projects.length % 2 !== 0;
+          const hasLiveDemo = Boolean(project.liveUrl);
+          const primaryUrl = project.liveUrl ?? project.caseStudyUrl;
+          const primaryLabel = hasLiveDemo ? "Live Demo" : "View Case Study";
+          const PrimaryIcon = hasLiveDemo ? PlayCircle : ExternalLink;
           return (
-           <Card 
-            key={project.title} 
+           <Card
+            key={project.title}
             className={cn(
               "card-power border-0 overflow-hidden group will-change-transform h-full flex flex-col",
-              project.isPlaceholder 
-                ? "border-2 border-dashed border-muted-foreground/20 bg-muted/5" 
+              project.isPlaceholder
+                ? "border-2 border-dashed border-muted-foreground/20 bg-muted/5"
                 : "",
               isLastAndOdd ? "md:col-span-2 md:max-w-xl md:mx-auto" : ""
             )}
             style={{ animationDelay: `${index * 150}ms` }}
           >
-            {/* Project Thumbnail */}
+            {/* Project Thumbnail — standardized 16:9, lazy-loaded */}
             {project.image && (
-              <div className="w-full h-48 bg-background/60 border-b border-border/50 flex items-center justify-center overflow-hidden rounded-t-xl">
-                <img
-                  src={project.image}
-                  alt={`${project.title} preview`}
-                  loading="lazy"
-                  className="w-full h-full object-contain"
-                />
+              <div className="w-full bg-background/60 border-b border-border/50 overflow-hidden rounded-t-xl">
+                <AspectRatio ratio={16 / 9}>
+                  <OptimizedImage
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-contain"
+                    containerClassName="w-full h-full"
+                    lazy
+                  />
+                </AspectRatio>
               </div>
             )}
 
@@ -59,9 +68,16 @@ const ProjectsSection = () => {
                   </div>
                 </div>
                 {project.metricBadge && (
-                  <span className="font-mono text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/25 whitespace-nowrap shrink-0">
-                    {project.metricBadge}
-                  </span>
+                  <div className="flex flex-col items-end gap-1 shrink-0 max-w-[45%]">
+                    <span className="font-mono text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/25 whitespace-nowrap">
+                      {project.metricBadge}
+                    </span>
+                    {project.metricExplainer && (
+                      <p className="text-[10px] sm:text-[11px] text-muted-foreground text-right leading-snug">
+                        {project.metricExplainer}
+                      </p>
+                    )}
+                  </div>
                 )}
               </div>
             </CardHeader>
@@ -90,7 +106,7 @@ const ProjectsSection = () => {
               <div className="mb-8 flex-grow">
               <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <Badge 
+                    <Badge
                       key={tag}
                       variant="emerald"
                       className="text-xs px-2.5 py-1"
@@ -101,11 +117,11 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Action Buttons */}
+              {/* Action Buttons — standardized: primary case study / live demo, secondary source code */}
               <div className="flex gap-3 mt-auto">
                 {project.isPlaceholder ? (
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="sm"
                     className="flex-1 focus-ring-primary opacity-50"
                     disabled
@@ -115,15 +131,16 @@ const ProjectsSection = () => {
                   </Button>
                 ) : (
                   <>
-                    {project.liveUrl && (
+                    {primaryUrl && (
                       <Button
-                        variant="outline"
+                        variant="default"
                         size="sm"
-                        className="flex-1 focus-ring-primary interactive-element"
-                        onClick={() => window.open(project.liveUrl, '_blank')}
+                        className="flex-1 focus-ring-primary interactive-element bg-primary hover:bg-primary-hover text-white"
+                        onClick={() => window.open(primaryUrl, "_blank", "noopener,noreferrer")}
+                        aria-label={`${primaryLabel}: ${project.title}`}
                       >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        {project.title.includes('StatsBomb') ? 'View Report' : 'View Project'}
+                        <PrimaryIcon className="w-4 h-4 mr-2" />
+                        {primaryLabel}
                       </Button>
                     )}
                     {project.githubUrl && (
@@ -131,7 +148,8 @@ const ProjectsSection = () => {
                         variant="outline"
                         size="sm"
                         className="flex-1 focus-ring-primary interactive-element"
-                        onClick={() => window.open(project.githubUrl, '_blank')}
+                        onClick={() => window.open(project.githubUrl, "_blank", "noopener,noreferrer")}
+                        aria-label={`Source code: ${project.title}`}
                       >
                         <Github className="w-4 h-4 mr-2" />
                         Source Code
@@ -146,34 +164,6 @@ const ProjectsSection = () => {
         })}
       </div>
 
-      </ParallaxSection>
-
-      {/* Enhanced Call to Action */}
-      <ParallaxSection fadeIn slideUp scale>
-      <div className="mt-20 lg:mt-24">
-        <div className="bg-card border border-border rounded-2xl p-8 lg:p-12 shadow-xl">
-          <div className="text-center">
-            <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground">Interested in Collaboration?</h3>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-              I'm always excited to work on challenging football analytics projects. 
-              Let's discuss how data can drive your team's success.
-            </p>
-            <Button 
-              variant="default"
-              size="lg"
-              className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-glow"
-              onClick={() => {
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Get In Touch
-            </Button>
-          </div>
-        </div>
-      </div>
       </ParallaxSection>
     </Section>
   );

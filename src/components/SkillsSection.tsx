@@ -10,7 +10,7 @@ const SkillsSection = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">Technical Expertise</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
-              A data science toolkit built for football analytics — from statistical modeling and performance analysis to AI-driven insights,
+              A data science toolkit built for football analytics, from statistical modeling and performance analysis to AI-driven insights,
               shaped by hands-on sports data projects and an ongoing MSc in AI Applied to Sports.
             </p>
           </div>

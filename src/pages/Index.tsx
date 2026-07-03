@@ -6,6 +6,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import TrustStrip from "@/components/TrustStrip";
 import {
   SectionDecorSet1,
   SectionDecorSet2,
@@ -22,6 +23,10 @@ const Index = () => {
         <section id="home" className="relative">
           <HeroSection />
         </section>
+
+        <TrustStrip />
+
+
 
         {/* Unified continuous surface for all content sections */}
         <div className="relative bg-background">

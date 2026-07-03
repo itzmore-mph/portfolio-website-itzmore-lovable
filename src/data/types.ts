@@ -14,10 +14,14 @@ export interface Project {
   tags: string[];
   metrics: string[];
   metricBadge?: string;
+  /** Short muted explainer rendered under the metric badge, e.g. what an ICC score means. */
+  metricExplainer?: string;
   icon: LucideIcon;
   color: string;
   liveUrl?: string;
   githubUrl?: string;
+  /** Case-study / write-up URL. Used as the primary CTA when present. */
+  caseStudyUrl?: string;
   isPlaceholder?: boolean;
 }
 
@@ -47,7 +51,10 @@ export interface Experience {
   position: string;
   location: string;
   details: string[];
+  /** Marks the single active employment (Publicis) so we can render a "Current Position" badge. */
   current?: boolean;
+  /** Marks a role that is still active in parallel (e.g. Freelance) — rendered as "Ongoing". */
+  ongoing?: boolean;
   links?: ExternalLink[];
 }
 
@@ -89,4 +96,11 @@ export interface AboutHighlight {
 export interface StatData {
   value: string;
   label: string;
+}
+
+// Trust / logo strip Types
+export interface TrustLogo {
+  name: string;
+  /** Optional logo asset path. When absent, a text fallback is rendered. */
+  logo?: string;
 }

@@ -24,6 +24,10 @@ const Index = () => {
           <HeroSection />
         </section>
 
+        <TrustStrip />
+
+
+
         {/* Unified continuous surface for all content sections */}
         <div className="relative bg-background">
           {/* Global ambient gradient layer spanning all sections */}

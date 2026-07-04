@@ -33,8 +33,7 @@ const ExperienceSection = () => {
       <div className="space-y-8">
         {experiences.map((exp, index) => {
           const isExpanded = expandedCards.includes(index);
-          const visibleBullets = isExpanded ? exp.details : exp.details.slice(0, DEFAULT_BULLETS);
-          const hasMore = exp.details.length > DEFAULT_BULLETS;
+          const hasDetails = exp.details.length > 0;
 
           return (
           <Card key={index} className="portfolio-card-elevated overflow-hidden group will-change-transform">
@@ -73,24 +72,14 @@ const ExperienceSection = () => {
                         <span className="font-medium text-body-sm">{exp.location}</span>
                       </div>
                     </div>
-
-                    {/* Always-visible achievement bullets (first 2-3) */}
-                    <ul className="space-y-3 mb-4">
-                      {visibleBullets.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="flex items-start gap-3 text-muted-foreground">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2.5 flex-shrink-0" />
-                          <span className="leading-relaxed">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {hasMore && (
+                    {hasDetails && (
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => toggleCard(index)}
                         className="mb-4 -ml-2 h-auto px-2 py-1 text-primary hover:text-primary hover:bg-primary/10 interactive-element focus-ring-primary"
                         aria-expanded={isExpanded}
+                        aria-controls={`exp-details-${index}`}
                       >
                         {isExpanded ? (
                           <>
@@ -102,6 +91,17 @@ const ExperienceSection = () => {
                           </>
                         )}
                       </Button>
+                    )}
+
+                    {hasDetails && isExpanded && (
+                      <ul id={`exp-details-${index}`} className="space-y-3 mb-4">
+                        {exp.details.map((detail, detailIndex) => (
+                          <li key={detailIndex} className="flex items-start gap-3 text-muted-foreground">
+                            <div className="w-2 h-2 bg-primary rounded-full mt-2.5 flex-shrink-0" />
+                            <span className="leading-relaxed">{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
                     )}
 
                     {exp.links && (

@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
       "Build end-to-end football analytics prototypes on open data (FBref, StatsBomb): data ingestion/cleaning in Python + SQL/DuckDB, analysis, and publication via Streamlit and Power BI/Tableau.",
       "Train and evaluate a baseline xG model; derive player/team metrics (passing networks, shot maps, possession-adjusted comparisons) with methods documented in README files.",
       "Produce season case studies (e.g., Bundesliga 2023/24) to demonstrate workflow and reporting style.",
-      "Portfolio: itzmore.dev, Upwork, Malt.",
+      
     ],
     ongoing: true,
     links: [

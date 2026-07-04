@@ -75,7 +75,7 @@ const ExperienceSection = () => {
                     </div>
 
                     {/* Always-visible achievement bullets (first 2-3) */}
-                    <ul className="space-y-3 mb-6">
+                    <ul className="space-y-3 mb-4">
                       {visibleBullets.map((detail, detailIndex) => (
                         <li key={detailIndex} className="flex items-start gap-3 text-muted-foreground">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2.5 flex-shrink-0" />
@@ -83,6 +83,26 @@ const ExperienceSection = () => {
                         </li>
                       ))}
                     </ul>
+
+                    {hasMore && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => toggleCard(index)}
+                        className="mb-4 -ml-2 h-auto px-2 py-1 text-primary hover:text-primary hover:bg-primary/10 interactive-element focus-ring-primary"
+                        aria-expanded={isExpanded}
+                      >
+                        {isExpanded ? (
+                          <>
+                            Hide Details <ChevronUp className="icon-sm ml-1" />
+                          </>
+                        ) : (
+                          <>
+                            Show Details <ChevronDown className="icon-sm ml-1" />
+                          </>
+                        )}
+                      </Button>
+                    )}
 
                     {exp.links && (
                       <div className="flex flex-wrap gap-3 mb-2">
@@ -102,26 +122,6 @@ const ExperienceSection = () => {
                       </div>
                     )}
                   </div>
-
-                  {hasMore && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => toggleCard(index)}
-                      className="lg:self-start interactive-element focus-ring-primary"
-                      aria-expanded={isExpanded}
-                    >
-                      {isExpanded ? (
-                        <>
-                          Hide Details <ChevronUp className="icon-sm ml-2" />
-                        </>
-                      ) : (
-                        <>
-                          Show Details <ChevronDown className="icon-sm ml-2" />
-                        </>
-                      )}
-                    </Button>
-                  )}
                 </div>
               </div>
             </CardContent>

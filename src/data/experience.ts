@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     date: "01/2025 – current",
     company: "Publicis Media Austria",
-    position: "Senior Digital Data & Dashboard Manager",
+    position: "Senior Data Analyst",
     location: "Austria",
     details: [
       "Lead dashboard development and analytics engineering in Salesforce Marketing Intelligence (Datorama) for international stakeholders; build Data Streams/Transformations pipelines and create efficient reporting.",
@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
       "Build end-to-end football analytics prototypes on open data (FBref, StatsBomb): data ingestion/cleaning in Python + SQL/DuckDB, analysis, and publication via Streamlit and Power BI/Tableau.",
       "Train and evaluate a baseline xG model; derive player/team metrics (passing networks, shot maps, possession-adjusted comparisons) with methods documented in README files.",
       "Produce season case studies (e.g., Bundesliga 2023/24) to demonstrate workflow and reporting style.",
-      "Portfolio: itzmore.dev, Upwork, Malt.",
+      
     ],
     ongoing: true,
     links: [

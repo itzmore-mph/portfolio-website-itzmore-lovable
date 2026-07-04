@@ -3,7 +3,7 @@ import { Experience } from "./types";
 export const experiences: Experience[] = [
   {
     date: "01/2025 – current",
-    company: "Publicis Media Austria",
+    company: "Publicis Media",
     position: "Senior Data Analyst",
     location: "Austria",
     details: [

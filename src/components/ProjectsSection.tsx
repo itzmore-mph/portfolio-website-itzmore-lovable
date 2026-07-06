@@ -56,31 +56,30 @@ const ProjectsSection = () => {
 
             {/* Project Header with Icon */}
             <CardHeader className="pb-6">
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-center gap-4 min-w-0">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/25 transition-all duration-300 group-hover:scale-110">
-                    <project.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <div className="min-w-0">
-                    <CardTitle className="text-card-title group-hover:text-primary transition-colors">
-                      {project.title}
-                    </CardTitle>
-                  </div>
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 border border-primary/25 transition-all duration-300 group-hover:scale-110 shrink-0">
+                  <project.icon className="w-7 h-7 text-primary" />
                 </div>
-                {project.metricBadge && (
-                  <div className="flex flex-col items-end gap-1 shrink-0 max-w-[45%]">
-                    <span className="font-mono text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/25 whitespace-nowrap">
-                      {project.metricBadge}
-                    </span>
-                    {project.metricExplainer && (
-                      <p className="text-[10px] sm:text-[11px] text-muted-foreground text-right leading-snug">
-                        {project.metricExplainer}
-                      </p>
-                    )}
-                  </div>
-                )}
+                <div className="min-w-0 flex-1">
+                  <CardTitle className="text-card-title group-hover:text-primary transition-colors break-words">
+                    {project.title}
+                  </CardTitle>
+                </div>
               </div>
+              {project.metricBadge && (
+                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <span className="font-mono text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/25 whitespace-nowrap">
+                    {project.metricBadge}
+                  </span>
+                  {project.metricExplainer && (
+                    <p className="text-[11px] text-muted-foreground leading-snug flex-1 min-w-[12rem]">
+                      {project.metricExplainer}
+                    </p>
+                  )}
+                </div>
+              )}
             </CardHeader>
+
 
 
             <CardContent className="flex flex-col h-full">

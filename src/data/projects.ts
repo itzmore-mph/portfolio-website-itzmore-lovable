@@ -1,12 +1,11 @@
 import { BarChart3, TrendingUp, Network, Video } from "lucide-react";
 import { Project } from "./types";
-import bodyIntelligenceImg from "@/assets/body-intelligence.png.asset.json";
-import pitchControlImg from "@/assets/pitch-control.png.asset.json";
 import passingNetworkImg from "@/assets/passing-network.png.asset.json";
+import pitchControlImg from "@/assets/pitch-control-preview.png.asset.json";
+import bodyIntelligenceImg from "@/assets/football-body-intelligence-preview.png.asset.json";
+import bundesligaImg from "@/assets/bundesliga-performance-analysis-preview.png.asset.json";
+import xgDashboardImg from "@/assets/football-analytics-dashboard-preview.png.asset.json";
 
-// TODO: replace SVG placeholders with real dashboard screenshots when available.
-const xgDashboardThumb = "/lovable-uploads/xg-dashboard-thumb.svg";
-const bundesligaThumb = "/lovable-uploads/bundesliga-thumb.svg";
 
 export const projects: Project[] = [
   {
@@ -43,7 +42,7 @@ export const projects: Project[] = [
     title: "Bundesliga Performance and Valuation Analysis",
     description:
       "Season-long study of Bayer Leverkusen's unbeaten campaign combining performance metrics, market valuation, and ML feature importance via Ridge and Random Forest.",
-    image: bundesligaThumb,
+    image: bundesligaImg.url,
     tags: ["Python", "Machine Learning", "Bundesliga", "Performance Analysis"],
     metrics: ["Ridge Regression", "Random Forest", "Feature Importance"],
     metricBadge: "age feature importance = 0.44",
@@ -58,7 +57,7 @@ export const projects: Project[] = [
     title: "Football Analytics Dashboard, Expected Goals and Passing Networks",
     description:
       "Interactive Streamlit dashboard for player performance and tactical insight, with an XGBoost xG baseline and pass-network views built on open StatsBomb event data.",
-    image: xgDashboardThumb,
+    image: xgDashboardImg.url,
     tags: ["Python", "Streamlit", "xG Models", "Network Analysis"],
     metrics: ["XGBoost xG", "Passing Networks", "StatsBomb Data"],
     metricBadge: "open StatsBomb data",

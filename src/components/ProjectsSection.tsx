@@ -7,8 +7,9 @@ import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { cn } from "@/lib/utils";
 import { ParallaxSection } from "@/components/ui/parallax-section";
-import { OptimizedImage } from "@/components/ui/optimized-image";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ProjectThumbnail } from "@/components/ui/project-thumbnail";
+
+
 
 const ProjectsSection = () => {
   return (
@@ -39,20 +40,14 @@ const ProjectsSection = () => {
             )}
             style={{ animationDelay: `${index * 150}ms` }}
           >
-            {/* Project Thumbnail — standardized 16:9, lazy-loaded */}
+            {/* Project Thumbnail — standardized shared 16:9 wrapper */}
             {project.image && (
-              <div className="w-full bg-background/60 border-b border-border/50 overflow-hidden rounded-t-xl">
-                <AspectRatio ratio={16 / 9}>
-                  <OptimizedImage
-                    src={project.image}
-                    alt={`${project.title} preview`}
-                    className="w-full h-full object-contain"
-                    containerClassName="w-full h-full"
-                    lazy
-                  />
-                </AspectRatio>
-              </div>
+              <ProjectThumbnail
+                src={project.image}
+                alt={`${project.title} preview`}
+              />
             )}
+
 
             {/* Project Header with Icon */}
             <CardHeader className="pb-6">

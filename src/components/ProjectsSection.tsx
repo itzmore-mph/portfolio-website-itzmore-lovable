@@ -40,20 +40,14 @@ const ProjectsSection = () => {
             )}
             style={{ animationDelay: `${index * 150}ms` }}
           >
-            {/* Project Thumbnail — standardized 16:9, lazy-loaded */}
+            {/* Project Thumbnail — standardized shared 16:9 wrapper */}
             {project.image && (
-              <div className="w-full bg-background/60 border-b border-border/50 overflow-hidden rounded-t-xl">
-                <AspectRatio ratio={16 / 9}>
-                  <OptimizedImage
-                    src={project.image}
-                    alt={`${project.title} preview`}
-                    className="w-full h-full object-contain"
-                    containerClassName="w-full h-full"
-                    lazy
-                  />
-                </AspectRatio>
-              </div>
+              <ProjectThumbnail
+                src={project.image}
+                alt={`${project.title} preview`}
+              />
             )}
+
 
             {/* Project Header with Icon */}
             <CardHeader className="pb-6">

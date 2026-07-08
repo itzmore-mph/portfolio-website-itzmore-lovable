@@ -1,12 +1,11 @@
 import { BarChart3, TrendingUp, Network, Video } from "lucide-react";
 import { Project } from "./types";
-import bodyIntelligenceImg from "@/assets/body-intelligence.png.asset.json";
-import pitchControlImg from "@/assets/pitch-control.png.asset.json";
 import passingNetworkImg from "@/assets/passing-network.png.asset.json";
+import pitchControlImg from "@/assets/pitch-control-preview.png.asset.json";
+import bodyIntelligenceImg from "@/assets/football-body-intelligence-preview.png.asset.json";
+import bundesligaImg from "@/assets/bundesliga-performance-analysis-preview.png.asset.json";
+import xgDashboardImg from "@/assets/football-analytics-dashboard-preview.png.asset.json";
 
-// TODO: replace SVG placeholders with real dashboard screenshots when available.
-const xgDashboardThumb = "/lovable-uploads/xg-dashboard-thumb.svg";
-const bundesligaThumb = "/lovable-uploads/bundesliga-thumb.svg";
 
 export const projects: Project[] = [
   {

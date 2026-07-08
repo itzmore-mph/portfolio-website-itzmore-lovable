@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: "Bundesliga Performance and Valuation Analysis",
     description:
       "Season-long study of Bayer Leverkusen's unbeaten campaign combining performance metrics, market valuation, and ML feature importance via Ridge and Random Forest.",
-    image: bundesligaThumb,
+    image: bundesligaImg.url,
     tags: ["Python", "Machine Learning", "Bundesliga", "Performance Analysis"],
     metrics: ["Ridge Regression", "Random Forest", "Feature Importance"],
     metricBadge: "age feature importance = 0.44",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     title: "Football Analytics Dashboard, Expected Goals and Passing Networks",
     description:
       "Interactive Streamlit dashboard for player performance and tactical insight, with an XGBoost xG baseline and pass-network views built on open StatsBomb event data.",
-    image: xgDashboardThumb,
+    image: xgDashboardImg.url,
     tags: ["Python", "Streamlit", "xG Models", "Network Analysis"],
     metrics: ["XGBoost xG", "Passing Networks", "StatsBomb Data"],
     metricBadge: "open StatsBomb data",

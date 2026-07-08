@@ -6,9 +6,8 @@ import { projects } from "@/data/projects";
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { cn } from "@/lib/utils";
-import { ParallaxSection } from "@/components/ui/parallax-section";
-import { OptimizedImage } from "@/components/ui/optimized-image";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ProjectThumbnail } from "@/components/ui/project-thumbnail";
+
 
 const ProjectsSection = () => {
   return (

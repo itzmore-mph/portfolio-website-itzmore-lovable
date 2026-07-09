@@ -12,4 +12,4 @@ export const trustLogos: TrustLogo[] = [
 ];
 
 export const trustBadge =
-  "Finalist, AWS World Sports Innovation Cup 2026 (DFL Campus Frankfurt)";
+  "Finalist, AWS World Sports Innovation Cup 2026 (DFB Campus Frankfurt)";

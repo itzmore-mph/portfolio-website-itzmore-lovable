@@ -26,7 +26,7 @@ export const projects: Project[] = [
   {
     title: "Football Body Intelligence Platform",
     description:
-      "AWS World Sports Innovation Cup 2026 submission, EMEA finalist (DFL Campus Frankfurt). Two proprietary metrics, AWI (cognitive scanning via head rotation) and PQI (pressing quality), derived from 700M plus TRACAB tracking data points on AWS (S3, SageMaker, Bedrock).",
+      "AWS World Sports Innovation Cup 2026 submission, EMEA finalist (DFB Campus Frankfurt). Two proprietary metrics, AWI (cognitive scanning via head rotation) and PQI (pressing quality), derived from 700M plus TRACAB tracking data points on AWS (S3, SageMaker, Bedrock).",
     image: bodyIntelligenceImg.url,
     tags: ["Python", "AWS", "Tracking Data", "Streamlit"],
     metrics: ["TRACAB Tracking", "AWS SageMaker", "AWI and PQI"],

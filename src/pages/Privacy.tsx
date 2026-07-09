@@ -27,7 +27,7 @@ const Privacy = () => {
             </Link>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            {language === 'en' ? 'Privacy Policy' : 'Datenschutzerklärung'}
+            {language === 'en' ? 'Privacy Policy' : <><span className="sm:hidden">Datenschutz</span><span className="hidden sm:inline">Datenschutzerklärung</span></>}
           </h1>
           <p className="text-white/90 text-lg">
             {language === 'en' 

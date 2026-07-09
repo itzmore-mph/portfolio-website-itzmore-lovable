@@ -293,92 +293,94 @@ const CookieConsent = () => {
       )}
 
       <Dialog open={showDetails} onOpenChange={setShowDetails}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
+        <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+          <DialogHeader className="shrink-0">
             <DialogTitle>{L.detailsTitle}</DialogTitle>
             <DialogDescription>{L.detailsIntro}</DialogDescription>
           </DialogHeader>
 
-          <div className="space-y-3">
-            <div className="flex items-start justify-between gap-4 rounded-lg border border-border p-3">
-              <div className="flex gap-3">
-                <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-                <div>
-                  <p className="text-sm font-medium">{L.essential}</p>
-                  <p className="text-xs text-muted-foreground">{L.essentialDesc}</p>
+          <div className="flex-1 overflow-y-auto -mx-6 px-6 py-1 space-y-5">
+            <div className="space-y-3">
+              <div className="flex items-start justify-between gap-4 rounded-lg border border-border p-3">
+                <div className="flex gap-3">
+                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                  <div>
+                    <p className="text-sm font-medium">{L.essential}</p>
+                    <p className="text-xs text-muted-foreground">{L.essentialDesc}</p>
+                  </div>
                 </div>
+                <span className="shrink-0 text-xs font-medium text-muted-foreground">
+                  {L.alwaysOn}
+                </span>
               </div>
-              <span className="shrink-0 text-xs font-medium text-muted-foreground">
-                {L.alwaysOn}
-              </span>
+
+              <div className="flex items-start justify-between gap-4 rounded-lg border border-border p-3">
+                <div className="flex gap-3">
+                  <BarChart3 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                  <div>
+                    <label htmlFor="consent-analytics" className="text-sm font-medium">
+                      {L.analytics}
+                    </label>
+                    <p className="text-xs text-muted-foreground">{L.analyticsDesc}</p>
+                  </div>
+                </div>
+                <Switch
+                  id="consent-analytics"
+                  checked={analytics}
+                  onCheckedChange={setAnalytics}
+                  aria-label={L.analytics}
+                />
+              </div>
             </div>
 
-            <div className="flex items-start justify-between gap-4 rounded-lg border border-border p-3">
-              <div className="flex gap-3">
-                <BarChart3 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-                <div>
-                  <label htmlFor="consent-analytics" className="text-sm font-medium">
-                    {L.analytics}
-                  </label>
-                  <p className="text-xs text-muted-foreground">{L.analyticsDesc}</p>
-                </div>
-              </div>
-              <Switch
-                id="consent-analytics"
-                checked={analytics}
-                onCheckedChange={setAnalytics}
-                aria-label={L.analytics}
-              />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              {L.cookieList}
-            </p>
-            <div className="overflow-x-auto rounded-lg border border-border">
-              <table className="w-full text-left text-xs">
-                <thead className="bg-muted/40 text-muted-foreground">
-                  <tr>
-                    <th className="px-3 py-2 font-medium">{L.name}</th>
-                    <th className="px-3 py-2 font-medium">{L.provider}</th>
-                    <th className="px-3 py-2 font-medium">{L.purpose}</th>
-                    <th className="px-3 py-2 font-medium">{L.duration}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {L.rows.map((r) => (
-                    <tr key={r.name} className="border-t border-border/60">
-                      <td className="px-3 py-2 font-mono">{r.name}</td>
-                      <td className="px-3 py-2">{r.provider}</td>
-                      <td className="px-3 py-2 text-muted-foreground">{r.purpose}</td>
-                      <td className="px-3 py-2">{r.duration}</td>
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                {L.cookieList}
+              </p>
+              <div className="overflow-x-auto rounded-lg border border-border">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-muted/40 text-muted-foreground">
+                    <tr>
+                      <th className="px-3 py-2 font-medium">{L.name}</th>
+                      <th className="px-3 py-2 font-medium">{L.provider}</th>
+                      <th className="px-3 py-2 font-medium">{L.purpose}</th>
+                      <th className="px-3 py-2 font-medium">{L.duration}</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {L.rows.map((r) => (
+                      <tr key={r.name} className="border-t border-border/60">
+                        <td className="px-3 py-2 font-mono">{r.name}</td>
+                        <td className="px-3 py-2">{r.provider}</td>
+                        <td className="px-3 py-2 text-muted-foreground">{r.purpose}</td>
+                        <td className="px-3 py-2">{r.duration}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3 text-[11px] text-muted-foreground">{L.controller}</p>
+              <p className="mt-1 text-[11px] text-muted-foreground">
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 underline hover:text-foreground"
+                >
+                  Google Privacy Policy <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                </a>
+              </p>
             </div>
-            <p className="mt-3 text-[11px] text-muted-foreground">{L.controller}</p>
-            <p className="mt-1 text-[11px] text-muted-foreground">
-              <a
-                href="https://policies.google.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 underline hover:text-foreground"
-              >
-                Google Privacy Policy <ExternalLink className="h-3 w-3" aria-hidden="true" />
-              </a>
-            </p>
           </div>
 
-          <DialogFooter className="flex-col-reverse gap-2 sm:flex-row sm:gap-2">
-            <Button type="button" variant="outline" onClick={rejectAll} className="w-full sm:w-auto">
+          <DialogFooter className="shrink-0 flex-col-reverse gap-2 sm:flex-row sm:gap-2 border-t border-border pt-4 mt-2">
+            <Button type="button" variant="outline" onClick={rejectAll} className="h-11 w-full sm:h-9 sm:w-auto">
               {L.reject}
             </Button>
-            <Button type="button" variant="secondary" onClick={saveCustom} className="w-full sm:w-auto">
+            <Button type="button" variant="secondary" onClick={saveCustom} className="h-11 w-full sm:h-9 sm:w-auto">
               {L.save}
             </Button>
-            <Button type="button" onClick={acceptAll} className="w-full sm:w-auto">
+            <Button type="button" onClick={acceptAll} className="h-11 w-full sm:h-9 sm:w-auto">
               {L.accept}
             </Button>
           </DialogFooter>

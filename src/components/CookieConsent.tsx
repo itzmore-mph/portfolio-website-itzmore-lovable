@@ -207,9 +207,9 @@ const CookieConsent = () => {
         aria-modal="false"
         aria-labelledby="cookie-consent-title"
         aria-describedby="cookie-consent-body"
-        className="fixed inset-x-0 bottom-0 z-50 px-3 pb-3 sm:px-4 sm:pb-4"
+        className="fixed inset-x-0 bottom-0 z-50 px-3 [padding-bottom:max(0.75rem,env(safe-area-inset-bottom))] sm:px-4 sm:[padding-bottom:max(1rem,env(safe-area-inset-bottom))]"
       >
-        <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-background/95 text-foreground shadow-xl backdrop-blur-md">
+        <div className="mx-auto max-h-[80vh] max-w-3xl overflow-y-auto overscroll-contain rounded-2xl border border-border bg-background/95 text-foreground shadow-xl backdrop-blur-md">
           <div className="flex items-start gap-3 p-4 sm:p-5">
             <div className="hidden sm:flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               <Cookie className="h-5 w-5" aria-hidden="true" />
@@ -264,26 +264,24 @@ const CookieConsent = () => {
               <div className="flex flex-col-reverse gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-end">
                 <Button
                   type="button"
-                  variant="ghost"
-                  size="sm"
+                  variant="outline"
                   onClick={() => setShowDetails(true)}
+                  className="h-11 w-full sm:h-9 sm:w-auto"
                 >
                   {L.customize}
                 </Button>
                 <Button
                   type="button"
                   variant="outline"
-                  size="sm"
                   onClick={rejectAll}
-                  className="sm:min-w-[140px]"
+                  className="h-11 w-full sm:h-9 sm:w-auto"
                 >
                   {L.reject}
                 </Button>
                 <Button
                   type="button"
-                  size="sm"
                   onClick={acceptAll}
-                  className="sm:min-w-[140px]"
+                  className="h-11 w-full sm:h-9 sm:w-auto"
                 >
                   {L.accept}
                 </Button>

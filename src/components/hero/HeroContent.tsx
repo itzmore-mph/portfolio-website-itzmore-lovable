@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
+import cvAsset from "@/assets/CV_Moritz-Philipp-Haaf.pdf.asset.json";
 
 interface HeroContentProps {
   onProjectsClick: () => void;

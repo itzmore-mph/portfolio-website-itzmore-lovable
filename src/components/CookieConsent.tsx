@@ -201,6 +201,7 @@ const CookieConsent = () => {
     const record = parseConsent(getItem(STORAGE_KEY));
     setAnalytics(record?.analytics ?? false);
     setShowBanner(true);
+    detailsOpenedAt.current = Date.now();
     setShowDetails(true);
   }, []);
 

@@ -284,7 +284,8 @@ const CookieConsent = () => {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => setShowDetails(true)}
+                  onClick={openDetails}
+                  onPointerUp={openDetails}
                   className="h-11 w-full sm:h-9 sm:w-auto"
                 >
                   {L.customize}

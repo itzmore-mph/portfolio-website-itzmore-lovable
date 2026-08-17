@@ -135,6 +135,24 @@ const CookieConsent = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [language, setLanguage] = useState<Lang>("en");
+  const detailsOpenedAt = useRef(0);
+
+  // On touch devices the tap that opens the dialog can replay as a click on the
+  // freshly mounted overlay, closing it instantly. Ignore outside interactions
+  // that arrive right after opening.
+  const openDetails = useCallback(() => {
+    detailsOpenedAt.current = Date.now();
+    setShowDetails(true);
+  }, []);
+
+  const handleDetailsOpenChange = useCallback((open: boolean) => {
+    if (!open && Date.now() - detailsOpenedAt.current < 500) return;
+    setShowDetails(open);
+  }, []);
+
+  const guardOutside = useCallback((event: Event) => {
+    if (Date.now() - detailsOpenedAt.current < 500) event.preventDefault();
+  }, []);
 
   useEffect(() => {
     const browser = (navigator.language || "en").toLowerCase();

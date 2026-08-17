@@ -312,8 +312,13 @@ const CookieConsent = () => {
       </div>
       )}
 
-      <Dialog open={showDetails} onOpenChange={setShowDetails}>
-        <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+      <Dialog open={showDetails} onOpenChange={handleDetailsOpenChange}>
+        <DialogContent
+          className="max-w-2xl max-h-[90vh] flex flex-col overflow-hidden"
+          onPointerDownOutside={guardOutside}
+          onInteractOutside={guardOutside}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+        >
           <DialogHeader className="shrink-0">
             <DialogTitle>{L.detailsTitle}</DialogTitle>
             <DialogDescription>{L.detailsIntro}</DialogDescription>

@@ -65,7 +65,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    date: "02/2019 – 09/2022",
+    date: "02/2019 – 09/2021",
     company: "E2 Communications GmbH",
     position: "Oddserve & Ad Operations Manager",
     location: "Austria",

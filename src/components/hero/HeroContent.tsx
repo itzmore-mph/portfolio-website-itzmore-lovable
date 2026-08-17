@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
+import cvAsset from "@/assets/CV_Moritz-Philipp-Haaf.pdf.asset.json";
 
 interface HeroContentProps {
   onProjectsClick: () => void;
@@ -7,7 +8,7 @@ interface HeroContentProps {
 
 export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
   const handleDownloadCV = () => {
-    window.open('/CV_Moritz-Philipp-Haaf.pdf', '_blank');
+    window.open(cvAsset.url, '_blank');
   };
 
   return (

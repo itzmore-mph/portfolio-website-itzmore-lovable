@@ -8,7 +8,7 @@ interface HeroContentProps {
 
 export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
   const handleDownloadCV = () => {
-    window.open('/CV_Moritz-Philipp-Haaf.pdf', '_blank');
+    window.open(cvAsset.url, '_blank');
   };
 
   return (

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import {
@@ -135,6 +135,24 @@ const CookieConsent = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [language, setLanguage] = useState<Lang>("en");
+  const detailsOpenedAt = useRef(0);
+
+  // On touch devices the tap that opens the dialog can replay as a click on the
+  // freshly mounted overlay, closing it instantly. Ignore outside interactions
+  // that arrive right after opening.
+  const openDetails = useCallback(() => {
+    detailsOpenedAt.current = Date.now();
+    setShowDetails(true);
+  }, []);
+
+  const handleDetailsOpenChange = useCallback((open: boolean) => {
+    if (!open && Date.now() - detailsOpenedAt.current < 500) return;
+    setShowDetails(open);
+  }, []);
+
+  const guardOutside = useCallback((event: Event) => {
+    if (Date.now() - detailsOpenedAt.current < 500) event.preventDefault();
+  }, []);
 
   useEffect(() => {
     const browser = (navigator.language || "en").toLowerCase();
@@ -183,6 +201,7 @@ const CookieConsent = () => {
     const record = parseConsent(getItem(STORAGE_KEY));
     setAnalytics(record?.analytics ?? false);
     setShowBanner(true);
+    detailsOpenedAt.current = Date.now();
     setShowDetails(true);
   }, []);
 
@@ -265,7 +284,8 @@ const CookieConsent = () => {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => setShowDetails(true)}
+                  onClick={openDetails}
+                  onPointerUp={openDetails}
                   className="h-11 w-full sm:h-9 sm:w-auto"
                 >
                   {L.customize}
@@ -292,8 +312,13 @@ const CookieConsent = () => {
       </div>
       )}
 
-      <Dialog open={showDetails} onOpenChange={setShowDetails}>
-        <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+      <Dialog open={showDetails} onOpenChange={handleDetailsOpenChange}>
+        <DialogContent
+          className="max-w-2xl max-h-[90vh] flex flex-col overflow-hidden"
+          onPointerDownOutside={guardOutside}
+          onInteractOutside={guardOutside}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+        >
           <DialogHeader className="shrink-0">
             <DialogTitle>{L.detailsTitle}</DialogTitle>
             <DialogDescription>{L.detailsIntro}</DialogDescription>

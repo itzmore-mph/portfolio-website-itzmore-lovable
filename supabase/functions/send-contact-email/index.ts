@@ -150,25 +150,33 @@ const handler = async (req: Request): Promise<Response> => {
     const safeSubject = escapeHtml(subject);
     const safeMessageHtml = escapeHtml(message).replace(/\n/g, '<br>');
 
-    // Send notification email to you
-    const emailResponse = await resend.emails.send({
-      from: "Contact Form <contact@itzmore.dev>",
-      to: ["itzmore.dev@gmail.com"],
-      subject: `New Contact Form Submission: ${safeSubject}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>From:</strong> ${safeFirstName} ${safeLastName} (${safeEmail})</p>
-        <p><strong>Subject:</strong> ${safeSubject}</p>
-        <p><strong>Message:</strong></p>
-        <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 10px 0;">
-          ${safeMessageHtml}
-        </div>
-        <p style="color:#666; font-size:12px;">IP: ${escapeHtml(ip)} | User-Agent: ${escapeHtml(userAgent)}</p>
-        <p><em>Submitted at: ${new Date().toLocaleString()}</em></p>
-      `,
-    });
+    // Send notification email (only if an email provider is configured)
+    if (resend) {
+      try {
+        const emailResponse = await resend.emails.send({
+          from: "Contact Form <contact@itzmore.dev>",
+          to: ["itzmore.dev@gmail.com"],
+          subject: `New Contact Form Submission: ${safeSubject}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>From:</strong> ${safeFirstName} ${safeLastName} (${safeEmail})</p>
+            <p><strong>Subject:</strong> ${safeSubject}</p>
+            <p><strong>Message:</strong></p>
+            <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 10px 0;">
+              ${safeMessageHtml}
+            </div>
+            <p style="color:#666; font-size:12px;">IP: ${escapeHtml(ip)} | User-Agent: ${escapeHtml(userAgent)}</p>
+            <p><em>Submitted at: ${new Date().toLocaleString()}</em></p>
+          `,
+        });
+        console.log("Email sent successfully:", emailResponse);
+      } catch (mailError) {
+        console.error("Email delivery failed, message stored in database:", mailError);
+      }
+    } else {
+      console.warn("No email provider configured, message stored in database only");
+    }
 
-    console.log("Email sent successfully:", emailResponse);
 
     return new Response(
       JSON.stringify({ success: true, message: "Contact form submitted successfully" }),

@@ -14,42 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
-      contact_messages: {
-        Row: {
-          created_at: string
-          email: string
-          first_name: string
-          id: string
-          ip_address: string | null
-          last_name: string
-          message: string
-          subject: string
-          user_agent: string | null
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          first_name: string
-          id?: string
-          ip_address?: string | null
-          last_name: string
-          message: string
-          subject: string
-          user_agent?: string | null
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          first_name?: string
-          id?: string
-          ip_address?: string | null
-          last_name?: string
-          message?: string
-          subject?: string
-          user_agent?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never

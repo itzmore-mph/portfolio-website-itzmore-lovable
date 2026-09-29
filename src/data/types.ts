@@ -22,6 +22,8 @@ export interface Project {
   githubUrl?: string;
   /** Case-study / write-up URL. Used as the primary CTA when present. */
   caseStudyUrl?: string;
+  /** Optional custom label for the primary CTA, e.g. "Read the Report" instead of "View Case Study". */
+  caseStudyLabel?: string;
   isPlaceholder?: boolean;
 }
 

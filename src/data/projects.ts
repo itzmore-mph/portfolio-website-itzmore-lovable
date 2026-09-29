@@ -20,7 +20,9 @@ export const projects: Project[] = [
       "ICC = agreement with ground-truth tracking; above 0.75 indicates strong reliability.",
     icon: Video,
     color: "primary",
-    caseStudyUrl: "https://github.com/itzmore-mph/soccernet-setpiece-vision",
+    caseStudyUrl:
+      "https://github.com/itzmore-mph/soccernet-setpiece-vision/blob/main/report.md",
+    caseStudyLabel: "Read the Report",
     githubUrl: "https://github.com/itzmore-mph/soccernet-setpiece-vision",
   },
   {

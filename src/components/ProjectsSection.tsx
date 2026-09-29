@@ -26,7 +26,7 @@ const ProjectsSection = () => {
           const isLastAndOdd = index === projects.length - 1 && projects.length % 2 !== 0;
           const hasLiveDemo = Boolean(project.liveUrl);
           const primaryUrl = project.liveUrl ?? project.caseStudyUrl;
-          const primaryLabel = hasLiveDemo ? "Live Demo" : "View Case Study";
+          const primaryLabel = hasLiveDemo ? "Live Demo" : project.caseStudyLabel ?? "View Case Study";
           const PrimaryIcon = hasLiveDemo ? PlayCircle : ExternalLink;
           return (
            <Card

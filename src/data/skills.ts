@@ -72,6 +72,6 @@ export const keyStrengths: KeyStrength[] = [
     icon: Cog,
     title: "AI Specialization",
     description:
-      "Currently pursuing the MSc in AI Applied to Sports to become a Football Data Scientist in professional clubs or federations.",
+      "Completed the MSc in AI Applied to Sports to become a Football Data Scientist in professional clubs or federations.",
   },
 ];

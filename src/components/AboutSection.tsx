@@ -91,22 +91,22 @@ const AboutSection = () => {
           <AnimatedSection animation="slide-left" delay={200}>
             <div className="space-y-6">
               <h3 className="text-subsection-title text-center lg:text-left">Professional Background</h3>
-              <div className="space-y-4 text-justify lg:text-left">
+              <div className="space-y-4 text-left">
                 <p className="text-body-sm text-muted-foreground">
-                  I am a <strong className="text-foreground">Football Data Scientist with a corporate analytics foundation</strong>, experienced in transforming complex datasets into actionable insights. My background spans <strong className="text-foreground">sports, media, and technology</strong>, giving me a unique perspective on how data can drive performance and decision-making.
+                  I build data pipelines and models that turn football video and tracking data into metrics for <strong className="text-foreground">recruitment and match analysis</strong>. My work focuses on <strong className="text-foreground">broadcast computer vision</strong>, <strong className="text-foreground">optical and skeletal tracking data</strong>, and <strong className="text-foreground">event data</strong> from StatsBomb and Wyscout.
                 </p>
                 <p className="text-body-sm text-muted-foreground">
-                  At <strong className="text-foreground">Publicis Media Austria</strong>, I lead international dashboard and automation projects, building real-time data visualization tools and scalable workflows. These skills translate directly into the demands of football analytics, where speed, accuracy, and clarity are critical.
+                  Recent work includes a broadcast pipeline that derives player positions and pitch control from single-camera match footage, the <strong className="text-foreground">Football Body Intelligence Platform</strong> on TRACAB 3D skeleton data (finalist, AWS World Sports Innovation Cup 2026), and a <strong className="text-foreground">scouting data pipeline for a professional club</strong>.
                 </p>
                 <p className="text-body-sm text-muted-foreground">
-                  Alongside this, I actively develop <strong className="text-foreground">football analytics projects</strong>, including expected goals (xG) models, opponent analysis dashboards, and player comparison case studies using StatsBomb and other open-source data.
+                  At <strong className="text-foreground">Publicis Media</strong> I lead dashboard and data-pipeline work for international stakeholders: documented metric definitions, automated QA and reporting that non-technical teams rely on. The same standards apply to my football work.
                 </p>
               </div>
 
               <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 shadow-lg">
                 <h4 className="font-semibold text-primary mb-3 text-body-sm">Academic Background</h4>
-                <p className="text-body-sm text-muted-foreground text-justify lg:text-left">
-                  I hold an <strong className="text-foreground">MSc in Artificial Intelligence Applied to Sports</strong> from Sports Data Campus, where I deepened my expertise in AI, machine learning, and applied football analytics. My goal is to combine corporate analytics experience, academic specialization, and applied football projects to contribute as a <strong className="text-foreground">Football Data Scientist</strong> in professional clubs, federations, or sports data companies.
+                <p className="text-body-sm text-muted-foreground text-left">
+                  <strong className="text-foreground">MSc in Artificial Intelligence Applied to Sports</strong>, Sports Data Campus / UCAM. Projects covered computer vision, tracking-data analysis, predictive modelling and generative AI for football. Previously M.A. Digital Media Management and B.Sc. Business Administration.
                 </p>
               </div>
             </div>

@@ -17,7 +17,7 @@ const ProjectsSection = () => {
       <ParallaxSection fadeIn slideUp>
       <SectionHeader
         title="Featured Projects"
-        subtitle="A showcase of my football analytics projects, demonstrating expertise in data analysis, machine learning, and strategic insights across various aspects of the beautiful game."
+        subtitle="Selected work on broadcast video, tracking and event data. Each project links to code or a write-up."
         size="default"
       />
 

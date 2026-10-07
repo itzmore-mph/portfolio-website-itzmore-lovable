@@ -37,7 +37,7 @@ const HeroSection = () => {
           </div>
           
           {/* Content - Mobile */}
-          <div className="text-center max-w-lg mx-auto px-2">
+          <div className="text-center w-full max-w-lg mx-auto px-2">
             <HeroContent 
               onProjectsClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             />

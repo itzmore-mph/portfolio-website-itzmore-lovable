@@ -27,8 +27,8 @@ export const aboutHighlights: AboutHighlight[] = [
   {
     icon: Target,
     title: "Focus",
-    primary: "Data-Driven",
-    secondary: "Decision Making",
+    primary: "Tracking & Broadcast CV",
+    secondary: "Pitch Control, Body Pose",
     color: "data-orange"
   }
 ];

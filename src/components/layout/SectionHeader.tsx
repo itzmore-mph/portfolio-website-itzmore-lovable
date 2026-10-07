@@ -20,8 +20,8 @@ export const SectionHeader = ({
   const subtitleMaxWidth = alignment === "center" ? "max-w-3xl mx-auto" : "max-w-3xl";
   
   return (
-    <div className={cn(alignmentStyles, "mb-16 lg:mb-20 animate-fade-in", className)}>
-      <h2 className={cn(titleSize, "mb-6 font-semibold tracking-tight text-foreground")}>
+    <div className={cn(alignmentStyles, "mb-10 md:mb-16 lg:mb-20 animate-fade-in", className)}>
+      <h2 className={cn(titleSize, "mb-4 md:mb-6 font-semibold tracking-tight text-foreground")}>
         {title}
       </h2>
       {subtitle && (

@@ -4,10 +4,10 @@ import { ParallaxSection } from "@/components/ui/parallax-section";
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 bg-muted/30">
+    <section id="skills" className="py-14 md:py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <ParallaxSection fadeIn slideUp>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">Technical Expertise</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
               A data science toolkit built for football analytics, from statistical modeling and performance analysis to AI-driven insights,
@@ -18,7 +18,7 @@ const SkillsSection = () => {
 
         {/* Skills Categories */}
         <ParallaxSection fadeIn slideUp>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 md:mb-16">
             {skillCategories.map((category) => (
               <Card
                 key={category.title}

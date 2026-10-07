@@ -46,7 +46,7 @@ const AboutSection = () => {
 
         {/* Band 1: Highlight cards full-width */}
         <AnimatedSection animation="slide-up" delay={100}>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 lg:mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 md:mb-12 lg:mb-16">
             {highlights.map((highlight) => (
               <Card key={highlight.title} className="card-power border-border/50">
                 <CardContent className="p-4 text-center">

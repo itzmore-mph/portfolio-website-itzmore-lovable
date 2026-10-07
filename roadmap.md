@@ -5,3 +5,4 @@
 - [x] "View the Series" button verified to open worldcup2026.sportsdatacampus.com
 - [x] Stat card values no longer clipped ("Finalist", "5+ years")
 - [x] Canonical job title "Senior Data Analyst" at Publicis everywhere, no "Austria" after Publicis
+- [x] Hero profile avatar swapped to the new headshot, cropped square, verified on desktop and phone

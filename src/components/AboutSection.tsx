@@ -83,7 +83,7 @@ const AboutSection = () => {
                 <div className="pointer-events-none absolute inset-0 bg-primary/[0.07] mix-blend-soft-light" aria-hidden="true" />
               </div>
               <figcaption className="mt-3 text-caption text-muted-foreground text-center">
-                AWS World Sports Innovation Cup 2026, Finalist at DFB Campus Frankfurt
+                AWS World Sports Innovation Cup 2026, Finalist at DFB Campus, Frankfurt
               </figcaption>
             </figure>
           </AnimatedSection>

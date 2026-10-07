@@ -13,12 +13,8 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
 
   return (
     <div className="text-center lg:text-left space-y-8 lg:space-y-10 animate-fade-in">
-      {/* Pill Badge + availability */}
+      {/* Availability */}
       <div className="flex flex-wrap items-center gap-3 justify-center lg:justify-start">
-        <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/30 rounded-full px-5 py-2 text-sm text-primary font-semibold shadow-lg">
-          <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-          Football Analytics
-        </div>
         <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 text-xs sm:text-sm text-white/85 font-medium">
           <span className="w-1.5 h-1.5 bg-primary rounded-full" aria-hidden="true" />
           Open to Football Data Science roles at clubs (EU)
@@ -29,6 +25,10 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
       <div className="space-y-4 lg:space-y-6">
         <h1 className="font-semibold text-white leading-[0.95] tracking-tight" 
             style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
+          <span className="block font-semibold text-white tracking-tight mb-3 sm:mb-4"
+                style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 1.2 }}>
+            Moritz Philipp Haaf
+          </span>
           Football Data
           <br />
           <span className="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">

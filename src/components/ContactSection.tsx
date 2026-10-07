@@ -33,17 +33,17 @@ const ContactSection = () => {
                   key={method.title}
                   className="portfolio-card-elevated border-0 bg-gradient-to-br from-card to-card-hover hover:from-card-hover hover:to-muted transition-all duration-300"
                 >
-                  <CardContent className="p-8">
-                    <div className="flex items-start gap-6">
-                      <div className="p-4 rounded-xl bg-primary/10 border border-primary/20 shadow-md">
-                        <method.icon className="w-8 h-8 text-primary" />
+                  <CardContent className="p-5 sm:p-8">
+                    <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-3 gap-y-3 sm:gap-x-6">
+                      <div className="p-2 sm:p-4 rounded-xl bg-primary/10 border border-primary/20 shadow-md sm:row-span-2">
+                        <method.icon className="w-5 h-5 sm:w-8 sm:h-8 text-primary" />
                       </div>
-                      <div>
-                        <h4 className="font-semibold mb-3 text-xl text-card-title">{method.title}</h4>
+                      <h4 className="font-semibold self-center text-xl text-card-title">{method.title}</h4>
+                      <div className="col-span-2 min-w-0 sm:col-span-1 sm:col-start-2">
                         {method.title === "Email" ? (
                           <a
                             href={`mailto:${method.value}`}
-                            className="font-medium text-primary mb-2 hover:text-accent transition-colors duration-200 underline decoration-dotted underline-offset-4 hover:decoration-solid block text-lg break-all"
+                            className="font-medium text-primary mb-2 hover:text-accent transition-colors duration-200 underline decoration-dotted underline-offset-4 hover:decoration-solid block text-sm sm:text-lg whitespace-nowrap"
                           >
                             {method.value}
                           </a>

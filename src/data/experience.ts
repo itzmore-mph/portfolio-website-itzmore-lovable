@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     date: "01/2025 – current",
     company: "Publicis Media",
-    position: "Senior Data Analyst",
+    position: "Senior Digital Data & Dashboard Manager",
     location: "Austria",
     details: [
       "Lead dashboard development and analytics engineering in Salesforce Marketing Intelligence (Datorama) for international stakeholders; build Data Streams/Transformations pipelines and create efficient reporting.",
@@ -16,13 +16,13 @@ export const experiences: Experience[] = [
   {
     date: "04/2024 – current",
     company: "Freelance",
-    position: "Football Data Scientist & Analyst",
+    position: "Football Data Scientist",
     location: "Remote",
     details: [
-      "Build end-to-end football analytics prototypes on open data (FBref, StatsBomb): data ingestion/cleaning in Python + SQL/DuckDB, analysis, and publication via Streamlit and Power BI/Tableau.",
-      "Train and evaluate a baseline xG model; derive player/team metrics (passing networks, shot maps, possession-adjusted comparisons) with methods documented in README files.",
-      "Produce season case studies (e.g., Bundesliga 2023/24) to demonstrate workflow and reporting style.",
-      
+      "Built an end-to-end broadcast computer-vision pipeline (YOLOv11n, ByteTrack, TVCalib) that derives player positions and pitch-control surfaces from single-camera broadcast footage, validated against SoccerNet GSR ground truth.",
+      "Developed the Football Body Intelligence Platform on 700M+ TRACAB 3D skeleton data points (AWS S3, SageMaker, Bedrock) with two body-mechanics metrics (AWI, PQI). EMEA finalist, AWS World Sports Innovation Cup 2026.",
+      "Designed a two-phase Python scouting data pipeline for a professional club (under NDA), ingesting and normalising league source data for recruitment workflows.",
+      "Co-authored 2026 FIFA World Cup match analyses for the Sports Data Campus 'World Cup of Data' series.",
     ],
     ongoing: true,
     links: [
@@ -56,12 +56,12 @@ export const experiences: Experience[] = [
   {
     date: "06/2021 – 08/2022",
     company: "Hawk-Eye Innovations Ltd",
-    position: "Football Systems Operator",
-    location: "Remote",
+    position: "Football Systems Operator (VAR)",
+    location: "Austria",
     details: [
-      "Operated VAR/replay systems for Austrian Bundesliga & UEFA fixtures for the Austrian Bundesliga & UEFA competitions.",
-      "Replay Operator for professional football matches; supporting decision-making through video technology.",
-      "Application of project management skills to optimize sports technology processes.",
+      "On-site technical guarantee for the VAR system in Austrian stadiums: matchday setup and live monitoring of the video-assistant-referee technology.",
+      "IFAB-approved Replay Operator, working alongside video match officials in UEFA Champions League, UEFA Europa League and test matches.",
+      "Worked on both sides of VAR: the technology in the stadium and the replay workflow next to the referees.",
     ],
   },
   {

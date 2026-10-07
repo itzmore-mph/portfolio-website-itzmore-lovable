@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, PlayCircle } from "lucide-react";
-import { projects } from "@/data/projects";
+import { projects, earlierWork } from "@/data/projects";
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { cn } from "@/lib/utils";
@@ -156,6 +156,25 @@ const ProjectsSection = () => {
           </Card>
           );
         })}
+      </div>
+
+      <div className="mt-10">
+        <p className="text-body-sm text-muted-foreground mb-3">Earlier work</p>
+        <div className="flex flex-wrap gap-3">
+          {earlierWork.map((item) => (
+            <a
+              key={item.title}
+              href={item.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-body-sm text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors focus-ring-primary"
+              aria-label={`${item.title} on GitHub (opens in new tab)`}
+            >
+              <Github className="w-4 h-4 shrink-0" />
+              {item.title}
+            </a>
+          ))}
+        </div>
       </div>
 
       </ParallaxSection>

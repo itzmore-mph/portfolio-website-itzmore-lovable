@@ -47,7 +47,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2" aria-label="Go to homepage">
+          <Link to="/" className="flex items-center gap-2" aria-label="Moritz Philipp Haaf, home">
             <OptimizedImage 
               src={isScrolled 
                 ? "/lovable-uploads/6b68b2a5-c182-4e8e-ba5e-046e6d0a528c.png" 

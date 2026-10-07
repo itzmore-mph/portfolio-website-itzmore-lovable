@@ -25,6 +25,10 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
       <div className="space-y-4 lg:space-y-6">
         <h1 className="font-semibold text-white leading-[0.95] tracking-tight" 
             style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}>
+          <span className="block font-semibold text-white tracking-tight mb-3 sm:mb-4"
+                style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', lineHeight: 1.2 }}>
+            Moritz Philipp Haaf
+          </span>
           Football Data
           <br />
           <span className="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">

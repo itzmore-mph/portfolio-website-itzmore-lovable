@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, GraduationCap, Trophy } from "lucide-react";
 import cvAsset from "@/assets/CV_Moritz-Philipp-Haaf.pdf.asset.json";
 
 interface HeroContentProps {
@@ -40,32 +40,36 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         <div className="hidden md:block space-y-1">
           <h2 className="text-white/90 font-normal leading-tight"
               style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}>
-            Turning football data into insight.
+            From broadcast video to pitch control.
           </h2>
-          <p className="text-muted-foreground font-normal leading-snug italic"
-             style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1.05rem)' }}>
-            One byte at a time.
-          </p>
         </div>
         
         {/* Subline - Desktop */}
         <p className="hidden md:block text-white/80 font-normal leading-relaxed max-w-2xl" 
            style={{ fontSize: 'clamp(1rem, 1.2vw, 1.125rem)' }}>
-          Transforming complex football data into clear, actionable insights for scouting, opponent analysis, and set-pieces.
+          I build computer-vision and tracking-data pipelines that turn match footage into player positions and spatial metrics, validated against ground truth, for recruitment and match analysis where optical tracking isn't available.
         </p>
         
         {/* Subline - Mobile (shorter) */}
         <p className="md:hidden text-white/80 font-normal leading-relaxed" 
            style={{ fontSize: 'clamp(0.875rem, 3vw, 1rem)' }}>
-          Actionable scouting, opponent & set-piece insights from football data.
+          Broadcast video to player positions and pitch control, validated against ground truth.
         </p>
         
-        {/* Role Meta Box */}
-        <div className="inline-flex items-start text-left bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 shadow-md">
-          <p className="text-white/85 font-medium leading-snug" 
-             style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}>
-            <span className="text-primary font-semibold">Currently:</span> Senior Digital Data & Dashboard Manager @ Publicis Media
-          </p>
+        {/* Proof strip: two credentials, aligned to the text column */}
+        <div className="w-full max-w-2xl mx-auto lg:mx-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 shadow-md">
+          <ul className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-left">
+            <li className="flex items-center gap-2.5 text-white/85 font-medium leading-snug"
+                style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}>
+              <Trophy className="h-4 w-4 text-primary shrink-0" aria-hidden="true" />
+              <span>Finalist, AWS World Sports Innovation Cup 2026</span>
+            </li>
+            <li className="flex items-center gap-2.5 text-white/85 font-medium leading-snug"
+                style={{ fontSize: 'clamp(0.875rem, 1vw, 1rem)' }}>
+              <GraduationCap className="h-4 w-4 text-primary shrink-0" aria-hidden="true" />
+              <span>MSc AI Applied to Sports</span>
+            </li>
+          </ul>
         </div>
       </div>
       

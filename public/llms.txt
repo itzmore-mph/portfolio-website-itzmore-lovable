@@ -4,7 +4,7 @@
 
 ## Credentials
 - EMEA Finalist, AWS World Sports Innovation Cup 2026 (Football Body Intelligence Platform)
-- MSc Artificial Intelligence Applied to Sports (completed, capstone graded 100/100)
+- MSc Artificial Intelligence Applied to Sports (completed)
 
 ## Projects
 - Pitch-Control from Broadcast Video: YOLOv11n, ByteTrack, TVCalib, validated against SoccerNet GSR across 33 clips, ICC 0.83 to 0.92. Report: https://github.com/itzmore-mph/soccernet-setpiece-vision/blob/main/report.md

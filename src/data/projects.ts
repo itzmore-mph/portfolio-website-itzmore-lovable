@@ -3,6 +3,7 @@ import { Project } from "./types";
 import pitchControlImg from "@/assets/pitch-control-preview.png.asset.json";
 import bodyIntelligenceImg from "@/assets/football-body-intelligence-preview.png.asset.json";
 import bundesligaImg from "@/assets/bundesliga-performance-analysis-preview.png.asset.json";
+import worldCupOfDataImg from "@/assets/world-cup-of-data-preview.png.asset.json";
 
 
 export const projects: Project[] = [
@@ -57,11 +58,13 @@ export const projects: Project[] = [
     title: "World Cup of Data, 2026 FIFA World Cup Match Analyses",
     description:
       "Co-authored match analyses for a collaborative Sports Data Campus series on the 2026 FIFA World Cup, covering Mexico vs South Africa, Canada vs Qatar and Group G with event-data metrics and tactical breakdowns.",
+    image: worldCupOfDataImg.url,
     tags: ["Match Analysis", "Event Data", "Data Visualisation", "Collaboration"],
     metrics: ["Event Data", "Tactical Breakdowns", "Sports Data Campus"],
     icon: Globe,
     color: "primary",
-    // caseStudyUrl: add link to the published series here
+    caseStudyUrl: "https://worldcup2026.sportsdatacampus.com/",
+    caseStudyLabel: "View the Series",
   },
 ];
 

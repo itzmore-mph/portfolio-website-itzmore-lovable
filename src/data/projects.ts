@@ -1,8 +1,8 @@
 import { TrendingUp, Video, Globe } from "lucide-react";
 import { Project } from "./types";
 import pitchControlImg from "@/assets/pitch-control-preview.png.asset.json";
-import bodyIntelligenceImg from "@/assets/football-body-intelligence-preview.png.asset.json";
-import bundesligaImg from "@/assets/bundesliga-performance-analysis-preview.png.asset.json";
+import bodyIntelligenceImg from "@/assets/football-body-intelligence-dark.png.asset.json";
+import bundesligaImg from "@/assets/bundesliga-performance-analysis-dark.png.asset.json";
 import worldCupOfDataImg from "@/assets/world-cup-of-data-preview.png.asset.json";
 
 

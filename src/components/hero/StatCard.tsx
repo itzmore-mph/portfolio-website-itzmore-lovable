@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 interface StatCardProps {
   value: string;
@@ -8,28 +7,11 @@ interface StatCardProps {
 }
 
 export const StatCard = ({ value, label, className }: StatCardProps) => {
-  // Only animate clean numeric values like "5+", "700" or "700M+". Otherwise show as-is.
-  const isAnimatable = /^\d+\+?$/.test(value);
-  const numericValue = isAnimatable ? parseInt(value, 10) : 0;
-  const suffix = isAnimatable ? value.replace(/\d/g, '') : '';
-
-  const { count, elementRef } = useCounterAnimation({
-    end: numericValue,
-    duration: 1500,
-  });
-
-  // Auto-scale font so the longest values (e.g. "Finalist") still fit the card.
-  const valueLen = value.length;
-  const valueFontSize =
-    valueLen <= 4
-      ? 'clamp(1.75rem, 4.5vw, 2.5rem)'
-      : valueLen <= 8
-        ? 'clamp(1.15rem, 2.6vw, 1.6rem)'
-        : 'clamp(0.95rem, 2vw, 1.25rem)';
+  // Uniform font size across all cards so text values stay consistent and fit at 320px.
+  const valueFontSize = 'clamp(0.9rem, 2.5vw, 1.4rem)';
 
   return (
     <div
-      ref={elementRef}
       className={cn(
         "bg-black/30 border border-primary/20 rounded-2xl text-center shadow-lg relative overflow-hidden group",
         "transition-all duration-300 hover:border-primary/40 hover:scale-[1.02]",
@@ -43,7 +25,7 @@ export const StatCard = ({ value, label, className }: StatCardProps) => {
           className="font-mono font-semibold text-primary mb-2 sm:mb-3 tracking-tight leading-none whitespace-nowrap"
           style={{ fontSize: valueFontSize }}
         >
-          {isAnimatable ? `${count}${suffix}` : value}
+          {value}
         </div>
         <div
           className="text-white/85 font-medium tracking-wide group-hover:text-white transition-colors duration-300"

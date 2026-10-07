@@ -51,7 +51,7 @@ export interface Experience {
   date: string;
   company: string;
   position: string;
-  location: string;
+  location?: string;
   details: string[];
   /** Marks the single active employment (Publicis) so we can render a "Current Position" badge. */
   current?: boolean;

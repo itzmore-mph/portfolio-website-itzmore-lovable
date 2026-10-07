@@ -67,10 +67,12 @@ const ExperienceSection = () => {
                         <Calendar className="icon-md" />
                         <span className="font-medium text-body-sm">{exp.date}</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="icon-md" />
-                        <span className="font-medium text-body-sm">{exp.location}</span>
-                      </div>
+                      {exp.location && (
+                        <div className="flex items-center gap-2">
+                          <MapPin className="icon-md" />
+                          <span className="font-medium text-body-sm">{exp.location}</span>
+                        </div>
+                      )}
                     </div>
                     {hasDetails && (
                       <Button

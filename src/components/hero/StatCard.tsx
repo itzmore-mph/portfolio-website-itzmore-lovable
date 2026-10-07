@@ -22,10 +22,10 @@ export const StatCard = ({ value, label, className }: StatCardProps) => {
   const valueLen = value.length;
   const valueFontSize =
     valueLen <= 4
-      ? 'clamp(1.75rem, 5vw, 2.75rem)'
+      ? 'clamp(1.75rem, 4.5vw, 2.5rem)'
       : valueLen <= 8
-        ? 'clamp(1.25rem, 3.2vw, 1.85rem)'
-        : 'clamp(1rem, 2.4vw, 1.4rem)';
+        ? 'clamp(1.15rem, 2.6vw, 1.6rem)'
+        : 'clamp(0.95rem, 2vw, 1.25rem)';
 
   return (
     <div
@@ -40,7 +40,7 @@ export const StatCard = ({ value, label, className }: StatCardProps) => {
     >
       <div className="relative z-10">
         <div
-          className="font-mono font-semibold text-primary mb-2 sm:mb-3 tracking-tight leading-none max-w-full px-1 truncate"
+          className="font-mono font-semibold text-primary mb-2 sm:mb-3 tracking-tight leading-none whitespace-nowrap"
           style={{ fontSize: valueFontSize }}
         >
           {isAnimatable ? `${count}${suffix}` : value}

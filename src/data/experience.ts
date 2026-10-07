@@ -4,8 +4,7 @@ export const experiences: Experience[] = [
   {
     date: "01/2025 – current",
     company: "Publicis Media",
-    position: "Senior Digital Data & Dashboard Manager",
-    location: "Austria",
+    position: "Senior Data Analyst",
     details: [
       "Lead dashboard development and analytics engineering in Salesforce Marketing Intelligence (Datorama) for international stakeholders; build Data Streams/Transformations pipelines and create efficient reporting.",
       "Implement scalable metrics and dimensions using Datorama's JS-style expression language.",

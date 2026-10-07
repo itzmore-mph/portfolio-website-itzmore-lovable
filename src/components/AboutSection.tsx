@@ -69,15 +69,18 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <AnimatedSection animation="slide-right" className="flex justify-center lg:sticky lg:top-24">
             <figure className="relative w-full max-w-sm">
-              <div className="overflow-hidden rounded-2xl border border-primary/20 shadow-xl bg-black/20">
+              <div className="relative overflow-hidden rounded-2xl border border-primary/30 shadow-xl bg-black/20">
                 <OptimizedImage
                   src={aboutPhoto.url}
                   alt="Moritz Philipp Haaf holding the AWS World Sports Innovation Cup 2026 Finalist certificate at the DFL Bundesliga headquarters"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover saturate-[0.82] brightness-[0.93]"
                   width={800}
                   height={1067}
                   lazy={true}
                 />
+                {/* cool wash so the bright banner settles into the dark page */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/10 to-background/40" aria-hidden="true" />
+                <div className="pointer-events-none absolute inset-0 bg-primary/[0.07] mix-blend-soft-light" aria-hidden="true" />
               </div>
               <figcaption className="mt-3 text-caption text-muted-foreground text-center">
                 AWS World Sports Innovation Cup 2026, Finalist at DFL Bundesliga HQ

@@ -55,12 +55,11 @@ export const experiences: Experience[] = [
   {
     date: "06/2021 – 08/2022",
     company: "Hawk-Eye Innovations Ltd",
-    position: "Football Systems Operator (VAR)",
+    position: "Football Systems Operator",
     location: "Austria",
     details: [
-      "On-site technical guarantee for the VAR system in Austrian stadiums: matchday setup and live monitoring of the video-assistant-referee technology.",
-      "IFAB-approved Replay Operator, working alongside video match officials in UEFA Champions League, UEFA Europa League and test matches.",
-      "Worked on both sides of VAR: the technology in the stadium and the replay workflow next to the referees.",
+      "Setup and live operation of VAR and replay technology for professional football matches in Austria.",
+      "Technical support for match officials' video review workflow.",
     ],
   },
   {

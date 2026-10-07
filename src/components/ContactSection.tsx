@@ -141,7 +141,7 @@ const ContactSection = () => {
 
       {/* Single site-wide CTA band */}
       <ParallaxSection fadeIn slideUp scale>
-        <div className="mt-24 text-center">
+        <div className="mt-14 md:mt-24 text-center">
           <div className="bg-card border border-border/50 p-12 lg:p-16 rounded-3xl shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 rounded-3xl"></div>
             <div className="relative z-10">

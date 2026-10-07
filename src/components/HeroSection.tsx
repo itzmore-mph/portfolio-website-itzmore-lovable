@@ -2,7 +2,7 @@ import { HeroContent } from "./hero/HeroContent";
 import { ProfilePhoto } from "./hero/ProfilePhoto";
 import { StatsGrid } from "./hero/StatsGrid";
 import { HeroDataMotif } from "./hero/HeroDataMotif";
-import profilePhoto from "/lovable-uploads/0b867816-0a39-456f-9866-a42d58f5ccc5.png";
+import profilePhotoAsset from "@/assets/moritz-profile-hero.jpg.asset.json";
 import { ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
@@ -31,7 +31,7 @@ const HeroSection = () => {
           {/* Profile Photo - Mobile */}
           <div className="flex-shrink-0">
             <ProfilePhoto 
-              src={profilePhoto}
+              src={profilePhotoAsset.url}
               alt="Moritz Philipp Haaf, Football Data Scientist, professional portrait"
             />
           </div>
@@ -61,7 +61,7 @@ const HeroSection = () => {
           {/* Profile & Stats - Desktop */}
           <div className="space-y-8 lg:space-y-10 animate-slide-up order-2">
             <ProfilePhoto 
-              src={profilePhoto}
+              src={profilePhotoAsset.url}
               alt="Moritz Philipp Haaf, Football Data Scientist, professional portrait"
             />
             <StatsGrid />

@@ -58,7 +58,7 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         
         {/* Proof strip: two credentials, aligned to the text column */}
         <div className="w-full max-w-2xl mx-auto lg:mx-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-3 py-3 sm:px-4 shadow-md">
-          <ul className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 text-left">
+          <ul className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-center gap-x-6 gap-y-2 text-left">
             <li className="flex items-center gap-2 sm:gap-2.5 text-white/85 font-medium leading-snug"
                 style={{ fontSize: 'clamp(0.79rem, 1vw, 1rem)' }}>
               <Trophy className="h-4 w-4 text-primary shrink-0" aria-hidden="true" />

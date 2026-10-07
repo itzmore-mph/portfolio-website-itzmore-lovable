@@ -1,0 +1,28 @@
+# Moritz Philipp Haaf, Football Data Scientist
+
+> Football Data Scientist based in Vienna, Austria. Builds computer-vision and tracking-data pipelines that turn broadcast match footage into player positions and spatial metrics such as pitch control, validated against ground truth, for recruitment and match analysis. Senior Data Analyst at Publicis Media. Open to football data science roles at clubs in the EU.
+
+## Credentials
+- EMEA Finalist, AWS World Sports Innovation Cup 2026 (Football Body Intelligence Platform)
+- MSc Artificial Intelligence Applied to Sports (completed, capstone graded 100/100)
+
+## Projects
+- Pitch-Control from Broadcast Video: YOLOv11n, ByteTrack, TVCalib, validated against SoccerNet GSR across 33 clips, ICC 0.83 to 0.92. Report: https://github.com/itzmore-mph/soccernet-setpiece-vision/blob/main/report.md
+- Football Body Intelligence Platform: 700M+ TRACAB 3D skeleton points on AWS S3, SageMaker and Bedrock
+- World Cup of Data: co-authored 2026 FIFA World Cup match analyses for Sports Data Campus: https://worldcup2026.sportsdatacampus.com/
+- Bundesliga Performance and Valuation Analysis
+- Scouting data pipeline for a professional club (NDA)
+
+## Experience
+- Senior Data Analyst, Publicis Media, Vienna
+- Football Data Scientist, freelance
+- Football Systems Operator, Hawk-Eye Innovations, Austria
+
+## Skills
+Python, SQL, computer vision, broadcast tracking, TRACAB tracking data, StatsBomb and Wyscout event data, xG, pitch control, AWS, Power BI, Tableau
+
+## Contact
+- Website: https://itzmore.dev/
+- Email: itzmore.dev@gmail.com
+- LinkedIn: https://www.linkedin.com/in/moritz-philipp-haaf/
+- GitHub: https://github.com/itzmore-mph

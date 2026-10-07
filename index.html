@@ -32,57 +32,83 @@
     <meta name="theme-color" content="#0b1220">
 
     <!-- SEO Meta Tags -->
-    <title>Moritz Philipp Haaf | Football Data Scientist | Football Analytics Portfolio</title>
-    <meta name="description" content="Football Data Scientist Moritz Philipp Haaf. Tracking-data analytics, pitch-control from broadcast video, xG models, and passing networks. EMEA finalist AWS World Sports Innovation Cup 2026.">
+    <title>Moritz Philipp Haaf | Football Data Scientist, Tracking and Computer Vision</title>
+    <meta name="description" content="Moritz Philipp Haaf, Football Data Scientist in Vienna. Computer vision and tracking pipelines that turn broadcast video into player positions and pitch control. AWS finalist, MSc AI in Sports.">
     <meta name="author" content="Moritz Philipp Haaf" />
-    <meta name="keywords" content="Moritz Philipp Haaf, Moritz Haaf, Football Data Scientist, Football Analytics, Tracking Data, TRACAB, Pitch Control, Computer Vision, Broadcast Tracking, xG, Passing Networks, Python, Streamlit, AWS SageMaker, Vienna">
-    <link rel="canonical" href="https://itzmore.dev" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="keywords" content="Moritz Philipp Haaf, Moritz Haaf, Football Data Scientist, Football Analytics, Broadcast Tracking, Computer Vision, Pitch Control, TRACAB, SoccerNet, YOLO, ByteTrack, StatsBomb, Wyscout, Expected Goals, Scouting, AWS SageMaker, Vienna, Austria">
+    <link rel="canonical" href="https://itzmore.dev/" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
 
-    <!-- Structured Data for SEO -->
+    <!-- Structured Data for SEO and AI search -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Moritz Philipp Haaf",
-      "alternateName": ["Moritz Haaf", "Moritz P. Haaf"],
-      "jobTitle": "Football Data Scientist",
-      "description": "Football Data Scientist working on tracking-data analytics, pitch-control from broadcast video, xG models and passing networks.",
-      "url": "https://itzmore.dev",
-      "image": "https://itzmore.dev/__l5e/assets-v1/e99b27df-638b-4fd9-a4ff-c565173c25b0/moritz-profile-hero.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/moritz-philipp-haaf/",
-        "https://github.com/itzmore-mph"
-      ],
-      "knowsAbout": ["Football Analytics", "Tracking Data", "Pitch Control", "Expected Goals", "Passing Networks", "Python", "AWS SageMaker", "Streamlit"],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Publicis Media"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Vienna",
-        "addressCountry": "Austria"
-      }
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://itzmore.dev/#person",
+          "name": "Moritz Philipp Haaf",
+          "alternateName": ["Moritz Haaf", "itzmore"],
+          "jobTitle": "Football Data Scientist",
+          "description": "Football Data Scientist building computer vision and tracking data pipelines that turn match footage into player positions and spatial metrics such as pitch control, validated against ground truth, for recruitment and match analysis. Senior Data Analyst at Publicis Media in Vienna.",
+          "url": "https://itzmore.dev/",
+          "image": "https://itzmore.dev/__l5e/assets-v1/e99b27df-638b-4fd9-a4ff-c565173c25b0/moritz-profile-hero.jpg",
+          "email": "mailto:itzmore.dev@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/moritz-philipp-haaf/",
+            "https://github.com/itzmore-mph",
+            "https://www.upwork.com/freelancers/~01924c4b6089ef56d8",
+            "https://www.malt.de/profile/moritzphilipphaaf"
+          ],
+          "knowsAbout": ["Football Analytics", "Computer Vision", "Broadcast Player Tracking", "Pitch Control", "TRACAB Tracking Data", "3D Skeleton Pose Data", "Event Data", "StatsBomb", "Wyscout", "Expected Goals (xG)", "Passing Networks", "Football Scouting", "YOLO", "ByteTrack", "Python", "SQL", "AWS SageMaker", "AWS Bedrock"],
+          "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "MSc Artificial Intelligence Applied to Sports" }
+          ],
+          "award": "EMEA Finalist, AWS World Sports Innovation Cup 2026",
+          "worksFor": { "@type": "Organization", "name": "Publicis Media" },
+          "hasOccupation": { "@type": "Occupation", "name": "Football Data Scientist" },
+          "seeks": "Football data science roles at clubs in the EU",
+          "address": { "@type": "PostalAddress", "addressLocality": "Vienna", "addressCountry": "AT" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://itzmore.dev/#website",
+          "url": "https://itzmore.dev/",
+          "name": "itzmore, Moritz Philipp Haaf",
+          "inLanguage": "en",
+          "about": { "@id": "https://itzmore.dev/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "url": "https://itzmore.dev/",
+          "name": "Moritz Philipp Haaf, Football Data Scientist",
+          "mainEntity": { "@id": "https://itzmore.dev/#person" }
+        }
+      ]
     }
     </script>
-    <!-- Add sitemap reference -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
     <!-- Open Graph / Social Media -->
+    <meta property="og:site_name" content="itzmore" />
     <meta property="og:title" content="Moritz Philipp Haaf | Football Data Scientist" />
-    <meta property="og:description" content="Football analytics portfolio: tracking data, pitch-control from broadcast video, xG and passing networks. EMEA finalist AWS WSIC 2026." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://itzmore.dev" />
+    <meta property="og:description" content="From broadcast video to pitch control. Computer vision and tracking pipelines for recruitment and match analysis, validated against ground truth." />
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="Moritz" />
+    <meta property="profile:last_name" content="Haaf" />
+    <meta property="og:url" content="https://itzmore.dev/" />
     <meta property="og:image" content="https://itzmore.dev/__l5e/assets-v1/e99b27df-638b-4fd9-a4ff-c565173c25b0/moritz-profile-hero.jpg" />
     <meta property="og:image:width" content="1000" />
     <meta property="og:image:height" content="1000" />
+    <meta property="og:image:alt" content="Portrait of Moritz Philipp Haaf, Football Data Scientist" />
     <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Moritz Philipp Haaf | Football Data Scientist" />
-    <meta name="twitter:description" content="Football analytics portfolio. Tracking data, pitch control, xG, passing networks." />
+    <meta name="twitter:description" content="From broadcast video to pitch control. Tracking data, computer vision and event data analysis for football." />
     <meta name="twitter:image" content="https://itzmore.dev/__l5e/assets-v1/e99b27df-638b-4fd9-a4ff-c565173c25b0/moritz-profile-hero.jpg" />
-    
+
     <style>
       /* Prevent flash of unstyled content on Safari */
       .loading-fallback {
@@ -162,17 +188,24 @@
     -->
     <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
       <h1>Moritz Philipp Haaf, Football Data Scientist</h1>
-      <p>Football analytics portfolio: tracking-data analytics, pitch-control from broadcast video, expected goals (xG) models, and passing-network analysis. Currently Senior Data Analyst at Publicis Media. EMEA finalist of the AWS World Sports Innovation Cup 2026 with the Football Body Intelligence Platform built on 700M plus TRACAB tracking data points using AWS S3, SageMaker and Bedrock.</p>
+      <p>From broadcast video to pitch control. I build computer-vision and tracking-data pipelines that turn match footage into player positions and spatial metrics, validated against ground truth, for recruitment and match analysis where optical tracking isn't available. Based in Vienna, Senior Data Analyst at Publicis Media, open to football data science roles at clubs in the EU.</p>
+      <h2>Credentials</h2>
+      <ul>
+        <li>EMEA Finalist, AWS World Sports Innovation Cup 2026.</li>
+        <li>MSc Artificial Intelligence Applied to Sports, completed, capstone graded 100/100.</li>
+      </ul>
       <h2>Featured projects</h2>
       <ul>
-        <li>Football Body Intelligence Platform, AWS WSIC 2026 EMEA finalist, AWI and PQI metrics on TRACAB tracking data.</li>
-        <li>Pitch-Control from Broadcast Video, MSc capstone using YOLOv11n, ByteTrack, TVCalib and Shaw TTI, validated against SoccerNet GSR (ICC 0.83 to 0.92).</li>
-        <li>Football Analytics Dashboard with XGBoost xG baseline and passing networks on StatsBomb open data.</li>
-        <li>Bundesliga 2023 to 2024 performance and valuation analysis with Ridge and Random Forest.</li>
-        <li>StatsBomb passing-network analysis, UEFA Champions League Final 2018.</li>
+        <li>Pitch-Control from Broadcast Video: YOLOv11n, ByteTrack and TVCalib pipeline validated against SoccerNet GSR ground truth across 33 clips, ICC 0.83 to 0.92.</li>
+        <li>Football Body Intelligence Platform: 700M+ TRACAB 3D skeleton points processed on AWS S3, SageMaker and Bedrock.</li>
+        <li>World Cup of Data: co-authored 2026 FIFA World Cup match analyses for the Sports Data Campus series.</li>
+        <li>Bundesliga Performance and Valuation Analysis.</li>
+        <li>Scouting data pipeline for a professional club (NDA), scraping and ETL.</li>
       </ul>
       <h2>Skills</h2>
-      <p>Python, SQL, AWS SageMaker, Streamlit, PyTorch, computer vision, tracking data, xG models, pitch control, passing networks, Power BI, Tableau.</p>
+      <p>Python, SQL, computer vision, broadcast tracking, TRACAB tracking data, StatsBomb and Wyscout event data, xG, pitch control, AWS, Power BI, Tableau.</p>
+      <h2>Contact</h2>
+      <p>Email itzmore.dev@gmail.com, LinkedIn linkedin.com/in/moritz-philipp-haaf, GitHub github.com/itzmore-mph.</p>
     </div>
 
     <div class="loading-fallback">

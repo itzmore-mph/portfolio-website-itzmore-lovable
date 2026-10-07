@@ -72,7 +72,7 @@ const AboutSection = () => {
               <div className="relative overflow-hidden rounded-2xl border border-primary/30 shadow-xl bg-black/20">
                 <OptimizedImage
                   src={aboutPhoto.url}
-                  alt="Moritz Philipp Haaf holding the AWS World Sports Innovation Cup 2026 Finalist certificate at the DFL Bundesliga headquarters"
+                  alt="Moritz Philipp Haaf holding the AWS World Sports Innovation Cup 2026 Finalist certificate at the DFB Campus in Frankfurt"
                   className="w-full h-auto object-cover saturate-[0.82] brightness-[0.93]"
                   width={800}
                   height={1067}
@@ -83,7 +83,7 @@ const AboutSection = () => {
                 <div className="pointer-events-none absolute inset-0 bg-primary/[0.07] mix-blend-soft-light" aria-hidden="true" />
               </div>
               <figcaption className="mt-3 text-caption text-muted-foreground text-center">
-                AWS World Sports Innovation Cup 2026, Finalist at DFL Bundesliga HQ
+                AWS World Sports Innovation Cup 2026, Finalist at DFB Campus Frankfurt
               </figcaption>
             </figure>
           </AnimatedSection>

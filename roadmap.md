@@ -12,4 +12,4 @@
 - [x] Canonical job title "Senior Data Analyst" at Publicis everywhere, no "Austria" after Publicis
 - [x] Hero profile avatar swapped to the new headshot, cropped square, verified on desktop and phone
 - [x] Contact area simplified to one compact card, verified at 1440px, 390px and 320px
-- [x] Email button subject prefill plus copy-to-clipboard button, verified on desktop and phones
+- [x] Email button keeps the subject prefill but is labelled "Email me"; the copy-to-clipboard button was removed, verified at 1440px, 393px and 320px

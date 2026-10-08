@@ -23,6 +23,9 @@ const ContactSection = () => {
     PRIMARY_SOCIALS.includes(s.name as (typeof PRIMARY_SOCIALS)[number])
   );
 
+  const [workStyleLead, ...workStyleRest] = contactWorkStyle.split(" ");
+
+
   return (
     <Section id="contact" background="default" spacing="xl">
       <ParallaxSection fadeIn slideUp>

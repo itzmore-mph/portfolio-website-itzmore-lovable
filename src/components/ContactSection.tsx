@@ -62,7 +62,7 @@ const ContactSection = () => {
                       asChild
                       variant="outline"
                       size="lg"
-                      className="w-full sm:w-auto h-14 px-6 text-sm sm:text-base font-semibold rounded-xl shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02]"
+                      className="w-full sm:w-auto h-14 px-4 sm:px-6 text-xs min-[360px]:text-sm lg:text-base font-semibold rounded-xl shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02]"
                     >
                       <a
                         href={social.href}

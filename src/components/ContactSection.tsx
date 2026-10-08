@@ -78,9 +78,18 @@ const ContactSection = () => {
                 })}
               </div>
 
-              <p className="mt-8 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>{contactLocation}</span>
+              <p className="mt-8 flex flex-col min-[360px]:flex-row items-center justify-center gap-1 min-[360px]:gap-2 text-xs min-[360px]:text-sm text-muted-foreground">
+                <span className="flex items-center gap-2 whitespace-nowrap">
+                  <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
+                  Vienna, Austria
+                </span>
+                <span className="hidden min-[360px]:inline" aria-hidden="true">
+                  ·
+                </span>
+                <span className="text-center">
+                  <span className="whitespace-nowrap">Remote-first,</span> with
+                  regular on-site visits
+                </span>
               </p>
             </div>
           </div>

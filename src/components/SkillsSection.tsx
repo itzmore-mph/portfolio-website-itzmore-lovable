@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { skillCategories, keyStrengths } from "@/data/skills";
+import { skillCategories, keyStrengths, skillsIntro } from "@/data/skills";
 import { ParallaxSection } from "@/components/ui/parallax-section";
 
 const SkillsSection = () => {
@@ -10,8 +10,7 @@ const SkillsSection = () => {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">Technical Expertise</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
-              A data science toolkit built for football analytics, from statistical modeling and performance analysis to AI-driven insights,
-              shaped by hands-on sports data projects and an MSc in AI Applied to Sports.
+              {skillsIntro}
             </p>
           </div>
         </ParallaxSection>

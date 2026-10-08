@@ -10,13 +10,10 @@ export const projects: Project[] = [
   {
     title: "Pitch-Control from Broadcast Video",
     description:
-      "MSc capstone. End-to-end computer-vision pipeline (YOLOv11n detection, ByteTrack identity, TVCalib camera calibration, Shaw time-to-intercept pitch-control) that turns broadcast footage into spatial pressure surfaces, validated against SoccerNet GSR ground truth across 33 clips.",
+      "MSc capstone. End-to-end computer-vision pipeline (YOLOv11n detection, ByteTrack identity, TVCalib camera calibration, Shaw time-to-intercept pitch-control) that turns broadcast footage into spatial pressure surfaces, validated against SoccerNet GSR ground truth.",
     image: pitchControlImg.url,
     tags: ["Python", "Computer Vision", "PyTorch", "Validation"],
     metrics: ["YOLOv11n + ByteTrack", "TVCalib Homography", "Shaw TTI Model"],
-    metricBadge: "ICC 0.83 to 0.92",
-    metricExplainer:
-      "ICC = agreement with ground-truth tracking; above 0.75 indicates strong reliability.",
     icon: Video,
     color: "primary",
     caseStudyUrl:
@@ -42,13 +39,10 @@ export const projects: Project[] = [
   {
     title: "Bundesliga Performance and Valuation Analysis",
     description:
-      "Season-long study of Bayer Leverkusen's unbeaten campaign combining performance metrics, market valuation, and ML feature importance via Ridge and Random Forest.",
+      "Season-long study of Bayer Leverkusen's unbeaten 2023/24 Bundesliga season, combining performance metrics, market valuation and ML feature importance via Ridge and Random Forest.",
     image: bundesligaImg.url,
     tags: ["Python", "Machine Learning", "Bundesliga", "Performance Analysis"],
     metrics: ["Ridge Regression", "Random Forest", "Feature Importance"],
-    metricBadge: "age feature importance = 0.44",
-    metricExplainer:
-      "Feature importance = relative contribution of a variable to model predictions (0 to 1).",
     icon: TrendingUp,
     color: "primary",
     caseStudyUrl: "https://itzmore-mph.github.io/bundesliga-performance-analysis/",
@@ -59,7 +53,7 @@ export const projects: Project[] = [
     description:
       "Co-authored match analyses for a collaborative Sports Data Campus series on the 2026 FIFA World Cup, covering Mexico vs South Africa, Canada vs Qatar and Group G with event-data metrics and tactical breakdowns.",
     image: worldCupOfDataImg.url,
-    tags: ["Match Analysis", "Event Data", "Data Visualisation", "Collaboration"],
+    tags: ["Match Analysis", "Event Data", "Tactical Analysis", "Data Visualisation"],
     metrics: ["Event Data", "Tactical Breakdowns", "Sports Data Campus"],
     icon: Globe,
     color: "primary",

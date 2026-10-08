@@ -12,14 +12,13 @@ const EMAIL_ADDRESS = "itzmore.dev@gmail.com";
 
 const ContactSection = () => {
   const primarySocials = socialLinks.filter((s) => PRIMARY_SOCIALS.includes(s.name));
-  const freelanceSocials = socialLinks.filter((s) => !PRIMARY_SOCIALS.includes(s.name));
 
   return (
     <Section id="contact" background="default" spacing="xl">
       <ParallaxSection fadeIn slideUp>
         <SectionHeader
           title="Let's Work Together"
-          subtitle="Open to Football Data Science roles across clubs, federations and sports-tech. Reach out to discuss how tracking data, video and event data can support your team."
+          subtitle="Open to football data roles and project work with clubs, federations and sports-tech in the EU and UK. Typical projects: set-piece analysis, tracking and video data pipelines, and recruitment data workflows."
         />
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -110,28 +109,6 @@ const ContactSection = () => {
                     ))}
                   </div>
 
-                  {freelanceSocials.length > 0 && (
-                    <div className="mt-8">
-                      <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground mb-3">
-                        Freelance profiles
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {freelanceSocials.map((social) => (
-                          <a
-                            key={social.name}
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${social.name} freelance profile (opens in new tab)`}
-                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-muted/30 hover:bg-muted hover:border-primary/40 text-xs font-medium text-muted-foreground hover:text-primary transition-colors focus-ring-primary"
-                          >
-                            <img src={social.logo} alt="" className="w-3.5 h-3.5" width={14} height={14} loading="lazy" />
-                            {social.name}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
               </CardContent>
             </Card>
@@ -147,7 +124,7 @@ const ContactSection = () => {
             <div className="relative z-10">
               <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground">Let's talk football data</h3>
               <p className="text-muted-foreground mb-10 max-w-3xl mx-auto text-xl leading-relaxed">
-                Clubs, federations and sports-tech teams, I'm open to full-time and contract roles in Football Data Science across remote and EU based setups.
+                Clubs, federations and sports-tech teams: I'm open to full-time roles and project-based work in Football Data Science across the EU and UK, remote-first or hybrid.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button

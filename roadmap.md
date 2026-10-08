@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Refine hero portrait, accents, proof lines and backdrop, move capability cards below it
-- [ ] Verify hero at desktop 1440px, tablet 768px and mobile 390px
+- [x] Refine hero portrait, accents, proof lines and backdrop, move capability cards below it
+- [x] Verify hero at desktop 1440px, tablet 768px and mobile 390px
 
 - [x] Apply and verify requested portfolio content updates without visual changes
 

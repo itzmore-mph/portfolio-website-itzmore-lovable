@@ -1,9 +1,7 @@
-import { trustLogos, trustBadge } from "@/data/trust";
-import { Award } from "lucide-react";
+import { trustLogos } from "@/data/trust";
 
 /**
  * Compact trust strip: prior employers rendered grayscale with an emerald tint on hover,
- * plus a text credential badge for the AWS finalist milestone.
  */
 export const TrustStrip = () => {
   return (
@@ -30,12 +28,6 @@ export const TrustStrip = () => {
               )}
             </div>
           ))}
-        </div>
-        <div className="flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-xs sm:text-sm text-primary font-medium">
-            <Award className="w-4 h-4" aria-hidden="true" />
-            {trustBadge}
-          </div>
         </div>
       </div>
     </section>

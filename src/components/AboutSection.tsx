@@ -41,7 +41,7 @@ const AboutSection = () => {
       <ParallaxSection fadeIn slideUp>
         <SectionHeader
           title="About Me"
-          subtitle="Get to know more about my background, expertise, and passion for transforming complex data into actionable insights."
+          subtitle="Background, education and how I work."
         />
 
         {/* Band 1: Highlight cards full-width */}
@@ -96,7 +96,7 @@ const AboutSection = () => {
                   I build data pipelines and models that turn football video and tracking data into metrics for <strong className="text-foreground">recruitment and match analysis</strong>. My work focuses on <strong className="text-foreground">broadcast computer vision</strong>, <strong className="text-foreground">optical and skeletal tracking data</strong>, and <strong className="text-foreground">event data</strong> from StatsBomb and Wyscout.
                 </p>
                 <p className="text-body-sm text-muted-foreground">
-                  Recent work includes a broadcast pipeline that derives player positions and pitch control from single-camera match footage, the <strong className="text-foreground">Football Body Intelligence Platform</strong> on TRACAB 3D skeleton data (finalist, AWS World Sports Innovation Cup 2026), and a <strong className="text-foreground">scouting data pipeline for a professional club</strong>.
+                  Recent work includes a broadcast pipeline that derives player positions and pitch control from single-camera match footage, the <strong className="text-foreground">Football Body Intelligence Platform</strong> on TRACAB 3D skeleton data, and a <strong className="text-foreground">scouting data pipeline for a professional club</strong>.
                 </p>
                 <p className="text-body-sm text-muted-foreground">
                   At <strong className="text-foreground">Publicis Media</strong> I lead dashboard and data-pipeline work for international stakeholders: documented metric definitions, automated QA and reporting that non-technical teams rely on. The same standards apply to my football work.

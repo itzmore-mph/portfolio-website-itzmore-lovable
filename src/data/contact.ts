@@ -12,8 +12,8 @@ export const contactMethods: ContactMethod[] = [
   {
     icon: MapPin,
     title: "Location",
-    value: "Austria",
-    description: "Available for remote work worldwide",
+    value: "Vienna, Austria",
+    description: "Remote-first, with regular on-site visits",
     color: "analytics-purple"
   }
 ];

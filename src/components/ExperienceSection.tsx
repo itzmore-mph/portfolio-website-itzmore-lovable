@@ -26,7 +26,7 @@ const ExperienceSection = () => {
       <ParallaxSection fadeIn slideUp>
       <SectionHeader
         title="Professional Journey"
-        subtitle="From corporate dashboard development to football analytics innovation, backed by an MSc in AI Applied to Sports, building expertise across sports, media, and technology sectors."
+        subtitle="Data and analytics roles across sports technology, media and advertising, now focused on football data science."
         size="default"
       />
 

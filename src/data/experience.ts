@@ -6,9 +6,8 @@ export const experiences: Experience[] = [
     company: "Publicis Media",
     position: "Senior Data Analyst",
     details: [
-      "Lead dashboard development and analytics engineering in Salesforce Marketing Intelligence (Datorama) for international stakeholders; build Data Streams/Transformations pipelines and create efficient reporting.",
-      "Implement scalable metrics and dimensions using Datorama's JS-style expression language.",
-      "Design cross-source data models and reusable components; maintain a metric dictionary, naming conventions, and QA/alerting for consistent reporting.",
+      "Lead dashboard development and analytics engineering for international stakeholders in Salesforce Marketing Intelligence (Datorama).",
+      "Build cross-source data pipelines and data models with a documented metric dictionary, naming conventions and automated QA and alerting.",
     ],
     current: true,
   },

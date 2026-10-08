@@ -4,11 +4,12 @@ import {
   Brain,
   Cloud,
   Code2,
-  Cog,
+  Database,
   ScanEye,
-  TrendingUp,
 } from "lucide-react";
 import { SkillCategory, KeyStrength } from "./types";
+
+export const skillsIntro = "Tools and data I work with, from broadcast video and tracking data to event data, pipelines and reporting.";
 
 export const skillCategories: SkillCategory[] = [
   {
@@ -34,12 +35,17 @@ export const skillCategories: SkillCategory[] = [
     icon: Activity,
     color: "primary",
     skills: [
-      "StatsBomb data",
       "xG modelling",
       "Pitch Control",
       "Tracking & skeleton data",
       "mplsoccer",
     ],
+  },
+  {
+    title: "Data Providers",
+    icon: Database,
+    color: "primary",
+    skills: ["Hudl StatsBomb (event & 360)", "Wyscout", "TRACAB 3D skeletal tracking", "SoccerNet"],
   },
   {
     title: "Visualization & BI",
@@ -48,30 +54,30 @@ export const skillCategories: SkillCategory[] = [
     skills: ["Streamlit", "Power BI", "Tableau", "Looker Studio", "Datorama"],
   },
   {
-    title: "Cloud & Workflow",
+    title: "Data Engineering & Cloud",
     icon: Cloud,
     color: "primary",
-    skills: ["AWS (S3, SageMaker, Bedrock)", "Docker", "Git & GitHub", "Jupyter"],
+    skills: ["Web scraping", "API ingestion & ETL pipelines", "DuckDB", "AWS (S3, SageMaker, Bedrock)", "Docker", "Git & GitHub"],
   },
 ];
 
 export const keyStrengths: KeyStrength[] = [
   {
-    icon: TrendingUp,
-    title: "Corporate Analytics Excellence",
+    icon: ScanEye,
+    title: "Tracking & Broadcast Computer Vision",
     description:
-      "Leading international dashboard and automation projects at Publicis Media Austria, building real-time visualization tools and scalable workflows.",
+      "Turning broadcast video and optical tracking into player positions and spatial metrics such as pitch control, validated against ground truth.",
   },
   {
-    icon: Brain,
-    title: "Applied Football Analytics",
+    icon: Database,
+    title: "End-to-End Data Pipelines",
     description:
-      "Actively developing xG models, opponent analysis dashboards, and player comparison studies using StatsBomb and open-source data.",
+      "From scraping and provider data to cleaned, modelled datasets: a scouting data pipeline for a professional club and cloud pipelines on 700M+ tracking data points.",
   },
   {
-    icon: Cog,
-    title: "AI Specialization",
+    icon: Activity,
+    title: "Published Football Analysis",
     description:
-      "Completed the MSc in AI Applied to Sports to become a Football Data Scientist in professional clubs or federations.",
+      "Co-authored 2026 FIFA World Cup match analyses for the Sports Data Campus World Cup of Data series, translating event data into tactical findings.",
   },
 ];

@@ -7,6 +7,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import TrustStrip from "@/components/TrustStrip";
+import { StatsGrid } from "@/components/hero/StatsGrid";
 import {
   SectionDecorSet1,
   SectionDecorSet2,
@@ -22,6 +23,10 @@ const Index = () => {
       <main className="relative" id="main-content">
         <section id="home" className="relative">
           <HeroSection />
+        </section>
+
+        <section aria-label="Football data capabilities" className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+          <StatsGrid />
         </section>
 
         <TrustStrip />

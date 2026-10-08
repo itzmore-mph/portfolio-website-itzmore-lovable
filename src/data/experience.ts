@@ -21,12 +21,11 @@ export const experiences: Experience[] = [
       "Developed the Football Body Intelligence Platform on 700M+ TRACAB 3D skeleton data points (AWS S3, SageMaker, Bedrock) with two body-mechanics metrics (AWI, PQI). EMEA finalist, AWS World Sports Innovation Cup 2026.",
       "Designed a two-phase Python scouting data pipeline for a professional club (under NDA), ingesting and normalising league source data for recruitment workflows.",
       "Co-authored 2026 FIFA World Cup match analyses for the Sports Data Campus 'World Cup of Data' series.",
+      "Client projects including Tableau dashboard development for a Swiss Salesforce consultancy and a ticket sales analysis for a sports organisation.",
     ],
     ongoing: true,
     links: [
       { name: "GitHub", url: "https://github.com/itzmore-mph" },
-      { name: "Upwork", url: "https://www.upwork.com/freelancers/~01924c4b6089ef56d8" },
-      { name: "Malt", url: "https://www.malt.de/profile/moritzphilipphaaf" },
     ],
   },
   {

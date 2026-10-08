@@ -7,7 +7,7 @@ export const experiences: Experience[] = [
     position: "Senior Data Analyst",
     location: "Vienna, Austria",
     details: [
-      "Lead end-to-end dashboard and automation projects for cross-media campaigns, from requirements to rollout and ongoing support, in Salesforce Marketing Intelligence (Datorama), Power BI and Looker / Looker Studio.",
+      "Lead end-to-end dashboard and automation projects for cross-media campaigns, from requirements to rollout and ongoing support, in Salesforce Marketing Intelligence (Datorama), Power BI and Looker Studio.",
       "Act as product owner for Austria for the network's in-house BI solutions: gathering local requirements, prioritising features and coordinating rollout with the engineering team in London.",
       "Build cross-source data pipelines and reporting frameworks for performance, pacing and KPI monitoring across markets, with a documented metric dictionary and automated QA.",
       "Drive the agency's data and AI strategy, scaling automation initiatives across teams.",

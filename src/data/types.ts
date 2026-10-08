@@ -61,14 +61,6 @@ export interface Experience {
 }
 
 // Contact Types
-export interface ContactMethod {
-  icon: LucideIcon;
-  title: string;
-  value: string;
-  description: string;
-  color: string;
-}
-
 export interface SocialLink {
   name: string;
   href: string;

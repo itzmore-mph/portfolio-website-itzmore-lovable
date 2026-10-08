@@ -22,7 +22,7 @@ export const skillCategories: SkillCategory[] = [
     title: "Data & Machine Learning",
     icon: Brain,
     color: "primary",
-    skills: ["pandas", "scikit-learn", "LightGBM", "PyTorch"],
+    skills: ["pandas", "scikit-learn", "LightGBM", "PyTorch", "TensorFlow/Keras"],
   },
   {
     title: "Computer Vision",

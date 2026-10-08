@@ -85,14 +85,14 @@ const ContactSection = () => {
               <p className="mt-8 flex flex-col min-[360px]:flex-row items-center justify-center gap-1 min-[360px]:gap-2 text-xs min-[360px]:text-sm text-muted-foreground">
                 <span className="flex items-center gap-2 whitespace-nowrap">
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                  Vienna, Austria
+                  {contactCity}
                 </span>
                 <span className="hidden min-[360px]:inline" aria-hidden="true">
                   ·
                 </span>
                 <span className="text-center">
-                  <span className="whitespace-nowrap">Remote-first,</span> with
-                  regular on-site visits
+                  <span className="whitespace-nowrap">{workStyleLead}</span>{" "}
+                  {workStyleRest.join(" ")}
                 </span>
               </p>
             </div>

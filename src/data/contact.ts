@@ -7,8 +7,9 @@ export const contactIntro =
 
 export const contactEmail = "itzmore.dev@gmail.com";
 
-export const contactLocation =
-  "Vienna, Austria · Remote-first, with regular on-site visits";
+export const contactCity = "Vienna, Austria";
+
+export const contactWorkStyle = "Remote-first, with regular on-site visits";
 
 export const socialLinks: SocialLink[] = [
   {

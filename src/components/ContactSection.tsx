@@ -3,10 +3,11 @@ import { ParallaxSection } from "@/components/ui/parallax-section";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import {
+  contactCity,
   contactEmail,
   contactHeading,
   contactIntro,
-  contactLocation,
+  contactWorkStyle,
   socialLinks
 } from "@/data/contact";
 

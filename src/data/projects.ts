@@ -53,8 +53,8 @@ export const projects: Project[] = [
     description:
       "Co-authored match analyses for a collaborative Sports Data Campus series on the 2026 FIFA World Cup, covering Mexico vs South Africa, Canada vs Qatar and Group G with event-data metrics and tactical breakdowns.",
     image: worldCupOfDataImg.url,
-    tags: ["Match Analysis", "Event Data", "Tactical Analysis", "Data Visualisation"],
-    metrics: ["Event Data", "Tactical Breakdowns", "Sports Data Campus"],
+    tags: ["Event Data", "Tactical Analysis", "Data Visualisation"],
+    metrics: ["Match Analysis", "Tactical Breakdowns"],
     icon: Globe,
     color: "primary",
     caseStudyUrl: "https://worldcup2026.sportsdatacampus.com/",

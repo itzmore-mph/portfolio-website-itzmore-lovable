@@ -1,23 +1,11 @@
 import { HeroContent } from "./hero/HeroContent";
 import { ProfilePhoto } from "./hero/ProfilePhoto";
-import { StatsGrid } from "./hero/StatsGrid";
 import { HeroDataMotif } from "./hero/HeroDataMotif";
 import profilePhotoAsset from "@/assets/moritz-profile-hero.jpg.asset.json";
-import { ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
-  const scrollToNext = () => {
-    const nextSection = document.querySelector('#about');
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // Fallback: scroll down by viewport height
-      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section className="relative min-h-dvh flex items-center justify-center overflow-hidden pt-20 lg:pt-0" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf, Football Data Scientist">
+    <section className="relative flex items-center justify-center overflow-hidden pt-20" role="banner" aria-label="Hero section introducing Moritz Philipp Haaf, Football Data Scientist">
       {/* Abstract data-viz motif (pitch-control + passing network), replaces stadium photo */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <HeroDataMotif />
@@ -27,7 +15,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile Layout */}
-        <div className="flex flex-col items-center justify-center min-h-dvh py-8 pb-40 space-y-8 lg:hidden">
+        <div className="flex flex-col items-center justify-center py-8 pb-12 space-y-8 md:hidden">
           {/* Profile Photo - Mobile */}
           <div className="flex-shrink-0">
             <ProfilePhoto 
@@ -43,47 +31,27 @@ const HeroSection = () => {
             />
           </div>
           
-          {/* Stats Grid - Mobile */}
-          <div className="w-full max-w-md mx-auto px-2">
-            <StatsGrid />
-          </div>
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center min-h-dvh py-20 pb-32">
+        <div className="hidden md:grid md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:grid-cols-2 gap-8 lg:gap-12 items-center py-16 lg:py-20">
           {/* Content - Desktop */}
-          <div className="order-1">
+          <div className="order-1 min-w-0">
             <HeroContent 
               onProjectsClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             />
           </div>
           
           {/* Profile & Stats - Desktop */}
-          <div className="space-y-8 lg:space-y-10 animate-slide-up order-2">
+          <div className="flex items-center justify-center animate-slide-up order-2 min-w-0">
             <ProfilePhoto 
               src={profilePhotoAsset.url}
               alt="Moritz Philipp Haaf, Football Data Scientist, professional portrait"
             />
-            <StatsGrid />
           </div>
         </div>
       </div>
       
-      {/* Scroll Indicator - Better positioned for mobile */}
-      <div className="hidden sm:block absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <button 
-          onClick={scrollToNext}
-          className="flex flex-col items-center text-white/90 cursor-pointer group hover:animate-none transition-all duration-500 animate-[bounce_3s_ease-in-out_infinite]"
-          aria-label="Scroll to next section"
-        >
-          <span className="text-sm mb-3 group-hover:text-white transition-colors duration-300 hidden sm:block font-medium">
-            Scroll to explore
-          </span>
-          <div className="bg-white/10 backdrop-blur-sm rounded-full p-3 group-hover:bg-white/20 transition-all duration-300 border border-white/20">
-            <ArrowDown className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-          </div>
-        </button>
-      </div>
     </section>
   );
 };

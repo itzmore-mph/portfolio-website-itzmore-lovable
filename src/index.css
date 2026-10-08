@@ -78,6 +78,18 @@
 
 /* Note: dormant .dark override removed. The :root theme above is the single source of truth. */
 
+.hero-network-mask {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero-network-mask {
+    display: block;
+    mask-image: linear-gradient(to right, transparent 58%, hsl(var(--foreground)) 82%);
+    -webkit-mask-image: linear-gradient(to right, transparent 58%, hsl(var(--foreground)) 82%);
+  }
+}
+
 /* Safari WebKit Feature Flag Compatibility */
 :root {
   --vh: 1vh; /* Fallback for Safari mobile */

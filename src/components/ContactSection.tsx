@@ -81,7 +81,7 @@ const ContactSection = () => {
 
                 <div className="mt-10">
                   <h4 className="font-semibold mb-6 text-lg">Connect With Me</h4>
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-4">
                     {primarySocials.map((social) => (
                       <a
                         key={social.name}
@@ -89,20 +89,20 @@ const ContactSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${social.name} profile (opens in new tab)`}
-                        className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-muted/50 hover:bg-muted rounded-xl transition-all duration-200 group focus-ring shadow-sm hover:shadow-md border border-border/50 hover:border-primary/30"
+                        className="flex items-center gap-2 sm:gap-4 p-2 sm:p-4 bg-muted/50 hover:bg-muted rounded-xl transition-all duration-200 group focus-ring shadow-sm hover:shadow-md border border-border/50 hover:border-primary/30"
                       >
-                        <div className={`p-4 rounded-xl ${social.color} flex-shrink-0 shadow-md`}>
+                        <div className={`p-1.5 sm:p-4 rounded-xl ${social.color} flex-shrink-0 shadow-md`}>
                           <img
                             src={social.logo}
                             alt=""
-                            className="w-6 h-6 invert"
-                            width="24"
-                            height="24"
+                            className="w-5 h-5 sm:w-6 sm:h-6 invert"
+                            width="20"
+                            height="20"
                             loading="lazy"
                             fetchPriority="low"
                           />
                         </div>
-                        <span className="font-medium group-hover:text-primary transition-colors text-sm">
+                        <span className="font-medium group-hover:text-primary transition-colors text-xs sm:text-sm whitespace-nowrap">
                           {social.name}
                         </span>
                       </a>

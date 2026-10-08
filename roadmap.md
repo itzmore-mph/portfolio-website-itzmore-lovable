@@ -13,3 +13,4 @@
 - [x] Hero profile avatar swapped to the new headshot, cropped square, verified on desktop and phone
 - [x] Contact area simplified to one compact card, verified at 1440px, 390px and 320px
 - [x] Email button keeps the subject prefill but is labelled "Email me"; the copy-to-clipboard button was removed, verified at 1440px, 393px and 320px
+- [x] Upwork and Malt removed site-wide (freelance links, contact data, JSON-LD, privacy pages), client-work bullet added to the freelance entry

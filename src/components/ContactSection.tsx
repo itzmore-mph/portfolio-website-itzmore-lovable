@@ -1,10 +1,12 @@
+import { useEffect, useRef, useState } from "react";
 import { Section } from "@/components/layout/Section";
 import { ParallaxSection } from "@/components/ui/parallax-section";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Check, Copy, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import {
   contactCity,
   contactEmail,
+  contactEmailSubject,
   contactHeading,
   contactIntro,
   contactWorkStyle,
@@ -18,6 +20,10 @@ const SOCIAL_ICONS = {
   GitHub: Github
 } as const;
 
+const CONTACT_EMAIL_HREF = `mailto:${contactEmail}?subject=${encodeURIComponent(
+  contactEmailSubject
+)}`;
+
 const ContactSection = () => {
   const primarySocials = socialLinks.filter((s) =>
     PRIMARY_SOCIALS.includes(s.name as (typeof PRIMARY_SOCIALS)[number])
@@ -25,6 +31,29 @@ const ContactSection = () => {
 
   const [workStyleLead, ...workStyleRest] = contactWorkStyle.split(" ");
 
+  const [isCopied, setIsCopied] = useState(false);
+  const copyTimer = useRef<number | undefined>(undefined);
+
+  useEffect(() => () => window.clearTimeout(copyTimer.current), []);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(contactEmail);
+    } catch {
+      const field = document.createElement("textarea");
+      field.value = contactEmail;
+      field.setAttribute("readonly", "");
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.appendChild(field);
+      field.select();
+      document.execCommand("copy");
+      document.body.removeChild(field);
+    }
+    setIsCopied(true);
+    window.clearTimeout(copyTimer.current);
+    copyTimer.current = window.setTimeout(() => setIsCopied(false), 2000);
+  };
 
   return (
     <Section id="contact" background="default" spacing="xl">
@@ -51,7 +80,7 @@ const ContactSection = () => {
                   size="lg"
                   className="w-full sm:w-auto h-14 px-4 sm:px-6 text-xs min-[360px]:text-sm lg:text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] bg-primary hover:bg-primary-hover text-white"
                 >
-                  <a href={`mailto:${contactEmail}`}>
+                  <a href={CONTACT_EMAIL_HREF}>
                     <Mail className="w-4 h-4 mr-1.5 sm:w-5 sm:h-5 sm:mr-2 flex-shrink-0" />
                     <span className="truncate">{contactEmail}</span>
                   </a>
@@ -82,7 +111,28 @@ const ContactSection = () => {
                 })}
               </div>
 
-              <p className="mt-8 flex flex-col min-[360px]:flex-row items-center justify-center gap-1 min-[360px]:gap-2 text-xs min-[360px]:text-sm text-muted-foreground">
+              <div className="mt-5 flex justify-center">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={copyEmail}
+                  aria-label={`Copy email address ${contactEmail}`}
+                  className="h-9 gap-2 rounded-lg border border-border/60 bg-muted/30 px-3 text-xs font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                >
+                  {isCopied ? (
+                    <Check className="w-3.5 h-3.5 text-primary" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5" />
+                  )}
+                  {isCopied ? "Email copied" : "Copy email address"}
+                </Button>
+                <span className="sr-only" aria-live="polite">
+                  {isCopied ? "Email address copied to clipboard" : ""}
+                </span>
+              </div>
+
+              <p className="mt-6 flex flex-col min-[360px]:flex-row items-center justify-center gap-1 min-[360px]:gap-2 text-xs min-[360px]:text-sm text-muted-foreground">
                 <span className="flex items-center gap-2 whitespace-nowrap">
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
                   {contactCity}

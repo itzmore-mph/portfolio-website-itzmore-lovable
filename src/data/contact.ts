@@ -7,6 +7,8 @@ export const contactIntro =
 
 export const contactEmail = "itzmore.dev@gmail.com";
 
+export const contactEmailSubject = "Football data role or project enquiry";
+
 export const contactCity = "Vienna, Austria";
 
 export const contactWorkStyle = "Remote-first, with regular on-site visits";

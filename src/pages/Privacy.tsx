@@ -115,7 +115,7 @@ const Privacy = () => {
                   <section>
                     <h2 className="text-2xl font-bold mb-4">5. External Links</h2>
                     <p className="text-muted-foreground leading-relaxed">
-                      This site may include links to external services such as GitHub, LinkedIn, Upwork, or Malt. I am not responsible for their data protection practices. Please refer to the respective providers' privacy policies.
+                      This site may include links to external services such as GitHub or LinkedIn. I am not responsible for their data protection practices. Please refer to the respective providers' privacy policies.
                     </p>
                   </section>
 
@@ -193,7 +193,7 @@ const Privacy = () => {
                   <section>
                     <h2 className="text-2xl font-bold mb-4">5. Externe Links</h2>
                     <p className="text-muted-foreground leading-relaxed">
-                      Diese Website enthält Links zu externen Diensten wie GitHub, LinkedIn, Upwork oder Malt. Ich bin nicht verantwortlich für deren Datenschutzrichtlinien. Bitte informieren Sie sich bei den jeweiligen Anbietern.
+                      Diese Website enthält Links zu externen Diensten wie GitHub oder LinkedIn. Ich bin nicht verantwortlich für deren Datenschutzrichtlinien. Bitte informieren Sie sich bei den jeweiligen Anbietern.
                     </p>
                   </section>
 

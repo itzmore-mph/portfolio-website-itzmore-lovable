@@ -25,17 +25,5 @@ export const socialLinks: SocialLink[] = [
     href: "https://github.com/itzmore-mph",
     logo: "/lovable-uploads/34ef4087-06b0-4169-8894-d784144a83d3.png",
     color: "bg-gray-800"
-  },
-  {
-    name: "Upwork",
-    href: "https://www.upwork.com/freelancers/~01924c4b6089ef56d8",
-    logo: "/lovable-uploads/3b9fdfb7-6fd1-4f4e-9f7a-ba9320d49e93.png",
-    color: "bg-green-600"
-  },
-  {
-    name: "Malt",
-    href: "https://www.malt.de/profile/moritzphilipphaaf",
-    logo: "/lovable-uploads/malt-logo-original.png",
-    color: "bg-[#FC5757]"
   }
 ];

@@ -179,25 +179,8 @@ const ProjectsSection = () => {
                     )}
                   </>
                 )}
-              </div>
-
-              {project.externalLinks && project.externalLinks.length > 0 && (
-                <div className="mt-3 flex flex-col gap-1.5">
-                  {project.externalLinks.map((link) => (
-                    <a
-                      key={link.url}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors focus-ring-primary"
-                      aria-label={`${link.label} (opens in new tab)`}
-                    >
-                      <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                      {link.label}
-                    </a>
-                  ))}
                 </div>
-              )}
+              </div>
             </CardContent>
           </Card>
           );

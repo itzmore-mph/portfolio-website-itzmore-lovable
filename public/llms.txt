@@ -3,7 +3,7 @@
 > Football Data Scientist based in Vienna, Austria. Builds computer-vision and tracking-data pipelines that turn broadcast match footage into player positions and spatial metrics such as pitch control, validated against ground truth, for recruitment and match analysis. Senior Data Analyst at Publicis Media. Open to football data science roles (EU & UK).
 
 ## Credentials
-- EMEA Finalist, AWS World Sports Innovation Cup 2026 (Football Body Intelligence Platform)
+- Finalist, AWS World Sports Innovation Cup 2026 (Football Body Intelligence Platform)
 - MSc Artificial Intelligence Applied to Sports (completed)
 
 ## Projects

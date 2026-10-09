@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
     details: [
       "Independent football data science projects and selected freelance work, focused on tracking data, broadcast video and recruitment data.",
       "Built an end-to-end broadcast computer-vision pipeline (YOLOv11n, ByteTrack, TVCalib) that derives player positions and pitch-control surfaces from single-camera broadcast footage, validated against SoccerNet GSR ground truth.",
-      "Developed the Football Body Intelligence Platform on 700M+ TRACAB 3D skeleton data points (AWS S3, SageMaker, Bedrock) with two body-mechanics metrics (AWI, PQI). EMEA finalist, AWS World Sports Innovation Cup 2026.",
+      "Developed the Football Body Intelligence Platform on 700M+ TRACAB 3D skeleton data points (AWS S3, SageMaker, Bedrock) with two body-mechanics metrics (AWI, PQI). Finalist at the on-site final of the AWS World Sports Innovation Cup 2026, DFB Campus Frankfurt.",
       "Designed a two-phase Python scouting data pipeline for a professional club (under NDA), ingesting and normalising league source data for recruitment workflows.",
       "Co-authored 2026 FIFA World Cup match analyses for the Sports Data Campus World Cup of Data series.",
     ],

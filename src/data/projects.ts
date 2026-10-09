@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     title: "Football Body Intelligence Platform",
     description:
-      "AWS World Sports Innovation Cup 2026 submission, EMEA finalist (DFB Campus, Frankfurt). Two proprietary metrics, AWI (cognitive scanning via head rotation) and PQI (pressing quality), derived from 700M plus TRACAB tracking data points on AWS (S3, SageMaker, Bedrock).",
+      "Finalist at the on-site final of the AWS World Sports Innovation Cup 2026, DFB Campus Frankfurt. Two proprietary metrics, AWI (cognitive scanning via head rotation) and PQI (pressing quality), derived from 700M plus TRACAB tracking data points on AWS (S3, SageMaker, Bedrock). The competition drew 138 submitted projects from 370 students at 117 universities in 41 countries.",
     image: bodyIntelligenceImg.url,
     tags: ["Python", "AWS", "Tracking Data", "Streamlit"],
     metrics: ["TRACAB Tracking", "AWS SageMaker", "AWI and PQI"],
@@ -35,6 +35,12 @@ export const projects: Project[] = [
     color: "primary",
     caseStudyUrl: "https://github.com/itzmore-mph/football-body-intelligence",
     githubUrl: "https://github.com/itzmore-mph/football-body-intelligence",
+    externalLinks: [
+      {
+        label: "Bundesliga recap video (team featured)",
+        url: "https://www.linkedin.com/feed/update/urn:li:activity:7510275272487936000/",
+      },
+    ],
   },
   {
     title: "Bundesliga Performance and Valuation Analysis",

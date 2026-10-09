@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, PlayCircle } from "lucide-react";
 import { projects, earlierWork } from "@/data/projects";
@@ -8,8 +8,6 @@ import { SectionHeader } from "@/components/layout/SectionHeader";
 import { cn } from "@/lib/utils";
 import { ParallaxSection } from "@/components/ui/parallax-section";
 import { ProjectThumbnail } from "@/components/ui/project-thumbnail";
-
-
 
 const ProjectsSection = () => {
   return (
@@ -40,7 +38,7 @@ const ProjectsSection = () => {
             )}
             style={{ animationDelay: `${index * 150}ms` }}
           >
-            {/* Project Thumbnail — standardized shared 16:9 wrapper */}
+            {/* Project Thumbnail, standardized shared 16:9 wrapper */}
             {project.image && (
               <ProjectThumbnail
                 src={project.image}
@@ -98,7 +96,7 @@ const ProjectsSection = () => {
 
               {/* Technologies */}
               <div className="mb-8 flex-grow">
-              <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge
                       key={tag}
@@ -111,65 +109,76 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Action Buttons — standardized: primary case study / live demo, secondary source code */}
-              <div className="flex gap-3 mt-auto">
-                {project.isPlaceholder ? (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 focus-ring-primary opacity-50"
-                    disabled
+              {/* Secondary video link, then action buttons, pinned to the card bottom */}
+              <div className="mt-auto">
+                {project.videoLink && (
+                  <a
+                    href={project.videoLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "sm" }),
+                      "mb-3 w-full justify-start focus-ring-primary"
+                    )}
+                    aria-label={`${project.videoLink.label} (opens in new tab)`}
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Coming Soon
-                  </Button>
-                ) : (
-                  <>
-                    {primaryUrl && (
-                      <Button
-                        variant="default"
-                        size="sm"
-                        className="flex-1 focus-ring-primary interactive-element bg-primary hover:bg-primary-hover text-white"
-                        onClick={() => window.open(primaryUrl, "_blank", "noopener,noreferrer")}
-                        aria-label={`${primaryLabel}: ${project.title}`}
-                      >
-                        <PrimaryIcon className="w-4 h-4 mr-2" />
-                        {primaryLabel}
-                      </Button>
-                    )}
-                    {project.githubUrl && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex-1 focus-ring-primary interactive-element"
-                        onClick={() => window.open(project.githubUrl, "_blank", "noopener,noreferrer")}
-                        aria-label={`Source code: ${project.title}`}
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        Source Code
-                      </Button>
-                    )}
-                  </>
+                    <PlayCircle className="w-4 h-4 shrink-0 text-primary" />
+                    <span className="min-w-0 truncate">
+                      <span className="sm:hidden">
+                        {project.videoLink.shortLabel ?? project.videoLink.label}
+                      </span>
+                      <span className="hidden sm:inline">{project.videoLink.label}</span>
+                      {project.videoLink.sublabel && (
+                        <span className="hidden lg:inline text-muted-foreground">
+                          {" "}
+                          · {project.videoLink.sublabel}
+                        </span>
+                      )}
+                    </span>
+                  </a>
                 )}
-              </div>
 
-              {project.externalLinks && project.externalLinks.length > 0 && (
-                <div className="mt-3 flex flex-col gap-1.5">
-                  {project.externalLinks.map((link) => (
-                    <a
-                      key={link.url}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors focus-ring-primary"
-                      aria-label={`${link.label} (opens in new tab)`}
+                <div className="flex gap-3">
+                  {project.isPlaceholder ? (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 focus-ring-primary opacity-50"
+                      disabled
                     >
-                      <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                      {link.label}
-                    </a>
-                  ))}
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Coming Soon
+                    </Button>
+                  ) : (
+                    <>
+                      {primaryUrl && (
+                        <Button
+                          variant="default"
+                          size="sm"
+                          className="flex-1 focus-ring-primary interactive-element bg-primary hover:bg-primary-hover text-white"
+                          onClick={() => window.open(primaryUrl, "_blank", "noopener,noreferrer")}
+                          aria-label={`${primaryLabel}: ${project.title}`}
+                        >
+                          <PrimaryIcon className="w-4 h-4 mr-2" />
+                          {primaryLabel}
+                        </Button>
+                      )}
+                      {project.githubUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 focus-ring-primary interactive-element"
+                          onClick={() => window.open(project.githubUrl, "_blank", "noopener,noreferrer")}
+                          aria-label={`Source code: ${project.title}`}
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Source Code
+                        </Button>
+                      )}
+                    </>
+                  )}
                 </div>
-              )}
+              </div>
             </CardContent>
           </Card>
           );

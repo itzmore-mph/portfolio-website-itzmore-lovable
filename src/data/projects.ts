@@ -35,12 +35,12 @@ export const projects: Project[] = [
     color: "primary",
     caseStudyUrl: "https://github.com/itzmore-mph/football-body-intelligence",
     githubUrl: "https://github.com/itzmore-mph/football-body-intelligence",
-    externalLinks: [
-      {
-        label: "Bundesliga recap video (team featured)",
-        url: "https://www.linkedin.com/feed/update/urn:li:activity:7510275272487936000/",
-      },
-    ],
+    videoLink: {
+      label: "Watch the Bundesliga recap of the final",
+      shortLabel: "Watch the Bundesliga recap",
+      sublabel: "LinkedIn · Bundesliga",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7510275272487936000/",
+    },
   },
   {
     title: "Bundesliga Performance and Valuation Analysis",

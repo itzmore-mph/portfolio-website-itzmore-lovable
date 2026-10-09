@@ -24,8 +24,8 @@ export interface Project {
   caseStudyUrl?: string;
   /** Optional custom label for the primary CTA, e.g. "Read the Report" instead of "View Case Study". */
   caseStudyLabel?: string;
-  /** Supplementary links rendered below the primary and source-code buttons, in a quieter style. */
-  externalLinks?: { label: string; url: string }[];
+  /** Prominent secondary video link rendered as a full-width outline button above the primary actions. */
+  videoLink?: { label: string; shortLabel?: string; sublabel?: string; url: string };
   isPlaceholder?: boolean;
 }
 

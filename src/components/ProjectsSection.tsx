@@ -111,8 +111,36 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Action Buttons — standardized: primary case study / live demo, secondary source code */}
-              <div className="flex gap-3 mt-auto">
+              {/* Secondary video link, then Action Buttons — pinned to the card bottom */}
+              <div className="mt-auto">
+                {project.videoLink && (
+                  <a
+                    href={project.videoLink.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "sm" }),
+                      "mb-3 w-full justify-start focus-ring-primary"
+                    )}
+                    aria-label={`${project.videoLink.label} (opens in new tab)`}
+                  >
+                    <PlayCircle className="w-4 h-4 shrink-0 text-primary" />
+                    <span className="min-w-0 truncate">
+                      <span className="sm:hidden">
+                        {project.videoLink.shortLabel ?? project.videoLink.label}
+                      </span>
+                      <span className="hidden sm:inline">{project.videoLink.label}</span>
+                      {project.videoLink.sublabel && (
+                        <span className="hidden lg:inline text-muted-foreground">
+                          {" "}
+                          · {project.videoLink.sublabel}
+                        </span>
+                      )}
+                    </span>
+                  </a>
+                )}
+
+                <div className="flex gap-3">
                 {project.isPlaceholder ? (
                   <Button
                     variant="outline"

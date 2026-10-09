@@ -9,8 +9,6 @@ import { cn } from "@/lib/utils";
 import { ParallaxSection } from "@/components/ui/parallax-section";
 import { ProjectThumbnail } from "@/components/ui/project-thumbnail";
 
-
-
 const ProjectsSection = () => {
   return (
     <Section background="power" spacing="xl" containerSize="content">

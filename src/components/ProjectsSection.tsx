@@ -40,7 +40,7 @@ const ProjectsSection = () => {
             )}
             style={{ animationDelay: `${index * 150}ms` }}
           >
-            {/* Project Thumbnail — standardized shared 16:9 wrapper */}
+            {/* Project Thumbnail, standardized shared 16:9 wrapper */}
             {project.image && (
               <ProjectThumbnail
                 src={project.image}
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
 
               {/* Technologies */}
               <div className="mb-8 flex-grow">
-              <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge
                       key={tag}
@@ -111,7 +111,7 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Secondary video link, then Action Buttons , pinned to the card bottom */}
+              {/* Secondary video link, then action buttons, pinned to the card bottom */}
               <div className="mt-auto">
                 {project.videoLink && (
                   <a
@@ -141,44 +141,44 @@ const ProjectsSection = () => {
                 )}
 
                 <div className="flex gap-3">
-                  project.isPlaceholder ? (
-                    Button
-                      ariant="outline"
-                      ize="sm"
-                      lassName="flex-1 focus-ring-primary opacity-50"
-                      isabled
-                    
-                      ExternalLink className="w-4 h-4 mr-2" />
-                      oming Soon
-                    /Button>
-                   : (
+                  {project.isPlaceholder ? (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 focus-ring-primary opacity-50"
+                      disabled
                     >
-                      primaryUrl && (
-                        Button
-                          ariant="default"
-                          ize="sm"
-                          lassName="flex-1 focus-ring-primary interactive-element bg-primary hover:bg-primary-hover text-white"
-                          nClick={() => window.open(primaryUrl, "_blank", "noopener,noreferrer")}
-                          ria-label={`${primaryLabel}: ${project.title}`}
-                        
-                          PrimaryIcon className="w-4 h-4 mr-2" />
-                          primaryLabel}
-                        /Button>
-                      }
-                      project.githubUrl && (
-                        Button
-                          ariant="outline"
-                          ize="sm"
-                          lassName="flex-1 focus-ring-primary interactive-element"
-                          nClick={() => window.open(project.githubUrl, "_blank", "noopener,noreferrer")}
-                          ria-label={`Source code: ${project.title}`}
-                        
-                          Github className="w-4 h-4 mr-2" />
-                          ource Code
-                        /Button>
-                      }
-                    />
-                  }
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Coming Soon
+                    </Button>
+                  ) : (
+                    <>
+                      {primaryUrl && (
+                        <Button
+                          variant="default"
+                          size="sm"
+                          className="flex-1 focus-ring-primary interactive-element bg-primary hover:bg-primary-hover text-white"
+                          onClick={() => window.open(primaryUrl, "_blank", "noopener,noreferrer")}
+                          aria-label={`${primaryLabel}: ${project.title}`}
+                        >
+                          <PrimaryIcon className="w-4 h-4 mr-2" />
+                          {primaryLabel}
+                        </Button>
+                      )}
+                      {project.githubUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 focus-ring-primary interactive-element"
+                          onClick={() => window.open(project.githubUrl, "_blank", "noopener,noreferrer")}
+                          aria-label={`Source code: ${project.title}`}
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Source Code
+                        </Button>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             </CardContent>

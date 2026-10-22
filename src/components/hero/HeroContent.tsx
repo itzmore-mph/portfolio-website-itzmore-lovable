@@ -39,14 +39,18 @@ export const HeroContent = ({ onProjectsClick }: HeroContentProps) => {
         <div className="hidden md:block space-y-1">
           <h2 className="text-foreground font-normal leading-tight"
               style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)' }}>
-            From broadcast video to pitch control.
+            From the camera to the decision.
           </h2>
         </div>
         
         {/* Subline - Desktop */}
         <p className="hidden md:block text-muted-foreground font-normal leading-relaxed max-w-2xl" 
            style={{ fontSize: 'clamp(1rem, 1.2vw, 1.125rem)' }}>
-          I build computer-vision and tracking-data pipelines that turn match footage into player positions and spatial metrics, validated against ground truth, for recruitment and match analysis where optical tracking isn't available.
+          I build the models behind recruitment and match analysis: scouting pipelines, match outcome prediction and player metrics from tracking data.
+        </p>
+        <p className="hidden md:block text-muted-foreground font-normal leading-relaxed max-w-2xl" 
+           style={{ fontSize: 'clamp(1rem, 1.2vw, 1.125rem)' }}>
+          My current focus is computer vision that turns broadcast video into player positions and pitch control.
         </p>
         
         {/* Subline - Mobile (shorter) */}

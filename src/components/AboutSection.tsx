@@ -55,7 +55,7 @@ const AboutSection = () => {
                   </div>
                   <h3 className="font-semibold mb-1 text-caption text-muted-foreground">{highlight.title}</h3>
                   <p className="text-body-sm font-medium text-foreground">{highlight.primary}</p>
-                  <p className="text-caption text-muted-foreground">{highlight.secondary}</p>
+                  <p className={highlight.title === "Industry" ? "text-[0.66rem] leading-tight sm:text-caption text-muted-foreground" : "text-caption text-muted-foreground"}>{highlight.secondary}</p>
                   {highlight.third && (
                     <p className="text-caption text-muted-foreground">{highlight.third}</p>
                   )}

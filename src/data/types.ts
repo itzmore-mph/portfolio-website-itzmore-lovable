@@ -29,11 +29,20 @@ export interface Project {
   isPlaceholder?: boolean;
 }
 
+export interface SkillTag {
+  name: string;
+  /** Short context shown under the tag, e.g. libraries used with a language. */
+  note?: string;
+  emphasis?: "primary" | "muted";
+}
+
 export interface SkillCategory {
   title: string;
   icon: LucideIcon;
   color: string;
-  skills: string[];
+  skills: (string | SkillTag)[];
+  /** Small muted line under the tags naming the projects these were used in. */
+  usedIn?: string;
 }
 
 

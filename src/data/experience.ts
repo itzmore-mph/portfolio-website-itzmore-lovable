@@ -27,6 +27,7 @@ export const experiences: Experience[] = [
       "Co-authored 2026 FIFA World Cup match analyses for the Sports Data Campus World Cup of Data series.",
     ],
     ongoing: true,
+    freelance: true,
     links: [
       { name: "GitHub", url: "https://github.com/itzmore-mph" },
     ],

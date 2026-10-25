@@ -47,16 +47,23 @@ const ExperienceSection = () => {
                     </div>
                       <div>
                         <h3 className="text-card-title text-foreground mb-2">{exp.company}</h3>
-                        {exp.current && (
-                          <Badge variant="secondary" className="skill-badge-accent font-medium">
-                            Current Position
-                          </Badge>
-                        )}
-                        {!exp.current && exp.ongoing && (
-                          <Badge variant="outline" className="font-medium border-primary/40 text-primary">
-                            Ongoing
-                          </Badge>
-                        )}
+                        <div className="flex flex-wrap items-center gap-2">
+                          {exp.current && (
+                            <Badge variant="secondary" className="skill-badge-accent font-medium">
+                              Current Position
+                            </Badge>
+                          )}
+                          {exp.freelance && (
+                            <Badge variant="emerald" className="font-medium">
+                              Freelance
+                            </Badge>
+                          )}
+                          {!exp.current && exp.ongoing && (
+                            <Badge variant="outline" className="font-medium border-primary/40 text-primary">
+                              Ongoing
+                            </Badge>
+                          )}
+                        </div>
                       </div>
                     </div>
 

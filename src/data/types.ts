@@ -68,6 +68,8 @@ export interface Experience {
   current?: boolean;
   /** Marks a role that is still active in parallel (e.g. Freelance) — rendered as "Ongoing". */
   ongoing?: boolean;
+  /** Marks self-employed work (own studio / client projects) — rendered as a "Freelance" badge. */
+  freelance?: boolean;
   links?: ExternalLink[];
 }
 

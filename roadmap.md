@@ -14,3 +14,4 @@
 - [x] Contact area simplified to one compact card, verified at 1440px, 390px and 320px
 - [x] Email button keeps the subject prefill but is labelled "Email me"; the copy-to-clipboard button was removed, verified at 1440px, 393px and 320px
 - [x] Upwork and Malt removed site-wide (freelance links, contact data, JSON-LD, privacy pages), client-work bullet added to the freelance entry
+- [x] itzmore.dev entry labelled "Freelance" next to "Ongoing", verified at 393px, 320px and 1280px

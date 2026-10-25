@@ -33,15 +33,34 @@ const SkillsSection = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="rounded-full bg-muted/50 border border-border px-4 py-1.5 text-sm text-foreground"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                    {category.skills.map((raw) => {
+                      const skill = typeof raw === "string" ? { name: raw } : raw;
+                      const tone =
+                        skill.emphasis === "primary"
+                          ? "border-primary/60 text-primary text-base font-medium"
+                          : skill.emphasis === "muted"
+                            ? "border-border/60 text-muted-foreground text-sm"
+                            : "border-border text-foreground text-sm";
+                      return (
+                        <span
+                          key={skill.name}
+                          className={`rounded-full bg-muted/50 border px-4 py-1.5 max-w-full ${tone}`}
+                        >
+                          {skill.name}
+                          {skill.note && (
+                            <span className="block text-xs font-normal text-muted-foreground leading-snug">
+                              {skill.note}
+                            </span>
+                          )}
+                        </span>
+                      );
+                    })}
                   </div>
+                  {category.usedIn && (
+                    <p className="mt-4 text-xs text-muted-foreground leading-snug line-clamp-2">
+                      {category.usedIn}
+                    </p>
+                  )}
                 </CardContent>
               </Card>
             ))}

@@ -13,51 +13,68 @@ export const skillsIntro = "Tools and data I work with, from broadcast video and
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Languages",
+    title: "Programming",
     icon: Code2,
     color: "primary",
-    skills: ["Python", "SQL", "R"],
+    skills: [
+      { name: "Python", note: "pandas, NumPy, scikit-learn, PyTorch", emphasis: "primary" },
+      { name: "SQL", note: "DuckDB, ETL and data modeling" },
+      { name: "R (basic)", emphasis: "muted" },
+    ],
+    usedIn: "Used in: pitch control from broadcast video, xG model, AWS pipeline",
   },
   {
     title: "Data & Machine Learning",
     icon: Brain,
     color: "primary",
     skills: ["pandas", "scikit-learn", "LightGBM", "PyTorch", "TensorFlow/Keras"],
+    usedIn: "Used in: xG model, passing networks, player metrics",
   },
   {
-    title: "Computer Vision",
+    title: "Computer Vision (Sports)",
     icon: ScanEye,
     color: "primary",
-    skills: ["YOLOv11", "ByteTrack", "TVCalib", "OpenCV"],
+    skills: [
+      "YOLOv11",
+      "ByteTrack",
+      "TVCalib",
+      "Camera calibration",
+      "Player detection",
+      "Multi-object tracking",
+      "Pitch registration",
+    ],
+    usedIn: "Used in: pitch control pipeline from broadcast video",
   },
   {
     title: "Football Analytics",
     icon: Activity,
     color: "primary",
-    skills: [
-      "xG modelling",
-      "Pitch Control",
-      "Tracking & skeleton data",
-      "mplsoccer",
-    ],
+    skills: ["xG modelling", "Pitch Control", "Tracking & skeleton data", "mplsoccer"],
   },
   {
     title: "Data Providers",
     icon: Database,
     color: "primary",
-    skills: ["Hudl StatsBomb (event & 360)", "Wyscout", "TRACAB 3D skeletal tracking", "SoccerNet"],
+    skills: [
+      "Hudl StatsBomb (event & 360)",
+      "Wyscout",
+      "TRACAB 3D skeletal tracking",
+      "SoccerNet",
+      "Web scraping & API ingestion",
+    ],
   },
   {
-    title: "Visualization & BI",
-    icon: BarChart3,
-    color: "primary",
-    skills: ["Streamlit", "Power BI", "Tableau", "Looker Studio", "Datorama"],
-  },
-  {
-    title: "Data Engineering & Cloud",
+    title: "Deployment",
     icon: Cloud,
     color: "primary",
-    skills: ["Web scraping", "API ingestion & ETL pipelines", "DuckDB", "AWS (S3, SageMaker, Bedrock)", "Docker", "Git & GitHub"],
+    skills: ["AWS (S3, SageMaker, Bedrock, EC2)", "Docker", "Streamlit", "Google Cloud", "Git & GitHub"],
+    usedIn: "Used in: AWS World Sports Innovation Cup 2026, Finalist",
+  },
+  {
+    title: "BI & Visualization",
+    icon: BarChart3,
+    color: "primary",
+    skills: ["Power BI", "Tableau", "Looker", "Salesforce Marketing Intelligence"],
   },
 ];
 

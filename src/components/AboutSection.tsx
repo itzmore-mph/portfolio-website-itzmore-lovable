@@ -13,7 +13,7 @@ const AboutSection = () => {
       icon: Briefcase,
       title: "Industry",
       primary: "Sports & Media Tech",
-      secondary: "Hawk-Eye · Sportradar · Publicis",
+      secondary: "Hawk-Eye · Sportradar · Red Bull Media House · Publicis",
     },
     {
       icon: GraduationCap,

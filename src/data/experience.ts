@@ -7,10 +7,10 @@ export const experiences: Experience[] = [
     position: "Senior Data Analyst",
     location: "Vienna, Austria",
     details: [
-      "Lead end-to-end dashboard and automation projects for cross-media campaigns, from requirements to rollout and ongoing support, in Salesforce Marketing Intelligence (Datorama), Power BI and Looker Studio.",
-      "Act as product owner for Austria for the network's in-house BI solutions: gathering local requirements, prioritising features and coordinating rollout with the engineering team in London.",
-      "Build cross-source data pipelines and reporting frameworks for performance, pacing and KPI monitoring across markets, with a documented metric dictionary and automated QA.",
-      "Drive the agency's data and AI strategy, scaling automation initiatives across teams.",
+      "Lead end-to-end dashboard and automation projects for cross-media campaigns, from requirements to rollout and ongoing support, in Datorama (Salesforce Marketing Intelligence), Power BI, and Looker Studio.",
+      "Act as product owner for Austria for the network's in-house BI solutions: local requirements, feature prioritization and rollout, coordinate between local and international network teams.",
+      "Design and maintain reporting frameworks for performance, pacing and KPI monitoring across markets, with a shared metric dictionary and automated QA.",
+      "Drive the agency's data and AI strategy and product development, scaling core automation initiatives.",
     ],
     current: true,
   },
@@ -21,16 +21,14 @@ export const experiences: Experience[] = [
     location: "Remote",
     details: [
       "Independent football data science projects and selected freelance work, focused on tracking data, broadcast video and recruitment data.",
-      "Built an end-to-end broadcast computer-vision pipeline (YOLOv11n, ByteTrack, TVCalib) that derives player positions and pitch-control surfaces from single-camera broadcast footage, validated against SoccerNet GSR ground truth.",
-      "Developed the Football Body Intelligence Platform on 700M+ TRACAB 3D skeleton data points (AWS S3, SageMaker, Bedrock) with two body-mechanics metrics (AWI, PQI). Finalist at the on-site final of the AWS World Sports Innovation Cup 2026, DFB Campus Frankfurt.",
-      "Designed a two-phase Python scouting data pipeline for a professional club (under NDA), ingesting and normalising league source data for recruitment workflows.",
+      "Built a broadcast computer-vision pipeline (YOLO, ByteTrack, TVCalib) that derives player positions and pitch-control surfaces from single-camera match footage, validated against SoccerNet ground truth.",
+      "Developed the Football Body Intelligence Platform on 700M+ TRACAB 3D skeleton data points (AWS S3, SageMaker, Bedrock) with two body-mechanics metrics, AWI and PQI. Finalist at AWS World Sports Innovation Cup 2026.",
+      "Designed a scouting data pipeline for a professional club: scraping, ingestion and normalisation of league source data for recruitment workflows.",
       "Co-authored 2026 FIFA World Cup match analyses for the Sports Data Campus World Cup of Data series.",
     ],
     ongoing: true,
     freelance: true,
-    links: [
-      { name: "GitHub", url: "https://github.com/itzmore-mph" },
-    ],
+    links: [{ name: "GitHub", url: "https://github.com/itzmore-mph" }],
   },
   {
     date: "08/2022 – 04/2024",
@@ -56,10 +54,11 @@ export const experiences: Experience[] = [
     date: "06/2021 – 08/2022",
     company: "Hawk-Eye Innovations",
     position: "Football Systems Operator",
-    location: "Austria",
+    location: "Hybrid",
     details: [
-      "Setup and live operation of VAR and replay technology for professional football matches in Austria.",
-      "Technical support for match officials' video review workflow.",
+      "On-site technical responsibility for VAR systems at UEFA and Austrian Bundesliga matches: setup, camera and feed checks, live monitoring.",
+      "IFAB-approved replay operator, working alongside video match officials in live review situations.",
+      "Technical interface between referees, league officials and Hawk-Eye engineering during match operations.",
     ],
   },
   {
@@ -69,7 +68,8 @@ export const experiences: Experience[] = [
     location: "Vienna, Austria",
     details: [
       "Ad operations in the Oddsserve department, E2's sports betting odds ad product: campaign setup and optimisation across Adition, Epom and Adform.",
-      "Built data-driven reporting and conversion tracking for key accounts.",
+      "Built data-driven reporting and conversion tracking for key accounts, supporting campaign insights and decision-making",
+      "Supported key account management and project execution",
     ],
   },
   {

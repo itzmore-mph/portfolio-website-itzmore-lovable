@@ -5,19 +5,17 @@ import bodyIntelligenceImg from "@/assets/football-body-intelligence-dark.png.as
 import bundesligaImg from "@/assets/bundesliga-performance-analysis-dark.png.asset.json";
 import worldCupOfDataImg from "@/assets/world-cup-of-data-preview.png.asset.json";
 
-
 export const projects: Project[] = [
   {
     title: "Pitch-Control from Broadcast Video",
     description:
-      "MSc capstone. End-to-end computer-vision pipeline (YOLOv11n detection, ByteTrack identity, TVCalib camera calibration, Shaw time-to-intercept pitch-control) that turns broadcast footage into spatial pressure surfaces, validated against SoccerNet GSR ground truth.",
+      "End-to-end computer-vision pipeline (YOLOv11n detection, ByteTrack identity, TVCalib camera calibration, Shaw time-to-intercept pitch-control) that turns broadcast footage into spatial pressure surfaces, validated against SoccerNet GSR ground truth.",
     image: pitchControlImg.url,
     tags: ["Python", "Computer Vision", "PyTorch", "Validation"],
     metrics: ["YOLOv11n + ByteTrack", "TVCalib Homography", "Shaw TTI Model"],
     icon: Video,
     color: "primary",
-    caseStudyUrl:
-      "https://github.com/itzmore-mph/soccernet-setpiece-vision/blob/main/report.md",
+    caseStudyUrl: "https://github.com/itzmore-mph/soccernet-setpiece-vision/blob/main/report.md",
     caseStudyLabel: "Read the Report",
     githubUrl: "https://github.com/itzmore-mph/soccernet-setpiece-vision",
   },
@@ -69,6 +67,12 @@ export const projects: Project[] = [
 ];
 
 export const earlierWork: { title: string; githubUrl: string }[] = [
-  { title: "Football Analytics Dashboard, Expected Goals and Passing Networks", githubUrl: "https://github.com/itzmore-mph/football-analytics-portfolio" },
-  { title: "StatsBomb Passing Network Analysis", githubUrl: "https://github.com/itzmore-mph/statsbomb-passing-network-analysis" },
+  {
+    title: "Football Analytics Dashboard, Expected Goals and Passing Networks",
+    githubUrl: "https://github.com/itzmore-mph/football-analytics-portfolio",
+  },
+  {
+    title: "StatsBomb Passing Network Analysis",
+    githubUrl: "https://github.com/itzmore-mph/statsbomb-passing-network-analysis",
+  },
 ];
